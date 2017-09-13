@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAMA,aAAc;EACb,UAAU,EAPH,IAAI;;AAUZ,MAAO;EACN,WAAW,EARD,SAAS;EASnB,UAAU,EAXF,IAAI",
-"sources": ["myStyleGuide.scss"],
-"names": [],
-"file": "myStyleGuide.css"
-}
