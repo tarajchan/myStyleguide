@@ -1,0 +1,6 @@
+/*include as scss partial*/
+
+@font-face {
+	font-family: "Miriam Libre";
+	src: url("/Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype");
+}

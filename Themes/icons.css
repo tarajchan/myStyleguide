@@ -1,0 +1,55 @@
+
+
+/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
+container as a text to create padding between the text and the icon*/
+.icon__menu-item--right {
+	position: absolute;
+	right: 1em;
+}
+
+.icon__module--left {
+	margin-right: 0.5em;
+  margin-bottom: 0.125em;
+}
+
+.icon__module--right {
+	margin-left: 0.5em;
+  margin-top: 0.125em;
+}
+
+/*Positioning for absolutely positioned items*/
+.bottom {
+	bottom: 0;
+}
+
+.left {
+	left: 0;
+}
+
+.right {
+	right: 0;
+}
+
+.top {
+	top: 0;
+}
+
+.arrow--up {
+	position: absolute;
+	height: 0;
+	width: 0;
+	border-left: 0.5em solid transparent;
+	border-right: 0.5em solid transparent;
+
+	border-bottom: 0.5em solid #000;
+}
+
+.arrow--right {
+	position: absolute;
+	height: 0;
+	width: 0;
+	border-bottom: 0.5em solid transparent;
+	border-top: 0.5em solid transparent;
+
+	border-left: 0.5em solid #000;
+}

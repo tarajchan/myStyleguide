@@ -1,0 +1,165 @@
+
+@font-face {
+	font-family: "Miriam Libre";
+	src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype");
+}
+
+/*create @mixin for default centering of flex items, ex.
+display: flex, flex:1, align & justify: center*/
+
+.hidden {
+	display: none;
+}
+
+
+/*use @extend to duplicate CSS from navigationBar__menu-item*/
+.navigationBar__dropDown {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  max-height: 3em;
+  border-left: 0.01em solid #3C3939;
+  color: #FFF;
+  text-align: center;
+  font-family: "Miriam Libre";
+  font-size: 0.9em;
+  transition: 0.3s;
+}
+
+.navigationBar__dropDown:hover {
+	background: #3CB3B9;
+	box-shadow: inset 0 0 2em 0.25em #23585A;
+	border-left-color: #000;
+	cursor: pointer;
+}
+
+.navigationBar__dropDown:hover .navigationBar__dropDown-menu {
+	display: flex;
+}
+
+
+.navigationBar__dropDown-menu {
+	display: none;
+	position: absolute;
+	flex-direction: column;
+  min-height: 14em;
+  min-width: 10em;
+  background: #000;
+  top: 3em;
+  left: 0;
+  border-top: 0.25em solid #3CB3B9;
+
+}
+
+.navigationBar__dropDown-item, 
+.navigationBar__dropDown-sub-item {
+	position: relative;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	background: transparent;
+	border-bottom: 0.01em solid #FFF;
+	color: #FFF;
+}
+
+/*creates a left margin for the text for an indented appearance*/
+.navigationBar__dropDown-item-text {
+	position: absolute;
+	left: 1em;
+}
+
+/*creates a border to distinguish sub-menu item
+from drop down item*/
+.navigationBar__dropDown-sub-item {
+	border-left: 0.01em solid #FFF;
+}
+
+.navigationBar__dropDown-sub-item:hover {
+	background: #3CB3B9;
+	box-shadow: inset 0 0 2em 0.25em #23585A;
+}
+
+.navigationBar__dropDown-sub-menu {
+ 	position: absolute;
+  display: none;
+  left: 10em;
+  top: 0;
+	min-height: 5.5em;
+  min-width: 10em;
+  background: #000;
+}
+
+.navigationBar__dropDown-item:hover .navigationBar__dropDown-sub-menu {
+	display: flex;
+	flex-direction: column;
+}
+
+/*create a variable for "hover" background color*/
+.navigationBar__dropDown-item:hover {
+	background: #3CB3B9;
+	box-shadow: inset 0 0 2em 0.25em #23585A; 
+}
+
+.navigationBar__innerWrapper {
+	position: fixed;
+	display: flex;			
+
+	left: 1vw;
+	right: 1vw;
+	top: 0.85em;
+	max-height: 3em;
+
+	border: 0.01em solid #3C3939;
+	border-radius: 0.5em;
+	border-bottom: 0.25em solid #3CB3B9;
+	box-shadow: inset 0 0.125em 1em 0.125em #3C3939;
+}
+
+.navigationBar__highlight {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	min-height: 0.375em;
+}
+
+.navigationBar__menu {
+	display: flex;
+	flex: 1;
+	min-height: 3em;
+	padding: 0 4em;
+}
+
+.navigationBar__menu-item {
+	position: relative;
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	max-height: 3em;
+
+	border-left: 0.01em solid #3C3939;
+	color: #FFF;
+	text-align: center;
+
+	font-family: "Miriam Libre";
+	font-size: 0.9em;
+	transition: 0.3s;
+}
+
+.navigationBar__menu-item--start {
+	border: 0;
+}
+
+
+.navigationBar__menu-item:active,
+.navigationBar__menu-item--start:active,
+.navigationBar__menu-item:hover,
+.navigationBar__menu-item--start:hover {
+	background: #3CB3B9;
+	box-shadow: inset 0 0 2em 0.25em #23585A;
+	border-left-color: #000;
+	cursor: pointer;
+};
