@@ -1,34 +1,191 @@
-@font-face {
-  font-family: "Miriam Libre";
-  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
-/*create @mixin for default centering of flex items, ex.
-display: flex, flex:1, align & justify: center*/
-.hidden {
-  display: none; }
+/*Partials*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Semantically important icons*/
+.icon__search {
+  margin-top: -0.125em; }
 
-/*use @extend to duplicate CSS from navigationBar__menu-item*/
-.navigationBar__dropDown {
-  position: relative;
+#icon__bars {
+  display: block;
+  color: #FFF; }
+  @media screen and (min-width: 1024px) and (max-width: 1350px) {
+    #icon__bars {
+      display: none; } }
+
+.icon__media--circle {
+  height: 1em;
+  width: 1em;
+  -ms-border-radius: 0.5em;
+  moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+  background: #3CB3B9; }
+
+/*positions the icon in the specified direction by 1em*/
+/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
+container as a text to create padding between the text and the icon*/
+.icon__menu-item--right {
+  position: absolute;
+  right: 1em; }
+
+.icon__menu-item--top {
+  position: absolute;
+  top: 1em; }
+
+/*creates a margin on the opposite side of the specified position
+in order to align the icon on either the right or left margin*/
+.icon--left {
+  margin-right: 0.5em; }
+
+.icon--right {
+  margin-left: 0.5em;
+  margin-top: 0.125em; }
+
+/*Positioning for absolutely positioned items*/
+.bottom {
+  bottom: 0; }
+
+.left {
+  left: 0; }
+
+.right {
+  right: 0; }
+
+.top {
+  top: 0; }
+
+/*Creates a triangle representing an arrow with equal widths 
+for all borders. Commonly used with dropdown menus to signify 
+additional content. Color class names for black and white arrows
+have been created for styling purposes, but new class names with
+different colors can be created by adding a state value for color 
+(--state) and including the arrow mixin with desired color.*/
+/*white arrows*/
+.arrow--up--white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #FFF; }
+
+.arrow--right-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-left: 0.5em solid #FFF;
+  border-bottom: 0.5em solid transparent; }
+
+.arrow--down-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #FFF; }
+
+.arrow--left-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #FFF;
+  border-bottom: 0.5em solid transparent; }
+
+/*black arrows*/
+.arrow--up-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #000; }
+
+.arrow--right-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-left: 0.5em solid #000;
+  border-bottom: 0.5em solid transparent; }
+
+.arrow--down-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #000; }
+
+.arrow--left-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #000;
+  border-bottom: 0.5em solid transparent; }
+
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+.navigationBar__component {
   display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
   flex: 1;
   align-items: center;
-  justify-content: center;
-  max-height: 3em;
-  border-left: 0.01em solid #3C3939;
-  color: #FFF;
-  text-align: center;
-  font-family: "Miriam Libre";
-  font-size: 0.9em;
-  transition: 0.3s; }
-
-.navigationBar__dropDown:hover {
-  background: #3CB3B9;
-  box-shadow: inset 0 0 2em 0.25em #23585A;
-  border-left-color: #000;
-  cursor: pointer; }
-
-.navigationBar__dropDown:hover .navigationBar__dropDown-menu {
-  display: flex; }
+  justify-content: center; }
 
 .navigationBar__dropDown-menu {
   display: none;
@@ -37,7 +194,7 @@ display: flex, flex:1, align & justify: center*/
   min-height: 14em;
   min-width: 10em;
   background: #000;
-  top: 3em;
+  top: 2.7em;
   left: 0;
   border-top: 0.25em solid #3CB3B9; }
 
@@ -54,7 +211,8 @@ display: flex, flex:1, align & justify: center*/
 /*creates a left margin for the text for an indented appearance*/
 .navigationBar__dropDown-item-text {
   position: absolute;
-  left: 1em; }
+  left: 1em;
+  font-size: 0.95em; }
 
 /*creates a border to distinguish sub-menu item
 from drop down item*/
@@ -96,6 +254,7 @@ from drop down item*/
   box-shadow: inset 0 0.125em 1em 0.125em #3C3939; }
 
 .navigationBar__highlight {
+  background-color: #3CB3B9;
   position: fixed;
   left: 0;
   right: 0;
@@ -105,22 +264,73 @@ from drop down item*/
 .navigationBar__menu {
   display: flex;
   flex: 1;
-  min-height: 3em;
-  padding: 0 4em; }
+  min-height: 3em; }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .navigationBar__menu {
+      padding: 0 2em; } }
+  @media screen and (min-width: 1024px) and (max-width: 1536px) {
+    .navigationBar__menu {
+      padding: 0 3em; } }
+  @media screen and (min-width: 1536px) {
+    .navigationBar__menu {
+      padding: 0 4em; } }
 
 .navigationBar__menu-item {
-  position: relative;
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  max-height: 3em;
-  border-left: 0.01em solid #3C3939;
-  color: #FFF;
-  text-align: center;
-  font-family: "Miriam Libre";
-  font-size: 0.9em;
-  transition: 0.3s; }
+  display: none; }
+  @media screen and (min-width: 768px) {
+    .navigationBar__menu-item {
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      display: flex;
+      max-height: 2.7em;
+      border-left: 0.01em solid #3C3939;
+      color: #FFF;
+      text-align: center;
+      transition: 0.3s; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .navigationBar__menu-item:nth-child(1)::after {
+      content: "1";
+      font-size: 0.95em; }
+    .navigationBar__menu-item:nth-child(2)::after {
+      content: "2";
+      font-size: 0.95em; }
+    .navigationBar__menu-item:nth-child(3)::after {
+      content: "3";
+      font-size: 0.95em; }
+    .navigationBar__menu-item:nth-child(4)::after {
+      content: "4";
+      font-size: 0.95em; } }
+  @media screen and (min-width: 1024px) and (max-width: 1536px) {
+    .navigationBar__menu-item:nth-child(1)::after {
+      content: "Item 1";
+      font-size: 1em; }
+    .navigationBar__menu-item:nth-child(2)::after {
+      content: "Item 2";
+      font-size: 1em; }
+    .navigationBar__menu-item:nth-child(3)::after {
+      content: "Item 3";
+      font-size: 1em; }
+    .navigationBar__menu-item:nth-child(4)::after {
+      content: "Item 4";
+      font-size: 1em; } }
+  @media screen and (min-width: 1536px) {
+    .navigationBar__menu-item:nth-child(1)::after {
+      content: "Item 1";
+      font-size: 1.025em; }
+    .navigationBar__menu-item:nth-child(2)::after {
+      content: "Item 2";
+      font-size: 1.025em; }
+    .navigationBar__menu-item:nth-child(3)::after {
+      content: "Item 3";
+      font-size: 1.025em; }
+    .navigationBar__menu-item:nth-child(4)::after {
+      content: "Item 4";
+      font-size: 1.025em; } }
+
+.navigationBar__menu-item:hover .navigationBar__dropDown-menu {
+  display: flex; }
 
 .navigationBar__menu-item--start {
   border: 0; }
@@ -134,17 +344,576 @@ from drop down item*/
   border-left-color: #000;
   cursor: pointer; }
 
+/*BOTTOM NAVIGATION FOR MOBILE AND TABLET VIEW*/
+/*acts as a container for items inside the bottom navigation bar*/
+.navigationBar--bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  min-height: 4em;
+  font-family: "Quicksand Regular";
+  background: #000;
+  box-shadow: 0 -0.05em 0.5em 0.05em #4E4E4E; }
+  @media screen and (min-width: 1024px) {
+    .navigationBar--bottom {
+      display: none; } }
+
+.navigationBar__highlight--bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #3CB3B9;
+  min-height: 0.375em; }
+
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Styling for search buttons*/
+.button, .button__search, .button--absolute, #button--active, .button--noBorder {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background: transparent;
+  border: 0.01em solid #3C3939;
+  border-radius: 0.5em;
+  color: #FFF;
+  cursor: pointer;
+  font-family: "Quicksand Light";
+  text-decoration: none; }
+
+.button__search {
+  border-top: 0.01em solid #8C8C8C;
+  border-right: 0.01em solid #8C8C8C;
+  border-bottom: 0.01em solid #8C8C8C;
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0; }
+
+.button--absolute {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding-left: 1em;
+  border-radius: 0;
+  justify-content: flex-start;
+  width: 100%; }
+
+.button--absolute:hover,
+.button--absolute:active {
+  border-top: 0.25em solid #3CB3B9; }
+
+#button--active {
+  border-top: 0.25em solid #3CB3B9;
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: 0; }
+
+#button--active:hover {
+  border: 0; }
+
+.button--noBorder {
+  border: 0; }
+
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Semantically important icons*/
+.icon__search {
+  margin-top: -0.125em; }
+
+#icon__bars {
+  display: block;
+  color: #FFF; }
+  @media screen and (min-width: 1024px) and (max-width: 1350px) {
+    #icon__bars {
+      display: none; } }
+
+.icon__media--circle {
+  height: 1em;
+  width: 1em;
+  -ms-border-radius: 0.5em;
+  moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+  background: #3CB3B9; }
+
+/*positions the icon in the specified direction by 1em*/
+/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
+container as a text to create padding between the text and the icon*/
+.icon__menu-item--right {
+  position: absolute;
+  right: 1em; }
+
+.icon__menu-item--top {
+  position: absolute;
+  top: 1em; }
+
+/*creates a margin on the opposite side of the specified position
+in order to align the icon on either the right or left margin*/
+.icon--left {
+  margin-right: 0.5em; }
+
+.icon--right {
+  margin-left: 0.5em;
+  margin-top: 0.125em; }
+
+/*Positioning for absolutely positioned items*/
+.bottom {
+  bottom: 0; }
+
+.left {
+  left: 0; }
+
+.right {
+  right: 0; }
+
+.top {
+  top: 0; }
+
+/*Creates a triangle representing an arrow with equal widths 
+for all borders. Commonly used with dropdown menus to signify 
+additional content. Color class names for black and white arrows
+have been created for styling purposes, but new class names with
+different colors can be created by adding a state value for color 
+(--state) and including the arrow mixin with desired color.*/
+/*white arrows*/
+.arrow--up--white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #FFF; }
+
+.arrow--right-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-left: 0.5em solid #FFF;
+  border-bottom: 0.5em solid transparent; }
+
+.arrow--down-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #FFF; }
+
+.arrow--left-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #FFF;
+  border-bottom: 0.5em solid transparent; }
+
+/*black arrows*/
+.arrow--up-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #000; }
+
+.arrow--right-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-left: 0.5em solid #000;
+  border-bottom: 0.5em solid transparent; }
+
+.arrow--down-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #000; }
+
+.arrow--left-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #000;
+  border-bottom: 0.5em solid transparent; }
+
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Variables for font-size and line-height*/
+.text__border {
+  border: 0.01em outset #FFF;
+  border-radius: 0 0.5em;
+  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
+
+.text__wrapper {
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  position: absolute; }
+
+.text__heading, .text__heading--main {
+  letter-spacing: 0.1em;
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 0.55em;
+  color: #FFF;
+  line-height: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  margin-left: -0.1em; }
+
+.text_headingGroup {
+  position: relative;
+  left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.text__heading--main {
+  font-size: 1.25em; }
+  @media screen and (min-width: 768px) {
+    .text__heading--main {
+      font-size: 1.5em;
+      font-weight: normal; } }
+
+.text__heading--main.left {
+  margin-left: 0.25em; }
+
+.text__heading--main.right {
+  margin-right: 0.5em; }
+
+.text--responsive {
+  counter-increment: 1;
+  position: relative;
+  font-size: 0.95em; }
+
+@font-face {
+  font-family: "Miriam Libre";
+  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Bold";
+  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Light";
+  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Medium";
+  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Regular";
+  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+.sidebar__icon {
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  left: 1.5em;
+  padding: 0.5em;
+  border: 0.01em solid #3C3939;
+  border-radius: 0.25em;
+  box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
+  cursor: pointer; }
+
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+.grid {
+  display: grid; }
+
+/*Grid containers*/
+.grid__container--12 {
+  grid-template-columns: repeat(12, auto);
+  grid-template-rows: repeat(12, row);
+  grid-gap: 0.25em; }
+
+.grid__container--4 {
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 0.25em; }
+
+.grid__container--12 {
+  grid-template-columns: repeat(12, auto);
+  grid-template-rows: repeat(12, row);
+  grid-gap: 0.25em; }
+
+/*Grid template-columns beginning from grid-line 1*/
+.grid__template--columns-1-12 {
+  grid-column: 1/span 1; }
+
+.grid__template--columns-1-6 {
+  grid-column: 1/span 2; }
+
+.grid__template--columns--1-4 {
+  grid-column: 1/span 3; }
+
+.grid__template--columns-1-3 {
+  grid-column: 1/span 4; }
+
+.grid__template--columns-5-12 {
+  grid-column: 1/span 5; }
+
+.grid__template--columns-1-2 {
+  grid-column: 1/span 6; }
+
+.grid__template--columns-7-12 {
+  grid-column: 1/span 7; }
+
+.grid__template--columns-2-3 {
+  grid-column: 1/span 8; }
+
+.grid__template--columns-3-4 {
+  grid-column: 1/span 9; }
+
+.grid__template--columns-5-6 {
+  grid-column: 1/span 10; }
+
+.grid__template--columns-11-12 {
+  grid-column: 1/span 11; }
+
+.grid__template--columns-12 {
+  grid-column: 12; }
+
+/*Grid-template-rows beginning from grid-line 1*/
+.grid__template--rows-1-12 {
+  grid-row: 1/span 1; }
+
+.grid__template--rows-1-6 {
+  grid-row: 1/span 2; }
+
+.grid__template--rows--1-4 {
+  grid-row: 1/span 3; }
+
+.grid__template--rows-1-3 {
+  grid-row: 1/span 4; }
+
+.grid__template--rows-5-12 {
+  grid-row: 1/span 5; }
+
+.grid__template--rows-1-2 {
+  grid-row: 1/span 6; }
+
+.grid__template--rows-7-12 {
+  grid-row: 1/span 7; }
+
+.grid__template--rows-2-3 {
+  grid-row: 1/span 8; }
+
+.grid__template--rows-3-4 {
+  grid-row: 1/span 9; }
+
+.grid__template--rows-5-6 {
+  grid-row: 1/span 10; }
+
+.grid__template--rows-11-12 {
+  grid-row: 1/span 11; }
+
+.grid__template--rows-12 {
+  grid-row: 12; }
+
 /*INCLUDE POSITIONING STATIC DIMENSIONS OF MODULES*/
-/*IMPORT SCSS FILES HERE WHEN COMPILED TO SASS*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Variables for font-size and line-height*/
+.text__border {
+  border: 0.01em outset #FFF;
+  border-radius: 0 0.5em;
+  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
+
+.text__wrapper {
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  position: absolute; }
+
+.text__heading, .text__heading--main {
+  letter-spacing: 0.1em;
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 0.55em;
+  color: #FFF;
+  line-height: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  margin-left: -0.1em; }
+
+.text_headingGroup {
+  position: relative;
+  left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.text__heading--main {
+  font-size: 1.25em; }
+  @media screen and (min-width: 768px) {
+    .text__heading--main {
+      font-size: 1.5em;
+      font-weight: normal; } }
+
+.text__heading--main.left {
+  margin-left: 0.25em; }
+
+.text__heading--main.right {
+  margin-right: 0.5em; }
+
+.text--responsive {
+  counter-increment: 1;
+  position: relative;
+  font-size: 0.95em; }
+
+@font-face {
+  font-family: "Miriam Libre";
+  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Bold";
+  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Light";
+  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Medium";
+  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Regular";
+  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
 /*colors(include color variables from colors file)*/
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box; }
-
-.color__solidTeal {
-  background: #3CB3B9; }
 
 .navigationBar {
   /*Positioning*/
@@ -157,25 +926,739 @@ from drop down item*/
   flex-direction: row;
   min-height: 4em;
   /*Visual*/
-  background: #000; }
+  font-family: "Quicksand Regular";
+  background: #000;
+  box-shadow: 0 0.05em 0.5em 0.05em #4E4E4E; }
 
-.navigationBar--state,
-.navigationBar--state-center,
-.navigationBar--state-left,
-.navigationBar--state-right {
+.navigationBar--state {
+  position: relative;
   flex: 1;
   display: flex; }
 
-.navigationBar--state-center {
-  justify-content: center; }
-
-.navigationBar--state-left {
-  justify-content: flex-start; }
-
-.navigationBar--state-right {
-  justify-content: flex-end; }
-
 .navigationBar__text--absolute {
   color: #FFF; }
+
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Semantically important icons*/
+.icon__search {
+  margin-top: -0.125em; }
+
+#icon__bars {
+  display: block;
+  color: #FFF; }
+  @media screen and (min-width: 1024px) and (max-width: 1350px) {
+    #icon__bars {
+      display: none; } }
+
+.icon__media--circle {
+  height: 1em;
+  width: 1em;
+  -ms-border-radius: 0.5em;
+  moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+  background: #3CB3B9; }
+
+/*positions the icon in the specified direction by 1em*/
+/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
+container as a text to create padding between the text and the icon*/
+.icon__menu-item--right {
+  position: absolute;
+  right: 1em; }
+
+.icon__menu-item--top {
+  position: absolute;
+  top: 1em; }
+
+/*creates a margin on the opposite side of the specified position
+in order to align the icon on either the right or left margin*/
+.icon--left {
+  margin-right: 0.5em; }
+
+.icon--right {
+  margin-left: 0.5em;
+  margin-top: 0.125em; }
+
+/*Positioning for absolutely positioned items*/
+.bottom {
+  bottom: 0; }
+
+.left {
+  left: 0; }
+
+.right {
+  right: 0; }
+
+.top {
+  top: 0; }
+
+/*Creates a triangle representing an arrow with equal widths 
+for all borders. Commonly used with dropdown menus to signify 
+additional content. Color class names for black and white arrows
+have been created for styling purposes, but new class names with
+different colors can be created by adding a state value for color 
+(--state) and including the arrow mixin with desired color.*/
+/*white arrows*/
+.arrow--up--white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #FFF; }
+
+.arrow--right-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-left: 0.5em solid #FFF;
+  border-bottom: 0.5em solid transparent; }
+
+.arrow--down-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #FFF; }
+
+.arrow--left-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #FFF;
+  border-bottom: 0.5em solid transparent; }
+
+/*black arrows*/
+.arrow--up-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #000; }
+
+.arrow--right-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-left: 0.5em solid #000;
+  border-bottom: 0.5em solid transparent; }
+
+.arrow--down-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #000; }
+
+.arrow--left-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #000;
+  border-bottom: 0.5em solid transparent; }
+
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Variables for font-size and line-height*/
+.text__border {
+  border: 0.01em outset #FFF;
+  border-radius: 0 0.5em;
+  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
+
+.text__wrapper {
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  position: absolute; }
+
+.text__heading, .text__heading--main {
+  letter-spacing: 0.1em;
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 0.55em;
+  color: #FFF;
+  line-height: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  margin-left: -0.1em; }
+
+.text_headingGroup {
+  position: relative;
+  left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.text__heading--main {
+  font-size: 1.25em; }
+  @media screen and (min-width: 768px) {
+    .text__heading--main {
+      font-size: 1.5em;
+      font-weight: normal; } }
+
+.text__heading--main.left {
+  margin-left: 0.25em; }
+
+.text__heading--main.right {
+  margin-right: 0.5em; }
+
+.text--responsive {
+  counter-increment: 1;
+  position: relative;
+  font-size: 0.95em; }
+
+@font-face {
+  font-family: "Miriam Libre";
+  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Bold";
+  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Light";
+  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Medium";
+  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Regular";
+  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+.sidebar {
+  display: none; }
+  @media screen and (min-width: 1024px) {
+    .sidebar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      top: 4.35em;
+      display: block;
+      min-width: 16em;
+      background: #212121; } }
+
+.sidebar__dropDown {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 3em;
+  background: linear-gradient(135deg, #3CB3B9, #000);
+  color: #FFF;
+  padding: 0.75em; }
+
+.sidebar__dropDown-item {
+  position: relative;
+  padding: 0.5em 0; }
+
+.sidebar__dropDown-sub-menu {
+  padding-left: 1em;
+  position: relative; }
+
+/*show when bars icon is clicked in sidebar subheading*/
+.sidebar__iconBar {
+  display: none;
+  /*
+   **INCLUDE IN JS**
+  	@include border-radius(0, 0.5em, 0.5em, 0);
+  
+  	position: relative;
+  	flex: 1;
+  	margin-right: 0.5em;
+  	min-width: 3em;
+  	background: $black;
+  */ }
+
+.sidebar__innerContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  margin: 0.5em;
+  background: transparent; }
+
+.sidebar__module, .sidebar__moduleSubHeading, .sidebar__module.last {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  min-height: 3em;
+  background: #000;
+  font-family: "Quicksand Light"; }
+
+.sidebar__moduleSection {
+  flex: 1;
+  flex-direction: column;
+  margin: 0;
+  max-height: 16em;
+  background: transparent;
+  border-radius: 0.5em; }
+
+.sidebar__moduleSubHeading {
+  border-top: 0.25em solid #4BA7AB;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 0.5em;
+  position: relative;
+  min-height: 3.5em;
+  box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E; }
+
+.sidebar__module.last, .last.sidebar__moduleSubHeading {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  border-bottom: 0; }
+
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Variables for font-size and line-height*/
+.text__border {
+  border: 0.01em outset #FFF;
+  border-radius: 0 0.5em;
+  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
+
+.text__wrapper {
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  position: absolute; }
+
+.text__heading, .text__heading--main {
+  letter-spacing: 0.1em;
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 0.55em;
+  color: #FFF;
+  line-height: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  margin-left: -0.1em; }
+
+.text_headingGroup {
+  position: relative;
+  left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.text__heading--main {
+  font-size: 1.25em; }
+  @media screen and (min-width: 768px) {
+    .text__heading--main {
+      font-size: 1.5em;
+      font-weight: normal; } }
+
+.text__heading--main.left {
+  margin-left: 0.25em; }
+
+.text__heading--main.right {
+  margin-right: 0.5em; }
+
+.text--responsive {
+  counter-increment: 1;
+  position: relative;
+  font-size: 0.95em; }
+
+@font-face {
+  font-family: "Miriam Libre";
+  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Bold";
+  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Light";
+  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Medium";
+  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Regular";
+  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+/*Input styling*/
+input[type="text"] {
+  width: 90%;
+  height: 2em;
+  padding-top: 0;
+  padding-right: 1em;
+  padding-bottom: 0;
+  padding-left: 1em;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0.5em;
+  background: transparent;
+  border: 0.1em solid #8C8C8C;
+  color: #FFF;
+  font-family: "Quicksand Light"; }
+
+input[type="text"].form__input--no-border {
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0.01em solid #3C3939;
+  border-left: 0; }
+
+.form__segment {
+  display: none; }
+  @media screen and (min-width: 768px) {
+    .form__segment {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      min-height: 1.5em;
+      width: 80%; } }
+
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Semantically important icons*/
+.icon__search {
+  margin-top: -0.125em; }
+
+#icon__bars {
+  display: block;
+  color: #FFF; }
+  @media screen and (min-width: 1024px) and (max-width: 1350px) {
+    #icon__bars {
+      display: none; } }
+
+.icon__media--circle {
+  height: 1em;
+  width: 1em;
+  -ms-border-radius: 0.5em;
+  moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+  background: #3CB3B9; }
+
+/*positions the icon in the specified direction by 1em*/
+/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
+container as a text to create padding between the text and the icon*/
+.icon__menu-item--right {
+  position: absolute;
+  right: 1em; }
+
+.icon__menu-item--top {
+  position: absolute;
+  top: 1em; }
+
+/*creates a margin on the opposite side of the specified position
+in order to align the icon on either the right or left margin*/
+.icon--left {
+  margin-right: 0.5em; }
+
+.icon--right {
+  margin-left: 0.5em;
+  margin-top: 0.125em; }
+
+/*Positioning for absolutely positioned items*/
+.bottom {
+  bottom: 0; }
+
+.left {
+  left: 0; }
+
+.right {
+  right: 0; }
+
+.top {
+  top: 0; }
+
+/*Creates a triangle representing an arrow with equal widths 
+for all borders. Commonly used with dropdown menus to signify 
+additional content. Color class names for black and white arrows
+have been created for styling purposes, but new class names with
+different colors can be created by adding a state value for color 
+(--state) and including the arrow mixin with desired color.*/
+/*white arrows*/
+.arrow--up--white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #FFF; }
+
+.arrow--right-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-left: 0.5em solid #FFF;
+  border-bottom: 0.5em solid transparent; }
+
+.arrow--down-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #FFF; }
+
+.arrow--left-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #FFF;
+  border-bottom: 0.5em solid transparent; }
+
+/*black arrows*/
+.arrow--up-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #000; }
+
+.arrow--right-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-left: 0.5em solid #000;
+  border-bottom: 0.5em solid transparent; }
+
+.arrow--down-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #000; }
+
+.arrow--left-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #000;
+  border-bottom: 0.5em solid transparent; }
+
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Variables for font-size and line-height*/
+.text__border {
+  border: 0.01em outset #FFF;
+  border-radius: 0 0.5em;
+  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
+
+.text__wrapper {
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  position: absolute; }
+
+.text__heading, .text__heading--main {
+  letter-spacing: 0.1em;
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 0.55em;
+  color: #FFF;
+  line-height: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  margin-left: -0.1em; }
+
+.text_headingGroup {
+  position: relative;
+  left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.text__heading--main {
+  font-size: 1.25em; }
+  @media screen and (min-width: 768px) {
+    .text__heading--main {
+      font-size: 1.5em;
+      font-weight: normal; } }
+
+.text__heading--main.left {
+  margin-left: 0.25em; }
+
+.text__heading--main.right {
+  margin-right: 0.5em; }
+
+.text--responsive {
+  counter-increment: 1;
+  position: relative;
+  font-size: 0.95em; }
+
+@font-face {
+  font-family: "Miriam Libre";
+  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Bold";
+  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Light";
+  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Medium";
+  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Regular";
+  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
 
 /*# sourceMappingURL=main.css.map */

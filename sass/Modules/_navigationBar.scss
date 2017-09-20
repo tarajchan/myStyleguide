@@ -1,6 +1,7 @@
 /*INCLUDE POSITIONING STATIC DIMENSIONS OF MODULES*/
 
-/*IMPORT SCSS FILES HERE WHEN COMPILED TO SASS*/
+@import "../Themes/_colors.scss";
+@import "../Themes/_typography.scss";
 
 /*colors(include color variables from colors file)*/
 
@@ -9,10 +10,6 @@
 	   -moz-box-sizing: border-box;
 	    -ms-box-sizing: border-box;	
 					box-sizing: border-box;
-}
-
-.color__solidTeal {
-	background: #3CB3B9;
 }
 
 .navigationBar {
@@ -28,29 +25,17 @@
 	min-height: 4em;
 
 	/*Visual*/
-	background: #000;
+	font-family: "Quicksand Regular";
+	background: $black;
+	box-shadow: 0 0.05em 0.5em 0.05em $grey-dark;
 }
 
-.navigationBar--state, 
-.navigationBar--state-center,
-.navigationBar--state-left,
-.navigationBar--state-right {
+.navigationBar--state {
+	position: relative;
 	flex: 1;
 	display: flex;
 }
 
-.navigationBar--state-center {
-	justify-content: center;
-}
-
-.navigationBar--state-left {
-	justify-content: flex-start;
-}
-
-.navigationBar--state-right {
-	justify-content: flex-end;
-}
-
 .navigationBar__text--absolute {
-	color: #FFF;
+	color: $white;
 }

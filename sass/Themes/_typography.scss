@@ -1,0 +1,102 @@
+
+@import "../Helpers/_variables.scss";
+@import "./_colors.scss";
+
+/*Variables for font-size and line-height*/
+
+$line-height: 1.5em;
+$main-heading: 1.5em;
+$main-heading-mb: 1.25em;
+$heading: 1em;
+
+.text__border {
+	border: 0.01em outset $white; 
+	border-radius: 0 0.5em;
+	box-shadow: inset 0 -0.125em 0.75em 0.0175em $teal-dark, 
+							inset 0 -0.125em 0.25em $white,
+							inset 0 -0.25em 0.5em $green-neon,
+							inset 0 -0.25em 1em $red;
+}
+
+.text__wrapper {
+	@include padding(0, 0.5em, 0, 1.5em);
+
+	display: flex;
+	flex-direction: row;
+	position: absolute;
+}
+
+
+//margin-left used to offset gap for last letter of heading due to letter-spacing
+.text__heading {
+	@include letter-spacing(0.1em);
+	@include padding(0, 0.5em, 0, 0.55em);
+
+	color: $white;
+	line-height: $line-height;
+	font-size:	$heading;
+	font-weight: 600;
+	margin-left: -0.1em;
+}
+
+.text_headingGroup {
+	position: relative;
+	left: 1.5em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.text__heading--main {
+	@extend .text__heading;
+	font-size: $main-heading-mb;
+
+	@media screen and (min-width: $mq-tablet) {
+		font-size:	$main-heading;
+		font-weight: normal;
+	}
+}
+
+.text__heading--main.left {
+	@include margin-side("left", 0.25em);
+}
+
+.text__heading--main.right {
+	@include margin-side("right", 0.5em);
+}
+
+.text--responsive {
+
+	counter-increment: 1;
+	position: relative;
+	font-size: 0.95em;
+
+}	 
+
+//	font-size: calc({slope}*100vw + {y-intercept}px)
+
+
+@font-face {
+	font-family: "Miriam Libre";
+	src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Quicksand Bold";
+	src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Quicksand Light";
+	src: url("../Quicksand/Quicksand-Light.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Quicksand Medium";
+	src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Quicksand Regular";
+	src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype");
+}

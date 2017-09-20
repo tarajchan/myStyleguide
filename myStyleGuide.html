@@ -1,163 +1,245 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>CSS Styleguide</title>
-    <meta name="viewport" content="width=device-width">
-    <link href="../trancerific.github.io/reset.css" rel="stylesheet" type="text/css"/>
-    <link href="sass/main.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<meta charset="utf-8">
+	<title>CSS Styleguide</title>
+	<meta name="viewport" content="width=device-width">
+	<link href="../trancerific.github.io/reset.css" rel="stylesheet" type="text/css"/>
+	<link href="sass/main.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
   </head>
   <body>
 
-  	<!--EDIT SPECIFICITY IN SYNTAX-->
- 		<header class="navigationBar clearfix">
- 			<div class="navigationBar__highlight color__solidTeal"></div>
+	<!--EDIT SPECIFICITY IN SYNTAX-->
+		<header class="navigationBar clearfix">
+			<div class="navigationBar__highlight"></div>
 
- 			<div class="navigationBar__innerWrapper">
-	 			<div class="navigationBar--state toggle">
-	 				<div class="navigationBar__menu">
-	 					<div class="navigationBar__menu-item--start navigationBar__menu-item">
-	 						<i class="fa fa-bars icon__module--left"></i>
-	 						<div class="arrow--right left"></div>
-	 						Item 1
-	 					</div>
-	 					<div class="navigationBar__menu-item">
-	 						<div class="arrow--right left"></div>
-	 						Item 2
-	 					</div>
-	 					<div class="navigationBar__menu-item">
-	 						<div class="arrow--right left"></div>
-	 						Item 3
-	 					</div>
-	 			
-	 					<div class="navigationBar__dropDown">
-	 						<div>Item 4</div>
-	 						<div class="navigationBar__dropDown-menu clearfix">
-	 							<div class="navigationBar__dropDown-item">
-	 								<div class="navigationBar__dropDown-item-text">Menu 1</div>
-	 								<i class="fa fa-plus-square-o icon__module--right icon__menu-item--right" aria-hidden="true"></i>
-	 								<div class="navigationBar__dropDown-sub-menu">
-	 									<div class="navigationBar__dropDown-sub-item">
-	 										<div class="navigationBar__dropDown-item-text">Item 1</div>
-	 									</div>	
-	 									<div class="navigationBar__dropDown-sub-item">
-	 										<div class="navigationBar__dropDown-item-text">Item 2</div>
-	 									</div>
-	 								</div>
-	 							</div>
-	 							<div class="navigationBar__dropDown-item">
-	 								<div class="navigationBar__dropDown-item-text">Menu 2</div>
-	 								<div class="navigationBar__dropDown-sub-menu">
-	 									<div class="navigationBar__dropDown-sub-item">
-	 										<div class="navigationBar__dropDown-item-text">Item 1</div>
-	 									</div>	
-	 									<div class="navigationBar__dropDown-sub-item">
-	 										<div class="navigationBar__dropDown-item-text">Item 2</div>
-	 									</div>
-	 								</div>
-	 							</div>
-	 							<div class="navigationBar__dropDown-item">
-	 								<div class="navigationBar__dropDown-item-text">Item 3</div>
-	 							</div>
-	 							<div class="navigationBar__dropDown-item">
-	 								<div class="navigationBar__dropDown-item-text">Item 4</div>
-	 							</div>
-	 							<div class="navigationBar__dropDown-item">
-	 								<div class="navigationBar__dropDown-item-text">Item 5</div>
-	 							</div>
-	 						</div>	
- 							<div class="arrow--right left"></div>
-	 					</div>
+			<div class="navigationBar__innerWrapper">
+				<div class="navigationBar--state toggle">
+					<div class="navigationBar__menu">
+						<div class="navigationBar__menu-item--start navigationBar__menu-item">
+							<i id="icon__bars" class="fa fa-bars icon--left"></i>
+							<div class="arrow--right-black left"></div>
+						</div>
+						<div class="navigationBar__menu-item">
+							<div class="arrow--right-black left"></div>
+						</div>
+						<div class="navigationBar__menu-item">
+							<div class="arrow--right-black left"></div>
+						</div>
+				
+						<div class="navigationBar__menu-item">
+							<div class="navigationBar__dropDown-menu clearfix">
+								<div class="navigationBar__dropDown-item">
+									<div class="navigationBar__dropDown-item-text">Menu 1</div>
+									<i class="fa fa-plus-square-o icon--right icon__menu-item--right" aria-hidden="true"></i>
+									<div class="navigationBar__dropDown-sub-menu">
+										<div class="navigationBar__dropDown-sub-item">
+											<div class="navigationBar__dropDown-item-text">Item 1</div>
+										</div>	
+										<div class="navigationBar__dropDown-sub-item">
+											<div class="navigationBar__dropDown-item-text">Item 2</div>
+										</div>
+									</div>
+								</div>
+								<div class="navigationBar__dropDown-item">
+									<div class="navigationBar__dropDown-item-text">Menu 2</div>
+									<i class="fa fa-plus-square-o icon--right icon__menu-item--right" aria-hidden="true"></i>
+									<div class="navigationBar__dropDown-sub-menu">
+										<div class="navigationBar__dropDown-sub-item">
+											<div class="navigationBar__dropDown-item-text">Item 1</div>
+										</div>	
+										<div class="navigationBar__dropDown-sub-item">
+											<div class="navigationBar__dropDown-item-text">Item 2</div>
+										</div>
+									</div>
+								</div>
+								<div class="navigationBar__dropDown-item">
+									<div class="navigationBar__dropDown-item-text">Item 3</div>
+								</div>
+								<div class="navigationBar__dropDown-item">
+									<div class="navigationBar__dropDown-item-text">Item 4</div>
+								</div>
+								<div class="navigationBar__dropDown-item">
+									<div class="navigationBar__dropDown-item-text">Item 5</div>
+								</div>
+							</div>	
+							<div class="arrow--right-black left"></div>
+						</div>
 
-	 				</div>
-	 			</div>
+					</div>
+				</div>
 
-	 			<div class="navigationBar--state">
-	 				<div class="navigationBar__component">
-	 					<div class="navigationBar__textWrapper">
-			 				<div class="navigationBar__text--left navigationBar__border navigationBar__text">
-			 					CUSTOM
-			 				</div>
-			 				<div class="navigationBar__text--right navigationBar__text">
-			 					STYLE
-			 				</div>
-			 			</div>
-		 			</div>
-		 			<!--
-	 				<div class="navigationBar__component navigationBar--state-right">
-						<input type="text" placeholder="search">
-						<button class="button"><i class="fa fa-search icon__white icon__fa-search" aria-hidden="true"></i></button>
-	 				</div>
-	 				-->
-	 			</div>
+				<div class="navigationBar--state">
+					<div class="navigationBar__component">
+						<div class="text__wrapper">
+							<div class="text__border text__heading--main">
+								CUSTOM
+							</div>
+							<div class="text__heading--main left">
+								STYLE
+							</div>
+						</div>
+					</div>
+				</div>
 
-	 			<div class="navigationBar--state navigationBar--state-right toggle">
-	 				<div class="navigationBar__text--absolute">
-	 					
-	 				</div>
-	 			</div>
-	 		</div>
+				<div class="navigationBar--state">
+					<div class="navigationBar__component">
+						<div class="form__segment">
+							<input type="text" placeholder="search">
+							<button class="button__search"><i class="fa fa-search icon__search" aria-hidden="true"></i></button>
+						</div>
+						</div>
+					</div>
+				</div>
 
- 		</header>	
- 		<!--
- 		<div class="navigationBar__menu grid color__black">
-			<div class="navigationBar__menu-item-border"><div class="c">Item 1</div></div>
-			<div class="navigationBar__menu-item-border"><div class="navigationBar__menu-item">Item 2</div></div>
+			</div>
+
+		</header>	
+
+
+
+
+		<!--Bottom navigation bar is present during phone and tablet screen widths-->
+
+			<nav class="navigationBar--bottom">
+				<div class="navigationBar__highlight--bottom"></div>
+				<div class="navigationBar__menu--bottom">
+				</div>
+			</nav>
+
+
+		<!--Navigation bar exampmles (several different modules)-->
+
+		<!--
+		<div class="navigationBar__menu grid">
+			<div class="navigationBar__menu-item-border"><div class="c">Item 1</div></div> class="navigationBar__menu-item-border"><div class="navigationBar__menu-item">Item 2</div></div>
 			<div class="navigationBar__menu-item-border"><div class="navigationBar__menu-item">Item 3</div></div>
 			<div class="navigationBar__menu-item-border"><div class="navigationBar__menu-item">Item 4</div></div>
 			<div class="grid__template--columns-11-span1-offset"><div class="navigationBar__menu-item-border"><div class="navigationBar__menu-item">Item 5</div></div></div>
 			<div class="grid__template--columns-12-span1-offset"><div class="navigationBar__menu-item-border"><div class="navigationBar__menu-item">Item 6</div></div></div>
- 		</div>
+		</div>
 		-->
 
 
- 		<!--add an icon to the top left corner of sidebar to add hide/show functionality*/-->
- 		<!--
- 		<nav class="sidebar color__notQuiteBlack">
+		<!--add an icon to the top left corner of sidebar to add hide/show functionality*/-->
+		
+		<nav class="sidebar">
 
- 			<div class="sidebar__innerContainer">
- 				<div class="sidebar__moduleSection">
-	 				<div class="sidebar__module sidebar__moduleSubHeading color__solidDarkGrey">SUBHEADER</div>
-	 				<div class="sidebar__module color__black"><button class="sidebar__button sidebar__button--active"><i class="fa fa-bars icon__module"></i>Module 1</button></div>
-	 				<div class="sidebar__module color__black"><button class="sidebar__button"><i class="fa fa-user-circle-o icon__module" aria-hidden="true"></i>Module 2</button></div>
-	 				<div class="sidebar__module color__black"><button class="sidebar__button"><i class="fa fa-calendar icon__module" aria-hidden="true"></i>Module 3</button></div>
-	 				<div class="sidebar__module color__black"><button class="sidebar__button"><i class="fa fa-address-book icon__module" aria-hidden="true"></i>Module 4</button></div>
-	 				<div class="sidebar__module color__black"><button class="sidebar__button"><i class="fa fa-envelope icon__module" aria-hidden="true"></i>Module 5</button></div>
- 				</div>
- 			</div>
+			<div class="sidebar__innerContainer">
 
- 		</nav>
+				<div class="sidebar__iconBar">
+							
+				</div>
+
+				<div class="sidebar__moduleSection">
+					<div class="sidebar__moduleSubHeading">
+						<div class="sidebar__icon">
+							<i id="icon__bars" class="fa fa-bars icon--left"></i>
+						</div>
+						<div class="text__headingGroup">
+							<div class="icon__media--circle"></div>
+							<div class="text__heading">SUBHEADER</div>
+						</div>
+					</div>
+					<div class="sidebar__module">
+						<button class="button--absolute" id="button--active"><i class="fa fa-bars icon--left"></i>Layout</button>
+						<div class="sidebar__dropDown">
+							<div class="sidebar__dropDown-item">
+								<div class="text__link">Main</div>
+							</div>
+							<div class="sidebar__dropDown-item">
+								<div class="text__link">Flexbox</div>
+								<div class="icon__menu-item--right icon__menu-item--top arrow--down-white"></div>
+								<div class="sidebar__dropDown-sub-menu">	
+									<div class="sidebar__dropDown-item">Structure</div>
+									<div class="sidebar__dropDown-item">Image Gallery</div>
+									<div class="sidebar__dropDown-item">Templates</div>
+								</div>
+							</div>
+							<div class="sidebar__dropDown-item">			
+								<div class="text__link">Grid</div>
+								<div class="icon__menu-item--right icon__menu-item--top arrow--down-white"></div>
+								<div class="sidebar__dropDown-sub-menu">	
+									<div class="sidebar__dropDown-item">Structure</div>
+									<div class="sidebar__dropDown-item">Image Gallery</div>
+									<div class="sidebar__dropDown-item">Templates</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!--
+
+					<div class="sidebar__module">
+						<button class="button--absolute button--noBorder"><i class="fa fa-user-circle-o icon--left" aria-hidden="true"></i>Components</button>
+						<div class="sidebar__dropDown">
+							<div class="sidebar__dropDown-item">
+								<div class="text__link">Form</div>
+								<div class="icon__menu-item--right arrow--down-white"></div>
+								<div class="sidebar__dropDown-menu">	
+									<div class="sidebar__dropDown-item">Input</div>
+									<div class="sidebar__dropDown-item">Radio</div>
+									<div class="sidebar__dropDown-item">Checkbox</div>
+									<div class="sidebar__dropDown-item">Dropdown</div>
+									<div class="sidebar__dropDown-item">Templates</div>
+							</div>
+							<div class="sidebar__dropDown-item">
+								<div class="text__link">Cards</div>
+							</div>
+							<div class="sidebar__dropDown-item">
+								<div class="text__link">Media Objects</div>
+								<div class="icon__menu-item--right arrow--down-white"></div>
+							</div>
+							<div class="sidebar__dropDown-item">
+								<div class="text__link">Cards</div>
+								<div class="icon__menu-item--right arrow--down-white"></div>
+							</div>
+							<div class="sidebar__dropDown-item">
+								<div class="text__link">Cards</div>
+								<div class="icon__menu-item--right arrow--down-white"></div>
+							</div>
+						</div>
+					</div>
+					<div class="sidebar__module"><button class="button--absolute button--noBorder"><i class="fa fa-calendar icon--left" aria-hidden="true"></i>Modules</button></div> 
+					<div class="sidebar__module"><button class="button--absolute button--noBorder"><i class="fa fa-address-book icon--left" aria-hidden="true"></i>Themes</button></div> 
+					<div class="sidebar__module last"><button class="button--absolute button--noBorder"><i class="fa fa-envelope icon--left" aria-hidden="true"></i>Themes</button></div>
+				</div>
+			</div>
 
 
+		</nav>
 
- 		<!--create drop down buttons for each "example" -->
- 		<!--
- 		<div class="mainContent color__lightWinterGreen">
+		-->
 
- 			<div class=" grid__container--3 grid mainContent__pageHeading color__paleSolidTeal">
- 				<div class="grid__template--rows-2-span1-offset grid__template--columns-1-6 color__notQuiteBlack"></div>
- 				<div class="mainContent__pageHeadingTitle">Welcome to Custom Style</div>
- 				<!--	
- 				<div class="mainContent__pageHeadingDescription">
-    			You are about to witness something truely incredible. Don't believe me? Take a look for yourself.
-    		</div>-->
- 			</div>
- 			<!--
- 			<div class="mainContent__sectionHeading mainContent__sectionHeading--left">
+		<!--create drop down buttons for each "example" -->
+
+		<!--
+
+		<div class="mainContent">
+
+			<div class=" grid__container--3 grid mainContent__pageHeading">
+				<div class="grid__template--rows-2-span1-offset grid__template--columns-1-6 color__notQuiteBlack"></div>
+				<div class="mainContent__pageHeadingTitle">Welcome to Custom Style</div>
+				<!--	
+				<div class="mainContent__pageHeadingDescription">
+				You are about to witness something truely incredible. Don't believe me? Take a look for yourself.
+			</div>		
+			
+			<div class="mainContent__sectionHeading mainContent__sectionHeading--left">
 				<span class="mainContent__sectionHeadingText--bold">Flexbox</span>
 			</div>
 			-->
- 		<!--include flexbox and grid layouts (use grid for column and row offsets)-->
+		<!--include flexbox and grid layouts (use grid for column and row offsets)-->
 
- 			<!--
+			<!--
 
-	 		<div class="mainContent__sectionWrapper color__notQuiteBlack">	
+			<div class="mainContent__sectionWrapper color__notQuiteBlack">	
 				<div class="mainContent__wrapper">	 		
-		 			<div class="mainContent__exampleHeading clearfix">
-		 				<div class="mainContent__exampleHeadingBackground">01.1</div>
-		 				<div class="mainContent__exampleHeadingBackground">Flex Example</div>
-		 			</div>
+					<div class="mainContent__exampleHeading clearfix">
+						<div class="mainContent__exampleHeadingBackground">01.1</div>
+						<div class="mainContent__exampleHeadingBackground">Flex Example</div>
+					</div>
 					<div class="row--flex pointer">
 						<div class="row__rowItem--flex row__rowGap row__columnGap color__solidTeal"><i class="fa fa-bath" aria-hidden="true"></i></div>
 						<div class="row__rowItem--flex row__rowGap row__columnGap color__solidTeal--radialGradient"></div>
@@ -177,18 +259,18 @@
 					</pre>
 					
 					<div class="row--flex">
-						<div class="row__rowItem--flex row__rowGap row__columnGap color__paleSolidTeal"><i class="fa fa-snowflake-o" aria-hidden="true"></i></div>
-						<div class="row__rowItem--flex row__rowGap row__columnGap color__paleSolidTeal--linearGradient"></div>
-						<div class="row__rowItem--flex row__rowGap row__columnGap color__paleSolidTeal"></div>
-						<div class="row__rowItem--flex row__rowGap row__columnGap color__paleSolidTeal--linearGradient"></div>
-						<div class="row__rowItem--flex row__rowGap row__columnGap color__paleSolidTeal"></div>
-						<div class="row__rowItem--flex row__rowGap  color__paleSolidTeal--linearGradient"></div>
+						<div class="row__rowItem--flex row__rowGap row__columnGap"><i class="fa fa-snowflake-o" aria-hidden="true"></i></div>
+						<div class="row__rowItem--flex row__rowGap row__columnGap--linearGradient"></div>
+						<div class="row__rowItem--flex row__rowGap row__columnGap"></div>
+						<div class="row__rowItem--flex row__rowGap row__columnGap--linearGradient"></div>
+						<div class="row__rowItem--flex row__rowGap row__columnGap"></div>
+						<div class="row__rowItem--flex row__rowGap --linearGradient"></div>
 					</div>
 
 					-->
 
 					<!--
-					<pre class="htmlCode toggle">&lt;div class=&#34;row--flex&#34;&gt;&#10;  &lt;div class=&#34;row__rowItem--flex row__rowGap row__columnGap color__paleSolidTeal&#34;&gt;&lt;i class=&#34;fa fa-snowflake-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&#10;  &lt;div class=&#34;row__rowItem--flex row__rowGap row__columnGap color__paleSolidTeal--linearGradient&#34;&gt;&lt;/div&gt;&#10;  &lt;div class=&#34;row__rowItem--flex row__rowGap row__columnGap color__paleSolidTeal&#34;&gt;&lt;/div&gt;&#10;  &lt;div class=&#34;row__rowItem--flex row__rowGap row__columnGap color__paleSolidTeal--linearGradient&#34;&gt;&lt;/div&gt;&#10;  &lt;div class=&#34;row__rowItem--flex row__rowGap row__columnGap color__paleSolidTeal&#34;&gt;&lt;/div&gt;&#10;  &lt;div class=&#34;row__rowItem--flex row__rowGap row__columnGap color__paleSolidTeal--linearGradient&#34;&gt;&lt;/div&gt;&#10;&lt;/div&gt;
+					<pre class="htmlCode toggle">&lt;div class=&#34;row--flex&#34;&gt;&#10;  &lt;div class=&#34;row__rowItem--flex row__rowGap row__columnGap&#34;&gt;&lt;i class=&#34;fa fa-snowflake-o&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&lt;/div&gt;&#10;  &lt;div class=&#34;row__rowItem--flex row__rowGap row__columnGap--linearGradient&#34;&gt;&lt;/div&gt;&#10;  &lt;div class=&#34;row__rowItem--flex row__rowGap row__columnGap&#34;&gt;&lt;/div&gt;&#10;  &lt;div class=&#34;row__rowItem--flex row__rowGap row__columnGap--linearGradient&#34;&gt;&lt;/div&gt;&#10;  &lt;div class=&#34;row__rowItem--flex row__rowGap row__columnGap&#34;&gt;&lt;/div&gt;&#10;  &lt;div class=&#34;row__rowItem--flex row__rowGap row__columnGap--linearGradient&#34;&gt;&lt;/div&gt;&#10;&lt;/div&gt;
 					</pre>
 					
 					<div class="row--flex">
@@ -201,7 +283,7 @@
 						<div class="row__rowItem--flex row__rowGap color__paleBabyBlueMachine--linearGradient"></div>
 					</div>
 					<div class="row--flex">
-						<div class="row__rowItem--flex color__solidLightBlue--linearGradient"><div class="flex__innermostItemOfRowItem"></div></div>
+						<div class="row__rowItem--flex --linearGradient"><div class="flex__innermostItemOfRowItem"></div></div>
 					</div>
 
 					<div class="mainContent__textBoxWrapper">
@@ -224,27 +306,26 @@
 				<!--
 				<div class="mainContent__wrapper">	
 					<div class="mainContent__exampleHeading clearfix">
-		 				<div class="mainContent__exampleHeadingBackground">01.2</div>
-		 				<div class="mainContent__exampleHeadingBackground">Flex Example</div>
-		 			</div>
-		 			<div class="grid__container--3 grid">
+						<div class="mainContent__exampleHeadingBackground">01.2</div>
+						<div class="mainContent__exampleHeadingBackground">Flex Example</div>
+					</div>
+					<div class="grid__container--3 grid">
 						<div class="row--flex row--flex-wrap">
-							<div class="row__rowItem color__purple"></div>
-							<div class="row__rowItem color__purple"></div>
-							<div class="row__rowItem color__purple"></div>
-							<div class="row__rowItem color__purple--midOpacity"></div>
-							<div class="row__rowItem color__purple--midOpacity"></div>
-							<div class="row__rowItem color__purple--midOpacity"></div>
-							<div class="row__rowItem color__purple--lowOpacity"></div>
-							<div class="row__rowItem color__purple--lowOpacity"></div>
-						</div>
-						<div class="row--flex">
-							<div class="row__rowItem--flex row__rowItem--flex-a-Start row__columnGap color__purple"></div>
-							<div class="row__rowItem--flex row__rowItem--flex-a-Center row__columnGap color__purple--midOpacity"></div>
-							<div class="row__rowItem--flex row__rowItem--flex-a-End row__columnGap color__purple--lowOpacity"></div>
-							<div class="row__rowItem--flex-a-Stretch row__columnGap color__purple"></div>
-						</div>
-					</div>	
+							<div class="row__rowItem"></div>
+							<div class="row__rowItem</div>
+							<div class="row__rowItem</div>
+							<div class="></div>
+							<div class="></div>
+							<div class="></div>
+							<div class="></div>
+							<div class="></div>
+						</div> class="row-">
+							<div class=--flex row__rowItem--flex-a-Start"></div>
+							<div class="ro--flex row__rowItem--flex-a-Center row__columnGap--midOpacity"></div>
+							<div class=--flex row__rowItem--flex-a-End row__columnGap--lowOpacity"></div>
+							<div class=--flex-a-Stretch row__columnGap"></div>
+
+					</div>
 
 			</div>
 			
@@ -254,6 +335,7 @@
 
 			<!--GRID-->
 
+			<!--
 			<div class="mainContent__sectionHeading mainContent__sectionHeading--left">
 				<span class="mainContent__sectionHeadingText--bold">Grid</span>
 			</div>
@@ -262,37 +344,38 @@
 					<div class="mainContent__exampleHeading clearfix">
 						<div class="mainContent__exampleHeadingBackground">02.1</div>
 						<div class="mainContent__exampleHeadingBackground">Grid Example</div>
-			 		</div>
+					</div>
 
-			 		<!--make sure to add description of how the 12 column/row grid has 13 grid
-			 		lines, so a value of 1 is added to the row/column start and span value or
-			 		grid/column end line. Include several layout modules for the grid layout, 
-			 		including a 12x12 grid, 3x3 grid, 3-column grid with auto-flow-rows, responsive
-			 		grid layouts by using auto-fill and minmax() for columns (use fr units)-->
+					<!--make sure to add description of how the 12 column/row grid has 13 grid
+					lines, so a value of 1 is added to the row/column start and span value or
+					grid/column end line. Include several layout modules for the grid layout, 
+					including a 12x12 grid, 3x3 grid, 3-column grid with auto-flow-rows, responsive
+					grid layouts by using auto-fill and minmax() for columns (use fr units)-->
 
-			 		<!--
-					<div class="grid grid__container--12 color__Snow">
-						<div class="grid__template--columns-1-12 color__lightWinterGreen"></div>
-						<div class="grid__template--columns-5-span1-offset color__lightWinterGreen"></div>
-						<div class="grid__template--columns-9-span1-offset color__lightWinterGreen"></div>	
-						<div class="grid__template--columns-1-6 color__solidLightBlue"></div>
-						<div class="grid__template--columns-5-span2-offset color__solidLightBlue"></div>
-						<div class="grid__template--columns-9-span2-offset color__solidLightBlue"></div>
-						<div class="grid__template--columns-1-3 color__paleSolidTeal"></div>
-						<div class="grid__template--columns-5-span4-offset color__purple"></div>
-						<div class="grid__template--columns-9-span4-offset color__black"></div>
-						<div class="grid grid__template--rows-4-span9-offset grid__template--columns-2-3 grid__row--auto color__solidTeal">
-							<div class="grid__template--columns-1-12 color__lightWinterGreen"></div>
-							<div class="grid__template--columns-5-span1-offset color__lightWinterGreen"></div>
-							<div class="grid__template--columns-9-span1-offset color__lightWinterGreen"></div>
-							<div class="grid__template--rows-4-span5-offset grid__template--columns-3-span5-offset color__black"></div>
-							<div class="grid__template--rows-5-span3-offset grid__template--columns-5-span1-offset color__Snow"></div>
+
+					<!--
+					<div class="grid grid__container--12">
+						<div class="grid__template--columns-1-12"></div>
+						<div class="grid__template--columns-5-span1-offset"></div>
+						<div class="grid__template--columns-9-span1-offset"></div>	
+						<div class="grid__template--columns-1-6 "></div>
+						<div class="grid__template--columns-5-span2-offset "></div>
+						<div class="grid__template--columns-9-span2-offset "></div>
+						<div class="grid__template--columns-1-3"></div>
+						<div class="grid__template--columns-5-span4-offset"></div>
+						<div class="grid__template--columns-9-span4-offset"></div>
+						<div class="grid grid__template--rows-4-span9-offset grid__template--columns-2-3 grid__row--auto">
+							<div class="grid__template--columns-1-12"></div>
+							<div class="grid__template--columns-5-span1-offset"></div>
+							<div class="grid__template--columns-9-span1-offset"></div>
+							<div class="grid__template--rows-4-span5-offset grid__template--columns-3-span5-offset"></div>
+							<div class="grid__template--rows-5-span3-offset grid__template--columns-5-span1-offset"></div>
 						</div>
 					</div>
 				</div>
 			</div>
-			-->	
+			-->
 		</div>
 		<script src="myStyleGuide.js" type="text/javascript"></script>
   </body>
-</html>  
+</html> 

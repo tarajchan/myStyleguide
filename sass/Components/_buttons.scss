@@ -1,0 +1,58 @@
+@import "../Helpers/_variables.scss";
+@import "../Helpers/_mixins.scss";
+@import "../Themes/_colors.scss";
+
+
+
+/*Styling for search buttons*/
+
+.button {
+	@include flex-alignnment(null, center, center);
+
+	display: flex;
+	background: $button;
+	border: 0.01em solid $charcoal;
+	border-radius: 0.5em;
+	color: $white;
+	cursor: pointer;
+	font-family: "Quicksand Light";
+	text-decoration: none;
+}
+
+.button__search {
+	@include border(0.01em solid $grey, 0.01em solid $grey, 0.01em solid $grey, 0);
+	@include border-radius(0, 0.5em, 0.5em, 0);
+	@extend .button;
+}
+
+.button--absolute {
+	@include abs-positioning(0, 0, 0, 0);
+	@include padding-side("left", 1em);
+	@extend .button;
+
+	border-radius: 0;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.button--absolute:hover,
+.button--absolute:active {
+	border-top: 0.25em solid $teal;
+}
+
+#button--active {
+	@include border(0.25em solid $teal, 0, 0 ,0);
+	@extend .button;
+
+	border-radius: 0;	
+}
+
+#button--active:hover {
+	border: 0;
+}
+
+.button--noBorder {
+	@extend .button;
+
+	border: 0;	
+}

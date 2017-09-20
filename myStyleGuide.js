@@ -1,10 +1,12 @@
+
 document.addEventListener("DOMContentLoaded", main);
 
 
 function main() {
+	"use strict";
 	let navDropDown = document.querySelector(".navigationBar__dropDown");
 
-	navDropDown.addEventListener("clickedElement", showDropDown(), false);
+	navDropDown.addEventListener("click", showDropDown(), false);
 }
 
 function showDropDown(event) {
@@ -14,9 +16,9 @@ function showDropDown(event) {
 
 	
 		dropDownMenu.classList.toggle(hidden);
-
-	}
 }
+
+
 
 
 /*var indexValuesForEachRow = [0, 1, 2, 3, 4];

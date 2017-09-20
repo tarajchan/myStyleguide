@@ -1,42 +1,17 @@
+/*Partials*/
 
-@font-face {
-	font-family: "Miriam Libre";
-	src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype");
-}
-
-/*create @mixin for default centering of flex items, ex.
-display: flex, flex:1, align & justify: center*/
-
-.hidden {
-	display: none;
-}
+@import "../Themes/_colors.scss";
+@import "../Themes/_icons.scss"; 
+@import "../Helpers/_mixins.scss";
+@import "../Helpers/_variables.scss";
 
 
-/*use @extend to duplicate CSS from navigationBar__menu-item*/
-.navigationBar__dropDown {
-  position: relative;
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  max-height: 3em;
-  border-left: 0.01em solid #3C3939;
-  color: #FFF;
-  text-align: center;
-  font-family: "Miriam Libre";
-  font-size: 0.9em;
-  transition: 0.3s;
-}
 
-.navigationBar__dropDown:hover {
-	background: #3CB3B9;
-	box-shadow: inset 0 0 2em 0.25em #23585A;
-	border-left-color: #000;
-	cursor: pointer;
-}
 
-.navigationBar__dropDown:hover .navigationBar__dropDown-menu {
+.navigationBar__component {
 	display: flex;
+	@include abs-positioning(0, 0, 0, 0);
+	@include flex-alignnment(1, center, center);
 }
 
 
@@ -46,11 +21,10 @@ display: flex, flex:1, align & justify: center*/
 	flex-direction: column;
   min-height: 14em;
   min-width: 10em;
-  background: #000;
-  top: 3em;
+  background: $black;
+  top: 2.7em;
   left: 0;
-  border-top: 0.25em solid #3CB3B9;
-
+  border-top: 0.25em solid $teal;
 }
 
 .navigationBar__dropDown-item, 
@@ -60,25 +34,26 @@ display: flex, flex:1, align & justify: center*/
 	display: flex;
 	align-items: center;
 	background: transparent;
-	border-bottom: 0.01em solid #FFF;
-	color: #FFF;
+	border-bottom: 0.01em solid $white;
+	color: $white;
 }
 
 /*creates a left margin for the text for an indented appearance*/
 .navigationBar__dropDown-item-text {
 	position: absolute;
 	left: 1em;
+	font-size: 0.95em;
 }
 
 /*creates a border to distinguish sub-menu item
 from drop down item*/
 .navigationBar__dropDown-sub-item {
-	border-left: 0.01em solid #FFF;
+	border-left: 0.01em solid $white;
 }
 
 .navigationBar__dropDown-sub-item:hover {
-	background: #3CB3B9;
-	box-shadow: inset 0 0 2em 0.25em #23585A;
+	background: $teal;
+	box-shadow: inset 0 0 2em 0.25em $dark-teal;
 }
 
 .navigationBar__dropDown-sub-menu {
@@ -88,7 +63,7 @@ from drop down item*/
   top: 0;
 	min-height: 5.5em;
   min-width: 10em;
-  background: #000;
+  background: $black;
 }
 
 .navigationBar__dropDown-item:hover .navigationBar__dropDown-sub-menu {
@@ -98,8 +73,8 @@ from drop down item*/
 
 /*create a variable for "hover" background color*/
 .navigationBar__dropDown-item:hover {
-	background: #3CB3B9;
-	box-shadow: inset 0 0 2em 0.25em #23585A; 
+	background: $teal;
+	box-shadow: inset 0 0 2em 0.25em $dark-teal; 
 }
 
 .navigationBar__innerWrapper {
@@ -111,13 +86,14 @@ from drop down item*/
 	top: 0.85em;
 	max-height: 3em;
 
-	border: 0.01em solid #3C3939;
+	border: 0.01em solid $charcoal;
 	border-radius: 0.5em;
-	border-bottom: 0.25em solid #3CB3B9;
-	box-shadow: inset 0 0.125em 1em 0.125em #3C3939;
+	border-bottom: 0.25em solid $teal;
+	box-shadow: inset 0 0.125em 1em 0.125em $charcoal;
 }
 
 .navigationBar__highlight {
+	background-color: $teal;
 	position: fixed;
 	left: 0;
 	right: 0;
@@ -126,27 +102,71 @@ from drop down item*/
 }
 
 .navigationBar__menu {
+
 	display: flex;
 	flex: 1;
 	min-height: 3em;
-	padding: 0 4em;
+
+	@include mediaQuery--tablet {
+		padding: 0 2em;
+	}
+	@include mediaQuery--desktop {
+		padding: 0 3em;
+	}
+	@include mediaQuery--wide {
+		padding: 0 4em;
+	}	
 }
 
 .navigationBar__menu-item {
+
+	display: none;
+
+  @media screen and (min-width: $mq-tablet) {
+  @include flex-alignnment(1, center, center);
+	
 	position: relative;
 	display: flex;
-	flex: 1;
-	align-items: center;
-	justify-content: center;
-	max-height: 3em;
+	max-height: 2.7em;
 
-	border-left: 0.01em solid #3C3939;
-	color: #FFF;
+	border-left: 0.01em solid $charcoal;
+	color: $white;
 	text-align: center;
-
-	font-family: "Miriam Libre";
-	font-size: 0.9em;
 	transition: 0.3s;
+  
+  }	
+
+  @include mediaQuery--tablet {
+		@for $i from 1 through 4 {
+			&:nth-child(#{$i})::after {
+				content: "#{$i}";
+				font-size: 0.95em;
+			}
+		}
+	}
+
+	@include mediaQuery--desktop {
+		@for $i from 1 through 4 {
+			&:nth-child(#{$i})::after {
+				content: "Item " + "#{$i}";
+				font-size: 1em;
+			}
+		}	
+	}
+
+	@include mediaQuery--wide {
+		@for $i from 1 through 4 {
+			&:nth-child(#{$i})::after {
+				content: "Item " + "#{$i}";
+				font-size: 1.025em;
+			}
+		}	
+	}
+
+}
+
+.navigationBar__menu-item:hover .navigationBar__dropDown-menu {
+	display: flex;
 }
 
 .navigationBar__menu-item--start {
@@ -158,8 +178,35 @@ from drop down item*/
 .navigationBar__menu-item--start:active,
 .navigationBar__menu-item:hover,
 .navigationBar__menu-item--start:hover {
-	background: #3CB3B9;
-	box-shadow: inset 0 0 2em 0.25em #23585A;
-	border-left-color: #000;
+	background: $teal;
+	box-shadow: inset 0 0 2em 0.25em $dark-teal;
+	border-left-color: $black;
 	cursor: pointer;
 };
+
+/*BOTTOM NAVIGATION FOR MOBILE AND TABLET VIEW*/
+
+
+/*acts as a container for items inside the bottom navigation bar*/
+.navigationBar--bottom {
+	@include fixed-positioning(null, 0, 0, 0);
+
+	display: flex;
+	flex-direction: row;
+	min-height: 4em;
+
+	font-family: "Quicksand Regular";
+	background: $black;
+	box-shadow: 0 -0.05em 0.5em 0.05em $grey-dark;
+
+	@media screen and (min-width: $mq-desktop) {
+		display: none;
+	}
+}
+
+.navigationBar__highlight--bottom {
+	@include abs-positioning(null, 0, 0, 0);	
+
+	background-color: $teal;
+	min-height: 0.375em;
+}

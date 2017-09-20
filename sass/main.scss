@@ -1,5 +1,13 @@
 // main.scss
 
 @import "./Components/_navigationBar.scss";
+@import "./Components/_buttons.scss";
+@import "./Components/_sidebar.scss";
+@import "./Layout/_grid.scss";
+@import "./Layout/_mainContent.scss";
 @import "./Modules/_navigationBar.scss";
-
+@import "./Modules/_sidebar.scss";
+@import "./Modules/_form.scss";
+@import "./Themes/_icons.scss";
+@import "./Themes/_typography.scss";
+@import "./Helpers/_mixins.scss";

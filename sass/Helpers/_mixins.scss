@@ -1,0 +1,179 @@
+
+@import "./_variables.scss";
+
+/*Icon mixins*/
+
+@mixin circle($height, $width, $border-radius) {
+	height: $height;
+	width: $width;
+	-ms-border-radius: $border-radius;
+	moz-border-radius: $border-radius;
+	-webkit-border-radius: $border-radius;
+	border-radius: $border-radius;
+}
+
+
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+@mixin arrow-eq($position, $direction, $border-width, $color, $height: 0, $width: 0) {
+	height: $height;
+	width: $width;
+	position: $position;
+
+	@if $direction == up {
+		border-left: $border-width solid transparent;
+		border-right: $border-width solid transparent;
+		border-bottom: $border-width solid $color;
+	}
+
+	@if $direction == right {
+		border-top: $border-width solid transparent;
+		border-left: $border-width solid $color;
+		border-bottom: $border-width solid transparent;
+	}
+
+	@if $direction == down {
+		border-left: $border-width solid transparent;
+		border-right: $border-width solid transparent;
+		border-top: $border-width solid $color;
+	}
+
+	@if $direction == left {
+		border-top: $border-width solid transparent;
+		border-right: $border-width solid $color;
+		border-bottom: $border-width solid transparent;
+	}
+}
+
+
+/*Box model dimensions*/
+
+
+//automatically sets the height as the width by default if height is not specified
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+@mixin border($top, $right, $bottom, $left) {
+	border-top: $top;
+	border-right: $right;
+	border-bottom: $bottom;
+	border-left: $left;
+}
+
+@mixin border-side($direction, $value) {
+	border-#{$direction}: $value; 
+}
+
+@mixin border-radius($top-left, $top-right, $bottom-right, $bottom-left) {
+	border-top-left-radius: $top-left;
+	border-top-right-radius: $top-right;
+	border-bottom-right-radius: $bottom-right;
+	border-bottom-left-radius: $bottom-left;
+}
+
+
+
+
+/*Typography Mixins*/
+
+@mixin letter-spacing($value) {
+	letter-spacing: $value;
+}
+
+
+
+
+/*Box shadow*/
+
+/*Specify inset value as false to turn off inset property value*/ 
+
+
+
+
+/*Flexbox helpers*/
+@mixin flex-alignnment($flex, $align-items, $justify-content) {
+	flex: $flex;
+	align-items: $align-items;
+	justify-content: $justify-content;
+}
+
+
+/*MARGIN & PADDING HELPERS*/
+
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+@mixin margin-side($direction, $value) {
+	margin-#{$direction}: $value;
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+	margin-top: $top;
+	margin-right: $right;
+	margin-bottom: $bottom;
+	margin-left: $left;
+}
+
+@mixin padding-side($direction, $value...) {
+	padding-#{$direction}: $value;	
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+	padding-top: $top;
+	padding-right: $right;
+	padding-bottom: $bottom;
+	padding-left: $left;
+}
+
+
+/*Positioning mixins*/
+
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+@mixin abs-positioning($top, $right, $bottom, $left) {
+	position: absolute;
+	bottom: $bottom;
+	left: $left;
+	right: $right;
+	top: $top;
+}
+
+@mixin fixed-positioning($top, $right, $bottom, $left) {
+	position: fixed;
+	bottom: $bottom;
+	left: $left;
+	right: $right;
+	top: $top;	
+}
+
+/*Media Query Mixins*/
+
+@mixin mediaQuery--mobile {
+	@media screen and (max-width: #{$mq-mobile}) {
+		@content;
+	}
+}
+
+@mixin mediaQuery--tablet {
+	@media screen and (min-width: #{$mq-tablet}) and (max-width: #{$mq-desktop - 1}) {
+		@content;
+	}
+}
+
+@mixin mediaQuery--desktop {
+	@media screen and (min-width: #{$mq-desktop}) and (max-width: #{$mq-wide}) {
+		@content;
+	}
+}
+
+@mixin mediaQuery--wide {
+	@media screen and (min-width: #{$mq-wide}) {
+		@content;
+	}
+}
+
+@mixin mediaQuery--custom($min-width, $max-width) {
+	@media screen and (min-width: #{$min-width}) and (max-width: #{$max-width}) {
+		@content;
+	} 
+}
