@@ -1,0 +1,26 @@
+
+@import "../Themes/_colors.scss";
+@import "../Themes/_typography.scss";
+@import "../Helpers/_mixins.scss";
+@import "../Helpers/_variables.scss";
+
+.card {
+	position: relative;
+
+}
+
+.card__back,
+.card__front {
+	@include abs-positioning(0, null, null, 0);
+	@include prefix(backface-visibility, hidden);
+
+
+}
+
+.card__back {
+	background: $black;
+}
+
+.card__front {
+	background: $teal;
+}

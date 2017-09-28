@@ -13,7 +13,7 @@
 		@include fixed-positioning(4.35em, null, 0, 0);
 
 		display: block;
-		min-width: 16em;
+		min-width: 14em;
 		background: $black-opaque;
 	}
 }
@@ -21,9 +21,17 @@
 .sidebar__dropDown {
 	@include abs-positioning(3em, 0, null, 0);
 
+	display: none;
+	padding: 0.75em;
 	background: linear-gradient(135deg, $teal, $black);
 	color: $white;
-	padding: 0.75em;
+
+	animation: 0.05s ease-out normal slide-vertical;
+	transition: 0.3s;
+}
+
+.sidebar__dropDown.show {
+	display: block;
 }
 
 .sidebar__dropDown-item {
@@ -31,14 +39,36 @@
 	padding: 0.5em 0;
 }
 
+.sidebar__dropDown-item.collapsible {
+	padding: 0;
+}
+
+.sidebar__dropDown-item.collapsible .triangle--down-white:hover {
+	opacity: 0.75;
+}
+
+.sidebar__dropDown-item.collapsible.active {
+	opacity: 0.75;
+}
+
+.sidebar__dropDown-item.collapsible.active .sidebar__dropDown-item-sub-menu {
+	opacity: 1;
+}
+
+.sidebar__dropDown-item.first {
+	@include padding-side("top", 0);
+}
+
 .sidebar__dropDown-sub-menu {
 	@include padding-side("left", 1em);
 
 	position: relative; 
+	display: none;
 }
 
-
-
+.sidebar__dropDown-sub-menu.show {
+	display: block;
+}
 
 /*show when bars icon is clicked in sidebar subheading*/
 .sidebar__iconBar {
@@ -89,7 +119,7 @@
 }
 
 .sidebar__moduleSubHeading {
-	@include border-side("top", 0.25em solid $teal-dark);
+	@include border-side("top", 0.25em solid $teal-medium);
 	@include border-radius(0.5em, 0.5em, 0, 0);
 	@include padding-side("left", 0.5em);
 	@extend .sidebar__module;
@@ -105,4 +135,12 @@
 	@extend .sidebar__module;
 
 	border-bottom: 0;
+}
+
+.sidebar__module.closed .sidebar__dropDown {
+	display: none;
+}
+
+.sidebar__module.opened .sidebar__dropDown {
+	display: block;
 }

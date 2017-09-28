@@ -1,0 +1,41 @@
+
+@import "../Themes/_colors.scss";
+@import "../Themes/_typography.scss";
+@import "../Helpers/_mixins.scss";
+@import "../Helpers/_variables.scss";
+
+.breadcrumb {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	min-height: 2em;
+	padding-left: 2.75em;
+	align-items: center;
+	font-family: "Quicksand Light";
+}
+
+.breadcrumb__divider {
+	@include margin(null, 0.5em, null, 0.5em);
+
+	color: $teal;
+	font-family: "Quicksand Bold";
+}
+
+.breadcrumb__link {
+	cursor: pointer;
+}
+
+.breadcrumb__link:hover {
+	opacity: 0.75;
+}
+
+.breadcrumb__link--active {
+	font-weight: 700;
+}
+
+.breadcrumb--bordered {
+	margin: auto;
+	max-width: 95%;
+	padding-left: 0.5em;
+	border: 0.25em double $wintergreen-light;
+}

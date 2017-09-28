@@ -20,7 +20,7 @@
 }
 
 .button__search {
-	@include border(0.01em solid $grey, 0.01em solid $grey, 0.01em solid $grey, 0);
+	@include border(0.05em solid $grey, 0.05em solid $grey, 0.05em solid $grey, 0);
 	@include border-radius(0, 0.5em, 0.5em, 0);
 	@extend .button;
 }
@@ -33,6 +33,12 @@
 	border-radius: 0;
 	justify-content: flex-start;
 	width: 100%;
+	outline: none;
+}
+
+.button.active,
+.button--absolute.active, {
+	background: $transparent;
 }
 
 .button--absolute:hover,
@@ -42,13 +48,7 @@
 
 #button--active {
 	@include border(0.25em solid $teal, 0, 0 ,0);
-	@extend .button;
-
-	border-radius: 0;	
-}
-
-#button--active:hover {
-	border: 0;
+	@extend .button--absolute;	
 }
 
 .button--noBorder {

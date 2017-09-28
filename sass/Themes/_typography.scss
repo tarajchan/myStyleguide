@@ -1,18 +1,21 @@
 
+@import "../Helpers/_mixins.scss";
 @import "../Helpers/_variables.scss";
 @import "./_colors.scss";
 
 /*Variables for font-size and line-height*/
 
 $line-height: 1.5em;
-$main-heading: 1.5em;
-$main-heading-mb: 1.25em;
+$main-heading: 2.25em;
+$nav-heading: 1.5em;
+$nav-heading-mb: 1.25em;
 $heading: 1em;
+$bold: 600;
 
 .text__border {
-	border: 0.01em outset $white; 
+	border: 0.05em outset $white; 
 	border-radius: 0 0.5em;
-	box-shadow: inset 0 -0.125em 0.75em 0.0175em $teal-dark, 
+	box-shadow: inset 0 -0.125em 0.75em 0.0175em $teal-medium, 
 							inset 0 -0.125em 0.25em $white,
 							inset 0 -0.25em 0.5em $green-neon,
 							inset 0 -0.25em 1em $red;
@@ -35,11 +38,11 @@ $heading: 1em;
 	color: $white;
 	line-height: $line-height;
 	font-size:	$heading;
-	font-weight: 600;
+	font-weight: $bold;
 	margin-left: -0.1em;
 }
 
-.text_headingGroup {
+.text__headingGroup {
 	position: relative;
 	left: 1.5em;
 	display: flex;
@@ -47,22 +50,85 @@ $heading: 1em;
 	align-items: center;
 }
 
+
+//text for the heading of a section within the main body
 .text__heading--main {
 	@extend .text__heading;
-	font-size: $main-heading-mb;
+
+	position: absolute;
+	top: 2.25em;
+	padding: 0;
+	font-family: "Quicksand Regular";
+	font-size: $main-heading;
+	color: $white;
+}
+
+.text__headingLabel--main {
+	position: absolute;
+	top: 3em;
+	padding-top: 0.5em;
+	width: 4em;
+	font-family: "Quicksand Light";
+	border-top: 0.25em solid $teal;
+	color: $white;
+
+}
+
+.text__heading--nav {
+	@extend .text__heading;
+	font-size: $nav-heading-mb;
 
 	@media screen and (min-width: $mq-tablet) {
-		font-size:	$main-heading;
+		font-size:	$nav-heading;
 		font-weight: normal;
 	}
 }
 
-.text__heading--main.left {
+.text__heading--nav.left {
 	@include margin-side("left", 0.25em);
 }
 
-.text__heading--main.right {
+.text__heading--nav.right {
 	@include margin-side("right", 0.5em);
+}
+
+.text__label {
+	position: relative;
+	padding-bottom: 0.5em;
+	font-family: "Quicksand Light"; 
+	font-size: 0.925em;
+}
+
+.text__link {
+	font-family: "Quicksand Light"; 
+	font-size: 0.925em;	
+}
+
+.text__link:hover {
+	cursor: pointer;
+	opacity: 0.75;
+}
+
+.text__link--underlined {
+	@extend .text__link;
+	
+}
+
+.text--bold {
+	font-weight: $bold;
+}
+
+.text--code {
+	padding: 0.125em 0.25em;
+	background: $teal-green-tint;
+	border-radius: 0.125em;
+	box-shadow: inset 0 0.05em 0.5em $teal;
+	color: $white;
+	font-weight: $bold;
+}
+
+.text--italicized {
+	font-style: italic;
 }
 
 .text--responsive {

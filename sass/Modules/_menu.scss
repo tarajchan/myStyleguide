@@ -1,0 +1,32 @@
+
+@import "../Helpers/_mixins.scss";
+@import "../Helpers/_variables.scss";
+@import "../Themes/_colors.scss";
+@import "../Themes/_typography.scss";
+
+.menu {
+	@include abs-positioning(0, 0, 0, 0);
+
+	display: block;
+	padding: 1em;
+	font-family: "Quicksand Light";
+}
+
+.menu__item {
+	position: relative;
+	font-weight: 600;
+}
+
+.menu__heading {
+	margin-bottom: 1em;
+	line-height: 1.15em;
+	font-family: "Quicksand Regular";
+	font-size: 1.15em;
+	font-weight: 600;
+}
+
+.menu__expander-icon {
+	cursor: pointer;
+	right: 0;
+	top: 0.5em;
+}

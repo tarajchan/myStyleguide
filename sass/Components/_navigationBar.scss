@@ -22,7 +22,7 @@
   min-height: 14em;
   min-width: 10em;
   background: $black;
-  top: 2.7em;
+  top: 2.8em;
   left: 0;
   border-top: 0.25em solid $teal;
 }
@@ -53,7 +53,7 @@ from drop down item*/
 
 .navigationBar__dropDown-sub-item:hover {
 	background: $teal;
-	box-shadow: inset 0 0 2em 0.25em $dark-teal;
+	box-shadow: inset 0 0 2em 0.25em $teal-dark;
 }
 
 .navigationBar__dropDown-sub-menu {
@@ -74,7 +74,7 @@ from drop down item*/
 /*create a variable for "hover" background color*/
 .navigationBar__dropDown-item:hover {
 	background: $teal;
-	box-shadow: inset 0 0 2em 0.25em $dark-teal; 
+	box-shadow: inset 0 0 2em 0.25em $teal-dark; 
 }
 
 .navigationBar__innerWrapper {
@@ -86,14 +86,12 @@ from drop down item*/
 	top: 0.85em;
 	max-height: 3em;
 
-	border: 0.01em solid $charcoal;
 	border-radius: 0.5em;
 	border-bottom: 0.25em solid $teal;
 	box-shadow: inset 0 0.125em 1em 0.125em $charcoal;
 }
 
 .navigationBar__highlight {
-	background-color: $teal;
 	position: fixed;
 	left: 0;
 	right: 0;
@@ -129,7 +127,7 @@ from drop down item*/
 	display: flex;
 	max-height: 2.7em;
 
-	border-left: 0.01em solid $charcoal;
+	border-left: 0.05em solid $charcoal;
 	color: $white;
 	text-align: center;
 	transition: 0.3s;
@@ -170,7 +168,7 @@ from drop down item*/
 }
 
 .navigationBar__menu-item--start {
-	border: 0;
+	border-left: 0;
 }
 
 
@@ -179,7 +177,7 @@ from drop down item*/
 .navigationBar__menu-item:hover,
 .navigationBar__menu-item--start:hover {
 	background: $teal;
-	box-shadow: inset 0 0 2em 0.25em $dark-teal;
+	box-shadow: inset 0 0 2em 0.25em $teal-dark;
 	border-left-color: $black;
 	cursor: pointer;
 };

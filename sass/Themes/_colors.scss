@@ -2,20 +2,28 @@
 
 $transparent: transparent;
 $black: #000;
+$black-opaque: #212121;
 $white: #FFF;
 $grey: #8C8C8C;
 $grey-dark: #4E4E4E;
+$grey-light: #A0A0A0;
+$grey-ultraLight: #C7C7C7;
+$grey-lowOpacity: #E6E6E6;
 $charcoal: #3C3939;
-$black-opaque: #212121;
 $red: #F00;
 
 /*Tertiary color scheme for main color theme*/
 
+$green-light: #9BF1A1;
+$green-lowOpacity: #DEF9EE;
 $green-neon: #26CE31;
+$wintergreen-light: #BEE4DB;
 $teal: #3CB3B9;
-$teal-dark: #4BA7AB;
-$dark-teal: #23585A;
-
+$teal-green-tint: #1F9EA4;
+$teal-medium: #4BA7AB;
+$teal-dark: #23585A;
+$blue-highlight: #B0F0FF;
+$blue-dark: #133A9C;
 
 /*Button preset colors*/
 $button: $transparent;

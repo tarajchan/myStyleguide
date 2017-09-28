@@ -1,0 +1,173 @@
+
+@import "../Themes/_colors.scss";
+@import "../Themes/_icons.scss"; 
+@import "../Themes/_typography.scss";
+@import "../Helpers/_mixins.scss";
+@import "../Helpers/_variables.scss";
+
+
+.accordion {
+	@include prefix(transition, 0.4s);
+
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	margin: auto;
+	width: 90%;
+	padding: 1em;
+	background: $black;
+	border: none;
+	border-radius: 0.5em;
+	box-shadow: 0 0.05em 0.125em 0 $grey-light,
+							0 -0.125em 0.25em 0 $grey-light,
+							inset 0 0.125em 0.5em 0.125em $grey-dark;
+	color: white;
+	cursor: pointer;
+	outline: none;
+	text-align: left;
+	font-family: "Quicksand Light"; 
+}
+
+.accordion.active {
+	@include border-radius(0.5em, 0.5em, 0, 0);
+	@extend .accordion;
+
+	background: $teal;
+	box-shadow: 0 0.05em 0.5em 0 $grey-light,
+							inset 0 0.125em 0.5em 0.125em $teal-medium;
+}
+
+.accordion.active > .accordion__expander-icon {
+	@include prefix(transform, rotate(-180deg));
+
+	border: 0.25em double $white;
+	transition: transform 0.3s;
+}
+
+.accordion.active > .accordion__expander-icon > .arrow--down-white {
+	top: 0.05em;
+	left: 0.25em;
+}
+
+.accordion:hover {
+	background: $grey-dark;
+}
+
+.accordion:hover .accordion__expander-icon {
+	border-color: $black-opaque;
+}
+
+.accordion.active:hover {
+	background: $teal;
+	opacity: 0.85;
+}
+
+.accordion.active:hover .accordion__expander-icon {
+	border-color: $white;
+}
+
+.accordion__expander-icon {
+	position: relative;
+	min-height: 1.75em;
+	min-width: 1.75em;
+	padding: 0.5em;
+	border: 0.25em double $grey-dark;
+	border-radius: 0.25em;
+}
+
+.accordion__expander-icon > .arrow--down-white {
+	top: 0.25em;
+	left: 0.275em;
+}
+
+.accordion__heading {
+	flex: 1;
+}
+
+.accordion__panel {
+	position: relative;
+	display: none;
+	margin: auto;
+	max-height: 0;
+	width: 90%;
+	padding: 0.5em;
+	background: $black-opaque;
+	color: $white;
+	font-family: "Quicksand Light";
+	line-height: $line-height;
+}
+
+.accordion__panel--left {
+	float: left;
+	max-width: 50%;
+	min-height: 100%;
+}
+
+.accordion__panel--right {
+	float: right;
+	max-width: 50%;
+	min-height: 100%;
+}
+
+.accordion__innerPanel {
+	@include padding(0.5em, 0.5em, 0.65em, 0.5em);
+
+	display: flex;
+	min-width: 100%;
+	background: $black;
+	border: 0.01em solid $transparent;
+	border-radius: 0.25em;
+}
+
+.accordion__panel.show {
+	@include border-radius(0, 0, 0.5em, 0.5em);
+
+	display: flex;
+	min-height: 8em;
+}
+
+.accordion__row,
+.accordion__row--last,
+.accordion__row--first {
+	@include prefix(background, linear-gradient(to right, $grey-dark 10%, 
+																												$grey 40%, 
+																												$grey-light 50%, 
+																												$grey 60%, 
+																												$grey-dark 100%));
+
+	padding: 0.25em 0;
+}
+
+.accordion__row--last {
+	@include border-radius(null, null, 0.25em, 0.25em);
+	@include padding-side("bottom", 1em);
+}
+
+.accordion__row--first {
+	@include border-radius(0.25em, 0.25em, null, null);
+	@include padding-side("top", 1em);
+}
+
+.accordion__group {
+	padding: 1em;
+	background: $black;
+	border: 0.01em solid $transparent;
+	border-radius: 0.25em;
+}
+
+/*Accordion containers*/
+
+.accordion--flex {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+/*Accordian styles*/
+
+
+/*creates a "screen-like" appearance on the inner panel of the
+accordian panel*/
+.accordion__innerPanel--teal-screen {
+	background: linear-gradient(to right, $black 10%, $teal-medium 30%, $blue-highlight 50%, $teal-medium 65%, $black 100%)
+}

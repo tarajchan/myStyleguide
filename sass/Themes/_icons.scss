@@ -5,11 +5,8 @@
 
 /*Semantically important icons*/
 
-.icon__search {
-	margin-top: -0.125em;
-}
 
-#icon__bars {
+#icon__mq {
 
 	display: block;
 	color: $white;
@@ -19,20 +16,58 @@
 	}
 }
 
+.icon__button {
+	@include size(2em);
+
+	position: absolute;
+	left: 1.5em;
+	padding: 0.5em;
+	border: 0.01em solid $charcoal;
+	border-radius: 0.25em;
+	box-shadow: inset 0 0em 0.75em 0.125em $black,
+							inset 0 0.35em 1em 0.125em $grey-dark;
+	color: $white;
+	cursor: pointer;
+}
+
+.icon__code--left {
+	@include arrow(absolute, "left", 0.25em, $grey-dark, solid);
+
+	right: 0.85em;
+}
+
+.icon__code--right {
+	@include arrow(absolute, "right", 0.25em, $grey-dark, solid);
+
+	left: 0.85em;
+}
+
+.icon__search {
+	margin-top: -0.125em;
+}
+
 .icon__media--circle {
 	@include circle(1em, 1em, 0.5em);
 
 	background: $teal;
 }
 
+/*page corner icons*/
 
-/*positions the icon in the specified direction by 1em*/
+.icon__pageCorner--top-left {
+	@include page-corner(relative, "top left", 0.25em, groove, $teal, 2em);	
+}
+
+.icon__pageCorner--bottom-right {
+	@include page-corner(relative, "bottom-right", 0.25em, groove, $teal, 2em);	
+}
+
 
 /* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
 container as a text to create padding between the text and the icon*/
 .icon__menu-item--right {
 	position: absolute;
-	right: 1em;
+	right: 0;
 }
 
 .icon__menu-item--top {
@@ -53,6 +88,11 @@ in order to align the icon on either the right or left margin*/
 }
 
 /*Positioning for absolutely positioned items*/
+
+.icon--absolute {
+	position: absolute;
+}
+
 .bottom {
 	bottom: 0;
 }
@@ -70,44 +110,63 @@ in order to align the icon on either the right or left margin*/
 }
 
 
-/*Creates a triangle representing an arrow with equal widths 
-for all borders. Commonly used with dropdown menus to signify 
-additional content. Color class names for black and white arrows
-have been created for styling purposes, but new class names with
-different colors can be created by adding a state value for color 
-(--state) and including the arrow mixin with desired color.*/
+/*Creates a triangle with equal widths for all borders. Commonly used 
+with dropdown menus to signify additional content. Color class names for
+black and white triangles have been created for styling purposes,but new 
+class names with different colors can be created by adding a state value 
+for color (--state) and including the .triangle mixin with desired color.*/
 
+
+/*white triangles*/
+ .triangle--up--white {
+	@include triangle-eq(absolute, "up", 0.5em, $white);	
+}
+
+ .triangle--right-white {
+	@include triangle-eq(absolute, "right", 0.5em, $white);
+}
+
+ .triangle--down-white {
+	@include triangle-eq(absolute, "down", 0.5em, $white);
+
+	cursor: pointer;
+}
+
+ .triangle--left-white {
+	@include triangle-eq(absolute, "left", 0.5em, $white);
+}
+
+/*black triangles*/
+ .triangle--up-black {
+	@include triangle-eq(absolute, "up", 0.5em, $black);
+}
+
+ .triangle--right-black {
+	@include triangle-eq(absolute, "right", 0.5em, $black);
+}
+
+ .triangle--down-black {
+	@include triangle-eq(absolute, "down", 0.5em, $black);
+}
+
+ .triangle--left-black {
+	@include triangle-eq(absolute, "left", 0.5em, $black);
+}
+
+.triangle--right-black.left:before {
+	content: "";
+}
+
+
+
+/*black triangle sizes*/
+
+.triangle--down-black--small {
+	@include triangle-eq(absolute, "down", 0.25em, $black);
+}
 
 /*white arrows*/
-.arrow--up--white {
-	@include arrow-eq(absolute, "up", 0.5em, $white);	
-}
-
-.arrow--right-white {
-	@include arrow-eq(absolute, "right", 0.5em, $white);
-}
 
 .arrow--down-white {
-	@include arrow-eq(absolute, "down", 0.5em, $white);
-}
-
-.arrow--left-white {
-	@include arrow-eq(absolute, "left", 0.5em, $white);
-}
-
-/*black arrows*/
-.arrow--up-black {
-	@include arrow-eq(absolute, "up", 0.5em, $black);
-}
-
-.arrow--right-black {
-	@include arrow-eq(absolute, "right", 0.5em, $black);
-}
-
-.arrow--down-black {
-	@include arrow-eq(absolute, "down", 0.5em, $black);
-}
-
-.arrow--left-black {
-	@include arrow-eq(absolute, "left", 0.5em, $black);
+	@include arrow(absolute, "down", 0.25em, $white, solid);
 }

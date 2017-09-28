@@ -1,6 +1,34 @@
 
 @import "./_variables.scss";
 
+/*Vendor prefix mixin*/
+
+@mixin prefix($property, $arguments...) {
+	@each $prefix in -webkit-, -moz-, -ms-, -o- {
+		#{$prefix}#{$property}: $arguments;
+		#{$property}: $arguments;
+	}
+}
+
+
+
+
+/*@keyframes mixins (animation mixins)*/
+
+@keyframes slide-vertical {
+	from {
+		margin-bottom: 20%;
+		height: 50%;
+	} 
+
+	to {
+		margin-bottom: 100%;
+		height: 200%;
+	}
+} 
+
+
+
 /*Icon mixins*/
 
 @mixin circle($height, $width, $border-radius) {
@@ -15,7 +43,7 @@
 
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
-@mixin arrow-eq($position, $direction, $border-width, $color, $height: 0, $width: 0) {
+@mixin triangle-eq($position, $direction, $border-width, $color, $height: 0, $width: 0) {
 	height: $height;
 	width: $width;
 	position: $position;
@@ -46,6 +74,45 @@ argument unquoted in order for the CSS to render properly*/
 }
 
 
+@mixin arrow($position, $direction, $border-width, $border-color, $border-style, $padding: $border-width) {
+	display: inline-block;
+	padding: $padding;
+	position: $position;
+	border: $border-style $border-color;
+	border-right: $border-width;
+	border-bottom: $border-width;
+
+	@if $direction == up {
+		@include prefix(transform, rotate(-135deg));
+	}
+	@if $direction == right {
+		@include prefix(transform, rotate(135deg));
+	}
+	@if $direction == down {
+		@include prefix(transform, rotate(225deg));
+	}
+	@if $direction == left {
+		@include prefix(transform, rotate(315deg));
+	}
+}
+
+@mixin page-corner($position, $corner, $border-width, $border-style, $border-color, $height, $width: $height) {
+	position: $position;
+	width: $width;
+	height: $height;
+
+	@if $corner == top left {
+		border-left: $border-width $border-style $border-color;
+		border-top: $border-width $border-style $border-color;
+	}
+
+	@if $corner == bottom right {
+		border-bottom: $border-width $border-style $border-color;
+		border-right: $border-width $border-style $border-color;
+	}
+
+}
+
 /*Box model dimensions*/
 
 
@@ -74,6 +141,24 @@ argument unquoted in order for the CSS to render properly*/
 }
 
 
+/*Transition Mixins*/
+
+
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
 
 
 /*Typography Mixins*/
