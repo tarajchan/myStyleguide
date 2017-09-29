@@ -19,10 +19,9 @@
 .icon__button {
 	@include size(2em);
 
-	position: absolute;
-	left: 1.5em;
+	margin-right: 0.5em;
 	padding: 0.5em;
-	border: 0.01em solid $charcoal;
+	border: 0.05em solid $charcoal;
 	border-radius: 0.25em;
 	box-shadow: inset 0 0em 0.75em 0.125em $black,
 							inset 0 0.35em 1em 0.125em $grey-dark;
@@ -46,8 +45,14 @@
 	margin-top: -0.125em;
 }
 
-.icon__media--circle {
+.icon__media--circle--small {
 	@include circle(1em, 1em, 0.5em);
+
+	background: $teal;
+}
+
+.icon__media--circle--medium {
+	@include circle(1.5em, 1.5em, 0.75em);
 
 	background: $teal;
 }

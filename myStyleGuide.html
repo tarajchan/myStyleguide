@@ -3,7 +3,7 @@
   <head>
 	<meta charset="utf-8">
 	<title>CSS Styleguide</title>
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link href="../trancerific.github.io/reset.css" rel="stylesheet" type="text/css"/>
 	<link href="sass/main.css" rel="stylesheet" type="text/css"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -128,10 +128,14 @@
 						<div class="icon__button">
 							<i class="fa fa-bars icon--left icon--absolute"></i>
 						</div>
-						<div class="text__headingGroup">
-							<div class="icon__media--circle"></div>
-							<div class="text__heading">Tara Chan</div>
-							<div class="text__heading">See my profile</div>
+						<div class="media">
+							<div class="media__icon"> 
+								<div class="icon__media--circle--medium"></div>
+							</div>
+							<div class="media__heading-group">
+								<div class="media__heading">Tara Chan</div>
+								<div class="media__description">See my profile</div>
+							</div>
 						</div>
 					</div>
 					<div class="sidebar__module">
@@ -271,7 +275,7 @@
 						</div>
 						<div class="main__sectionContent">
 
-							<div class="accordion__group accordion--flex">
+							<div class="accordion__group">
 								<div class="accordion__row--first">
 									<button class="accordion">
 										<div class="accordion__heading">Accordion</div>
@@ -281,44 +285,92 @@
 									</button>
 									<div class="accordion__panel">
 										<div class="accordion__innerPanel">
-											Some of those that work forces, are the same that burn crosses<br/>
-											Some of those that work forces, are the same that burn crosses<br/>
-											Some of those that work forces, are the same that burn crosses<br/>
-											Some of those that work forces, are the same that burn crosses
-										</div>
-									</div>
-								</div>
-								<div class="accordion__row">
-									<button class="accordion">
-										<div class="accordion__heading">Accordion</div>
-										<div class="accordion__expander-icon">
-											<div class="arrow--down-white"></div>
-										</div>
-								  </button>
-									<div class="accordion__panel">
-										<div class="accordion__innerPanel">
-											<div class="accordion__panel--left">
-												"You'll never take our voice<br/>
-												In our final moments we'll truly know desire<br/>
-												We'll understand our need to exists<br/>
-												The cause of our downfall"
+											<div class="accordion__panel-text">
+												Some of those that work forces, are the same that burn crosses<br/>
+												Some of those that work forces, are the same that burn crosses<br/>
+												Some of those that work forces, are the same that burn crosses<br/>
+												Some of those that work forces, are the same that burn crosses
 											</div>
-											<div class="accordion__panel--right">
-												<span class="text--italicized">- "Need to Exist"</span> by <span class="text--bold">Odium</span>
-											</div> 
 										</div>
 									</div>
 								</div>
 								<div class="accordion__row">
 									<button class="accordion">
-										<div class="accordion__heading">Accordion</div>
+										<div class="accordion__heading">Accordion with two columns</div>
 										<div class="accordion__expander-icon">
 											<div class="arrow--down-white"></div>
 										</div>
 								  </button>
 									<div class="accordion__panel">
 										<div class="accordion__innerPanel">
-											CONTENT <br/>CONTENT <br/>CONTENT <br/>CONTENT 
+											<div class="accordion__panel-text clearfix">
+												<div class="accordion__panel--left">
+														"You'll never take our voice<br/>
+														In our final moments we'll truly know desire<br/>
+														We'll understand our need to exist<br/>
+														The cause of our downfall"
+													</div>
+													<div class="accordion__panel--right">
+														<span class="text--italicized">- "Need to Exist"&nbsp;&nbsp;</span>by<span class="text--bold">&nbsp;Odium</span>
+													</div>
+												</div> 
+										</div>
+									</div>
+								</div>
+								<div class="accordion__row">
+									<button class="accordion">
+										<div class="accordion__heading">Accordion with content and image with description</div>
+										<div class="accordion__expander-icon">
+											<div class="arrow--down-white"></div>
+										</div>
+								  </button>
+									<div class="accordion__panel">
+										<div class="accordion__innerPanel">
+											<div class="accordion__panel-text">
+												<div class="accordion__panel--left">
+													Beyond the sands of time<br/>
+													Within the realm of the mind<br/>
+													There is a land where life and death<br/>
+													Are ruled by steel<br/>
+													Out of this land five conquering heroes<br/>
+													Arose to make their stand<br/>
+													Throughout their journey<br/>
+													They stake their claim<br/>
+													That they are the warlords<br/>
+													By the name Medieval Steel<br/>
+													<br/>
+													There was a time long ago<br/>
+													When men fought for steel<br/>
+													The sword was worth more than gold<br/>
+													And easy to make the kill<br/>
+													Twenty years in the gallows<br/>
+													One slave began to rise<br/>
+													He fights a thousand battles<br/>
+													With hatred in his eyes<br/>
+													<br/>
+													Chorus:<br/>
+													Medieval steel cuts you like a knife<br/>
+													Warriors on the battlefield<br/>
+													Laying down their life for steel<br/>
+													<br/>
+													Then came the day he was set free<br/>
+													Free to roam this land<br/>
+													Iron will in his heart<br/>
+													And his sword in his hand<br/>
+													He began to take command<br/>
+													Over the mountains, through the glen<br/>
+													Came the king and his marching men<br/>
+													To fight the fight and to kill the slave<br/>
+													When the fight was over he was saved<br/>
+												</div>
+												<div class="accordion__panel--right">
+													<div class="accordion__panelContainer--right">
+														<div class="media__image">
+															<img src="sass/Themes/medievalSteel.jpg" alt="Medieval Steel album cover" height="100%" width="100%">
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -341,27 +393,26 @@
 						<div class="main__section">
 							<div class="main__sectionDescription">
 								<div class="main__sectionDescription-title">
-									<div class="icon__pageCorner--top-left"></div>
 									<div class="main__sectionDescription--bold">
-										An accordion contains collapsable content and is grouped together with multiple accordions to create an <code class="text--code">.accordion__group</code>.
+										An accordion contains collapsable content and is grouped together with multiple accordions to create an <code class="text--code">.accordion__group</code> .
 									</div>
-									<div class="icon__pageCorner--bottom-right"></div>
+									<div class="main__sectionDescription-heading">Description</div>
 								</div>
-								<div class="main__sectionDescription-wrapper grid__container--3">
-									<div class="main__sectionDescription-card">
-										<div class="main__sectionDescription-heading">Wrapper</div>
+								<div class="main__sectionDescription-wrapper">
+									<div class="main__sectionDescription-card first">
+										<div class="main__sectionDescription-card-heading">Wrapper</div>
 										<div class="main__sectionDescription-content">
-											Use the <code class="text--code">.accordion__group</code> and <code class="text--code">.accordion--flex</code> classes on a parent container that contains <code class="text--code">.accordion</code> elements to create a standard accordion.<br/> 
+											Use the <code class="text--code">.accordion__group</code> class on a parent container that contains <code class="text--code">.accordion</code> elements to create a standard accordion.<br/> 
 										</div>
 									</div>
 									<div class="main__sectionDescription-card">
-										<div class="main__sectionDescription-heading">Row</div>
+										<div class="main__sectionDescription-card-heading">Row</div>
 										<div class="main__sectionDescription-content">
 											Each row contains a class of <code class="text--code">.accordion__row</code> with state variations of <code class="text--code">--first</code> or <code class="text--code">--last</code> with the <code class="text--code">.accordion</code> object placed within the row. 
 										</div>
 									</div>	
 									<div class="main__sectionDescription-card last">
-										<div class="main__sectionDescription-heading">Default</div>
+										<div class="main__sectionDescription-card-heading">Default</div>
 										<div class="main__sectionDescription-content">
 											The default stylings for the accordion are used here and are native to the the default accordion class (the basic <code class="text--code">.accordion</code> class names shown in the above example without modifications).
 										</div>
@@ -369,6 +420,10 @@
 								</div>
 							</div>
 						</div>
+						<!--
+						<div class="main__section">
+						</div>
+					-->
 						<div class="main__section">
 							<div class="main__sectionDetails">
 								<div class="main__sectionDetails-identifier"></div>

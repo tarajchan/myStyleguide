@@ -66,10 +66,9 @@ $teal-box-shadow: //code here
 .icon__button {
   width: 2em;
   height: 2em;
-  position: absolute;
-  left: 1.5em;
+  margin-right: 0.5em;
   padding: 0.5em;
-  border: 0.01em solid #3C3939;
+  border: 0.05em solid #3C3939;
   border-radius: 0.25em;
   box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
   color: #FFF;
@@ -112,13 +111,22 @@ $teal-box-shadow: //code here
 .icon__search {
   margin-top: -0.125em; }
 
-.icon__media--circle {
+.icon__media--circle--small {
   height: 1em;
   width: 1em;
   -ms-border-radius: 0.5em;
   moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
   border-radius: 0.5em;
+  background: #3CB3B9; }
+
+.icon__media--circle--medium {
+  height: 1.5em;
+  width: 1.5em;
+  -ms-border-radius: 0.75em;
+  moz-border-radius: 0.75em;
+  -webkit-border-radius: 0.75em;
+  border-radius: 0.75em;
   background: #3CB3B9; }
 
 /*page corner icons*/
@@ -354,12 +362,11 @@ $teal-box-shadow: //code here
   font-weight: 600;
   margin-left: -0.1em; }
 
-.text__headingGroup {
+.text__heading-group {
   position: relative;
-  left: 1.5em;
   display: flex;
-  flex-direction: row;
-  align-items: center; }
+  flex-direction: column;
+  justify-items: center; }
 
 .text__heading--main {
   position: absolute;
@@ -515,6 +522,7 @@ the direction of where you want the margin spacing to be applied*/
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   background: #3CB3B9;
+  border-bottom: 0.45em groove #1F9EA4;
   box-shadow: 0 0.05em 0.5em 0 #A0A0A0, inset 0 0.125em 0.5em 0.125em #4BA7AB; }
 
 .accordion.active > .accordion__expander-icon {
@@ -571,36 +579,76 @@ the direction of where you want the margin spacing to be applied*/
   background: #212121;
   color: #FFF;
   font-family: "Quicksand Light";
-  line-height: 1.5em; }
+  line-height: 1.5em;
+  overflow: auto; }
+
+.accordion__panel-text {
+  position: relative;
+  min-width: 100%; }
 
 .accordion__panel--left {
-  float: left;
-  max-width: 50%;
-  min-height: 100%; }
+  font-size: 0.925em;
+  max-width: 100%;
+  margin-bottom: 0.5em;
+  line-height: 1.5em; }
+  @media screen and (min-width: 480px) and (max-width: 1024px) {
+    .accordion__panel--left {
+      float: left;
+      font-size: 1em;
+      max-width: 50%;
+      min-height: auto; } }
+  @media screen and (min-width: 1024px) and (max-width: 1420px) {
+    .accordion__panel--left {
+      float: left;
+      font-size: 0.9em;
+      max-width: 50%;
+      min-height: auto; } }
+  @media screen and (min-width: 1420px) {
+    .accordion__panel--left {
+      float: left;
+      font-size: 1em;
+      max-width: 50%;
+      min-height: auto; } }
 
 .accordion__panel--right {
-  float: right;
-  max-width: 50%;
-  min-height: 100%; }
+  margin-bottom: 0.5em;
+  max-width: 100%; }
+  @media screen and (min-width: 480px) {
+    .accordion__panel--right {
+      float: right;
+      max-width: 50%;
+      min-height: auto; } }
+
+.accordion__panelContainer--right {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0.5em; }
+  @media screen and (min-width: 1536px) {
+    .accordion__panelContainer--right {
+      margin-top: 1em;
+      margin-right: 2em;
+      margin-bottom: 1em;
+      margin-left: 0.5em; } }
 
 .accordion__innerPanel {
-  padding-top: 0.5em;
-  padding-right: 0.5em;
+  padding-top: 0.65em;
+  padding-right: 1em;
   padding-bottom: 0.65em;
-  padding-left: 0.5em;
-  display: flex;
+  padding-left: 1em;
+  display: table-cell;
   min-width: 100%;
   background: #000;
   border: 0.01em solid transparent;
-  border-radius: 0.25em; }
+  border-radius: 0.25em;
+  overflow: auto; }
 
 .accordion__panel.show {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
-  display: flex;
-  min-height: 8em; }
+  display: table;
+  min-height: auto; }
 
 .accordion__row,
 .accordion__row--last,
@@ -630,12 +678,6 @@ the direction of where you want the margin spacing to be applied*/
   background: #000;
   border: 0.01em solid transparent;
   border-radius: 0.25em; }
-
-/*Accordion containers*/
-.accordion--flex {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap; }
 
 /*Accordian styles*/
 /*creates a "screen-like" appearance on the inner panel of the
@@ -712,10 +754,9 @@ $teal-box-shadow: //code here
 .icon__button {
   width: 2em;
   height: 2em;
-  position: absolute;
-  left: 1.5em;
+  margin-right: 0.5em;
   padding: 0.5em;
-  border: 0.01em solid #3C3939;
+  border: 0.05em solid #3C3939;
   border-radius: 0.25em;
   box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
   color: #FFF;
@@ -758,13 +799,22 @@ $teal-box-shadow: //code here
 .icon__search {
   margin-top: -0.125em; }
 
-.icon__media--circle {
+.icon__media--circle--small {
   height: 1em;
   width: 1em;
   -ms-border-radius: 0.5em;
   moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
   border-radius: 0.5em;
+  background: #3CB3B9; }
+
+.icon__media--circle--medium {
+  height: 1.5em;
+  width: 1.5em;
+  -ms-border-radius: 0.75em;
+  moz-border-radius: 0.75em;
+  -webkit-border-radius: 0.75em;
+  border-radius: 0.75em;
   background: #3CB3B9; }
 
 /*page corner icons*/
@@ -1142,7 +1192,7 @@ from drop down item*/
   right: 0;
   display: flex;
   flex-direction: row;
-  min-height: 4em;
+  min-height: 3em;
   font-family: "Quicksand Regular";
   background: #000;
   box-shadow: 0 -0.05em 0.5em 0.05em #4E4E4E; }
@@ -1242,12 +1292,11 @@ $teal-box-shadow: //code here
   font-weight: 600;
   margin-left: -0.1em; }
 
-.text__headingGroup {
+.text__heading-group {
   position: relative;
-  left: 1.5em;
   display: flex;
-  flex-direction: row;
-  align-items: center; }
+  flex-direction: column;
+  justify-items: center; }
 
 .text__heading--main {
   position: absolute;
@@ -1591,12 +1640,11 @@ $teal-box-shadow: //code here
   font-weight: 600;
   margin-left: -0.1em; }
 
-.text__headingGroup {
+.text__heading-group {
   position: relative;
-  left: 1.5em;
   display: flex;
-  flex-direction: row;
-  align-items: center; }
+  flex-direction: column;
+  justify-items: center; }
 
 .text__heading--main {
   position: absolute;
@@ -1812,10 +1860,9 @@ $teal-box-shadow: //code here
 .icon__button {
   width: 2em;
   height: 2em;
-  position: absolute;
-  left: 1.5em;
+  margin-right: 0.5em;
   padding: 0.5em;
-  border: 0.01em solid #3C3939;
+  border: 0.05em solid #3C3939;
   border-radius: 0.25em;
   box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
   color: #FFF;
@@ -1858,13 +1905,22 @@ $teal-box-shadow: //code here
 .icon__search {
   margin-top: -0.125em; }
 
-.icon__media--circle {
+.icon__media--circle--small {
   height: 1em;
   width: 1em;
   -ms-border-radius: 0.5em;
   moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
   border-radius: 0.5em;
+  background: #3CB3B9; }
+
+.icon__media--circle--medium {
+  height: 1.5em;
+  width: 1.5em;
+  -ms-border-radius: 0.75em;
+  moz-border-radius: 0.75em;
+  -webkit-border-radius: 0.75em;
+  border-radius: 0.75em;
   background: #3CB3B9; }
 
 /*page corner icons*/
@@ -2100,12 +2156,11 @@ $teal-box-shadow: //code here
   font-weight: 600;
   margin-left: -0.1em; }
 
-.text__headingGroup {
+.text__heading-group {
   position: relative;
-  left: 1.5em;
   display: flex;
-  flex-direction: row;
-  align-items: center; }
+  flex-direction: column;
+  justify-items: center; }
 
 .text__heading--main {
   position: absolute;
@@ -2230,6 +2285,528 @@ the direction of where you want the margin spacing to be applied*/
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Semantically important icons*/
+#icon__mq {
+  display: block;
+  color: #FFF; }
+  @media screen and (min-width: 1024px) and (max-width: 1350px) {
+    #icon__mq {
+      display: none; } }
+
+.icon__button {
+  width: 2em;
+  height: 2em;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  border: 0.05em solid #3C3939;
+  border-radius: 0.25em;
+  box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
+  color: #FFF;
+  cursor: pointer; }
+
+.icon__code--left {
+  display: inline-block;
+  padding: 0.25em;
+  position: absolute;
+  border: solid #4E4E4E;
+  border-right: 0.25em;
+  border-bottom: 0.25em;
+  -webkit-transform: rotate(315deg);
+  transform: rotate(315deg);
+  -moz-transform: rotate(315deg);
+  transform: rotate(315deg);
+  -ms-transform: rotate(315deg);
+  transform: rotate(315deg);
+  -o-transform: rotate(315deg);
+  transform: rotate(315deg);
+  right: 0.85em; }
+
+.icon__code--right {
+  display: inline-block;
+  padding: 0.25em;
+  position: absolute;
+  border: solid #4E4E4E;
+  border-right: 0.25em;
+  border-bottom: 0.25em;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+  left: 0.85em; }
+
+.icon__search {
+  margin-top: -0.125em; }
+
+.icon__media--circle--small {
+  height: 1em;
+  width: 1em;
+  -ms-border-radius: 0.5em;
+  moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+  background: #3CB3B9; }
+
+.icon__media--circle--medium {
+  height: 1.5em;
+  width: 1.5em;
+  -ms-border-radius: 0.75em;
+  moz-border-radius: 0.75em;
+  -webkit-border-radius: 0.75em;
+  border-radius: 0.75em;
+  background: #3CB3B9; }
+
+/*page corner icons*/
+.icon__pageCorner--top-left {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border-left: 0.25em groove #3CB3B9;
+  border-top: 0.25em groove #3CB3B9;
+  border-bottom: 0.25em groove #3CB3B9;
+  border-right: 0.25em groove #3CB3B9; }
+
+.icon__pageCorner--bottom-right {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border-left: 0.25em groove #3CB3B9;
+  border-top: 0.25em groove #3CB3B9;
+  border-bottom: 0.25em groove #3CB3B9;
+  border-right: 0.25em groove #3CB3B9; }
+
+/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
+container as a text to create padding between the text and the icon*/
+.icon__menu-item--right {
+  position: absolute;
+  right: 0; }
+
+.icon__menu-item--top {
+  position: absolute;
+  top: 1em; }
+
+/*creates a margin on the opposite side of the specified position
+in order to align the icon on either the right or left margin*/
+.icon--left {
+  margin-right: 0.5em; }
+
+.icon--right {
+  margin-left: 0.5em;
+  margin-top: 0.125em; }
+
+/*Positioning for absolutely positioned items*/
+.icon--absolute {
+  position: absolute; }
+
+.bottom {
+  bottom: 0; }
+
+.left {
+  left: 0; }
+
+.right {
+  right: 0; }
+
+.top {
+  top: 0; }
+
+/*Creates a triangle with equal widths for all borders. Commonly used 
+with dropdown menus to signify additional content. Color class names for
+black and white triangles have been created for styling purposes,but new 
+class names with different colors can be created by adding a state value 
+for color (--state) and including the .triangle mixin with desired color.*/
+/*white triangles*/
+.triangle--up--white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #FFF; }
+
+.triangle--right-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-left: 0.5em solid #FFF;
+  border-bottom: 0.5em solid transparent; }
+
+.triangle--down-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #FFF;
+  cursor: pointer; }
+
+.triangle--left-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #FFF;
+  border-bottom: 0.5em solid transparent; }
+
+/*black triangles*/
+.triangle--up-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #000; }
+
+.triangle--right-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-left: 0.5em solid #000;
+  border-bottom: 0.5em solid transparent; }
+
+.triangle--down-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #000; }
+
+.triangle--left-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #000;
+  border-bottom: 0.5em solid transparent; }
+
+.triangle--right-black.left:before {
+  content: ""; }
+
+/*black triangle sizes*/
+.triangle--down-black--small {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.25em solid transparent;
+  border-right: 0.25em solid transparent;
+  border-top: 0.25em solid #000; }
+
+/*white arrows*/
+.arrow--down-white {
+  display: inline-block;
+  padding: 0.25em;
+  position: absolute;
+  border: solid #FFF;
+  border-right: 0.25em;
+  border-bottom: 0.25em;
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg); }
+
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Variables for font-size and line-height*/
+.text__border {
+  border: 0.05em outset #FFF;
+  border-radius: 0 0.5em;
+  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
+
+.text__wrapper {
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  position: absolute; }
+
+.text__heading, .text__heading--main, .text__heading--nav {
+  letter-spacing: 0.1em;
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 0.55em;
+  color: #FFF;
+  line-height: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  margin-left: -0.1em; }
+
+.text__heading-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-items: center; }
+
+.text__heading--main {
+  position: absolute;
+  top: 2.25em;
+  padding: 0;
+  font-family: "Quicksand Regular";
+  font-size: 2.25em;
+  color: #FFF; }
+
+.text__headingLabel--main {
+  position: absolute;
+  top: 3em;
+  padding-top: 0.5em;
+  width: 4em;
+  font-family: "Quicksand Light";
+  border-top: 0.25em solid #3CB3B9;
+  color: #FFF; }
+
+.text__heading--nav {
+  font-size: 1.25em; }
+  @media screen and (min-width: 768px) {
+    .text__heading--nav {
+      font-size: 1.5em;
+      font-weight: normal; } }
+
+.text__heading--nav.left {
+  margin-left: 0.25em; }
+
+.text__heading--nav.right {
+  margin-right: 0.5em; }
+
+.text__label {
+  position: relative;
+  padding-bottom: 0.5em;
+  font-family: "Quicksand Light";
+  font-size: 0.925em; }
+
+.text__link, .text__link--underlined {
+  font-family: "Quicksand Light";
+  font-size: 0.925em; }
+
+.text__link:hover, .text__link--underlined:hover {
+  cursor: pointer;
+  opacity: 0.75; }
+
+.text--bold {
+  font-weight: 600; }
+
+.text--code {
+  padding: 0.125em 0.25em;
+  background: #1F9EA4;
+  border-radius: 0.125em;
+  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
+  color: #FFF;
+  font-weight: 600; }
+
+.text--italicized {
+  font-style: italic; }
+
+.text--responsive {
+  counter-increment: 1;
+  position: relative;
+  font-size: 0.95em; }
+
+@font-face {
+  font-family: "Miriam Libre";
+  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Bold";
+  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Light";
+  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Medium";
+  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Regular";
+  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+.media {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  font-family: "Quicksand Light"; }
+
+.media__icon {
+  display: flex;
+  flex: 1;
+  align-self: center;
+  justify-content: center;
+  margin-left: 0.5em;
+  padding: 0.5em; }
+
+.media__image {
+  height: 100%;
+  width: 100%; }
+
+.media__description {
+  font-size: 0.85em; }
+
+.media__heading {
+  font-weight: 600; }
+
+.media__heading-group {
+  flex: 4;
+  padding: 0.5em;
+  line-height: 1.25em; }
+
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
@@ -2585,12 +3162,11 @@ $teal-box-shadow: //code here
   font-weight: 600;
   margin-left: -0.1em; }
 
-.text__headingGroup {
+.text__heading-group {
   position: relative;
-  left: 1.5em;
   display: flex;
-  flex-direction: row;
-  align-items: center; }
+  flex-direction: column;
+  justify-items: center; }
 
 .text__heading--main {
   position: absolute;
@@ -2751,60 +3327,117 @@ the direction of where you want the margin spacing to be applied*/
   margin-left: auto;
   position: relative;
   max-width: 95%;
-  padding: 1em; }
+  padding: 1em 0.25em; }
+  @media screen and (min-width: 480px) {
+    .main__sectionContent {
+      padding: 1em 0.5em; } }
+  @media screen and (min-width: 768px) {
+    .main__sectionContent {
+      padding: 1em; } }
 
 .main__sectionDescription {
   border-left: 0.5em groove #3CB3B9;
-  margin-right: 2.5em;
-  margin-bottom: 1em;
-  margin-left: 2.5em;
   padding-top: 1em;
   padding-bottom: 1em;
+  margin-right: 1em;
+  margin-left: 0.5em;
   font-family: "Quicksand Light";
   line-height: 1.5em; }
+  @media screen and (min-width: 480px) {
+    .main__sectionDescription {
+      margin-right: 1.5em;
+      margin-left: 1em; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main__sectionDescription {
+      margin: 0 1.5em; } }
+  @media screen and (min-width: 1536px) {
+    .main__sectionDescription {
+      margin-right: 2.5em;
+      margin-bottom: 1em;
+      margin-left: 2.5em; } }
 
 .main__sectionDescription--bold {
   margin-right: auto;
   margin-left: auto;
-  font-size: 1.35em;
+  max-width: 90%;
+  font-size: 1.25em;
   font-weight: 600;
   line-height: 1.5em;
   text-align: right; }
+  @media screen and (min-width: 640px) {
+    .main__sectionDescription--bold {
+      font-size: 1.35em; } }
 
+.main__sectionDescription-card.last,
+.main__sectionDescription-card.first,
 .main__sectionDescription-card {
-  padding: 0.5em;
+  flex: 1;
+  padding: 1em;
   border: 0.05em solid #A0A0A0;
   border-radius: 0.25em;
-  max-width: 90%; }
+  margin-top: 0.75em;
+  min-width: 100%;
+  background: linear-gradient(to bottom, #000 40%, #4E4E4E 100%);
+  box-shadow: inset 0 0.125em 1em 0.125em #3C3939, 0.25em 0.125em 1em 0.125em #8C8C8C;
+  color: white; }
+  @media screen and (min-width: 640px) {
+    .main__sectionDescription-card.last,
+    .main__sectionDescription-card.first,
+    .main__sectionDescription-card {
+      margin-left: 0.75em;
+      min-width: 48%; } }
+  @media screen and (min-width: 1200px) {
+    .main__sectionDescription-card.last,
+    .main__sectionDescription-card.first,
+    .main__sectionDescription-card {
+      min-width: 32%; } }
 
 .main__sectionDescription-card.last {
-  max-width: 100%; }
+  margin-left: 0; }
+  @media screen and (min-width: 1200px) {
+    .main__sectionDescription-card.last {
+      margin-left: 0.75em; } }
+
+.main__sectionDescription-card.first {
+  margin-left: 0; }
 
 .main__sectionDescription-content {
   line-height: 2em; }
 
-.main__sectionDescription-heading {
+.main__sectionDescription-card-heading {
   font-size: 1.25em;
   font-weight: 600;
   margin-bottom: 0.5em;
   padding-bottom: 0.5em;
-  border-bottom: 0.01em solid #A0A0A0; }
+  border-bottom: 0.05em dashed #A0A0A0; }
+
+.main__sectionDescription-heading {
+  margin-top: 0.5em;
+  margin-left: 0.75em;
+  padding: 0.5em 0.25em;
+  font-size: 1.5em;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25em groove #1F9EA4;
+  border-radius: 0.125em 0.125em 0 0; }
+  @media screen and (min-width: 480px) {
+    .main__sectionDescription-heading {
+      margin-top: 0.5em;
+      margin-left: 0.5em;
+      padding-left: 0.5em; } }
 
 .main__sectionDescription-title {
   position: relative;
-  margin: 0 auto;
-  max-width: 90%; }
+  margin-bottom: 1em; }
 
 .main__sectionDescription-wrapper {
-  padding: 1em; }
-
-@media screen and (max-width: 640px) {
-  .main__sectionDescription-wrapper.grid__container--2 {
-    display: grid; } }
-
-@media screen and (min-width: 640px) {
-  .main__sectionDescription-wrapper.grid__container--3 {
-    display: grid; } }
+  margin-bottom: 1em;
+  margin-left: 1em;
+  display: flex;
+  flex-wrap: wrap; }
+  @media screen and (min-width: 480px) {
+    .main__sectionDescription-wrapper {
+      margin-left: 1.5em; } }
 
 .main__sectionDetails {
   padding-top: 1em;
@@ -2924,9 +3557,10 @@ the direction of where you want the margin spacing to be applied*/
   position: relative;
   flex: 5;
   max-width: 75%;
+  margin-left: 1em;
   font-family: "Quicksand Regular";
-  font-size: 1.75em;
-  line-height: 2em; }
+  font-size: 2em;
+  line-height: 1.75em; }
 
 .main__sectionHeading--right {
   position: relative;
@@ -3050,12 +3684,11 @@ $teal-box-shadow: //code here
   font-weight: 600;
   margin-left: -0.1em; }
 
-.text__headingGroup {
+.text__heading-group {
   position: relative;
-  left: 1.5em;
   display: flex;
-  flex-direction: row;
-  align-items: center; }
+  flex-direction: column;
+  justify-items: center; }
 
 .text__heading--main {
   position: absolute;
@@ -3233,10 +3866,9 @@ $teal-box-shadow: //code here
 .icon__button {
   width: 2em;
   height: 2em;
-  position: absolute;
-  left: 1.5em;
+  margin-right: 0.5em;
   padding: 0.5em;
-  border: 0.01em solid #3C3939;
+  border: 0.05em solid #3C3939;
   border-radius: 0.25em;
   box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
   color: #FFF;
@@ -3279,13 +3911,22 @@ $teal-box-shadow: //code here
 .icon__search {
   margin-top: -0.125em; }
 
-.icon__media--circle {
+.icon__media--circle--small {
   height: 1em;
   width: 1em;
   -ms-border-radius: 0.5em;
   moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
   border-radius: 0.5em;
+  background: #3CB3B9; }
+
+.icon__media--circle--medium {
+  height: 1.5em;
+  width: 1.5em;
+  -ms-border-radius: 0.75em;
+  moz-border-radius: 0.75em;
+  -webkit-border-radius: 0.75em;
+  border-radius: 0.75em;
   background: #3CB3B9; }
 
 /*page corner icons*/
@@ -3521,12 +4162,11 @@ $teal-box-shadow: //code here
   font-weight: 600;
   margin-left: -0.1em; }
 
-.text__headingGroup {
+.text__heading-group {
   position: relative;
-  left: 1.5em;
   display: flex;
-  flex-direction: row;
-  align-items: center; }
+  flex-direction: column;
+  justify-items: center; }
 
 .text__heading--main {
   position: absolute;
@@ -3756,8 +4396,16 @@ the direction of where you want the margin spacing to be applied*/
   border-bottom-left-radius: 0;
   padding-left: 0.5em;
   position: relative;
+  display: flex;
   min-height: 3.5em;
   box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E; }
+
+.sidebar__moduleSubHeading > .media {
+  border-left: 0.05em solid #3C3939;
+  display: flex;
+  flex: 2;
+  flex-direction: row;
+  color: white; }
 
 .sidebar__module.last, .last.sidebar__moduleSubHeading {
   border-top-left-radius: 0;
@@ -3901,12 +4549,11 @@ $teal-box-shadow: //code here
   font-weight: 600;
   margin-left: -0.1em; }
 
-.text__headingGroup {
+.text__heading-group {
   position: relative;
-  left: 1.5em;
   display: flex;
-  flex-direction: row;
-  align-items: center; }
+  flex-direction: column;
+  justify-items: center; }
 
 .text__heading--main {
   position: absolute;
@@ -4081,10 +4728,9 @@ $teal-box-shadow: //code here
 .icon__button {
   width: 2em;
   height: 2em;
-  position: absolute;
-  left: 1.5em;
+  margin-right: 0.5em;
   padding: 0.5em;
-  border: 0.01em solid #3C3939;
+  border: 0.05em solid #3C3939;
   border-radius: 0.25em;
   box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
   color: #FFF;
@@ -4127,13 +4773,22 @@ $teal-box-shadow: //code here
 .icon__search {
   margin-top: -0.125em; }
 
-.icon__media--circle {
+.icon__media--circle--small {
   height: 1em;
   width: 1em;
   -ms-border-radius: 0.5em;
   moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
   border-radius: 0.5em;
+  background: #3CB3B9; }
+
+.icon__media--circle--medium {
+  height: 1.5em;
+  width: 1.5em;
+  -ms-border-radius: 0.75em;
+  moz-border-radius: 0.75em;
+  -webkit-border-radius: 0.75em;
+  border-radius: 0.75em;
   background: #3CB3B9; }
 
 /*page corner icons*/
@@ -4420,12 +5075,11 @@ $teal-box-shadow: //code here
   font-weight: 600;
   margin-left: -0.1em; }
 
-.text__headingGroup {
+.text__heading-group {
   position: relative;
-  left: 1.5em;
   display: flex;
-  flex-direction: row;
-  align-items: center; }
+  flex-direction: column;
+  justify-items: center; }
 
 .text__heading--main {
   position: absolute;
@@ -4609,12 +5263,11 @@ $teal-box-shadow: //code here
   font-weight: 600;
   margin-left: -0.1em; }
 
-.text__headingGroup {
+.text__heading-group {
   position: relative;
-  left: 1.5em;
   display: flex;
-  flex-direction: row;
-  align-items: center; }
+  flex-direction: column;
+  justify-items: center; }
 
 .text__heading--main {
   position: absolute;

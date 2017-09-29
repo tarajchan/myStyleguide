@@ -33,6 +33,7 @@
 	@extend .accordion;
 
 	background: $teal;
+	border-bottom: 0.45em groove $teal-green-tint;
 	box-shadow: 0 0.05em 0.5em 0 $grey-light,
 							inset 0 0.125em 0.5em 0.125em $teal-medium;
 }
@@ -95,35 +96,76 @@
 	color: $white;
 	font-family: "Quicksand Light";
 	line-height: $line-height;
+	overflow: auto;
+}
+
+.accordion__panel-text {
+	position: relative;
+	min-width: 100%;
 }
 
 .accordion__panel--left {
-	float: left;
-	max-width: 50%;
-	min-height: 100%;
+	font-size: 0.925em;
+	max-width: 100%;
+	margin-bottom: 0.5em;
+	line-height: $line-height;
+
+	@include mediaQuery--custom(480px, $mq-desktop) {
+		float: left;
+		font-size: 1em;
+		max-width: 50%;
+		min-height: auto;
+	}
+	@include mediaQuery--custom($mq-desktop, 1420px) {
+		float: left;
+		font-size: 0.9em;
+		max-width: 50%;
+		min-height: auto;	
+	}
+	@media screen and (min-width: 1420px) {
+		float: left;
+		font-size: 1em;
+		max-width: 50%;
+		min-height: auto;	
+	}
+
 }
 
 .accordion__panel--right {
-	float: right;
-	max-width: 50%;
-	min-height: 100%;
+	margin-bottom: 0.5em;
+	max-width: 100%;
+
+	@media screen and (min-width: 480px) {
+		float: right;
+		max-width: 50%;
+		min-height: auto;
+	}
+}
+
+.accordion__panelContainer--right {
+	@include margin(1em, null, 1em, 0.5em);
+
+	@media screen and (min-width: $mq-wide) {
+		@include margin(1em, 2em, 1em, 0.5em);
+	}
 }
 
 .accordion__innerPanel {
-	@include padding(0.5em, 0.5em, 0.65em, 0.5em);
+	@include padding(0.65em, 1em, 0.65em, 1em);
 
-	display: flex;
+	display: table-cell;
 	min-width: 100%;
 	background: $black;
 	border: 0.01em solid $transparent;
 	border-radius: 0.25em;
+	overflow: auto;
 }
 
 .accordion__panel.show {
 	@include border-radius(0, 0, 0.5em, 0.5em);
 
-	display: flex;
-	min-height: 8em;
+	display: table;
+	min-height: auto;
 }
 
 .accordion__row,
@@ -155,13 +197,6 @@
 	border-radius: 0.25em;
 }
 
-/*Accordion containers*/
-
-.accordion--flex {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-}
 
 /*Accordian styles*/
 
@@ -169,5 +204,5 @@
 /*creates a "screen-like" appearance on the inner panel of the
 accordian panel*/
 .accordion__innerPanel--teal-screen {
-	background: linear-gradient(to right, $black 10%, $teal-medium 30%, $blue-highlight 50%, $teal-medium 65%, $black 100%)
+	background: linear-gradient(to right, $black 10%, $teal-medium 30%, $blue-highlight 50%, $teal-medium 65%, $black 100%);
 }

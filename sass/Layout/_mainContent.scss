@@ -36,72 +36,131 @@
 
 	position: relative;
 	max-width: 95%;
-	padding: 1em;
+	padding: 1em 0.25em;
+
+	@media screen and (min-width: 480px) {
+		padding: 1em 0.5em;
+	}
+
+	@media screen and (min-width: $mq-tablet) {
+		padding: 1em;
+	}
+
 }
 
 .main__sectionDescription {
 	@include border-side("left", 0.5em groove $teal);
-	@include margin(null, 2.5em, 1em, 2.5em);
 	@include padding(1em, null, 1em, null);
-
+	@include margin(null, 1em, null, 0.5em);
 	font-family: "Quicksand Light";
 	line-height: $line-height;
+
+	@media screen and (min-width: 480px) {
+		@include margin(null, 1.5em, null, 1em);
+	}
+
+	@include mediaQuery--tablet {
+		margin: 0 1.5em;
+	}
+
+	@media screen and (min-width: $mq-wide) {
+		@include margin(null, 2.5em, 1em, 2.5em);
+	}
+
 }
 
 .main__sectionDescription--bold {
 	@include margin(null, auto, null, auto);
 
-	font-size: 1.35em;
+	max-width: 90%;
+	font-size: 1.25em;
 	font-weight: $bold;
 	line-height: $line-height;
 	text-align: right;
+
+	@media screen and (min-width: 640px) {
+		font-size: 1.35em;
+	}
 }
 
+.main__sectionDescription-card.last,
+.main__sectionDescription-card.first,
 .main__sectionDescription-card {
-	padding: 0.5em;
+	flex: 1;
+	padding: 1em;
 	border: 0.05em solid $grey-light;
 	border-radius: 0.25em;
-	max-width: 90%;
+	margin-top: 0.75em;
+	min-width: 100%;
+	background: linear-gradient(to bottom, $black 40%, $grey-dark 100%);
+	box-shadow: inset 0 0.125em 1em 0.125em $charcoal,
+							0.25em 0.125em 1em 0.125em $grey;
+	color: white;
+
+
+	@media screen and (min-width: 640px) {
+		margin-left: 0.75em;
+		min-width: 48%;
+	}
+	@media screen and (min-width: 1200px) {
+		min-width: 32%;
+	}
+
 }
 
 .main__sectionDescription-card.last {
-	max-width: 100%;
+	margin-left: 0;
+
+	@media screen and (min-width: 1200px) {
+		margin-left: 0.75em;
+	}
+}
+
+.main__sectionDescription-card.first {
+  margin-left: 0;
 }
 
 .main__sectionDescription-content {
 	line-height: 2em;
 }
 
-.main__sectionDescription-heading {
+.main__sectionDescription-card-heading {
 	font-size: 1.25em;
 	font-weight: $bold;
 	margin-bottom: 0.5em;
 	padding-bottom: 0.5em;
-	border-bottom: 0.01em solid $grey-light;
+	border-bottom: 0.05em dashed $grey-light;
+}
+
+.main__sectionDescription-heading {
+	@include margin(0.5em, null, null, 0.75em);
+
+	padding: 0.5em 0.25em;
+	font-size: 1.5em;
+	font-weight: $bold;
+	background: $black-lowOpacity;
+	border-bottom: 0.25em groove $teal-green-tint; 
+	border-radius: 0.125em 0.125em 0 0; 
+
+	@media screen and (min-width: 480px) {
+		@include margin(0.5em, null, null, 0.5em);
+		padding-left: 0.5em;
+	}
 }
 
 .main__sectionDescription-title {
 	position: relative;
-	margin: 0 auto;
-	max-width: 90%;
+	margin-bottom: 1em;
 }
 
 .main__sectionDescription-wrapper {
-	padding: 1em;
-}
+	@include margin(null, null, 1em, 1em);
 
-.main__sectionDescription-wrapper.grid__container--2 {
-	
-	@media screen and (max-width: 640px) {
-		display: grid;
-	}
-}
+	display: flex;
+	flex-wrap: wrap;
 
-
-.main__sectionDescription-wrapper.grid__container--3 {
-
-	@media screen and (min-width: 640px) {
-		display: grid;
+	@media screen and (min-width: 480px) {
+		margin-left: 1.5em;
 	}
 }
 
@@ -229,9 +288,10 @@
 	position: relative;
 	flex: 5;
 	max-width: 75%;
+	margin-left: 1em;
 	font-family: "Quicksand Regular";
-	font-size: 1.75em;
-	line-height: 2em;
+	font-size: 2em;
+	line-height: 1.75em;
 }
 
 .main__sectionHeading--right {

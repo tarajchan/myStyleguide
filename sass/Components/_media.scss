@@ -1,0 +1,43 @@
+
+@import "../Themes/_colors.scss";
+@import "../Themes/_icons.scss";
+@import "../Themes/_typography.scss"; 
+@import "../Helpers/_mixins.scss";
+@import "../Helpers/_variables.scss";
+
+.media {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	font-family: "Quicksand Light";
+}
+
+.media__icon {
+	display: flex;
+	flex: 1;
+	align-self: center;
+	justify-content: center;
+	margin-left: 0.5em;
+	padding: 0.5em;
+
+}
+
+.media__image {
+	height: 100%;
+	width: 100%;
+
+}
+
+.media__description {
+	font-size: 0.85em;
+}
+
+.media__heading {
+	font-weight: $bold;
+}
+
+.media__heading-group {
+	flex: 4;
+	padding: 0.5em;
+	line-height: 1.25em;
+}
