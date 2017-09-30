@@ -1,6 +1,13 @@
-/*Basic colors*/
+/*Transparent colors*/
 
 $transparent: transparent;
+/*transparency most visible on dark surfaces*/
+$transparent-05: rgba(255, 255, 255, 0.05);
+$transparent-15: rgba(255, 255, 255, 0.15); 
+$transparent-25: rgba(255, 255, 255, 0.25); 
+
+/*Basic colors*/
+
 $black: #000;
 $black-lowOpacity: hsla(0, 0, 0, 0.08);
 $black-opaque: #212121;

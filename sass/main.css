@@ -1,3 +1,5 @@
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -49,6 +51,8 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -329,6 +333,8 @@ the direction of where you want the margin spacing to be applied*/
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -446,6 +452,12 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Quicksand Regular";
   src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
@@ -492,14 +504,14 @@ the direction of where you want the margin spacing to be applied*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 .accordion, .accordion.active {
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  -moz-transition: 0.4s;
-  transition: 0.4s;
-  -ms-transition: 0.4s;
-  transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  -moz-transition: 0.1s;
+  transition: 0.1s;
+  -ms-transition: 0.1s;
+  transition: 0.1s;
+  -o-transition: 0.1s;
+  transition: 0.1s;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -569,6 +581,18 @@ the direction of where you want the margin spacing to be applied*/
 .accordion__heading {
   flex: 1; }
 
+.accordion__innerPanel {
+  padding-top: 0.65em;
+  padding-right: 1em;
+  padding-bottom: 0.65em;
+  padding-left: 1em;
+  display: table-cell;
+  min-width: 100%;
+  background: #000;
+  border: 0.01em solid transparent;
+  border-radius: 0.25em;
+  overflow: auto; }
+
 .accordion__panel {
   position: relative;
   display: none;
@@ -623,24 +647,29 @@ the direction of where you want the margin spacing to be applied*/
   margin-top: 1em;
   margin-bottom: 1em;
   margin-left: 0.5em; }
-  @media screen and (min-width: 1536px) {
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .accordion__panelContainer--right {
+      margin-top: 1em;
+      margin-right: 1em;
+      margin-bottom: 1em;
+      margin-left: 0.5em; } }
+  @media screen and (min-width: 1024px) and (max-width: 1536px) {
     .accordion__panelContainer--right {
       margin-top: 1em;
       margin-right: 2em;
       margin-bottom: 1em;
       margin-left: 0.5em; } }
+  @media screen and (min-width: 1536px) {
+    .accordion__panelContainer--right {
+      margin-top: 1em;
+      margin-right: 3em;
+      margin-bottom: 1em;
+      margin-left: 0.5em; } }
 
-.accordion__innerPanel {
-  padding-top: 0.65em;
-  padding-right: 1em;
-  padding-bottom: 0.65em;
-  padding-left: 1em;
-  display: table-cell;
-  min-width: 100%;
-  background: #000;
-  border: 0.01em solid transparent;
-  border-radius: 0.25em;
-  overflow: auto; }
+.accordion__panelWrapper {
+  position: relative;
+  padding: 0;
+  margin-top: 1.5em; }
 
 .accordion__panel.show {
   border-top-left-radius: 0;
@@ -686,6 +715,8 @@ accordian panel*/
   background: linear-gradient(to right, #000 10%, #4BA7AB 30%, #B0F0FF 50%, #4BA7AB 65%, #000 100%); }
 
 /*Partials*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -737,6 +768,8 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -1208,6 +1241,8 @@ from drop down item*/
   background-color: #3CB3B9;
   min-height: 0.375em; }
 
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -1259,6 +1294,8 @@ the direction of where you want the margin spacing to be applied*/
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -1376,6 +1413,12 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Quicksand Regular";
   src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
@@ -1496,6 +1539,8 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -1556,6 +1601,8 @@ $teal-box-shadow: //code here
 .button--noBorder {
   border: 0; }
 
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -1607,6 +1654,8 @@ the direction of where you want the margin spacing to be applied*/
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -1724,6 +1773,12 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Quicksand Regular";
   src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
@@ -1792,6 +1847,8 @@ the direction of where you want the margin spacing to be applied*/
 .card__front {
   background: #3CB3B9; }
 
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -1843,6 +1900,8 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -2123,6 +2182,8 @@ the direction of where you want the margin spacing to be applied*/
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -2240,6 +2301,12 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Quicksand Regular";
   src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
@@ -2285,6 +2352,8 @@ the direction of where you want the margin spacing to be applied*/
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -2336,6 +2405,8 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -2616,6 +2687,8 @@ the direction of where you want the margin spacing to be applied*/
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -2733,6 +2806,12 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Quicksand Regular";
   src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
@@ -2789,23 +2868,371 @@ the direction of where you want the margin spacing to be applied*/
   flex: 1;
   align-self: center;
   justify-content: center;
-  margin-left: 0.5em;
   padding: 0.5em; }
 
 .media__image {
-  height: 100%;
-  width: 100%; }
+  height: 90%;
+  width: 90%; }
+  @media screen and (min-width: 1536px) {
+    .media__image {
+      height: 100%;
+      width: 100%; } }
+
+.media__image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  border: 0.15em groove #212121;
+  border-radius: 0.25em;
+  box-shadow: 0 0.125em 0.75em #212121, inset 0 0.25em 0.5em #212121; }
 
 .media__description {
-  font-size: 0.85em; }
+  position: relative;
+  padding: 0.5em;
+  border: 0.05em solid #212121;
+  border-radius: 0.25em;
+  box-shadow: 0 -0.125em 0.75em #212121, inset 0 -0.25em 0.5em #212121; }
+
+.media__description--small {
+  padding: 0; }
+
+.media__description-heading {
+  margin-top: 0.5em;
+  margin-right: auto;
+  margin-bottom: 0.75em;
+  margin-left: auto;
+  max-width: 80%;
+  padding: 0.125em;
+  font-family: "Inconsolata Regular";
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.5em;
+  text-align: center;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.05) 75%, transparent);
+  border: 0.05em solid #4E4E4E;
+  border-radius: 0.125em;
+  box-shadow: inset 0 0.095em 0.5em #212121; }
+
+.media__description-sub-heading {
+  margin-bottom: 0.5em;
+  padding: 0 0.75em;
+  font-family: "Quicksand Light";
+  font-size: 1em;
+  line-height: 1.5em; }
+
+.media__heading,
+.media__heading--small,
+.media__heading--medium,
+.media__heading--large {
+  font-weight: 600; }
 
 .media__heading {
-  font-weight: 600; }
+  font-size: 1.5em;
+  line-height: 1.5em; }
+
+.media__heading--small {
+  font-size: 1em; }
 
 .media__heading-group {
   flex: 4;
   padding: 0.5em;
+  line-height: 1.5em; }
+
+.media__heading-group--small {
+  flex: 4;
+  padding: 0.25em;
   line-height: 1.25em; }
+
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Semantically important icons*/
+#icon__mq {
+  display: block;
+  color: #FFF; }
+  @media screen and (min-width: 1024px) and (max-width: 1350px) {
+    #icon__mq {
+      display: none; } }
+
+.icon__button {
+  width: 2em;
+  height: 2em;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  border: 0.05em solid #3C3939;
+  border-radius: 0.25em;
+  box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
+  color: #FFF;
+  cursor: pointer; }
+
+.icon__code--left {
+  display: inline-block;
+  padding: 0.25em;
+  position: absolute;
+  border: solid #4E4E4E;
+  border-right: 0.25em;
+  border-bottom: 0.25em;
+  -webkit-transform: rotate(315deg);
+  transform: rotate(315deg);
+  -moz-transform: rotate(315deg);
+  transform: rotate(315deg);
+  -ms-transform: rotate(315deg);
+  transform: rotate(315deg);
+  -o-transform: rotate(315deg);
+  transform: rotate(315deg);
+  right: 0.85em; }
+
+.icon__code--right {
+  display: inline-block;
+  padding: 0.25em;
+  position: absolute;
+  border: solid #4E4E4E;
+  border-right: 0.25em;
+  border-bottom: 0.25em;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+  left: 0.85em; }
+
+.icon__search {
+  margin-top: -0.125em; }
+
+.icon__media--circle--small {
+  height: 1em;
+  width: 1em;
+  -ms-border-radius: 0.5em;
+  moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+  background: #3CB3B9; }
+
+.icon__media--circle--medium {
+  height: 1.5em;
+  width: 1.5em;
+  -ms-border-radius: 0.75em;
+  moz-border-radius: 0.75em;
+  -webkit-border-radius: 0.75em;
+  border-radius: 0.75em;
+  background: #3CB3B9; }
+
+/*page corner icons*/
+.icon__pageCorner--top-left {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border-left: 0.25em groove #3CB3B9;
+  border-top: 0.25em groove #3CB3B9;
+  border-bottom: 0.25em groove #3CB3B9;
+  border-right: 0.25em groove #3CB3B9; }
+
+.icon__pageCorner--bottom-right {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border-left: 0.25em groove #3CB3B9;
+  border-top: 0.25em groove #3CB3B9;
+  border-bottom: 0.25em groove #3CB3B9;
+  border-right: 0.25em groove #3CB3B9; }
+
+/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
+container as a text to create padding between the text and the icon*/
+.icon__menu-item--right {
+  position: absolute;
+  right: 0; }
+
+.icon__menu-item--top {
+  position: absolute;
+  top: 1em; }
+
+/*creates a margin on the opposite side of the specified position
+in order to align the icon on either the right or left margin*/
+.icon--left {
+  margin-right: 0.5em; }
+
+.icon--right {
+  margin-left: 0.5em;
+  margin-top: 0.125em; }
+
+/*Positioning for absolutely positioned items*/
+.icon--absolute {
+  position: absolute; }
+
+.bottom {
+  bottom: 0; }
+
+.left {
+  left: 0; }
+
+.right {
+  right: 0; }
+
+.top {
+  top: 0; }
+
+/*Creates a triangle with equal widths for all borders. Commonly used 
+with dropdown menus to signify additional content. Color class names for
+black and white triangles have been created for styling purposes,but new 
+class names with different colors can be created by adding a state value 
+for color (--state) and including the .triangle mixin with desired color.*/
+/*white triangles*/
+.triangle--up--white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #FFF; }
+
+.triangle--right-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-left: 0.5em solid #FFF;
+  border-bottom: 0.5em solid transparent; }
+
+.triangle--down-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #FFF;
+  cursor: pointer; }
+
+.triangle--left-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #FFF;
+  border-bottom: 0.5em solid transparent; }
+
+/*black triangles*/
+.triangle--up-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #000; }
+
+.triangle--right-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-left: 0.5em solid #000;
+  border-bottom: 0.5em solid transparent; }
+
+.triangle--down-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #000; }
+
+.triangle--left-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #000;
+  border-bottom: 0.5em solid transparent; }
+
+.triangle--right-black.left:before {
+  content: ""; }
+
+/*black triangle sizes*/
+.triangle--down-black--small {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.25em solid transparent;
+  border-right: 0.25em solid transparent;
+  border-top: 0.25em solid #000; }
+
+/*white arrows*/
+.arrow--down-white {
+  display: inline-block;
+  padding: 0.25em;
+  position: absolute;
+  border: solid #FFF;
+  border-right: 0.25em;
+  border-bottom: 0.25em;
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg); }
 
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
@@ -2849,6 +3276,275 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Variables for font-size and line-height*/
+.text__border {
+  border: 0.05em outset #FFF;
+  border-radius: 0 0.5em;
+  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
+
+.text__wrapper {
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  position: absolute; }
+
+.text__heading, .text__heading--main, .text__heading--nav {
+  letter-spacing: 0.1em;
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 0.55em;
+  color: #FFF;
+  line-height: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  margin-left: -0.1em; }
+
+.text__heading-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-items: center; }
+
+.text__heading--main {
+  position: absolute;
+  top: 2.25em;
+  padding: 0;
+  font-family: "Quicksand Regular";
+  font-size: 2.25em;
+  color: #FFF; }
+
+.text__headingLabel--main {
+  position: absolute;
+  top: 3em;
+  padding-top: 0.5em;
+  width: 4em;
+  font-family: "Quicksand Light";
+  border-top: 0.25em solid #3CB3B9;
+  color: #FFF; }
+
+.text__heading--nav {
+  font-size: 1.25em; }
+  @media screen and (min-width: 768px) {
+    .text__heading--nav {
+      font-size: 1.5em;
+      font-weight: normal; } }
+
+.text__heading--nav.left {
+  margin-left: 0.25em; }
+
+.text__heading--nav.right {
+  margin-right: 0.5em; }
+
+.text__label {
+  position: relative;
+  padding-bottom: 0.5em;
+  font-family: "Quicksand Light";
+  font-size: 0.925em; }
+
+.text__link, .text__link--underlined {
+  font-family: "Quicksand Light";
+  font-size: 0.925em; }
+
+.text__link:hover, .text__link--underlined:hover {
+  cursor: pointer;
+  opacity: 0.75; }
+
+.text--bold {
+  font-weight: 600; }
+
+.text--code {
+  padding: 0.125em 0.25em;
+  background: #1F9EA4;
+  border-radius: 0.125em;
+  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
+  color: #FFF;
+  font-weight: 600; }
+
+.text--italicized {
+  font-style: italic; }
+
+.text--responsive {
+  counter-increment: 1;
+  position: relative;
+  font-size: 0.95em; }
+
+@font-face {
+  font-family: "Miriam Libre";
+  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Bold";
+  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Light";
+  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Medium";
+  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Regular";
+  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+.table {
+  display: table;
+  min-width: 100%; }
+
+.table__body {
+  display: table-row-group; }
+
+.table__column--1-12 {
+  width: 8.66%; }
+
+.table__column--5-12 {
+  width: 41.66%; }
+
+.table__column--12 {
+  width: 100%; }
+
+.table__data {
+  display: table-cell;
+  padding: 0.5em 0;
+  font-size: 0.9em;
+  text-align: left;
+  border-bottom: 0.05em solid #8C8C8C; }
+
+.table__data:first-child {
+  padding-left: 0.5em; }
+
+.table__data:last-child {
+  padding-right: 0.5em; }
+
+.table__footer {
+  display: table-footer-group; }
+
+.table__footer .table__data {
+  border-bottom: 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 -0.125em 0.75em #4E4E4E, inset 0 0.35em 0.75em #4E4E4E; }
+
+.table__heading {
+  display: table-cell;
+  padding: 0.5em 0;
+  font-size: 1em;
+  font-weight: 600;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.15); }
+
+.table__heading-group {
+  display: table-header-group; }
+
+.table__row {
+  display: table-row; }
+
+/*GLOBAL HELPERS*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -3078,6 +3774,8 @@ by the first value of grid-column and the last value of the class name
   position: relative;
   grid-row: 1/span min-content; }
 
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -3129,6 +3827,8 @@ the direction of where you want the margin spacing to be applied*/
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -3246,6 +3946,12 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Quicksand Regular";
   src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
@@ -3521,6 +4227,11 @@ the direction of where you want the margin spacing to be applied*/
 .main__sectionHeading-expander-icon:hover {
   box-shadow: 0.15em 0.15em 0.75em #8C8C8C; }
 
+.main__sectionHeading-expander-icon-heading {
+  padding: 0.25em;
+  font-size: 1.25em;
+  color: rgba(0, 0, 0, 0.08); }
+
 .main__sectionHeading-icon {
   border-top: 0.25em groove #133A9C;
   border-right: 0.25em groove #133A9C;
@@ -3555,8 +4266,8 @@ the direction of where you want the margin spacing to be applied*/
 
 .main__sectionHeading-text {
   position: relative;
-  flex: 5;
-  max-width: 75%;
+  flex: 4;
+  max-width: 60%;
   margin-left: 1em;
   font-family: "Quicksand Regular";
   font-size: 2em;
@@ -3600,6 +4311,8 @@ the direction of where you want the margin spacing to be applied*/
   display: flex; }
 
 /*INCLUDE POSITIONING STATIC DIMENSIONS OF MODULES*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -3651,6 +4364,8 @@ the direction of where you want the margin spacing to be applied*/
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -3768,6 +4483,12 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Quicksand Regular";
   src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*colors(include color variables from colors file)*/
 * {
   -webkit-box-sizing: border-box;
@@ -3798,6 +4519,8 @@ $teal-box-shadow: //code here
 .navigationBar__text--absolute {
   color: #FFF; }
 
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -3849,6 +4572,8 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -4129,6 +4854,8 @@ the direction of where you want the margin spacing to be applied*/
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -4246,6 +4973,12 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Quicksand Regular";
   src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
@@ -4465,6 +5198,8 @@ the direction of where you want the margin spacing to be applied*/
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -4516,6 +5251,8 @@ the direction of where you want the margin spacing to be applied*/
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -4633,6 +5370,12 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Quicksand Regular";
   src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*Input styling*/
 input[type="text"] {
   width: 90%;
@@ -4648,7 +5391,8 @@ input[type="text"] {
   background: transparent;
   border: 0.1em solid #8C8C8C;
   color: #FFF;
-  font-family: "Quicksand Light"; }
+  font-family: "Quicksand Light";
+  outline: none; }
 
 input[type="text"].form__input--no-border {
   border-top: 0;
@@ -4711,6 +5455,8 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -4991,6 +5737,8 @@ the direction of where you want the margin spacing to be applied*/
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -5042,6 +5790,8 @@ the direction of where you want the margin spacing to be applied*/
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -5159,6 +5909,12 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Quicksand Regular";
   src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 .menu {
   position: absolute;
   bottom: 0;
@@ -5170,11 +5926,19 @@ $teal-box-shadow: //code here
   font-family: "Quicksand Light"; }
 
 .menu__item {
+  border-top: 0.05em solid #C7C7C7;
+  border-bottom: 0.05em solid #C7C7C7;
   position: relative;
-  font-weight: 600; }
+  display: flex;
+  align-items: center;
+  padding: 0.25em 0;
+  margin-bottom: 0.5em;
+  font-size: 1.125em;
+  font-weight: 600;
+  line-height: 1.5em; }
 
 .menu__heading {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   line-height: 1.15em;
   font-family: "Quicksand Regular";
   font-size: 1.15em;
@@ -5183,7 +5947,7 @@ $teal-box-shadow: //code here
 .menu__expander-icon {
   cursor: pointer;
   right: 0;
-  top: 0.5em; }
+  top: 0.925em; }
 
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
@@ -5230,6 +5994,8 @@ the direction of where you want the margin spacing to be applied*/
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -5347,6 +6113,12 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Quicksand Regular";
   src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
