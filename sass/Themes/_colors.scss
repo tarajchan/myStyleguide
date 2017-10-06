@@ -2,19 +2,24 @@
 
 $transparent: transparent;
 /*transparency most visible on dark surfaces*/
-$transparent-05: rgba(255, 255, 255, 0.05);
-$transparent-15: rgba(255, 255, 255, 0.15); 
-$transparent-25: rgba(255, 255, 255, 0.25); 
+$transparent-05-d: rgba(255, 255, 255, 0.05);
+$transparent-15-d: rgba(255, 255, 255, 0.15); 
+$transparent-25-d: rgba(255, 255, 255, 0.25); 
+
+/*transparency most visible on light surfaces*/
+$transparent-05-l: rgba(0, 0, 0, 0.05);
+$transparent-15-l: rgba(0, 0, 0, 0.15); 
+$transparent-25-l: rgba(0, 0, 0, 0.25); 
 
 /*Basic colors*/
 
 $black: #000;
-$black-lowOpacity: hsla(0, 0, 0, 0.08);
 $black-opaque: #212121;
 $white: #FFF;
 $grey: #8C8C8C;
 $grey-dark: #4E4E4E;
 $grey-light: #A0A0A0;
+$grey-teal-tint: #8BA4A3;
 $grey-ultraLight: #C7C7C7;
 $grey-lowOpacity: #E6E6E6;
 $charcoal: #3C3939;
@@ -25,11 +30,15 @@ $red: #F00;
 $green-light: #9BF1A1;
 $green-lowOpacity: #DEF9EE;
 $green-neon: #26CE31;
+$green: #00920A;
+$green-dark: #005506;
+$green-ultraDark: #004205;
 $wintergreen-light: #BEE4DB;
 $teal: #3CB3B9;
 $teal-green-tint: #1F9EA4;
 $teal-medium: #4BA7AB;
 $teal-dark: #23585A;
+$teal-lowOpacity: rgba(60, 179, 185, 0.15);
 $blue-highlight: #B0F0FF;
 $blue-dark: #133A9C;
 

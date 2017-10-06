@@ -1,6 +1,5 @@
 
 @import "../Themes/_colors.scss";
-@import "../Themes/_typography.scss";
 @import "../Helpers/_mixins.scss";
 @import "../Helpers/_variables.scss";
 
@@ -11,11 +10,18 @@
 
 	background: $green-lowOpacity;
 	overflow-y: auto;
+	z-index: 1;
 
 	@media screen and (min-width: $mq-desktop) {
 		@include abs-positioning(4.35em, 0, 0, 14em);
 		overflow-y: auto;
 	}
+}
+
+.main--full {
+	@include abs-positioning(0, 0, 0, 0);
+	font-size: 3em;
+	color: $white;
 }
 
 .main__section {
@@ -72,6 +78,7 @@
 .main__sectionDescription--bold {
 	@include margin(null, auto, null, auto);
 
+	margin-bottom: 0.75em;
 	max-width: 90%;
 	font-size: 1.25em;
 	font-weight: $bold;
@@ -99,25 +106,30 @@
 
 
 	@media screen and (min-width: 640px) {
-		margin-left: 0.75em;
 		min-width: 48%;
 	}
 	@media screen and (min-width: 1200px) {
 		min-width: 32%;
+		margin-left: 0.75em;
 	}
-
 }
 
 .main__sectionDescription-card.last {
 	margin-left: 0;
 
-	@media screen and (min-width: 1200px) {
+	@include mediaQuery--custom(640px, 1200px) {
 		margin-left: 0.75em;
 	}
 }
 
 .main__sectionDescription-card.first {
   margin-left: 0;
+}
+
+.main__sectionDescription-card:nth-child(2) {
+	@media screen and (min-width: 640px) {
+		margin-left: 0.75em;
+	}
 }
 
 .main__sectionDescription-content {
@@ -138,7 +150,7 @@
 	padding: 0.5em 0.25em;
 	font-size: 1.5em;
 	font-weight: $bold;
-	background: $black-lowOpacity;
+	background: $transparent-05-l;
 	border-bottom: 0.25em groove $teal-green-tint; 
 	border-radius: 0.125em 0.125em 0 0; 
 
@@ -188,8 +200,8 @@
 
 .main__sectionDetails-description-tag {
 	@include margin(null, 0.25em, null, 0.25em);
+	@include padding(0.25em, 1em, 0.25em, 1.15em);
 
-	padding: 0.25em 1em;
 	font-weight: $bold;
 	letter-spacing: 0.125em;
 	background: $black;
@@ -248,7 +260,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 0 auto;
+	margin-left: 1em;
+	margin-right: auto;
 	border: 0.25em double $grey;
 	border-radius: 0.25em;
 }
@@ -260,7 +273,9 @@
 .main__sectionHeading-expander-icon-heading {
 	padding: 0.25em;
 	font-size: 1.25em;
-	color: $black-lowOpacity;
+	color: $transparent-15-l;
+	font-family: "Quicksand Bold";
+	margin-left: 3em;
 }
 
 .main__sectionHeading-icon {
@@ -300,14 +315,6 @@
 	line-height: 1.75em;
 }
 
-.main__sectionHeading--right {
-	position: relative;
-	display: flex;
-	flex: 1;
-	align-items: center;
-	min-height: 3.5em;
-}
-
 .main__wrapper {
 	@include margin(1em, null, 1em, null);
 	@include border-side("top", 0.25em double $grey-ultraLight);
@@ -325,6 +332,8 @@
 	}						
 
 }
+
+/*include position: fixed and width: 16.25em when menu becomes sticky*/
 
 .main__wrapper--right {
 	@extend .main__wrapper;

@@ -11,12 +11,11 @@
  *all grid containers must be accompanied with the class of .grid 
  *in order to enable display: grid. Must be used on the parent container
  *with children placed in specified grid areas (using 'grid__template-columns--'
- *and 'grid__template-rows--' or their corresponding offsets located below 
+ *and 'grid__template-rows--' or their rowonding offsets located below 
  *the grid-containers section)
  */
 
 .grid__container {
-	grid-gap: 0.125em;
 	margin: auto;
 	max-width: 95%;
 }
@@ -47,12 +46,13 @@
 }
 
 .grid__container--page-layout {
+	@extend .grid__container;
+
 	grid-template-areas:  	"main main"
 											"footer footer";
 	grid-template-columns: minmax(min-content, auto) 25%;
 	grid-template-rows: minmax(min-content, auto) 10em;
-	margin: 0 auto;
-	max-width: 95%; 
+ 
 
 	@media screen and (min-width: 820px) {
 		grid-template-areas: "main navigation"
@@ -60,6 +60,52 @@
 	}
 }
 
+/*the "--responsive-semantic" modifier on the grid container specifies
+the its main usage and how it behaves. This container is commonly used for
+entire page layouts that include a header, footer, aside, and main section.*/
+
+.grid__container--responsive-semantic {
+	grid-template-columns: minmax(min-content, 20%) 1fr minmax(min-content, 20%);
+	grid-template-rows: 1fr repeat(3, minmax(auto, 1fr)) 1fr;
+	grid-template-areas: "header header header"
+											 "aside main navigation"
+											 "aside main navigation"
+											 "aside main navigation"
+											 "footer footer footer";
+
+
+}
+
+.grid__header--responsive-semantic {
+	grid-area: header;
+	position: relative;
+}
+
+.grid__aside--responsive-semantic {
+	grid-area: aside;
+	position: relative;
+	background: $teal;
+}
+
+.grid__main--responsive-semantic {
+	grid-area: main;
+	position: relative;
+	background: $green-neon;
+}
+
+.grid__navigation--responsive-semantic {
+	grid-area: navigation;
+	position: relative;
+	background: $green;
+}
+
+.grid__footer--responsive-semantic {
+	grid-area: footer;
+	position: relative;
+	background: $teal-dark;
+}
+
+/*Grid-template-area items for the page layout*/
 .grid__content--page-layout {
 	grid-area: main;
 }
@@ -77,15 +123,59 @@
 	}
 }
 
-/*used with .grid__container--12 to create an inline row with 12 columns*/ 
-.grid__row--12 {
-	@extend .grid;
-
-	grid-template-columns: repeat(12, auto);
-} 
-
-
 /****Grid tempate columns & rows****/
+
+/*Grid-rows spanning up to 12 columns with auto-placement*/
+
+.grid__column--span1 { grid-column: auto/span 1; }
+
+.grid__column--span2 { grid-column: auto/span 2; }
+
+.grid__column--span3 { grid-column: auto/span 3; }
+
+.grid__column--span4 { grid-column: auto/span 4; }
+
+.grid__column--span5 { grid-column: auto/span 5; }
+
+.grid__column--span6 { grid-column: auto/span 6; }
+
+.grid__column--span7 { grid-column: auto/span 7; }
+
+.grid__column--span8 { grid-column: auto/span 8; }
+
+.grid__column--span9 { grid-column: auto/span 9; }
+
+.grid__column--span10 { grid-column: auto/span 10; }
+
+.grid__column--span11 { grid-column: auto/span 11; }
+
+.grid__column--span12 { grid-column: auto/span 12; }
+
+/*Grid-rows spanning up to 12 rows with auto-placement*/ 
+
+.grid__row--span1 { grid-row: auto/span 1; }
+
+.grid__row--span2 { grid-row: auto/span 2; }
+
+.grid__row--span3 { grid-row: auto/span 3; }
+
+.grid__row--span4 { grid-row: auto/span 4; }
+
+.grid__row--span5 { grid-row: auto/span 5; }
+
+.grid__row--span6 { grid-row: auto/span 6; }
+
+.grid__row--span7 { grid-row: auto/span 7; }
+
+.grid__row--span8 { grid-row: auto/span 8; }
+
+.grid__row--span9 { grid-row: auto/span 9; }
+
+.grid__row--span10 { grid-row: auto/span 10; }
+
+.grid__row--span11 { grid-row: auto/span 11; }
+
+.grid__row--span12 { grid-row: auto/span 12; }
 
 /*Grid template-columns beginning from grid-line 1*/
 
@@ -115,7 +205,7 @@
 
 
 
-/*Grid-template-rows beginning from grid-line 1*/
+/*Grid-template-rows beginning from row-line 1*/
 
 .grid__template--rows-1-12  { grid-row: 1/span 1; }
 
@@ -139,9 +229,9 @@
 
 .grid__template--rows-11-12 { grid-row: 1/span 11; }
 
-.grid__template--rows-12    { grid-row: 12; }
+.grid__template--rows-12    { grid-row: 1/span 12; }
 
-/*grid-template-columns spanning x columns, with start lines defined
+/*grid-rowate-columns spanning x columns, with start lines defined
 by the first value of grid-column and the last value of the class name
 'grid__template--columns-span(x)-y'*/
 
@@ -219,7 +309,7 @@ by the first value of grid-column and the last value of the class name
 /*Flexible grid classes*/
 
 .grid__row--responsive {
-	position: relative;
-	grid-row: 1/span min-content;
+	rowion: relative;
+	grid-row: 1/span min-row
 }
 

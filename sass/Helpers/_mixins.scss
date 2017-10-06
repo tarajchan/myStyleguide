@@ -27,7 +27,15 @@
 	}
 } 
 
+@keyframes ease {
+	from {
+		max-height: 0%;
+	} 
 
+	to {
+		max-height: 100%;
+	}
+} 
 
 /*Icon mixins*/
 
@@ -75,7 +83,7 @@ argument unquoted in order for the CSS to render properly*/
 
 
 @mixin arrow($position, $direction, $border-width, $border-color, $border-style, $padding: $border-width) {
-	display: inline-block;
+	display: block;
 	padding: $padding;
 	position: $position;
 	border: $border-style $border-color;
@@ -122,6 +130,30 @@ argument unquoted in order for the CSS to render properly*/
 	height: $height;
 }
 
+$columns: 12;
+
+@mixin media-image {
+	@for $i from 1 through 6 {
+		.media__image-wrapper--#{$i} {
+			width: calc((#{$i}/12) * 100%);
+			padding: 0.25em;
+		}
+	}
+	@for $i from 7 through 9 {
+		.media__image-wrapper--#{$i} {
+			width: calc((#{$i}/12) * 100%);
+			padding: 0.5em;
+		}
+	}
+	@for $i from 10 through 12 {
+		.media__image-wrapper--#{$i} {
+			width: calc((#{$i}/12) * 100%);
+			padding: 0.75em;
+		}
+	}	
+}
+
+
 @mixin border($top, $right, $bottom, $left) {
 	border-top: $top;
 	border-right: $right;
@@ -166,8 +198,6 @@ argument unquoted in order for the CSS to render properly*/
 @mixin letter-spacing($value) {
 	letter-spacing: $value;
 }
-
-
 
 
 /*Box shadow*/

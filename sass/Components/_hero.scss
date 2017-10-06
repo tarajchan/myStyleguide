@@ -1,0 +1,35 @@
+
+@import "../Helpers/_mixins.scss";
+@import "../Themes/_colors.scss";
+
+* {
+	@include prefix(box-sizing, border-box);
+	margin: 0;
+}
+
+.hero {
+	display: flex;
+	align-items: center;
+	margin: auto;
+	min-height: 16em;
+	padding: 1.5em 3em;
+	width: 100%;
+	background: $teal-lowOpacity;
+	font-family: "Quicksand Regular";
+}
+
+.hero__wrapper {
+	padding: 0.75em 1em;
+	display: flex;
+	flex-direction: column;
+	background: $teal-lowOpacity;
+	border: 0.05em solid $teal-dark;
+	border-radius: 0.25em;
+}
+
+.hero__wrapper--half {
+	@extend .hero__wrapper;
+
+	max-width: 50%; 
+}
+

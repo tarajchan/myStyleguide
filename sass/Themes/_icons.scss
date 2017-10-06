@@ -170,8 +170,12 @@ for color (--state) and including the .triangle mixin with desired color.*/
 	@include triangle-eq(absolute, "down", 0.25em, $black);
 }
 
+.triangle--left-black--small {
+	@include triangle-eq(absolute, "left", 0.25em, $black);
+}
+
 /*white arrows*/
 
 .arrow--down-white {
-	@include arrow(absolute, "down", 0.25em, $white, solid);
+	@include arrow(relative, "down", 0.25em, $white, solid);
 }

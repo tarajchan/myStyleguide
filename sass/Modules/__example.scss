@@ -1,0 +1,41 @@
+
+@import "../Themes/_colors.scss";
+@import "../Helpers/_mixins.scss";
+@import "../Helpers/_variables.scss";
+
+.example--pop-out {
+	padding: 0;
+	background: $transparent;
+	border-radius: 0.25em;
+}
+
+.example--pop-out.active {
+	padding: 1em;
+	background: $transparent-25-l;
+}
+
+.example__module--right {
+	@include abs-positioning(50%, 3em, null, null);
+
+	display: flex;
+	margin-top: -1.5em;
+	align-items: center;
+	min-height: 3.5em;
+}
+
+.example__section--pop-out {
+
+	display: none;
+	margin-top: 1em;
+	max-height: 0;
+	padding: 1em;
+	background: $transparent-15-l;
+	border-radius: 0.25em;
+	font-family: "Miriam Libre";
+	font-size: 0.9em;
+}
+
+.example__section--pop-out.active {
+	display: block;
+	max-height: min-content;
+}

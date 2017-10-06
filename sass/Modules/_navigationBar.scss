@@ -28,6 +28,7 @@
 	font-family: "Quicksand Regular";
 	background: $black;
 	box-shadow: 0 0.05em 0.5em 0.05em $grey-dark;
+	z-index: 2;
 }
 
 .navigationBar--state {

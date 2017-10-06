@@ -1,5 +1,6 @@
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -7,458 +8,7 @@
 $teal-box-shadow: //code here
 */
 /*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*Semantically important icons*/
-#icon__mq {
-  display: block;
-  color: #FFF; }
-  @media screen and (min-width: 1024px) and (max-width: 1350px) {
-    #icon__mq {
-      display: none; } }
-
-.icon__button {
-  width: 2em;
-  height: 2em;
-  margin-right: 0.5em;
-  padding: 0.5em;
-  border: 0.05em solid #3C3939;
-  border-radius: 0.25em;
-  box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
-  color: #FFF;
-  cursor: pointer; }
-
-.icon__code--left {
-  display: inline-block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -moz-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -ms-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -o-transform: rotate(315deg);
-  transform: rotate(315deg);
-  right: 0.85em; }
-
-.icon__code--right {
-  display: inline-block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -moz-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  transform: rotate(135deg);
-  left: 0.85em; }
-
-.icon__search {
-  margin-top: -0.125em; }
-
-.icon__media--circle--small {
-  height: 1em;
-  width: 1em;
-  -ms-border-radius: 0.5em;
-  moz-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
-  border-radius: 0.5em;
-  background: #3CB3B9; }
-
-.icon__media--circle--medium {
-  height: 1.5em;
-  width: 1.5em;
-  -ms-border-radius: 0.75em;
-  moz-border-radius: 0.75em;
-  -webkit-border-radius: 0.75em;
-  border-radius: 0.75em;
-  background: #3CB3B9; }
-
-/*page corner icons*/
-.icon__pageCorner--top-left {
-  position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
-
-.icon__pageCorner--bottom-right {
-  position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
-
-/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
-container as a text to create padding between the text and the icon*/
-.icon__menu-item--right {
-  position: absolute;
-  right: 0; }
-
-.icon__menu-item--top {
-  position: absolute;
-  top: 1em; }
-
-/*creates a margin on the opposite side of the specified position
-in order to align the icon on either the right or left margin*/
-.icon--left {
-  margin-right: 0.5em; }
-
-.icon--right {
-  margin-left: 0.5em;
-  margin-top: 0.125em; }
-
-/*Positioning for absolutely positioned items*/
-.icon--absolute {
-  position: absolute; }
-
-.bottom {
-  bottom: 0; }
-
-.left {
-  left: 0; }
-
-.right {
-  right: 0; }
-
-.top {
-  top: 0; }
-
-/*Creates a triangle with equal widths for all borders. Commonly used 
-with dropdown menus to signify additional content. Color class names for
-black and white triangles have been created for styling purposes,but new 
-class names with different colors can be created by adding a state value 
-for color (--state) and including the .triangle mixin with desired color.*/
-/*white triangles*/
-.triangle--up--white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #FFF; }
-
-.triangle--right-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--down-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #FFF;
-  cursor: pointer; }
-
-.triangle--left-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
-
-/*black triangles*/
-.triangle--up-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #000; }
-
-.triangle--right-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--down-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #000; }
-
-.triangle--left-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--right-black.left:before {
-  content: ""; }
-
-/*black triangle sizes*/
-.triangle--down-black--small {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.25em solid transparent;
-  border-right: 0.25em solid transparent;
-  border-top: 0.25em solid #000; }
-
-/*white arrows*/
-.arrow--down-white {
-  display: inline-block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #FFF;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -moz-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -ms-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -o-transform: rotate(225deg);
-  transform: rotate(225deg); }
-
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
 /*Variables for font-size and line-height*/
-.text__border {
-  border: 0.05em outset #FFF;
-  border-radius: 0 0.5em;
-  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
-
-.text__wrapper {
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 1.5em;
-  display: flex;
-  flex-direction: row;
-  position: absolute; }
-
-.text__heading, .text__heading--main, .text__heading--nav {
-  letter-spacing: 0.1em;
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 0.55em;
-  color: #FFF;
-  line-height: 1.5em;
-  font-size: 1em;
-  font-weight: 600;
-  margin-left: -0.1em; }
-
-.text__heading-group {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-items: center; }
-
-.text__heading--main {
-  position: absolute;
-  top: 2.25em;
-  padding: 0;
-  font-family: "Quicksand Regular";
-  font-size: 2.25em;
-  color: #FFF; }
-
-.text__headingLabel--main {
-  position: absolute;
-  top: 3em;
-  padding-top: 0.5em;
-  width: 4em;
-  font-family: "Quicksand Light";
-  border-top: 0.25em solid #3CB3B9;
-  color: #FFF; }
-
-.text__heading--nav {
-  font-size: 1.25em; }
-  @media screen and (min-width: 768px) {
-    .text__heading--nav {
-      font-size: 1.5em;
-      font-weight: normal; } }
-
-.text__heading--nav.left {
-  margin-left: 0.25em; }
-
-.text__heading--nav.right {
-  margin-right: 0.5em; }
-
-.text__label {
-  position: relative;
-  padding-bottom: 0.5em;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link, .text__link--underlined {
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link:hover, .text__link--underlined:hover {
-  cursor: pointer;
-  opacity: 0.75; }
-
-.text--bold {
-  font-weight: 600; }
-
-.text--code {
-  padding: 0.125em 0.25em;
-  background: #1F9EA4;
-  border-radius: 0.125em;
-  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
-  color: #FFF;
-  font-weight: 600; }
-
-.text--italicized {
-  font-style: italic; }
-
-.text--responsive {
-  counter-increment: 1;
-  position: relative;
-  font-size: 0.95em; }
-
-@font-face {
-  font-family: "Miriam Libre";
-  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Bold";
-  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Light";
-  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Medium";
-  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Regular";
-  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Bold";
-  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Regular";
-  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
-/*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Vendor prefix mixin*/
@@ -470,6 +20,11 @@ $teal-box-shadow: //code here
   to {
     margin-bottom: 100%;
     height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
 /*Icon mixins*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
@@ -501,6 +56,7 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 .accordion, .accordion.active {
@@ -546,12 +102,13 @@ the direction of where you want the margin spacing to be applied*/
   transform: rotate(-180deg);
   -o-transform: rotate(-180deg);
   transform: rotate(-180deg);
-  border: 0.25em double #FFF;
-  transition: transform 0.3s; }
+  border: 0.25em double #FFF; }
+
+.accordion.active > .accordion__expander-icon--no-border {
+  border: 0; }
 
 .accordion.active > .accordion__expander-icon > .arrow--down-white {
-  top: 0.05em;
-  left: 0.25em; }
+  top: -0.15em; }
 
 .accordion:hover {
   background: #4E4E4E; }
@@ -567,16 +124,26 @@ the direction of where you want the margin spacing to be applied*/
   border-color: #FFF; }
 
 .accordion__expander-icon {
+  -webkit-transition: transform 0.3s;
+  transition: transform 0.3s;
+  -moz-transition: transform 0.3s;
+  transition: transform 0.3s;
+  -ms-transition: transform 0.3s;
+  transition: transform 0.3s;
+  -o-transition: transform 0.3s;
+  transition: transform 0.3s;
   position: relative;
-  min-height: 1.75em;
-  min-width: 1.75em;
+  min-height: 1.25em;
+  min-width: 1.25em;
   padding: 0.5em;
   border: 0.25em double #4E4E4E;
   border-radius: 0.25em; }
 
 .accordion__expander-icon > .arrow--down-white {
-  top: 0.25em;
-  left: 0.275em; }
+  top: -0.15em; }
+
+.accordion__expander-icon--no-border {
+  border: 0; }
 
 .accordion__heading {
   flex: 1; }
@@ -594,6 +161,14 @@ the direction of where you want the margin spacing to be applied*/
   overflow: auto; }
 
 .accordion__panel {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   position: relative;
   display: none;
   margin: auto;
@@ -634,6 +209,9 @@ the direction of where you want the margin spacing to be applied*/
       max-width: 50%;
       min-height: auto; } }
 
+.accordion__panel--left > .media__image-wrapper--9 {
+  margin-bottom: 0.25em; }
+
 .accordion__panel--right {
   margin-bottom: 0.5em;
   max-width: 100%; }
@@ -671,14 +249,6 @@ the direction of where you want the margin spacing to be applied*/
   padding: 0;
   margin-top: 1.5em; }
 
-.accordion__panel.show {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0.5em;
-  border-bottom-left-radius: 0.5em;
-  display: table;
-  min-height: auto; }
-
 .accordion__row,
 .accordion__row--last,
 .accordion__row--first {
@@ -702,6 +272,43 @@ the direction of where you want the margin spacing to be applied*/
   border-top-right-radius: 0.25em;
   padding-top: 1em; }
 
+.accordion__row.active > .accordion__panel {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  display: table;
+  max-height: min-content; }
+
+.accordion__row--last.active > .accordion__panel {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  display: table;
+  max-height: min-content; }
+
+.accordion__row--first.active > .accordion__panel {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  display: table;
+  max-height: min-content; }
+
+.accordion__panel--border, .accordion__row--last.active > .accordion__panel--border, .accordion__row--first.active > .accordion__panel--border {
+  padding: 1em;
+  background: transparent;
+  border: 0;
+  border-bottom: 0.05em solid #4E4E4E;
+  border-radius: 0; }
+
+.accordion__row--transparent,
+.accordion__row--transparent-last,
+.accordion__row--transparent-first {
+  background: transparent;
+  border-radius: 0; }
+
 .accordion__group {
   padding: 1em;
   background: #000;
@@ -709,14 +316,27 @@ the direction of where you want the margin spacing to be applied*/
   border-radius: 0.25em; }
 
 /*Accordian styles*/
+.accordion--border {
+  border-top: 0.05em solid #4E4E4E;
+  border-bottom: 0.05em solid #4E4E4E;
+  border-radius: 0;
+  box-shadow: none; }
+
+.accordion--border.active {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  border-top: 0.05em solid #4E4E4E;
+  border-bottom: 0; }
+
 /*creates a "screen-like" appearance on the inner panel of the
 accordian panel*/
 .accordion__innerPanel--teal-screen {
   background: linear-gradient(to right, #000 10%, #4BA7AB 30%, #B0F0FF 50%, #4BA7AB 65%, #000 100%); }
 
-/*Partials*/
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -724,9 +344,7 @@ accordian panel*/
 $teal-box-shadow: //code here
 */
 /*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Vendor prefix mixin*/
@@ -738,6 +356,90 @@ $teal-box-shadow: //code here
   to {
     margin-bottom: 100%;
     height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+.alert, .alert--info {
+  position: relative;
+  display: flex;
+  padding: 1em;
+  border-radius: 0.25em;
+  background: rgba(0, 0, 0, 0.15);
+  margin-top: 2em; }
+
+.alert--info {
+  background: rgba(60, 179, 185, 0.15);
+  border: 0.05em solid #3CB3B9;
+  border-left: 0.25em solid #3CB3B9; }
+
+/*Partials*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
 /*Icon mixins*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
@@ -770,6 +472,7 @@ the direction of where you want the margin spacing to be applied*/
 /*Media Query Mixins*/
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -796,7 +499,7 @@ $teal-box-shadow: //code here
   cursor: pointer; }
 
 .icon__code--left {
-  display: inline-block;
+  display: block;
   padding: 0.25em;
   position: absolute;
   border: solid #4E4E4E;
@@ -813,7 +516,7 @@ $teal-box-shadow: //code here
   right: 0.85em; }
 
 .icon__code--right {
-  display: inline-block;
+  display: block;
   padding: 0.25em;
   position: absolute;
   border: solid #4E4E4E;
@@ -988,11 +691,19 @@ for color (--state) and including the .triangle mixin with desired color.*/
   border-right: 0.25em solid transparent;
   border-top: 0.25em solid #000; }
 
+.triangle--left-black--small {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.25em solid transparent;
+  border-right: 0.25em solid #000;
+  border-bottom: 0.25em solid transparent; }
+
 /*white arrows*/
 .arrow--down-white {
-  display: inline-block;
+  display: block;
   padding: 0.25em;
-  position: absolute;
+  position: relative;
   border: solid #FFF;
   border-right: 0.25em;
   border-bottom: 0.25em;
@@ -1006,6 +717,7 @@ for color (--state) and including the .triangle mixin with desired color.*/
   transform: rotate(225deg); }
 
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Vendor prefix mixin*/
@@ -1017,6 +729,11 @@ for color (--state) and including the .triangle mixin with desired color.*/
   to {
     margin-bottom: 100%;
     height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
 /*Icon mixins*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
@@ -1048,8 +765,18 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+.navigationBar--thin {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 2.5em;
+  width: 100%;
+  background: #FFF; }
+
 .navigationBar__component {
   display: flex;
   position: absolute;
@@ -1159,7 +886,6 @@ from drop down item*/
       max-height: 2.7em;
       border-left: 0.05em solid #3C3939;
       color: #FFF;
-      text-align: center;
       transition: 0.3s; } }
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     .navigationBar__menu-item:nth-child(1)::after {
@@ -1216,6 +942,53 @@ from drop down item*/
   border-left-color: #000;
   cursor: pointer; }
 
+/*Navigation bar styles*/
+.navigationBar__menu--thin {
+  display: flex;
+  min-height: 1.5em;
+  width: 100%;
+  box-shadow: 0 0.05em 0.5em 0.05em #C7C7C7;
+  font-family: "Quicksand Light"; }
+
+.navigationBar__menu--thin-left {
+  display: flex;
+  flex-direction: row;
+  min-width: calc((1/3) * 100%); }
+
+.navigationBar__menu-item--thin {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  max-height: 1.25em;
+  border-left: 0.05em solid #3C3939;
+  color: #000;
+  transition: 0.3s; }
+  @media screen and (min-width: 640px) {
+    .navigationBar__menu-item--thin {
+      align-self: center; }
+      .navigationBar__menu-item--thin:nth-child(1)::after {
+        content: "Item 1";
+        font-size: 0.95em; }
+      .navigationBar__menu-item--thin:nth-child(2)::after {
+        content: "Item 2";
+        font-size: 0.95em; }
+      .navigationBar__menu-item--thin:nth-child(3)::after {
+        content: "Item 3";
+        font-size: 0.95em; }
+      .navigationBar__menu-item--thin:nth-child(4)::after {
+        content: "Item 4";
+        font-size: 0.95em; } }
+
+.navigationBar__menu-item--thin:hover {
+  background: rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  opacity: 0.85; }
+
+.navigationBar__menu-item--thin.first {
+  border-left: 0; }
+
 /*BOTTOM NAVIGATION FOR MOBILE AND TABLET VIEW*/
 /*acts as a container for items inside the bottom navigation bar*/
 .navigationBar--bottom {
@@ -1226,7 +999,6 @@ from drop down item*/
   display: flex;
   flex-direction: row;
   min-height: 3em;
-  font-family: "Quicksand Regular";
   background: #000;
   box-shadow: 0 -0.05em 0.5em 0.05em #4E4E4E; }
   @media screen and (min-width: 1024px) {
@@ -1243,6 +1015,7 @@ from drop down item*/
 
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -1250,6 +1023,7 @@ from drop down item*/
 $teal-box-shadow: //code here
 */
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Vendor prefix mixin*/
@@ -1261,6 +1035,11 @@ $teal-box-shadow: //code here
   to {
     margin-bottom: 100%;
     height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
 /*Icon mixins*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
@@ -1292,17 +1071,18 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
 /*include box-shadow mixin to create preset box-shadow colored themes
 $teal-box-shadow: //code here
 */
-/*Variables for font-size and line-height*/
 .text__border {
   border: 0.05em outset #FFF;
   border-radius: 0 0.5em;
@@ -1327,7 +1107,11 @@ $teal-box-shadow: //code here
   line-height: 1.5em;
   font-size: 1em;
   font-weight: 600;
-  margin-left: -0.1em; }
+  margin-left: -0.1em;
+  font-family: "Quicksand Regular"; }
+
+.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
+  color: #000; }
 
 .text__heading-group {
   position: relative;
@@ -1371,16 +1155,31 @@ $teal-box-shadow: //code here
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link, .text__link--underlined {
+.text__link {
+  text-decoration: none;
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link:hover, .text__link--underlined:hover {
+.text__link:hover {
   cursor: pointer;
   opacity: 0.75; }
 
+.text__link:visited {
+  color: #FFF; }
+
 .text--bold {
   font-weight: 600; }
+
+.text--alert {
+  font-family: "Quicksand Medium";
+  font-size: 1.25em;
+  font-weight: 400; }
+
+.text--caption {
+  padding: 0.5em;
+  font-family: "Quicksand Light";
+  opacity: 0.75;
+  font-size: 0.85em; }
 
 .text--code {
   padding: 0.125em 0.25em;
@@ -1389,6 +1188,11 @@ $teal-box-shadow: //code here
   box-shadow: inset 0 0.05em 0.5em #3CB3B9;
   color: #FFF;
   font-weight: 600; }
+
+.text--hero {
+  font-size: 3em;
+  opacity: 0.75;
+  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
 
 .text--italicized {
   font-style: italic; }
@@ -1420,6 +1224,7 @@ $teal-box-shadow: //code here
   font-family: "Inconsolata Regular";
   src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Vendor prefix mixin*/
@@ -1431,6 +1236,11 @@ $teal-box-shadow: //code here
   to {
     margin-bottom: 100%;
     height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
 /*Icon mixins*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
@@ -1462,6 +1272,7 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 .breadcrumb {
@@ -1495,9 +1306,11 @@ the direction of where you want the margin spacing to be applied*/
   border: 0.25em double #BEE4DB; }
 
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Vendor prefix mixin*/
@@ -1509,6 +1322,11 @@ the direction of where you want the margin spacing to be applied*/
   to {
     margin-bottom: 100%;
     height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
 /*Icon mixins*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
@@ -1541,6 +1359,7 @@ the direction of where you want the margin spacing to be applied*/
 /*Media Query Mixins*/
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -1554,11 +1373,33 @@ $teal-box-shadow: //code here
   display: flex;
   background: transparent;
   border: 0.01em solid #3C3939;
-  border-radius: 0.5em;
+  border-radius: 0.25em;
   color: #FFF;
   cursor: pointer;
   font-family: "Quicksand Light";
+  line-height: 1.5em;
+  outline: none;
   text-decoration: none; }
+
+.button__action {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  background: #00920A;
+  border: 0.05em solid transparent;
+  box-shadow: inset 0 0.05em 0.5em #26CE31, inset 0 -0.025em 0.5em #26CE31;
+  color: #005506;
+  text-shadow: 0.025em 0.025em #004205; }
+
+.button__action:hover {
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  transition: background 0.3s;
+  -ms-transition: background 0.3s;
+  transition: background 0.3s;
+  -o-transition: background 0.3s;
+  transition: background 0.3s;
+  background: #26CE31; }
 
 .button__search {
   border-top: 0.05em solid #8C8C8C;
@@ -1566,8 +1407,8 @@ $teal-box-shadow: //code here
   border-bottom: 0.05em solid #8C8C8C;
   border-left: 0;
   border-top-left-radius: 0;
-  border-top-right-radius: 0.5em;
-  border-bottom-right-radius: 0.5em;
+  border-top-right-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
   border-bottom-left-radius: 0; }
 
 .button--absolute, #button--active {
@@ -1592,6 +1433,7 @@ $teal-box-shadow: //code here
 #button--active:active {
   border-top: 0.25em solid #3CB3B9; }
 
+/*Button states*/
 #button--active {
   border-top: 0.25em solid #3CB3B9;
   border-right: 0;
@@ -1601,8 +1443,13 @@ $teal-box-shadow: //code here
 .button--noBorder {
   border: 0; }
 
+.button--center {
+  margin-right: auto;
+  margin-left: auto; }
+
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -1610,6 +1457,7 @@ $teal-box-shadow: //code here
 $teal-box-shadow: //code here
 */
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Vendor prefix mixin*/
@@ -1621,6 +1469,11 @@ $teal-box-shadow: //code here
   to {
     margin-bottom: 100%;
     height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
 /*Icon mixins*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
@@ -1652,17 +1505,18 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
 /*include box-shadow mixin to create preset box-shadow colored themes
 $teal-box-shadow: //code here
 */
-/*Variables for font-size and line-height*/
 .text__border {
   border: 0.05em outset #FFF;
   border-radius: 0 0.5em;
@@ -1687,7 +1541,11 @@ $teal-box-shadow: //code here
   line-height: 1.5em;
   font-size: 1em;
   font-weight: 600;
-  margin-left: -0.1em; }
+  margin-left: -0.1em;
+  font-family: "Quicksand Regular"; }
+
+.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
+  color: #000; }
 
 .text__heading-group {
   position: relative;
@@ -1731,16 +1589,31 @@ $teal-box-shadow: //code here
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link, .text__link--underlined {
+.text__link {
+  text-decoration: none;
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link:hover, .text__link--underlined:hover {
+.text__link:hover {
   cursor: pointer;
   opacity: 0.75; }
 
+.text__link:visited {
+  color: #FFF; }
+
 .text--bold {
   font-weight: 600; }
+
+.text--alert {
+  font-family: "Quicksand Medium";
+  font-size: 1.25em;
+  font-weight: 400; }
+
+.text--caption {
+  padding: 0.5em;
+  font-family: "Quicksand Light";
+  opacity: 0.75;
+  font-size: 0.85em; }
 
 .text--code {
   padding: 0.125em 0.25em;
@@ -1749,6 +1622,11 @@ $teal-box-shadow: //code here
   box-shadow: inset 0 0.05em 0.5em #3CB3B9;
   color: #FFF;
   font-weight: 600; }
+
+.text--hero {
+  font-size: 3em;
+  opacity: 0.75;
+  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
 
 .text--italicized {
   font-style: italic; }
@@ -1780,6 +1658,7 @@ $teal-box-shadow: //code here
   font-family: "Inconsolata Regular";
   src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Vendor prefix mixin*/
@@ -1791,6 +1670,11 @@ $teal-box-shadow: //code here
   to {
     margin-bottom: 100%;
     height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
 /*Icon mixins*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
@@ -1822,6 +1706,7 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 .card {
@@ -1847,350 +1732,165 @@ the direction of where you want the margin spacing to be applied*/
 .card__front {
   background: #3CB3B9; }
 
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
 /*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*Semantically important icons*/
-#icon__mq {
-  display: block;
-  color: #FFF; }
-  @media screen and (min-width: 1024px) and (max-width: 1350px) {
-    #icon__mq {
-      display: none; } }
-
-.icon__button {
-  width: 2em;
-  height: 2em;
-  margin-right: 0.5em;
-  padding: 0.5em;
-  border: 0.05em solid #3C3939;
-  border-radius: 0.25em;
-  box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
-  color: #FFF;
-  cursor: pointer; }
-
-.icon__code--left {
-  display: inline-block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -moz-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -ms-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -o-transform: rotate(315deg);
-  transform: rotate(315deg);
-  right: 0.85em; }
-
-.icon__code--right {
-  display: inline-block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -moz-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  transform: rotate(135deg);
-  left: 0.85em; }
-
-.icon__search {
-  margin-top: -0.125em; }
-
-.icon__media--circle--small {
-  height: 1em;
-  width: 1em;
-  -ms-border-radius: 0.5em;
-  moz-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
-  border-radius: 0.5em;
-  background: #3CB3B9; }
-
-.icon__media--circle--medium {
-  height: 1.5em;
-  width: 1.5em;
-  -ms-border-radius: 0.75em;
-  moz-border-radius: 0.75em;
-  -webkit-border-radius: 0.75em;
-  border-radius: 0.75em;
-  background: #3CB3B9; }
-
-/*page corner icons*/
-.icon__pageCorner--top-left {
-  position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
-
-.icon__pageCorner--bottom-right {
-  position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
-
-/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
-container as a text to create padding between the text and the icon*/
-.icon__menu-item--right {
-  position: absolute;
-  right: 0; }
-
-.icon__menu-item--top {
-  position: absolute;
-  top: 1em; }
-
-/*creates a margin on the opposite side of the specified position
-in order to align the icon on either the right or left margin*/
-.icon--left {
-  margin-right: 0.5em; }
-
-.icon--right {
-  margin-left: 0.5em;
-  margin-top: 0.125em; }
-
-/*Positioning for absolutely positioned items*/
-.icon--absolute {
-  position: absolute; }
-
-.bottom {
-  bottom: 0; }
-
-.left {
-  left: 0; }
-
-.right {
-  right: 0; }
-
-.top {
-  top: 0; }
-
-/*Creates a triangle with equal widths for all borders. Commonly used 
-with dropdown menus to signify additional content. Color class names for
-black and white triangles have been created for styling purposes,but new 
-class names with different colors can be created by adding a state value 
-for color (--state) and including the .triangle mixin with desired color.*/
-/*white triangles*/
-.triangle--up--white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #FFF; }
-
-.triangle--right-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--down-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #FFF;
-  cursor: pointer; }
-
-.triangle--left-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
-
-/*black triangles*/
-.triangle--up-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #000; }
-
-.triangle--right-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--down-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #000; }
-
-.triangle--left-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--right-black.left:before {
-  content: ""; }
-
-/*black triangle sizes*/
-.triangle--down-black--small {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.25em solid transparent;
-  border-right: 0.25em solid transparent;
-  border-top: 0.25em solid #000; }
-
-/*white arrows*/
-.arrow--down-white {
-  display: inline-block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #FFF;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -moz-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -ms-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -o-transform: rotate(225deg);
-  transform: rotate(225deg); }
-
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
 /*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0; }
+
+.hero {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  min-height: 16em;
+  padding: 1.5em 3em;
+  width: 100%;
+  background: rgba(60, 179, 185, 0.15);
+  font-family: "Quicksand Regular"; }
+
+.hero__wrapper, .hero__wrapper--half {
+  padding: 0.75em 1em;
+  display: flex;
+  flex-direction: column;
+  background: rgba(60, 179, 185, 0.15);
+  border: 0.05em solid #23585A;
+  border-radius: 0.25em; }
+
+.hero__wrapper--half {
+  max-width: 50%; }
+
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
 .text__border {
   border: 0.05em outset #FFF;
   border-radius: 0 0.5em;
@@ -2215,7 +1915,11 @@ $teal-box-shadow: //code here
   line-height: 1.5em;
   font-size: 1em;
   font-weight: 600;
-  margin-left: -0.1em; }
+  margin-left: -0.1em;
+  font-family: "Quicksand Regular"; }
+
+.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
+  color: #000; }
 
 .text__heading-group {
   position: relative;
@@ -2259,521 +1963,31 @@ $teal-box-shadow: //code here
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link, .text__link--underlined {
+.text__link {
+  text-decoration: none;
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link:hover, .text__link--underlined:hover {
+.text__link:hover {
   cursor: pointer;
   opacity: 0.75; }
+
+.text__link:visited {
+  color: #FFF; }
 
 .text--bold {
   font-weight: 600; }
 
-.text--code {
-  padding: 0.125em 0.25em;
-  background: #1F9EA4;
-  border-radius: 0.125em;
-  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
-  color: #FFF;
-  font-weight: 600; }
-
-.text--italicized {
-  font-style: italic; }
-
-.text--responsive {
-  counter-increment: 1;
-  position: relative;
-  font-size: 0.95em; }
-
-@font-face {
-  font-family: "Miriam Libre";
-  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Bold";
-  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Light";
-  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
-@font-face {
+.text--alert {
   font-family: "Quicksand Medium";
-  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Regular";
-  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Bold";
-  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Regular";
-  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
+  font-size: 1.25em;
+  font-weight: 400; }
 
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*Semantically important icons*/
-#icon__mq {
-  display: block;
-  color: #FFF; }
-  @media screen and (min-width: 1024px) and (max-width: 1350px) {
-    #icon__mq {
-      display: none; } }
-
-.icon__button {
-  width: 2em;
-  height: 2em;
-  margin-right: 0.5em;
+.text--caption {
   padding: 0.5em;
-  border: 0.05em solid #3C3939;
-  border-radius: 0.25em;
-  box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
-  color: #FFF;
-  cursor: pointer; }
-
-.icon__code--left {
-  display: inline-block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -moz-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -ms-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -o-transform: rotate(315deg);
-  transform: rotate(315deg);
-  right: 0.85em; }
-
-.icon__code--right {
-  display: inline-block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -moz-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  transform: rotate(135deg);
-  left: 0.85em; }
-
-.icon__search {
-  margin-top: -0.125em; }
-
-.icon__media--circle--small {
-  height: 1em;
-  width: 1em;
-  -ms-border-radius: 0.5em;
-  moz-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
-  border-radius: 0.5em;
-  background: #3CB3B9; }
-
-.icon__media--circle--medium {
-  height: 1.5em;
-  width: 1.5em;
-  -ms-border-radius: 0.75em;
-  moz-border-radius: 0.75em;
-  -webkit-border-radius: 0.75em;
-  border-radius: 0.75em;
-  background: #3CB3B9; }
-
-/*page corner icons*/
-.icon__pageCorner--top-left {
-  position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
-
-.icon__pageCorner--bottom-right {
-  position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
-
-/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
-container as a text to create padding between the text and the icon*/
-.icon__menu-item--right {
-  position: absolute;
-  right: 0; }
-
-.icon__menu-item--top {
-  position: absolute;
-  top: 1em; }
-
-/*creates a margin on the opposite side of the specified position
-in order to align the icon on either the right or left margin*/
-.icon--left {
-  margin-right: 0.5em; }
-
-.icon--right {
-  margin-left: 0.5em;
-  margin-top: 0.125em; }
-
-/*Positioning for absolutely positioned items*/
-.icon--absolute {
-  position: absolute; }
-
-.bottom {
-  bottom: 0; }
-
-.left {
-  left: 0; }
-
-.right {
-  right: 0; }
-
-.top {
-  top: 0; }
-
-/*Creates a triangle with equal widths for all borders. Commonly used 
-with dropdown menus to signify additional content. Color class names for
-black and white triangles have been created for styling purposes,but new 
-class names with different colors can be created by adding a state value 
-for color (--state) and including the .triangle mixin with desired color.*/
-/*white triangles*/
-.triangle--up--white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #FFF; }
-
-.triangle--right-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--down-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #FFF;
-  cursor: pointer; }
-
-.triangle--left-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
-
-/*black triangles*/
-.triangle--up-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #000; }
-
-.triangle--right-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--down-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #000; }
-
-.triangle--left-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--right-black.left:before {
-  content: ""; }
-
-/*black triangle sizes*/
-.triangle--down-black--small {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.25em solid transparent;
-  border-right: 0.25em solid transparent;
-  border-top: 0.25em solid #000; }
-
-/*white arrows*/
-.arrow--down-white {
-  display: inline-block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #FFF;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -moz-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -ms-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -o-transform: rotate(225deg);
-  transform: rotate(225deg); }
-
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*Variables for font-size and line-height*/
-.text__border {
-  border: 0.05em outset #FFF;
-  border-radius: 0 0.5em;
-  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
-
-.text__wrapper {
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 1.5em;
-  display: flex;
-  flex-direction: row;
-  position: absolute; }
-
-.text__heading, .text__heading--main, .text__heading--nav {
-  letter-spacing: 0.1em;
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 0.55em;
-  color: #FFF;
-  line-height: 1.5em;
-  font-size: 1em;
-  font-weight: 600;
-  margin-left: -0.1em; }
-
-.text__heading-group {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-items: center; }
-
-.text__heading--main {
-  position: absolute;
-  top: 2.25em;
-  padding: 0;
-  font-family: "Quicksand Regular";
-  font-size: 2.25em;
-  color: #FFF; }
-
-.text__headingLabel--main {
-  position: absolute;
-  top: 3em;
-  padding-top: 0.5em;
-  width: 4em;
   font-family: "Quicksand Light";
-  border-top: 0.25em solid #3CB3B9;
-  color: #FFF; }
-
-.text__heading--nav {
-  font-size: 1.25em; }
-  @media screen and (min-width: 768px) {
-    .text__heading--nav {
-      font-size: 1.5em;
-      font-weight: normal; } }
-
-.text__heading--nav.left {
-  margin-left: 0.25em; }
-
-.text__heading--nav.right {
-  margin-right: 0.5em; }
-
-.text__label {
-  position: relative;
-  padding-bottom: 0.5em;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link, .text__link--underlined {
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link:hover, .text__link--underlined:hover {
-  cursor: pointer;
-  opacity: 0.75; }
-
-.text--bold {
-  font-weight: 600; }
+  opacity: 0.75;
+  font-size: 0.85em; }
 
 .text--code {
   padding: 0.125em 0.25em;
@@ -2782,6 +1996,11 @@ $teal-box-shadow: //code here
   box-shadow: inset 0 0.05em 0.5em #3CB3B9;
   color: #FFF;
   font-weight: 600; }
+
+.text--hero {
+  font-size: 3em;
+  opacity: 0.75;
+  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
 
 .text--italicized {
   font-style: italic; }
@@ -2813,6 +2032,7 @@ $teal-box-shadow: //code here
   font-family: "Inconsolata Regular";
   src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Vendor prefix mixin*/
@@ -2824,6 +2044,11 @@ $teal-box-shadow: //code here
   to {
     margin-bottom: 100%;
     height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
 /*Icon mixins*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
@@ -2855,6 +2080,68 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 .media {
@@ -2882,10 +2169,58 @@ the direction of where you want the margin spacing to be applied*/
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1em;
+  padding: 0.75em;
   border: 0.15em groove #212121;
   border-radius: 0.25em;
   box-shadow: 0 0.125em 0.75em #212121, inset 0 0.25em 0.5em #212121; }
+
+.media__image-wrapper--1 {
+  width: calc((1/12) * 100%);
+  padding: 0.25em; }
+
+.media__image-wrapper--2 {
+  width: calc((2/12) * 100%);
+  padding: 0.25em; }
+
+.media__image-wrapper--3 {
+  width: calc((3/12) * 100%);
+  padding: 0.25em; }
+
+.media__image-wrapper--4 {
+  width: calc((4/12) * 100%);
+  padding: 0.25em; }
+
+.media__image-wrapper--5 {
+  width: calc((5/12) * 100%);
+  padding: 0.25em; }
+
+.media__image-wrapper--6 {
+  width: calc((6/12) * 100%);
+  padding: 0.25em; }
+
+.media__image-wrapper--7 {
+  width: calc((7/12) * 100%);
+  padding: 0.5em; }
+
+.media__image-wrapper--8 {
+  width: calc((8/12) * 100%);
+  padding: 0.5em; }
+
+.media__image-wrapper--9 {
+  width: calc((9/12) * 100%);
+  padding: 0.5em; }
+
+.media__image-wrapper--10 {
+  width: calc((10/12) * 100%);
+  padding: 0.75em; }
+
+.media__image-wrapper--11 {
+  width: calc((11/12) * 100%);
+  padding: 0.75em; }
+
+.media__image-wrapper--12 {
+  width: calc((12/12) * 100%);
+  padding: 0.75em; }
 
 .media__description {
   position: relative;
@@ -2946,6 +2281,7 @@ the direction of where you want the margin spacing to be applied*/
 
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -2953,341 +2289,66 @@ the direction of where you want the margin spacing to be applied*/
 $teal-box-shadow: //code here
 */
 /*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*Semantically important icons*/
-#icon__mq {
-  display: block;
-  color: #FFF; }
-  @media screen and (min-width: 1024px) and (max-width: 1350px) {
-    #icon__mq {
-      display: none; } }
-
-.icon__button {
-  width: 2em;
-  height: 2em;
-  margin-right: 0.5em;
-  padding: 0.5em;
-  border: 0.05em solid #3C3939;
-  border-radius: 0.25em;
-  box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
-  color: #FFF;
-  cursor: pointer; }
-
-.icon__code--left {
-  display: inline-block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -moz-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -ms-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -o-transform: rotate(315deg);
-  transform: rotate(315deg);
-  right: 0.85em; }
-
-.icon__code--right {
-  display: inline-block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -moz-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  transform: rotate(135deg);
-  left: 0.85em; }
-
-.icon__search {
-  margin-top: -0.125em; }
-
-.icon__media--circle--small {
-  height: 1em;
-  width: 1em;
-  -ms-border-radius: 0.5em;
-  moz-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
-  border-radius: 0.5em;
-  background: #3CB3B9; }
-
-.icon__media--circle--medium {
-  height: 1.5em;
-  width: 1.5em;
-  -ms-border-radius: 0.75em;
-  moz-border-radius: 0.75em;
-  -webkit-border-radius: 0.75em;
-  border-radius: 0.75em;
-  background: #3CB3B9; }
-
-/*page corner icons*/
-.icon__pageCorner--top-left {
-  position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
-
-.icon__pageCorner--bottom-right {
-  position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
-
-/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
-container as a text to create padding between the text and the icon*/
-.icon__menu-item--right {
-  position: absolute;
-  right: 0; }
-
-.icon__menu-item--top {
-  position: absolute;
-  top: 1em; }
-
-/*creates a margin on the opposite side of the specified position
-in order to align the icon on either the right or left margin*/
-.icon--left {
-  margin-right: 0.5em; }
-
-.icon--right {
-  margin-left: 0.5em;
-  margin-top: 0.125em; }
-
-/*Positioning for absolutely positioned items*/
-.icon--absolute {
-  position: absolute; }
-
-.bottom {
-  bottom: 0; }
-
-.left {
-  left: 0; }
-
-.right {
-  right: 0; }
-
-.top {
-  top: 0; }
-
-/*Creates a triangle with equal widths for all borders. Commonly used 
-with dropdown menus to signify additional content. Color class names for
-black and white triangles have been created for styling purposes,but new 
-class names with different colors can be created by adding a state value 
-for color (--state) and including the .triangle mixin with desired color.*/
-/*white triangles*/
-.triangle--up--white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #FFF; }
-
-.triangle--right-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--down-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #FFF;
-  cursor: pointer; }
-
-.triangle--left-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
-
-/*black triangles*/
-.triangle--up-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #000; }
-
-.triangle--right-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--down-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #000; }
-
-.triangle--left-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--right-black.left:before {
-  content: ""; }
-
-/*black triangle sizes*/
-.triangle--down-black--small {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.25em solid transparent;
-  border-right: 0.25em solid transparent;
-  border-top: 0.25em solid #000; }
-
-/*white arrows*/
-.arrow--down-white {
-  display: inline-block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #FFF;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -moz-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -ms-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -o-transform: rotate(225deg);
-  transform: rotate(225deg); }
-
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
 /*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
 .text__border {
   border: 0.05em outset #FFF;
   border-radius: 0 0.5em;
@@ -3312,7 +2373,11 @@ $teal-box-shadow: //code here
   line-height: 1.5em;
   font-size: 1em;
   font-weight: 600;
-  margin-left: -0.1em; }
+  margin-left: -0.1em;
+  font-family: "Quicksand Regular"; }
+
+.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
+  color: #000; }
 
 .text__heading-group {
   position: relative;
@@ -3356,16 +2421,31 @@ $teal-box-shadow: //code here
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link, .text__link--underlined {
+.text__link {
+  text-decoration: none;
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link:hover, .text__link--underlined:hover {
+.text__link:hover {
   cursor: pointer;
   opacity: 0.75; }
 
+.text__link:visited {
+  color: #FFF; }
+
 .text--bold {
   font-weight: 600; }
+
+.text--alert {
+  font-family: "Quicksand Medium";
+  font-size: 1.25em;
+  font-weight: 400; }
+
+.text--caption {
+  padding: 0.5em;
+  font-family: "Quicksand Light";
+  opacity: 0.75;
+  font-size: 0.85em; }
 
 .text--code {
   padding: 0.125em 0.25em;
@@ -3374,6 +2454,11 @@ $teal-box-shadow: //code here
   box-shadow: inset 0 0.05em 0.5em #3CB3B9;
   color: #FFF;
   font-weight: 600; }
+
+.text--hero {
+  font-size: 3em;
+  opacity: 0.75;
+  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
 
 .text--italicized {
   font-style: italic; }
@@ -3405,6 +2490,7 @@ $teal-box-shadow: //code here
   font-family: "Inconsolata Regular";
   src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Vendor prefix mixin*/
@@ -3416,6 +2502,11 @@ $teal-box-shadow: //code here
   to {
     margin-bottom: 100%;
     height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
 /*Icon mixins*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
@@ -3447,6 +2538,7 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 .table {
@@ -3467,13 +2559,18 @@ the direction of where you want the margin spacing to be applied*/
 
 .table__data {
   display: table-cell;
-  padding: 0.5em 0;
-  font-size: 0.9em;
+  padding: 0.25em 0.5em;
+  font-size: 0.75em;
+  line-height: 1.5em;
   text-align: left;
   border-bottom: 0.05em solid #8C8C8C; }
+  @media screen and (min-width: 1300px) {
+    .table__data {
+      font-size: 0.875em; } }
 
 .table__data:first-child {
-  padding-left: 0.5em; }
+  padding-left: 0.5em;
+  font-weight: 600; }
 
 .table__data:last-child {
   padding-right: 0.5em; }
@@ -3482,14 +2579,18 @@ the direction of where you want the margin spacing to be applied*/
   display: table-footer-group; }
 
 .table__footer .table__data {
+  font-weight: 400;
   border-bottom: 0;
   text-align: center;
   background: rgba(255, 255, 255, 0.15);
   box-shadow: inset 0 -0.125em 0.75em #4E4E4E, inset 0 0.35em 0.75em #4E4E4E; }
 
 .table__heading {
+  padding-top: 0.125em;
+  padding-right: 0.5em;
+  padding-bottom: 0.25em;
+  padding-left: 0.5em;
   display: table-cell;
-  padding: 0.5em 0;
   font-size: 1em;
   font-weight: 600;
   text-align: left;
@@ -3502,6 +2603,7 @@ the direction of where you want the margin spacing to be applied*/
   display: table-row; }
 
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Vendor prefix mixin*/
@@ -3513,6 +2615,11 @@ the direction of where you want the margin spacing to be applied*/
   to {
     margin-bottom: 100%;
     height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
 /*Icon mixins*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
@@ -3545,24 +2652,24 @@ the direction of where you want the margin spacing to be applied*/
 /*Media Query Mixins*/
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
 /*include box-shadow mixin to create preset box-shadow colored themes
 $teal-box-shadow: //code here
 */
-.grid, .grid__row--12 {
+.grid {
   display: grid; }
 
 /****Grid containers****
  *all grid containers must be accompanied with the class of .grid 
  *in order to enable display: grid. Must be used on the parent container
  *with children placed in specified grid areas (using 'grid__template-columns--'
- *and 'grid__template-rows--' or their corresponding offsets located below 
+ *and 'grid__template-rows--' or their rowonding offsets located below 
  *the grid-containers section)
  */
-.grid__container, .grid__container--12, .grid__container--4, .grid__container--3, .grid__container--2 {
-  grid-gap: 0.125em;
+.grid__container, .grid__container--12, .grid__container--4, .grid__container--3, .grid__container--2, .grid__container--page-layout {
   margin: auto;
   max-width: 95%; }
 
@@ -3582,13 +2689,44 @@ $teal-box-shadow: //code here
 .grid__container--page-layout {
   grid-template-areas: "main main" "footer footer";
   grid-template-columns: minmax(min-content, auto) 25%;
-  grid-template-rows: minmax(min-content, auto) 10em;
-  margin: 0 auto;
-  max-width: 95%; }
+  grid-template-rows: minmax(min-content, auto) 10em; }
   @media screen and (min-width: 820px) {
     .grid__container--page-layout {
       grid-template-areas: "main navigation" "footer footer"; } }
 
+/*the "--responsive-semantic" modifier on the grid container specifies
+the its main usage and how it behaves. This container is commonly used for
+entire page layouts that include a header, footer, aside, and main section.*/
+.grid__container--responsive-semantic {
+  grid-template-columns: minmax(min-content, 20%) 1fr minmax(min-content, 20%);
+  grid-template-rows: 1fr repeat(3, minmax(auto, 1fr)) 1fr;
+  grid-template-areas: "header header header" "aside main navigation" "aside main navigation" "aside main navigation" "footer footer footer"; }
+
+.grid__header--responsive-semantic {
+  grid-area: header;
+  position: relative; }
+
+.grid__aside--responsive-semantic {
+  grid-area: aside;
+  position: relative;
+  background: #3CB3B9; }
+
+.grid__main--responsive-semantic {
+  grid-area: main;
+  position: relative;
+  background: #26CE31; }
+
+.grid__navigation--responsive-semantic {
+  grid-area: navigation;
+  position: relative;
+  background: #00920A; }
+
+.grid__footer--responsive-semantic {
+  grid-area: footer;
+  position: relative;
+  background: #23585A; }
+
+/*Grid-template-area items for the page layout*/
 .grid__content--page-layout {
   grid-area: main; }
 
@@ -3602,11 +2740,81 @@ $teal-box-shadow: //code here
     .grid__navigation--page-layout--right {
       display: block; } }
 
-/*used with .grid__container--12 to create an inline row with 12 columns*/
-.grid__row--12 {
-  grid-template-columns: repeat(12, auto); }
-
 /****Grid tempate columns & rows****/
+/*Grid-rows spanning up to 12 columns with auto-placement*/
+.grid__column--span1 {
+  grid-column: auto/span 1; }
+
+.grid__column--span2 {
+  grid-column: auto/span 2; }
+
+.grid__column--span3 {
+  grid-column: auto/span 3; }
+
+.grid__column--span4 {
+  grid-column: auto/span 4; }
+
+.grid__column--span5 {
+  grid-column: auto/span 5; }
+
+.grid__column--span6 {
+  grid-column: auto/span 6; }
+
+.grid__column--span7 {
+  grid-column: auto/span 7; }
+
+.grid__column--span8 {
+  grid-column: auto/span 8; }
+
+.grid__column--span9 {
+  grid-column: auto/span 9; }
+
+.grid__column--span10 {
+  grid-column: auto/span 10; }
+
+.grid__column--span11 {
+  grid-column: auto/span 11; }
+
+.grid__column--span12 {
+  grid-column: auto/span 12; }
+
+/*Grid-rows spanning up to 12 rows with auto-placement*/
+.grid__row--span1 {
+  grid-row: auto/span 1; }
+
+.grid__row--span2 {
+  grid-row: auto/span 2; }
+
+.grid__row--span3 {
+  grid-row: auto/span 3; }
+
+.grid__row--span4 {
+  grid-row: auto/span 4; }
+
+.grid__row--span5 {
+  grid-row: auto/span 5; }
+
+.grid__row--span6 {
+  grid-row: auto/span 6; }
+
+.grid__row--span7 {
+  grid-row: auto/span 7; }
+
+.grid__row--span8 {
+  grid-row: auto/span 8; }
+
+.grid__row--span9 {
+  grid-row: auto/span 9; }
+
+.grid__row--span10 {
+  grid-row: auto/span 10; }
+
+.grid__row--span11 {
+  grid-row: auto/span 11; }
+
+.grid__row--span12 {
+  grid-row: auto/span 12; }
+
 /*Grid template-columns beginning from grid-line 1*/
 .grid__template--columns-1-12 {
   grid-column: 1/span 1; }
@@ -3644,7 +2852,7 @@ $teal-box-shadow: //code here
 .grid__template--columns-12 {
   grid-column: 1/span 12; }
 
-/*Grid-template-rows beginning from grid-line 1*/
+/*Grid-template-rows beginning from row-line 1*/
 .grid__template--rows-1-12 {
   grid-row: 1/span 1; }
 
@@ -3679,9 +2887,9 @@ $teal-box-shadow: //code here
   grid-row: 1/span 11; }
 
 .grid__template--rows-12 {
-  grid-row: 12; }
+  grid-row: 1/span 12; }
 
-/*grid-template-columns spanning x columns, with start lines defined
+/*grid-rowate-columns spanning x columns, with start lines defined
 by the first value of grid-column and the last value of the class name
 'grid__template--columns-span(x)-y'*/
 /*grid-template columns spanning 1 column*/
@@ -3771,11 +2979,12 @@ by the first value of grid-column and the last value of the class name
 
 /*Flexible grid classes*/
 .grid__row--responsive {
-  position: relative;
-  grid-row: 1/span min-content; }
+  rowion: relative;
+  grid-row: 1/span min-row; }
 
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -3783,176 +2992,7 @@ by the first value of grid-column and the last value of the class name
 $teal-box-shadow: //code here
 */
 /*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
 /*Variables for font-size and line-height*/
-.text__border {
-  border: 0.05em outset #FFF;
-  border-radius: 0 0.5em;
-  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
-
-.text__wrapper {
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 1.5em;
-  display: flex;
-  flex-direction: row;
-  position: absolute; }
-
-.text__heading, .text__heading--main, .text__heading--nav {
-  letter-spacing: 0.1em;
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 0.55em;
-  color: #FFF;
-  line-height: 1.5em;
-  font-size: 1em;
-  font-weight: 600;
-  margin-left: -0.1em; }
-
-.text__heading-group {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-items: center; }
-
-.text__heading--main {
-  position: absolute;
-  top: 2.25em;
-  padding: 0;
-  font-family: "Quicksand Regular";
-  font-size: 2.25em;
-  color: #FFF; }
-
-.text__headingLabel--main {
-  position: absolute;
-  top: 3em;
-  padding-top: 0.5em;
-  width: 4em;
-  font-family: "Quicksand Light";
-  border-top: 0.25em solid #3CB3B9;
-  color: #FFF; }
-
-.text__heading--nav {
-  font-size: 1.25em; }
-  @media screen and (min-width: 768px) {
-    .text__heading--nav {
-      font-size: 1.5em;
-      font-weight: normal; } }
-
-.text__heading--nav.left {
-  margin-left: 0.25em; }
-
-.text__heading--nav.right {
-  margin-right: 0.5em; }
-
-.text__label {
-  position: relative;
-  padding-bottom: 0.5em;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link, .text__link--underlined {
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link:hover, .text__link--underlined:hover {
-  cursor: pointer;
-  opacity: 0.75; }
-
-.text--bold {
-  font-weight: 600; }
-
-.text--code {
-  padding: 0.125em 0.25em;
-  background: #1F9EA4;
-  border-radius: 0.125em;
-  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
-  color: #FFF;
-  font-weight: 600; }
-
-.text--italicized {
-  font-style: italic; }
-
-.text--responsive {
-  counter-increment: 1;
-  position: relative;
-  font-size: 0.95em; }
-
-@font-face {
-  font-family: "Miriam Libre";
-  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Bold";
-  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Light";
-  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Medium";
-  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Regular";
-  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Bold";
-  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Regular";
-  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
-/*GLOBAL HELPERS*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Vendor prefix mixin*/
@@ -3964,6 +3004,11 @@ $teal-box-shadow: //code here
   to {
     margin-bottom: 100%;
     height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
 /*Icon mixins*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
@@ -3995,6 +3040,7 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*MISC*/
@@ -4005,7 +3051,8 @@ the direction of where you want the margin spacing to be applied*/
   right: 0;
   top: 4.45em;
   background: #DEF9EE;
-  overflow-y: auto; }
+  overflow-y: auto;
+  z-index: 1; }
   @media screen and (min-width: 1024px) {
     .main {
       position: absolute;
@@ -4014,6 +3061,15 @@ the direction of where you want the margin spacing to be applied*/
       right: 0;
       top: 4.35em;
       overflow-y: auto; } }
+
+.main--full {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 3em;
+  color: #FFF; }
 
 .main__section {
   border-bottom: 0.01em solid #4BA7AB;
@@ -4065,6 +3121,7 @@ the direction of where you want the margin spacing to be applied*/
 .main__sectionDescription--bold {
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 0.75em;
   max-width: 90%;
   font-size: 1.25em;
   font-weight: 600;
@@ -4090,22 +3147,26 @@ the direction of where you want the margin spacing to be applied*/
     .main__sectionDescription-card.last,
     .main__sectionDescription-card.first,
     .main__sectionDescription-card {
-      margin-left: 0.75em;
       min-width: 48%; } }
   @media screen and (min-width: 1200px) {
     .main__sectionDescription-card.last,
     .main__sectionDescription-card.first,
     .main__sectionDescription-card {
-      min-width: 32%; } }
+      min-width: 32%;
+      margin-left: 0.75em; } }
 
 .main__sectionDescription-card.last {
   margin-left: 0; }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 640px) and (max-width: 1200px) {
     .main__sectionDescription-card.last {
       margin-left: 0.75em; } }
 
 .main__sectionDescription-card.first {
   margin-left: 0; }
+
+@media screen and (min-width: 640px) {
+  .main__sectionDescription-card:nth-child(2) {
+    margin-left: 0.75em; } }
 
 .main__sectionDescription-content {
   line-height: 2em; }
@@ -4123,7 +3184,7 @@ the direction of where you want the margin spacing to be applied*/
   padding: 0.5em 0.25em;
   font-size: 1.5em;
   font-weight: 600;
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.05);
   border-bottom: 0.25em groove #1F9EA4;
   border-radius: 0.125em 0.125em 0 0; }
   @media screen and (min-width: 480px) {
@@ -4168,7 +3229,10 @@ the direction of where you want the margin spacing to be applied*/
 .main__sectionDetails-description-tag {
   margin-right: 0.25em;
   margin-left: 0.25em;
-  padding: 0.25em 1em;
+  padding-top: 0.25em;
+  padding-right: 1em;
+  padding-bottom: 0.25em;
+  padding-left: 1.15em;
   font-weight: 600;
   letter-spacing: 0.125em;
   background: #000;
@@ -4220,7 +3284,8 @@ the direction of where you want the margin spacing to be applied*/
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  margin-left: 1em;
+  margin-right: auto;
   border: 0.25em double #8C8C8C;
   border-radius: 0.25em; }
 
@@ -4230,7 +3295,9 @@ the direction of where you want the margin spacing to be applied*/
 .main__sectionHeading-expander-icon-heading {
   padding: 0.25em;
   font-size: 1.25em;
-  color: rgba(0, 0, 0, 0.08); }
+  color: rgba(0, 0, 0, 0.15);
+  font-family: "Quicksand Bold";
+  margin-left: 3em; }
 
 .main__sectionHeading-icon {
   border-top: 0.25em groove #133A9C;
@@ -4273,13 +3340,6 @@ the direction of where you want the margin spacing to be applied*/
   font-size: 2em;
   line-height: 1.75em; }
 
-.main__sectionHeading--right {
-  position: relative;
-  display: flex;
-  flex: 1;
-  align-items: center;
-  min-height: 3.5em; }
-
 .main__wrapper, .main__wrapper--right {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -4294,6 +3354,7 @@ the direction of where you want the margin spacing to be applied*/
       position: relative;
       max-width: 100%; } }
 
+/*include position: fixed and width: 16.25em when menu becomes sticky*/
 .main__wrapper--right {
   margin-left: 2em;
   height: 100%; }
@@ -4310,9 +3371,9 @@ the direction of where you want the margin spacing to be applied*/
 .column {
   display: flex; }
 
-/*INCLUDE POSITIONING STATIC DIMENSIONS OF MODULES*/
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -4320,6 +3381,7 @@ the direction of where you want the margin spacing to be applied*/
 $teal-box-shadow: //code here
 */
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Vendor prefix mixin*/
@@ -4331,6 +3393,11 @@ $teal-box-shadow: //code here
   to {
     margin-bottom: 100%;
     height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
 /*Icon mixins*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
@@ -4362,17 +3429,112 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+.example--pop-out {
+  padding: 0;
+  background: transparent;
+  border-radius: 0.25em; }
+
+.example--pop-out.active {
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.25); }
+
+.example__module--right {
+  position: absolute;
+  right: 3em;
+  top: 50%;
+  display: flex;
+  margin-top: -1.5em;
+  align-items: center;
+  min-height: 3.5em; }
+
+.example__section--pop-out {
+  display: none;
+  margin-top: 1em;
+  max-height: 0;
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 0.25em;
+  font-family: "Miriam Libre";
+  font-size: 0.9em; }
+
+.example__section--pop-out.active {
+  display: block;
+  max-height: min-content; }
+
+/*INCLUDE POSITIONING STATIC DIMENSIONS OF MODULES*/
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
 /*include box-shadow mixin to create preset box-shadow colored themes
 $teal-box-shadow: //code here
 */
+/*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
 .text__border {
   border: 0.05em outset #FFF;
   border-radius: 0 0.5em;
@@ -4397,7 +3559,11 @@ $teal-box-shadow: //code here
   line-height: 1.5em;
   font-size: 1em;
   font-weight: 600;
-  margin-left: -0.1em; }
+  margin-left: -0.1em;
+  font-family: "Quicksand Regular"; }
+
+.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
+  color: #000; }
 
 .text__heading-group {
   position: relative;
@@ -4441,16 +3607,31 @@ $teal-box-shadow: //code here
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link, .text__link--underlined {
+.text__link {
+  text-decoration: none;
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link:hover, .text__link--underlined:hover {
+.text__link:hover {
   cursor: pointer;
   opacity: 0.75; }
 
+.text__link:visited {
+  color: #FFF; }
+
 .text--bold {
   font-weight: 600; }
+
+.text--alert {
+  font-family: "Quicksand Medium";
+  font-size: 1.25em;
+  font-weight: 400; }
+
+.text--caption {
+  padding: 0.5em;
+  font-family: "Quicksand Light";
+  opacity: 0.75;
+  font-size: 0.85em; }
 
 .text--code {
   padding: 0.125em 0.25em;
@@ -4459,6 +3640,11 @@ $teal-box-shadow: //code here
   box-shadow: inset 0 0.05em 0.5em #3CB3B9;
   color: #FFF;
   font-weight: 600; }
+
+.text--hero {
+  font-size: 3em;
+  opacity: 0.75;
+  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
 
 .text--italicized {
   font-style: italic; }
@@ -4509,7 +3695,8 @@ $teal-box-shadow: //code here
   /*Visual*/
   font-family: "Quicksand Regular";
   background: #000;
-  box-shadow: 0 0.05em 0.5em 0.05em #4E4E4E; }
+  box-shadow: 0 0.05em 0.5em 0.05em #4E4E4E;
+  z-index: 2; }
 
 .navigationBar--state {
   position: relative;
@@ -4521,6 +3708,7 @@ $teal-box-shadow: //code here
 
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -4528,341 +3716,66 @@ $teal-box-shadow: //code here
 $teal-box-shadow: //code here
 */
 /*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*Semantically important icons*/
-#icon__mq {
-  display: block;
-  color: #FFF; }
-  @media screen and (min-width: 1024px) and (max-width: 1350px) {
-    #icon__mq {
-      display: none; } }
-
-.icon__button {
-  width: 2em;
-  height: 2em;
-  margin-right: 0.5em;
-  padding: 0.5em;
-  border: 0.05em solid #3C3939;
-  border-radius: 0.25em;
-  box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
-  color: #FFF;
-  cursor: pointer; }
-
-.icon__code--left {
-  display: inline-block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -moz-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -ms-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -o-transform: rotate(315deg);
-  transform: rotate(315deg);
-  right: 0.85em; }
-
-.icon__code--right {
-  display: inline-block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -moz-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  transform: rotate(135deg);
-  left: 0.85em; }
-
-.icon__search {
-  margin-top: -0.125em; }
-
-.icon__media--circle--small {
-  height: 1em;
-  width: 1em;
-  -ms-border-radius: 0.5em;
-  moz-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
-  border-radius: 0.5em;
-  background: #3CB3B9; }
-
-.icon__media--circle--medium {
-  height: 1.5em;
-  width: 1.5em;
-  -ms-border-radius: 0.75em;
-  moz-border-radius: 0.75em;
-  -webkit-border-radius: 0.75em;
-  border-radius: 0.75em;
-  background: #3CB3B9; }
-
-/*page corner icons*/
-.icon__pageCorner--top-left {
-  position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
-
-.icon__pageCorner--bottom-right {
-  position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
-
-/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
-container as a text to create padding between the text and the icon*/
-.icon__menu-item--right {
-  position: absolute;
-  right: 0; }
-
-.icon__menu-item--top {
-  position: absolute;
-  top: 1em; }
-
-/*creates a margin on the opposite side of the specified position
-in order to align the icon on either the right or left margin*/
-.icon--left {
-  margin-right: 0.5em; }
-
-.icon--right {
-  margin-left: 0.5em;
-  margin-top: 0.125em; }
-
-/*Positioning for absolutely positioned items*/
-.icon--absolute {
-  position: absolute; }
-
-.bottom {
-  bottom: 0; }
-
-.left {
-  left: 0; }
-
-.right {
-  right: 0; }
-
-.top {
-  top: 0; }
-
-/*Creates a triangle with equal widths for all borders. Commonly used 
-with dropdown menus to signify additional content. Color class names for
-black and white triangles have been created for styling purposes,but new 
-class names with different colors can be created by adding a state value 
-for color (--state) and including the .triangle mixin with desired color.*/
-/*white triangles*/
-.triangle--up--white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #FFF; }
-
-.triangle--right-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--down-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #FFF;
-  cursor: pointer; }
-
-.triangle--left-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
-
-/*black triangles*/
-.triangle--up-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #000; }
-
-.triangle--right-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--down-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #000; }
-
-.triangle--left-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--right-black.left:before {
-  content: ""; }
-
-/*black triangle sizes*/
-.triangle--down-black--small {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.25em solid transparent;
-  border-right: 0.25em solid transparent;
-  border-top: 0.25em solid #000; }
-
-/*white arrows*/
-.arrow--down-white {
-  display: inline-block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #FFF;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -moz-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -ms-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -o-transform: rotate(225deg);
-  transform: rotate(225deg); }
-
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
 /*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
 .text__border {
   border: 0.05em outset #FFF;
   border-radius: 0 0.5em;
@@ -4887,7 +3800,11 @@ $teal-box-shadow: //code here
   line-height: 1.5em;
   font-size: 1em;
   font-weight: 600;
-  margin-left: -0.1em; }
+  margin-left: -0.1em;
+  font-family: "Quicksand Regular"; }
+
+.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
+  color: #000; }
 
 .text__heading-group {
   position: relative;
@@ -4931,16 +3848,31 @@ $teal-box-shadow: //code here
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link, .text__link--underlined {
+.text__link {
+  text-decoration: none;
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link:hover, .text__link--underlined:hover {
+.text__link:hover {
   cursor: pointer;
   opacity: 0.75; }
 
+.text__link:visited {
+  color: #FFF; }
+
 .text--bold {
   font-weight: 600; }
+
+.text--alert {
+  font-family: "Quicksand Medium";
+  font-size: 1.25em;
+  font-weight: 400; }
+
+.text--caption {
+  padding: 0.5em;
+  font-family: "Quicksand Light";
+  opacity: 0.75;
+  font-size: 0.85em; }
 
 .text--code {
   padding: 0.125em 0.25em;
@@ -4949,6 +3881,11 @@ $teal-box-shadow: //code here
   box-shadow: inset 0 0.05em 0.5em #3CB3B9;
   color: #FFF;
   font-weight: 600; }
+
+.text--hero {
+  font-size: 3em;
+  opacity: 0.75;
+  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
 
 .text--italicized {
   font-style: italic; }
@@ -4980,6 +3917,7 @@ $teal-box-shadow: //code here
   font-family: "Inconsolata Regular";
   src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Vendor prefix mixin*/
@@ -4991,6 +3929,11 @@ $teal-box-shadow: //code here
   to {
     margin-bottom: 100%;
     height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
 /*Icon mixins*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
@@ -5022,6 +3965,7 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 .sidebar {
@@ -5154,112 +4098,127 @@ the direction of where you want the margin spacing to be applied*/
   display: block; }
 
 /*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
 /*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
 .text__border {
   border: 0.05em outset #FFF;
   border-radius: 0 0.5em;
@@ -5284,7 +4243,11 @@ $teal-box-shadow: //code here
   line-height: 1.5em;
   font-size: 1em;
   font-weight: 600;
-  margin-left: -0.1em; }
+  margin-left: -0.1em;
+  font-family: "Quicksand Regular"; }
+
+.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
+  color: #000; }
 
 .text__heading-group {
   position: relative;
@@ -5328,16 +4291,31 @@ $teal-box-shadow: //code here
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link, .text__link--underlined {
+.text__link {
+  text-decoration: none;
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link:hover, .text__link--underlined:hover {
+.text__link:hover {
   cursor: pointer;
   opacity: 0.75; }
 
+.text__link:visited {
+  color: #FFF; }
+
 .text--bold {
   font-weight: 600; }
+
+.text--alert {
+  font-family: "Quicksand Medium";
+  font-size: 1.25em;
+  font-weight: 400; }
+
+.text--caption {
+  padding: 0.5em;
+  font-family: "Quicksand Light";
+  opacity: 0.75;
+  font-size: 0.85em; }
 
 .text--code {
   padding: 0.125em 0.25em;
@@ -5346,6 +4324,11 @@ $teal-box-shadow: //code here
   box-shadow: inset 0 0.05em 0.5em #3CB3B9;
   color: #FFF;
   font-weight: 600; }
+
+.text--hero {
+  font-size: 3em;
+  opacity: 0.75;
+  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
 
 .text--italicized {
   font-style: italic; }
@@ -5384,10 +4367,10 @@ input[type="text"] {
   padding-right: 1em;
   padding-bottom: 0;
   padding-left: 1em;
-  border-top-left-radius: 0.5em;
+  border-top-left-radius: 0.25em;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0.5em;
+  border-bottom-left-radius: 0.25em;
   background: transparent;
   border: 0.1em solid #8C8C8C;
   color: #FFF;
@@ -5411,9 +4394,7 @@ input[type="text"].form__input--no-border {
       width: 80%; } }
 
 /*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*Vendor prefix mixin*/
@@ -5425,6 +4406,153 @@ input[type="text"].form__input--no-border {
   to {
     margin-bottom: 100%;
     height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+.menu {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: block;
+  padding: 1em;
+  font-family: "Quicksand Light"; }
+
+.menu__item {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border-top: 0.05em solid #C7C7C7;
+  border-bottom: 0.05em solid #C7C7C7;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.25em;
+  margin-bottom: 0.5em;
+  font-size: 1.125em;
+  font-weight: 600;
+  line-height: 1.5em; }
+
+.menu__item.active {
+  background: rgba(255, 255, 255, 0.15); }
+
+.menu__item.active .menu__expander-icon {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+
+.menu__dropDown {
+  margin-bottom: 0.75em; }
+
+.menu__dropDown-content {
+  display: none;
+  line-height: 1.5em; }
+
+.menu__dropDown-content.show {
+  display: block; }
+
+.menu__dropDown-item {
+  padding: 0.25em; }
+
+.menu__heading {
+  margin-bottom: 0.5em;
+  line-height: 1.15em;
+  font-family: "Quicksand Regular";
+  font-size: 1.15em;
+  font-weight: 600; }
+
+.menu__expander-icon {
+  padding: 0.025em;
+  cursor: pointer;
+  right: 0.5em;
+  top: 0.9em; }
+
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
 /*Icon mixins*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
@@ -5457,6 +4585,7 @@ the direction of where you want the margin spacing to be applied*/
 /*Media Query Mixins*/
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
 /*Basic colors*/
 /*Tertiary color scheme for main color theme*/
 /*Button preset colors*/
@@ -5483,7 +4612,7 @@ $teal-box-shadow: //code here
   cursor: pointer; }
 
 .icon__code--left {
-  display: inline-block;
+  display: block;
   padding: 0.25em;
   position: absolute;
   border: solid #4E4E4E;
@@ -5500,7 +4629,7 @@ $teal-box-shadow: //code here
   right: 0.85em; }
 
 .icon__code--right {
-  display: inline-block;
+  display: block;
   padding: 0.25em;
   position: absolute;
   border: solid #4E4E4E;
@@ -5675,11 +4804,19 @@ for color (--state) and including the .triangle mixin with desired color.*/
   border-right: 0.25em solid transparent;
   border-top: 0.25em solid #000; }
 
+.triangle--left-black--small {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.25em solid transparent;
+  border-right: 0.25em solid #000;
+  border-bottom: 0.25em solid transparent; }
+
 /*white arrows*/
 .arrow--down-white {
-  display: inline-block;
+  display: block;
   padding: 0.25em;
-  position: absolute;
+  position: relative;
   border: solid #FFF;
   border-right: 0.25em;
   border-bottom: 0.25em;
@@ -5693,112 +4830,66 @@ for color (--state) and including the .triangle mixin with desired color.*/
   transform: rotate(225deg); }
 
 /*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
 /*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
 .text__border {
   border: 0.05em outset #FFF;
   border-radius: 0 0.5em;
@@ -5823,7 +4914,11 @@ $teal-box-shadow: //code here
   line-height: 1.5em;
   font-size: 1em;
   font-weight: 600;
-  margin-left: -0.1em; }
+  margin-left: -0.1em;
+  font-family: "Quicksand Regular"; }
+
+.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
+  color: #000; }
 
 .text__heading-group {
   position: relative;
@@ -5867,16 +4962,31 @@ $teal-box-shadow: //code here
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link, .text__link--underlined {
+.text__link {
+  text-decoration: none;
   font-family: "Quicksand Light";
   font-size: 0.925em; }
 
-.text__link:hover, .text__link--underlined:hover {
+.text__link:hover {
   cursor: pointer;
   opacity: 0.75; }
 
+.text__link:visited {
+  color: #FFF; }
+
 .text--bold {
   font-weight: 600; }
+
+.text--alert {
+  font-family: "Quicksand Medium";
+  font-size: 1.25em;
+  font-weight: 400; }
+
+.text--caption {
+  padding: 0.5em;
+  font-family: "Quicksand Light";
+  opacity: 0.75;
+  font-size: 0.85em; }
 
 .text--code {
   padding: 0.125em 0.25em;
@@ -5885,6 +4995,11 @@ $teal-box-shadow: //code here
   box-shadow: inset 0 0.05em 0.5em #3CB3B9;
   color: #FFF;
   font-weight: 600; }
+
+.text--hero {
+  font-size: 3em;
+  opacity: 0.75;
+  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
 
 .text--italicized {
   font-style: italic; }
@@ -5915,251 +5030,5 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Inconsolata Regular";
   src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
-.menu {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  display: block;
-  padding: 1em;
-  font-family: "Quicksand Light"; }
-
-.menu__item {
-  border-top: 0.05em solid #C7C7C7;
-  border-bottom: 0.05em solid #C7C7C7;
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0.25em 0;
-  margin-bottom: 0.5em;
-  font-size: 1.125em;
-  font-weight: 600;
-  line-height: 1.5em; }
-
-.menu__heading {
-  margin-bottom: 0.5em;
-  line-height: 1.15em;
-  font-family: "Quicksand Regular";
-  font-size: 1.15em;
-  font-weight: 600; }
-
-.menu__expander-icon {
-  cursor: pointer;
-  right: 0;
-  top: 0.925em; }
-
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*Variables for font-size and line-height*/
-.text__border {
-  border: 0.05em outset #FFF;
-  border-radius: 0 0.5em;
-  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
-
-.text__wrapper {
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 1.5em;
-  display: flex;
-  flex-direction: row;
-  position: absolute; }
-
-.text__heading, .text__heading--main, .text__heading--nav {
-  letter-spacing: 0.1em;
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 0.55em;
-  color: #FFF;
-  line-height: 1.5em;
-  font-size: 1em;
-  font-weight: 600;
-  margin-left: -0.1em; }
-
-.text__heading-group {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-items: center; }
-
-.text__heading--main {
-  position: absolute;
-  top: 2.25em;
-  padding: 0;
-  font-family: "Quicksand Regular";
-  font-size: 2.25em;
-  color: #FFF; }
-
-.text__headingLabel--main {
-  position: absolute;
-  top: 3em;
-  padding-top: 0.5em;
-  width: 4em;
-  font-family: "Quicksand Light";
-  border-top: 0.25em solid #3CB3B9;
-  color: #FFF; }
-
-.text__heading--nav {
-  font-size: 1.25em; }
-  @media screen and (min-width: 768px) {
-    .text__heading--nav {
-      font-size: 1.5em;
-      font-weight: normal; } }
-
-.text__heading--nav.left {
-  margin-left: 0.25em; }
-
-.text__heading--nav.right {
-  margin-right: 0.5em; }
-
-.text__label {
-  position: relative;
-  padding-bottom: 0.5em;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link, .text__link--underlined {
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link:hover, .text__link--underlined:hover {
-  cursor: pointer;
-  opacity: 0.75; }
-
-.text--bold {
-  font-weight: 600; }
-
-.text--code {
-  padding: 0.125em 0.25em;
-  background: #1F9EA4;
-  border-radius: 0.125em;
-  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
-  color: #FFF;
-  font-weight: 600; }
-
-.text--italicized {
-  font-style: italic; }
-
-.text--responsive {
-  counter-increment: 1;
-  position: relative;
-  font-size: 0.95em; }
-
-@font-face {
-  font-family: "Miriam Libre";
-  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Bold";
-  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Light";
-  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Medium";
-  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Regular";
-  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Bold";
-  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Regular";
-  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
-/*GLOBAL HELPERS*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
 
 /*# sourceMappingURL=main.css.map */

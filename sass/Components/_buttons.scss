@@ -12,16 +12,36 @@
 	display: flex;
 	background: $button;
 	border: 0.01em solid $charcoal;
-	border-radius: 0.5em;
+	border-radius: 0.25em;
 	color: $white;
 	cursor: pointer;
 	font-family: "Quicksand Light";
+	line-height: $line-height;
+	outline: none;
 	text-decoration: none;
 }
 
+.button__action {
+	@include margin(0.25em, null, 0.25em, null);
+
+	background: $green;
+	border: 0.05em solid $transparent;
+	box-shadow: inset 0 0.05em 0.5em $green-neon,
+							inset 0 -0.025em 0.5em $green-neon;
+	color: $green-dark;
+	text-shadow: 0.025em 0.025em $green-ultraDark;
+}
+
+.button__action:hover {
+	@include prefix(transition, background 0.3s);
+
+	background: $green-neon;
+}
+
+
 .button__search {
 	@include border(0.05em solid $grey, 0.05em solid $grey, 0.05em solid $grey, 0);
-	@include border-radius(0, 0.5em, 0.5em, 0);
+	@include border-radius(0, 0.25em, 0.25em, 0);
 	@extend .button;
 }
 
@@ -46,6 +66,8 @@
 	border-top: 0.25em solid $teal;
 }
 
+/*Button states*/
+
 #button--active {
 	@include border(0.25em solid $teal, 0, 0 ,0);
 	@extend .button--absolute;	
@@ -55,4 +77,8 @@
 	@extend .button;
 
 	border: 0;	
+}
+
+.button--center {
+	@include margin(null, auto, null, auto);
 }

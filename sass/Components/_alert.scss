@@ -1,0 +1,22 @@
+
+@import "../Themes/_colors.scss";
+@import "../Helpers/_mixins.scss";
+@import "../Helpers/_variables.scss";
+
+.alert {
+	position: relative;
+	display: flex;
+	padding: 1em;
+	border-radius: 0.25em;
+	background: $transparent-15-l;
+	margin-top: 2em;
+}
+
+
+.alert--info {
+	@extend .alert;
+
+	background: $teal-lowOpacity;
+	border: 0.05em solid $teal;
+	border-left: 0.25em solid $teal;
+}
