@@ -3,85 +3,206 @@
 	<head>
 		<title>Grid Templates</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<link href="../trancerific.github.io/reset.css" rel="stylesheet" type="text/css"/>
+		<link href="reset.css" rel="stylesheet" type="text/css"/>
 		<link href="../main.css" rel="stylesheet" type="text/css"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 	</head>
 	<body>
-		<div class="grid__container--responsive-semantic grid">
-			<div class="grid__header--responsive-semantic">	
-				<div class="navigationBar--thin">
+		<nav class="navigationBar inverted clearfix">
+			<div class="navigationBar__highlight"></div>
+			<div class="navigationBar--thin">
+				<div class="navigationBar--state">
+					<div class="navigationBar__icon-menu--thin">
+						<div class="icon__wrapper">
+							<a href="#" class="icon__home">
+								<i class="fa fa-home" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="navigationBar--state">
 					<div class="text__heading black">
 						Responsive Grid Layout Template
 					</div>
 				</div>
-				<div class="navigationBar__menu--thin">
-					<div class="navigationBar__menu--thin-left">
-						<div class="navigationBar__menu-item--thin first">
-						</div>
-						<div class="navigationBar__menu-item--thin">
-						</div>
-						<div class="navigationBar__menu-item--thin">
-						</div>
-						<div class="navigationBar__menu-item--thin">
-						</div>
+			</div>
+			<div class="navigationBar__menu--thin">
+				<div class="navigationBar__menu--thin-left">
+					<div class="navigationBar__menu-item--thin first">
 					</div>
-				</div>
-				<div class="hero">
-					<div class="hero__wrapper--half">
-						<div class="text--hero">
-							GRID LAYOUT
-						</div>
-						<div class="text--caption">
-							Experience the responsiveness of this basic grid layout
-							as the grid areas adjust to the size of the window to deliver aesthetically pleasing layouts on any size screen.
-						</div>
+					<div class="navigationBar__menu-item--thin">
+					</div>
+					<div class="navigationBar__menu-item--thin">
+					</div>
+					<div class="navigationBar__menu-item--thin">
 					</div>
 				</div>
 			</div>
-			<main class="grid__main--responsive-semantic">
-				<div class="main--full">
-					<div class="main__wrapper">
-						<div class="text__heading">
-							MAIN CONTENT
+		</nav>
+
+		<div class="main">
+			<div class="grid__container--responsive-semantic grid">
+				<div class="grid__header--responsive-semantic">
+					<div class="hero">
+						<div class="hero__wrapper--half">
+							<div class="text--hero">
+								GRID LAYOUT
+							</div>
+							<div class="text--caption">
+								Experience the responsiveness of this basic grid layout
+								as the grid areas adjust to the size of the window to deliver aesthetically pleasing layouts on any size screen.
+							</div>
 						</div>
 					</div>
 				</div>
-			</main>
-			<aside class="grid__aside--responsive-semantic">	
-			</aside>
-			<nav class="grid__navigation--responsive-semantic">	
-			<div class="menu">
-				<div class="menu__heading">Menu</div>
-				<div class="menu__dropDown">
-					<div class="menu__item">
-						<a class="text__link">Link one</a>
-						<div class="menu__expander-icon triangle--left-black--small"></div>
-					</div>	
-					<div class="menu__dropDown-content">
-						<div class="menu__dropDown-item">
-							<a class="text__link">Link one</a>
-						</div>
-						<div class="menu__dropDown-item">
-							<a class="text__link">Link two</a>
-							<!--see "Discogs" website accordion*-->
-						</div>
-						<div class="menu__dropDown-item">
-							<a class="text__link">Link three</a>
+
+				<main class="grid__main--responsive-semantic">
+					<div class="main--full">
+						<div class="main--flex">
+						
+							<div class="main__wrapper">
+								<div class="main__section top">
+									<div class="main__sectionHeading">
+										<div class="main__sectionHeading-icon">
+											<div class="main__sectionHeading-icon--medium">
+												<div class="main__sectionHeading-icon--small">
+													<div class="main__sectionHeading-icon--x-small"></div>
+												</div>
+											</div>
+										</div>
+										<div class="main__sectionHeading-text">Responsive grid</div>
+										<div class="example__module--right">
+											<div class="main__sectionHeading-expander-icon-heading">VIEW CODE</div>
+											<button class="main__sectionHeading-expander-icon button">
+												<div class="icon__code--left"></div>
+												<div class="icon__code--right"></div>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="main__section">
+								<div class="media">
+									<div class="media__innerWrapper">
+										<div class="media__image-wrapper--5"> 
+											<img src="../Themes/fog__stockImage.jpg" src="Media image" height="75%" width="100%">
+										</div>
+										<div class="media__description--no-border">
+											<div class="media__heading-group">
+												<div class="media__heading--small">Media Object</div>
+											</div>
+											<div class="media__description-text">
+												This is a standard media object. When placed within a responsive grid layout, each column that contains the media object will expand or collapse based on media query breakpoints.
+											</div>
+										</div>	
+									</div>		
+								</div>
+							</div>
+
+							<div class="main__section">
+								<div class="media">
+									<div class="media__innerWrapper">
+										<div class="media__image-wrapper--5"> 
+											<img src="../Themes/fog__stockImage.jpg" src="Media image" height="75%" width="100%">
+										</div>
+										<div class="media__description--no-border">
+											<div class="media__heading-group">
+												<div class="media__heading--small">Media Object</div>
+											</div>
+											<div class="media__description-text">
+												This is a standard media object. When placed within a responsive grid layout, each column that contains the media object will expand or collapse based on media query breakpoints.
+											</div>
+										</div>	
+									</div>		
+								</div>
+							</div>
+
+							<div class="main__section">
+								<div class="media">
+									<div class="media__innerWrapper">
+										<div class="media__image-wrapper--5"> 
+											<img src="../Themes/fog__stockImage.jpg" src="Media image" height="75%" width="100%">
+											<!--<div class="media__image-transparent-overlay"></div>-->
+										</div>
+										<div class="media__description--no-border">
+											<div class="media__heading-group">
+												<div class="media__heading--small">Media Object</div>
+											</div>
+											<div class="media__description-text">
+												This is a standard media object. When placed within a responsive grid layout, each column that contains the media object will expand or collapse based on media query breakpoints.
+											</div>
+										</div>	
+									</div>		
+								</div>
+							</div>
+
+							<div class="main__section">
+								<div class="media">
+									<div class="media__innerWrapper">
+										<div class="media__image-wrapper--5"> 
+											<img src="../Themes/fog__stockImage.jpg" src="Media image" height="75%" width="100%">
+										</div>
+										<div class="media__description--no-border">
+											<div class="media__heading-group">
+												<div class="media__heading--small">Media Object</div>
+											</div>
+											<div class="media__description-text">
+												This is a standard media object. When placed within a responsive grid layout, each column that contains the media object will expand or collapse based on media query breakpoints.
+											</div>
+										</div>	
+									</div>		
+								</div>
+							</div>
 						</div>
 
 					</div>
-				</div>
-				<div class="menu__dropDown">
-					<div class="menu__item">
-						<a class="text__link">Link two</a>
-						<div class="menu__expander-icon triangle--left-black--small"></div>
+				</main>
+
+				<aside class="grid__aside--responsive-semantic">	
+				</aside>
+				<nav class="grid__navigation--responsive-semantic">	
+				<div class="menu">
+					<div class="menu__heading">Menu</div>
+					<div class="menu__dropDown">
+						<div class="menu__item">
+							<a class="text__link">Link one</a>
+							<div class="menu__expander-icon triangle--left-black--small"></div>
+						</div>	
+						<div class="menu__dropDown-content">
+							<div class="menu__dropDown-item">
+								<a class="text__link">Link one</a>
+							</div>
+							<div class="menu__dropDown-item">
+								<a class="text__link">Link two</a>
+							</div>
+							<div class="menu__dropDown-item">
+								<a class="text__link">Link three</a>
+							</div>
+						</div>
 					</div>
+					<div class="menu__dropDown">
+						<div class="menu__item">
+							<a class="text__link">Link two</a>
+							<div class="menu__expander-icon triangle--left-black--small"></div>
+						</div>
+						<div class="menu__dropDown-content">
+							<div class="menu__dropDown-item">
+								<a class="text__link">Link one</a>
+							</div>
+							<div class="menu__dropDown-item">
+								<a class="text__link">Link two</a>
+							</div>
+							<div class="menu__dropDown-item">
+								<a class="text__link">Link three</a>
+							</div>
+						</div>
+					</div>	
 				</div>	
-			</div>	
-			</nav>
-			<footer class="grid__footer--responsive-semantic">	
-			</footer>
+				</nav>
+				<footer class="grid__footer--responsive-semantic">	
+				</footer>
+			</div>
 		</div>
 
 		<script src="../../myStyleGuide.js" type="text/javascript"></script>

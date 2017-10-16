@@ -35,14 +35,20 @@
 	right: 0.85em;
 }
 
+.icon__home {
+	position: relative;
+	color: $black;
+	font-size: 1.15em;
+}
+
+.icon__home:visited {
+	color: $black;
+}
+
 .icon__code--right {
 	@include arrow(absolute, "right", 0.25em, $grey-dark, solid);
 
 	left: 0.85em;
-}
-
-.icon__search {
-	margin-top: -0.125em;
 }
 
 .icon__media--circle--small {
@@ -57,6 +63,33 @@
 	background: $teal;
 }
 
+.icon__search {
+	margin-top: -0.125em;
+}
+
+/*icon containers*/
+
+.icon__wrapper {
+	@include prefix(transition, all 0.15s ease-in-out);
+
+	padding: 0.25em 0;
+	max-height: 85%;
+	border-bottom: 0.25em solid $teal;
+
+		&:hover {
+			background: $teal;
+			border-bottom: 0;
+			box-shadow: inset 0 -0.05em 0.5em 0.05em $teal-dark;
+			cursor: pointer;
+			padding: 0.25em 0.35em;
+		}
+}
+
+.icon__wrapper > *:hover {
+	color: $white;
+}
+
+
 /*page corner icons*/
 
 .icon__pageCorner--top-left {
@@ -64,7 +97,7 @@
 }
 
 .icon__pageCorner--bottom-right {
-	@include page-corner(relative, "bottom-right", 0.25em, groove, $teal, 2em);	
+	@include page-corner(relative, "bottom right", 0.25em, groove, $teal, 2em);	
 }
 
 
@@ -72,7 +105,7 @@
 container as a text to create padding between the text and the icon*/
 .icon__menu-item--right {
 	position: absolute;
-	right: 0;
+	right: 1em;
 }
 
 .icon__menu-item--top {

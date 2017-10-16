@@ -29,6 +29,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -59,7 +61,7 @@ the direction of where you want the margin spacing to be applied*/
 /*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
-.accordion, .accordion.active {
+.accordion, .accordion.active, .accordion--singleSelect {
   -webkit-transition: 0.1s;
   transition: 0.1s;
   -moz-transition: 0.1s;
@@ -84,7 +86,7 @@ the direction of where you want the margin spacing to be applied*/
   text-align: left;
   font-family: "Quicksand Light"; }
 
-.accordion.active {
+.accordion.active, .active.accordion--singleSelect {
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
   border-bottom-right-radius: 0;
@@ -93,7 +95,7 @@ the direction of where you want the margin spacing to be applied*/
   border-bottom: 0.45em groove #1F9EA4;
   box-shadow: 0 0.05em 0.5em 0 #A0A0A0, inset 0 0.125em 0.5em 0.125em #4BA7AB; }
 
-.accordion.active > .accordion__expander-icon {
+.accordion.active > .accordion__expander-icon, .active.accordion--singleSelect > .accordion__expander-icon {
   -webkit-transform: rotate(-180deg);
   transform: rotate(-180deg);
   -moz-transform: rotate(-180deg);
@@ -104,24 +106,31 @@ the direction of where you want the margin spacing to be applied*/
   transform: rotate(-180deg);
   border: 0.25em double #FFF; }
 
-.accordion.active > .accordion__expander-icon--no-border {
+.accordion.active > .accordion__expander-icon--no-border, .active.accordion--singleSelect > .accordion__expander-icon--no-border {
   border: 0; }
 
-.accordion.active > .accordion__expander-icon > .arrow--down-white {
+.accordion.active > .accordion__expander-icon > .arrow--down-white, .active.accordion--singleSelect > .accordion__expander-icon > .arrow--down-white {
   top: -0.15em; }
 
-.accordion:hover {
+.accordion:hover, .accordion--singleSelect:hover {
   background: #4E4E4E; }
 
-.accordion:hover .accordion__expander-icon {
+.accordion:hover .accordion__expander-icon, .accordion--singleSelect:hover .accordion__expander-icon {
   border-color: #212121; }
 
-.accordion.active:hover {
+.accordion.active:hover, .active.accordion--singleSelect:hover {
   background: #3CB3B9;
   opacity: 0.85; }
 
-.accordion.active:hover .accordion__expander-icon {
+.accordion.active:hover .accordion__expander-icon, .active.accordion--singleSelect:hover .accordion__expander-icon {
   border-color: #FFF; }
+
+/*Accordion sizes*/
+.accordion.small, .small.accordion--singleSelect {
+  padding: 0.5em; }
+
+.accordion.small.active, .small.active.accordion--singleSelect {
+  padding: 0.5em; }
 
 .accordion__expander-icon {
   -webkit-transition: transform 0.3s;
@@ -145,45 +154,62 @@ the direction of where you want the margin spacing to be applied*/
 .accordion__expander-icon--no-border {
   border: 0; }
 
+.accordion__group, .accordion__group--withHeading {
+  padding: 1em;
+  background: #000;
+  border: 0.01em solid transparent;
+  border-radius: 0.25em; }
+
+.accordion__group--withHeading {
+  padding: 0; }
+
 .accordion__heading {
   flex: 1; }
 
 .accordion__innerPanel {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
   padding-top: 0.65em;
   padding-right: 1em;
   padding-bottom: 0.65em;
   padding-left: 1em;
-  display: table-cell;
-  min-width: 100%;
+  margin: 0.5em;
   background: #000;
   border: 0.01em solid transparent;
   border-radius: 0.25em;
   overflow: auto; }
 
 .accordion__panel {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: max-height 0.4s ease-in-out, opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
+  transition: max-height 0.4s ease-in-out, opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
+  -moz-transition: max-height 0.4s ease-in-out, opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
+  transition: max-height 0.4s ease-in-out, opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
+  -ms-transition: max-height 0.4s ease-in-out, opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
+  transition: max-height 0.4s ease-in-out, opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
+  -o-transition: max-height 0.4s ease-in-out, opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
+  transition: max-height 0.4s ease-in-out, opacity 0.25s ease-in-out, visibility 0.25s ease-in-out;
   position: relative;
-  display: none;
   margin: auto;
   max-height: 0;
   width: 90%;
-  padding: 0.5em;
   background: #212121;
   color: #FFF;
   font-family: "Quicksand Light";
   line-height: 1.5em;
-  overflow: auto; }
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden; }
 
 .accordion__panel-text {
   position: relative;
-  min-width: 100%; }
+  min-width: 95%;
+  margin: 1em; }
 
 .accordion__panel--left {
   font-size: 0.925em;
@@ -209,8 +235,13 @@ the direction of where you want the margin spacing to be applied*/
       max-width: 50%;
       min-height: auto; } }
 
+.accordion__panel--left .text__heading, .accordion__panel--left .text__heading--main, .accordion__panel--left .text__heading--nav {
+  padding-left: 0.15em; }
+
 .accordion__panel--left > .media__image-wrapper--9 {
-  margin-bottom: 0.25em; }
+  margin-right: auto;
+  margin-bottom: 0.25em;
+  margin-left: auto; }
 
 .accordion__panel--right {
   margin-bottom: 0.5em;
@@ -272,32 +303,37 @@ the direction of where you want the margin spacing to be applied*/
   border-top-right-radius: 0.25em;
   padding-top: 1em; }
 
+.accordion__row.active {
+  max-height: min-content; }
+
 .accordion__row.active > .accordion__panel {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
-  display: table;
-  max-height: min-content; }
+  max-height: 200em;
+  opacity: 1;
+  visibility: visible; }
 
 .accordion__row--last.active > .accordion__panel {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
-  display: table;
-  max-height: min-content; }
+  max-height: 200em;
+  opacity: 1;
+  visibility: visible; }
 
 .accordion__row--first.active > .accordion__panel {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0.5em;
   border-bottom-left-radius: 0.5em;
-  display: table;
-  max-height: min-content; }
+  max-height: 200em;
+  opacity: 1;
+  visibility: visible; }
 
-.accordion__panel--border, .accordion__row--last.active > .accordion__panel--border, .accordion__row--first.active > .accordion__panel--border {
-  padding: 1em;
+.accordion__panel--border, .accordion__row.active > .accordion__panel--border, .accordion__row--last.active > .accordion__panel--border, .accordion__row--first.active > .accordion__panel--border {
   background: transparent;
   border: 0;
   border-bottom: 0.05em solid #4E4E4E;
@@ -309,26 +345,21 @@ the direction of where you want the margin spacing to be applied*/
   background: transparent;
   border-radius: 0; }
 
-.accordion__group {
-  padding: 1em;
-  background: #000;
-  border: 0.01em solid transparent;
-  border-radius: 0.25em; }
-
-/*Accordian styles*/
+/*Accordion styles*/
 .accordion--border {
   border-top: 0.05em solid #4E4E4E;
   border-bottom: 0.05em solid #4E4E4E;
   border-radius: 0;
   box-shadow: none; }
 
-.accordion--border.active {
+.accordion--border.active, .accordion--singleSelect.active {
   border-radius: 0;
   background: transparent;
   box-shadow: none;
   border-top: 0.05em solid #4E4E4E;
   border-bottom: 0; }
 
+/*Accordion behavior*/
 /*creates a "screen-like" appearance on the inner panel of the
 accordian panel*/
 .accordion__innerPanel--teal-screen {
@@ -365,6 +396,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -444,6 +477,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -515,6 +550,14 @@ $teal-box-shadow: //code here
   transform: rotate(315deg);
   right: 0.85em; }
 
+.icon__home {
+  position: relative;
+  color: #000;
+  font-size: 1.15em; }
+
+.icon__home:visited {
+  color: #000; }
+
 .icon__code--right {
   display: block;
   padding: 0.25em;
@@ -531,9 +574,6 @@ $teal-box-shadow: //code here
   -o-transform: rotate(135deg);
   transform: rotate(135deg);
   left: 0.85em; }
-
-.icon__search {
-  margin-top: -0.125em; }
 
 .icon__media--circle--small {
   height: 1em;
@@ -552,6 +592,32 @@ $teal-box-shadow: //code here
   -webkit-border-radius: 0.75em;
   border-radius: 0.75em;
   background: #3CB3B9; }
+
+.icon__search {
+  margin-top: -0.125em; }
+
+/*icon containers*/
+.icon__wrapper {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  padding: 0.25em 0;
+  max-height: 85%;
+  border-bottom: 0.25em solid #3CB3B9; }
+  .icon__wrapper:hover {
+    background: #3CB3B9;
+    border-bottom: 0;
+    box-shadow: inset 0 -0.05em 0.5em 0.05em #23585A;
+    cursor: pointer;
+    padding: 0.25em 0.35em; }
+
+.icon__wrapper > *:hover {
+  color: #FFF; }
 
 /*page corner icons*/
 .icon__pageCorner--top-left {
@@ -576,7 +642,7 @@ $teal-box-shadow: //code here
 container as a text to create padding between the text and the icon*/
 .icon__menu-item--right {
   position: absolute;
-  right: 0; }
+  right: 1em; }
 
 .icon__menu-item--top {
   position: absolute;
@@ -738,6 +804,8 @@ for color (--state) and including the .triangle mixin with desired color.*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -768,14 +836,49 @@ the direction of where you want the margin spacing to be applied*/
 /*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+.navigationBar {
+  /*Positioning*/
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0.375em;
+  /*Box Model*/
+  display: flex;
+  flex-direction: row;
+  min-height: 4em;
+  /*Visual*/
+  font-family: "Quicksand Regular";
+  background: #000;
+  box-shadow: 0 0.05em 0.5em 0.05em #4E4E4E;
+  z-index: 2; }
+
+.navigationBar--state {
+  position: relative;
+  flex: 1;
+  display: flex; }
+
+.navigationBar.inverted {
+  background: #FFF; }
+
+.navigationBar__text--absolute {
+  color: #FFF; }
+
 .navigationBar--thin {
+  -webkit-background: linear-gradient(to bottom, #FFF 20%, rgba(0, 0, 0, 0.05) 50%, #E6E6E6 100%);
+  background: linear-gradient(to bottom, #FFF 20%, rgba(0, 0, 0, 0.05) 50%, #E6E6E6 100%);
+  -moz-background: linear-gradient(to bottom, #FFF 20%, rgba(0, 0, 0, 0.05) 50%, #E6E6E6 100%);
+  background: linear-gradient(to bottom, #FFF 20%, rgba(0, 0, 0, 0.05) 50%, #E6E6E6 100%);
+  -ms-background: linear-gradient(to bottom, #FFF 20%, rgba(0, 0, 0, 0.05) 50%, #E6E6E6 100%);
+  background: linear-gradient(to bottom, #FFF 20%, rgba(0, 0, 0, 0.05) 50%, #E6E6E6 100%);
+  -o-background: linear-gradient(to bottom, #FFF 20%, rgba(0, 0, 0, 0.05) 50%, #E6E6E6 100%);
+  background: linear-gradient(to bottom, #FFF 20%, rgba(0, 0, 0, 0.05) 50%, #E6E6E6 100%);
+  position: fixed;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  min-height: 2.5em;
-  width: 100%;
-  background: #FFF; }
+  min-height: 2.65em;
+  width: 100%; }
 
 .navigationBar__component {
   display: flex;
@@ -858,7 +961,8 @@ from drop down item*/
   left: 0;
   right: 0;
   top: 0;
-  min-height: 0.375em; }
+  min-height: 0.375em;
+  background: #3CB3B9; }
 
 .navigationBar__menu {
   display: flex;
@@ -930,6 +1034,9 @@ from drop down item*/
 .navigationBar__menu-item:hover .navigationBar__dropDown-menu {
   display: flex; }
 
+.navigationBar__menu-item .triangle--right-black.left {
+  left: 0.05em; }
+
 .navigationBar__menu-item--start {
   border-left: 0; }
 
@@ -943,51 +1050,88 @@ from drop down item*/
   cursor: pointer; }
 
 /*Navigation bar styles*/
+.navigationBar__icon-menu--thin {
+  position: absolute;
+  left: 0;
+  top: -1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: left;
+  margin: 0 2em; }
+
 .navigationBar__menu--thin {
+  position: fixed;
+  top: 3em;
   display: flex;
   min-height: 1.5em;
   width: 100%;
-  box-shadow: 0 0.05em 0.5em 0.05em #C7C7C7;
   font-family: "Quicksand Light"; }
 
 .navigationBar__menu--thin-left {
+  position: relative;
+  margin-top: -0.05em;
   display: flex;
   flex-direction: row;
   min-width: calc((1/3) * 100%); }
 
 .navigationBar__menu-item--thin {
+  -webkit-transition: background 0.3s, transform 0.15s ease-in-out;
+  transition: background 0.3s, transform 0.15s ease-in-out;
+  -moz-transition: background 0.3s, transform 0.15s ease-in-out;
+  transition: background 0.3s, transform 0.15s ease-in-out;
+  -ms-transition: background 0.3s, transform 0.15s ease-in-out;
+  transition: background 0.3s, transform 0.15s ease-in-out;
+  -o-transition: background 0.3s, transform 0.15s ease-in-out;
+  transition: background 0.3s, transform 0.15s ease-in-out;
   flex: 1;
   align-items: center;
   justify-content: center;
   position: relative;
   display: flex;
+  align-self: center;
   max-height: 1.25em;
-  border-left: 0.05em solid #3C3939;
-  color: #000;
-  transition: 0.3s; }
+  color: #000; }
+  .navigationBar__menu-item--thin:nth-child(1)::after {
+    content: "1";
+    font-size: 0.95em; }
+  .navigationBar__menu-item--thin:nth-child(2)::after {
+    content: "2";
+    font-size: 0.95em; }
+  .navigationBar__menu-item--thin:nth-child(3)::after {
+    content: "3";
+    font-size: 0.95em; }
+  .navigationBar__menu-item--thin:nth-child(4)::after {
+    content: "4";
+    font-size: 0.95em; }
   @media screen and (min-width: 640px) {
-    .navigationBar__menu-item--thin {
-      align-self: center; }
-      .navigationBar__menu-item--thin:nth-child(1)::after {
-        content: "Item 1";
-        font-size: 0.95em; }
-      .navigationBar__menu-item--thin:nth-child(2)::after {
-        content: "Item 2";
-        font-size: 0.95em; }
-      .navigationBar__menu-item--thin:nth-child(3)::after {
-        content: "Item 3";
-        font-size: 0.95em; }
-      .navigationBar__menu-item--thin:nth-child(4)::after {
-        content: "Item 4";
-        font-size: 0.95em; } }
+    .navigationBar__menu-item--thin:nth-child(1)::after {
+      content: "Item 1";
+      font-size: 0.95em; }
+    .navigationBar__menu-item--thin:nth-child(2)::after {
+      content: "Item 2";
+      font-size: 0.95em; }
+    .navigationBar__menu-item--thin:nth-child(3)::after {
+      content: "Item 3";
+      font-size: 0.95em; }
+    .navigationBar__menu-item--thin:nth-child(4)::after {
+      content: "Item 4";
+      font-size: 0.95em; } }
 
 .navigationBar__menu-item--thin:hover {
+  border-right: 0.05em solid #3C3939;
+  border-left: 0.05em solid #3C3939;
   background: rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  transform: scale(1.15, 1.15);
   opacity: 0.85; }
 
 .navigationBar__menu-item--thin.first {
   border-left: 0; }
+
+.navigationBar__menu-item--thin.first:hover {
+  border-right: 0.05em solid #3C3939;
+  border-left: 0.05em solid #3C3939; }
 
 /*BOTTOM NAVIGATION FOR MOBILE AND TABLET VIEW*/
 /*acts as a container for items inside the bottom navigation bar*/
@@ -1044,6 +1188,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -1245,6 +1391,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -1331,6 +1479,8 @@ the direction of where you want the margin spacing to be applied*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -1388,6 +1538,7 @@ $teal-box-shadow: //code here
   border: 0.05em solid transparent;
   box-shadow: inset 0 0.05em 0.5em #26CE31, inset 0 -0.025em 0.5em #26CE31;
   color: #005506;
+  font-family: "Quicksand Bold";
   text-shadow: 0.025em 0.025em #004205; }
 
 .button__action:hover {
@@ -1478,6 +1629,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -1679,6 +1832,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -1754,6 +1909,8 @@ the direction of where you want the margin spacing to be applied*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -1816,7 +1973,8 @@ $teal-box-shadow: //code here
   flex-direction: column;
   background: rgba(60, 179, 185, 0.15);
   border: 0.05em solid #23585A;
-  border-radius: 0.25em; }
+  border-radius: 0.25em;
+  box-shadow: inset 0 0 0.5em 0.015em #23585A, 0.025em 0.025em 0.25em #23585A; }
 
 .hero__wrapper--half {
   max-width: 50%; }
@@ -1852,6 +2010,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -2053,6 +2213,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -2114,6 +2276,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -2144,7 +2308,7 @@ the direction of where you want the margin spacing to be applied*/
 /*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
-.media {
+.media, .media__innerWrapper {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -2174,63 +2338,98 @@ the direction of where you want the margin spacing to be applied*/
   border-radius: 0.25em;
   box-shadow: 0 0.125em 0.75em #212121, inset 0 0.25em 0.5em #212121; }
 
+.media__image-wrapper--5:hover .media__image-transparent-overlay {
+  opacity: 1; }
+
+.media__image-transparent-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease;
+  -moz-transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease;
+  -ms-transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease;
+  -o-transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease;
+  width: 100%;
+  height: 75%;
+  margin-top: -115%;
+  background: rgba(0, 0, 0, 0.15);
+  opacity: 0; }
+
 .media__image-wrapper--1 {
-  width: calc((1/12) * 100%);
-  padding: 0.25em; }
+  flex: 1;
+  width: calc((1/12) * 100%); }
 
 .media__image-wrapper--2 {
-  width: calc((2/12) * 100%);
-  padding: 0.25em; }
+  flex: 1;
+  width: calc((2/12) * 100%); }
 
 .media__image-wrapper--3 {
-  width: calc((3/12) * 100%);
-  padding: 0.25em; }
+  flex: 1;
+  width: calc((3/12) * 100%); }
 
 .media__image-wrapper--4 {
-  width: calc((4/12) * 100%);
-  padding: 0.25em; }
+  flex: 1;
+  width: calc((4/12) * 100%); }
 
 .media__image-wrapper--5 {
-  width: calc((5/12) * 100%);
-  padding: 0.25em; }
+  flex: 1;
+  width: calc((5/12) * 100%); }
 
 .media__image-wrapper--6 {
-  width: calc((6/12) * 100%);
-  padding: 0.25em; }
+  flex: 1;
+  width: calc((6/12) * 100%); }
 
 .media__image-wrapper--7 {
-  width: calc((7/12) * 100%);
-  padding: 0.5em; }
+  flex: 1;
+  width: calc((7/12) * 100%); }
 
 .media__image-wrapper--8 {
-  width: calc((8/12) * 100%);
-  padding: 0.5em; }
+  flex: 1;
+  width: calc((8/12) * 100%); }
 
 .media__image-wrapper--9 {
-  width: calc((9/12) * 100%);
-  padding: 0.5em; }
+  flex: 1;
+  width: calc((9/12) * 100%); }
 
 .media__image-wrapper--10 {
-  width: calc((10/12) * 100%);
-  padding: 0.75em; }
+  flex: 1;
+  width: calc((10/12) * 100%); }
 
 .media__image-wrapper--11 {
-  width: calc((11/12) * 100%);
-  padding: 0.75em; }
+  flex: 1;
+  width: calc((11/12) * 100%); }
 
 .media__image-wrapper--12 {
-  width: calc((12/12) * 100%);
-  padding: 0.75em; }
+  flex: 1;
+  width: calc((12/12) * 100%); }
+
+.media__innerWrapper {
+  padding: 0.5em;
+  min-width: 100%; }
 
 .media__description {
   position: relative;
-  padding: 0.5em;
+  flex: 3;
+  padding: 0 0.5em;
   border: 0.05em solid #212121;
   border-radius: 0.25em;
   box-shadow: 0 -0.125em 0.75em #212121, inset 0 -0.25em 0.5em #212121; }
 
+.media__description--no-border {
+  position: relative;
+  flex: 3;
+  padding: 0 0.5em; }
+
 .media__description--small {
   padding: 0; }
+
+.media__description-text {
+  line-height: 1.5em;
+  font-size: 0.9em; }
 
 .media__description-heading {
   margin-top: 0.5em;
@@ -2271,12 +2470,10 @@ the direction of where you want the margin spacing to be applied*/
 
 .media__heading-group {
   flex: 4;
-  padding: 0.5em;
   line-height: 1.5em; }
 
 .media__heading-group--small {
   flex: 4;
-  padding: 0.25em;
   line-height: 1.25em; }
 
 /*Transparent colors*/
@@ -2310,6 +2507,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -2511,6 +2710,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -2602,6 +2803,15 @@ the direction of where you want the margin spacing to be applied*/
 .table__row {
   display: table-row; }
 
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
 /*used with display property to hide content*/
@@ -2624,6 +2834,8 @@ the direction of where you want the margin spacing to be applied*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -2650,6 +2862,100 @@ the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
 /*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+.container___width--1 {
+  width: calc((1/12) * 100%); }
+
+.container___width--2 {
+  width: calc((2/12) * 100%); }
+
+.container___width--3 {
+  width: calc((3/12) * 100%); }
+
+.container___width--4 {
+  width: calc((4/12) * 100%); }
+
+.container___width--5 {
+  width: calc((5/12) * 100%); }
+
+.container___width--6 {
+  width: calc((6/12) * 100%); }
+
+.container___width--7 {
+  width: calc((7/12) * 100%); }
+
+.container___width--8 {
+  width: calc((8/12) * 100%); }
+
+.container___width--9 {
+  width: calc((9/12) * 100%); }
+
+.container___width--10 {
+  width: calc((10/12) * 100%); }
+
+.container___width--11 {
+  width: calc((11/12) * 100%); }
+
+.container___width--12 {
+  width: calc((12/12) * 100%); }
+
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
 /*transparency most visible on light surfaces*/
@@ -2698,9 +3004,12 @@ $teal-box-shadow: //code here
 the its main usage and how it behaves. This container is commonly used for
 entire page layouts that include a header, footer, aside, and main section.*/
 .grid__container--responsive-semantic {
-  grid-template-columns: minmax(min-content, 20%) 1fr minmax(min-content, 20%);
+  grid-template-columns: minmax(min-content, 15%) 1fr minmax(min-content, 15%);
   grid-template-rows: 1fr repeat(3, minmax(auto, 1fr)) 1fr;
-  grid-template-areas: "header header header" "aside main navigation" "aside main navigation" "aside main navigation" "footer footer footer"; }
+  grid-template-areas: "header header header" "main main main" "main main main" "main main main" "footer footer footer"; }
+  @media screen and (min-width: 1024px) {
+    .grid__container--responsive-semantic {
+      grid-template-areas: "header header header" "aside main navigation" "aside main navigation" "aside main navigation" "footer footer footer"; } }
 
 .grid__header--responsive-semantic {
   grid-area: header;
@@ -2708,23 +3017,34 @@ entire page layouts that include a header, footer, aside, and main section.*/
 
 .grid__aside--responsive-semantic {
   grid-area: aside;
-  position: relative;
-  background: #3CB3B9; }
+  display: none;
+  position: relative; }
+  @media screen and (min-width: 1024px) {
+    .grid__aside--responsive-semantic {
+      display: block; } }
 
 .grid__main--responsive-semantic {
   grid-area: main;
-  position: relative;
-  background: #26CE31; }
+  position: relative; }
+
+.grid__main--responsive-semantic .main--flex {
+  padding: 0.75em; }
+  @media screen and (min-width: 1024px) {
+    .grid__main--responsive-semantic .main--flex {
+      padding: 0; } }
 
 .grid__navigation--responsive-semantic {
   grid-area: navigation;
-  position: relative;
-  background: #00920A; }
+  display: none;
+  position: relative; }
+  @media screen and (min-width: 1024px) {
+    .grid__navigation--responsive-semantic {
+      display: block; } }
 
 .grid__footer--responsive-semantic {
   grid-area: footer;
   position: relative;
-  background: #23585A; }
+  background: rgba(0, 0, 0, 0.15); }
 
 /*Grid-template-area items for the page layout*/
 .grid__content--page-layout {
@@ -2739,6 +3059,22 @@ entire page layouts that include a header, footer, aside, and main section.*/
   @media screen and (min-width: 820px) {
     .grid__navigation--page-layout--right {
       display: block; } }
+
+/*Grid gap sizes*/
+.grid__gap--1 {
+  grid-gap: 1em; }
+
+.grid__gap--75 {
+  grid-gap: 0.75em; }
+
+.grid__gap--5 {
+  grid-gap: 0.5em; }
+
+.grid__gap--25 {
+  grid-gap: 0.25em; }
+
+.grid__gap--125 {
+  grid-gap: 0.125em; }
 
 /****Grid tempate columns & rows****/
 /*Grid-rows spanning up to 12 columns with auto-placement*/
@@ -2924,8 +3260,29 @@ by the first value of grid-column and the last value of the class name
   grid-column: 11/span 1; }
 
 /*grid-template columns spanning 2 columns*/
+.grid__template--columns-span2-2 {
+  grid-column: 2/span 2; }
+
 .grid__template--columns-span2-3 {
   grid-column: 3/span 2; }
+
+.grid__template--columns-span2-4 {
+  grid-column: 4/span 2; }
+
+.grid__template--columns-span2-5 {
+  grid-column: 5/span 2; }
+
+.grid__template--columns-span2-6 {
+  grid-column: 6/span 2; }
+
+.grid__template--columns-span2-7 {
+  grid-column: 7/span 2; }
+
+.grid__template--columns-span2-8 {
+  grid-column: 8/span 2; }
+
+.grid__template--columns-span2-9 {
+  grid-column: 9/span 2; }
 
 /*grid-template columns spanning 3 columns*/
 .grid__template--columns-span3-2 {
@@ -2977,10 +3334,67 @@ by the first value of grid-column and the last value of the class name
 .grid__template--columns-span4-9 {
   grid-column: 9/span 4; }
 
-/*Flexible grid classes*/
-.grid__row--responsive {
-  rowion: relative;
-  grid-row: 1/span min-row; }
+/*.grid-template rows spanning 1 row*/
+.grid__template--rows-span1-2 {
+  grid-row: 2/span 1; }
+
+.grid__template--rows-span1-3 {
+  grid-row: 3/span 1; }
+
+.grid__template--rows-span1-4 {
+  grid-row: 4/span 1; }
+
+.grid__template--rows-span1-5 {
+  grid-row: 5/span 1; }
+
+.grid__template--rows-span1-6 {
+  grid-row: 6/span 1; }
+
+.grid__template--rows-span1-7 {
+  grid-row: 7/span 1; }
+
+.grid__template--rows-span1-8 {
+  grid-row: 8/span 1; }
+
+.grid__template--rows-span1-9 {
+  grid-row: 9/span 1; }
+
+.grid__template--rows-span1-10 {
+  grid-row: 10/span 1; }
+
+.grid__template--rows-span1-11 {
+  grid-column: 11/span 1; }
+
+/*grid-template rows spanning 2 rows*/
+.grid__template--rows-span2-2 {
+  grid-row: 2/span 2; }
+
+.grid__template--rows-span2-3 {
+  grid-row: 3/span 2; }
+
+.grid__template--rows-span2-4 {
+  grid-row: 4/span 2; }
+
+.grid__template--rows-span2-5 {
+  grid-row: 5/span 2; }
+
+.grid__template--rows-span2-6 {
+  grid-row: 6/span 2; }
+
+.grid__template--rows-span2-7 {
+  grid-row: 7/span 2; }
+
+.grid__template--rows-span2-8 {
+  grid-row: 8/span 2; }
+
+.grid__template--rows-span2-9 {
+  grid-row: 9/span 2; }
+
+.grid__template--rows-span2-10 {
+  grid-row: 10/span 2; }
+
+.grid__template--rows-span2-11 {
+  grid-row: 11/span 2; }
 
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
@@ -3013,6 +3427,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -3044,7 +3460,43 @@ the direction of where you want the margin spacing to be applied*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
 /*MISC*/
-.main {
+.container___width--1 {
+  width: calc((1/12) * 100%); }
+
+.container___width--2 {
+  width: calc((2/12) * 100%); }
+
+.container___width--3 {
+  width: calc((3/12) * 100%); }
+
+.container___width--4 {
+  width: calc((4/12) * 100%); }
+
+.container___width--5 {
+  width: calc((5/12) * 100%); }
+
+.container___width--6 {
+  width: calc((6/12) * 100%); }
+
+.container___width--7 {
+  width: calc((7/12) * 100%); }
+
+.container___width--8 {
+  width: calc((8/12) * 100%); }
+
+.container___width--9 {
+  width: calc((9/12) * 100%); }
+
+.container___width--10 {
+  width: calc((10/12) * 100%); }
+
+.container___width--11 {
+  width: calc((11/12) * 100%); }
+
+.container___width--12 {
+  width: calc((12/12) * 100%); }
+
+.main, .main--sidebar {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -3053,23 +3505,43 @@ the direction of where you want the margin spacing to be applied*/
   background: #DEF9EE;
   overflow-y: auto;
   z-index: 1; }
-  @media screen and (min-width: 1024px) {
-    .main {
-      position: absolute;
-      bottom: 0;
-      left: 14em;
-      right: 0;
-      top: 4.35em;
-      overflow-y: auto; } }
+
+.main--flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.main--flex .main__section {
+  max-width: 100%; }
+  @media screen and (min-width: 768px) {
+    .main--flex .main__section {
+      max-width: 50%; } }
+
+.main--flex .main__section.top {
+  min-width: 100%; }
+
+@media screen and (min-width: 768px) {
+  .main--flex .main__section:nth-child(2n) {
+    margin-left: 0.5em; } }
+
+.main--flex .main__wrapper, .main--flex .main__wrapper--right {
+  min-width: 100%; }
 
 .main--full {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  top: 0;
-  font-size: 3em;
-  color: #FFF; }
+  top: 0; }
+
+@media screen and (min-width: 1024px) {
+  .main--sidebar {
+    position: absolute;
+    bottom: 0;
+    left: 14em;
+    right: 0;
+    top: 4.35em;
+    overflow-y: auto; } }
 
 .main__section {
   border-bottom: 0.01em solid #4BA7AB;
@@ -3337,22 +3809,21 @@ the direction of where you want the margin spacing to be applied*/
   max-width: 60%;
   margin-left: 1em;
   font-family: "Quicksand Regular";
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1.75em; }
+  @media screen and (min-width: 768px) {
+    .main__sectionHeading-text {
+      font-size: 2em; } }
 
 .main__wrapper, .main__wrapper--right {
   margin-top: 1em;
   margin-bottom: 1em;
   border-top: 0.25em double #C7C7C7;
-  position: absolute;
-  max-width: 95%;
+  position: relative;
+  max-width: 100%;
   background: #E6E6E6;
   border: 1px solid #C7C7C7;
   box-shadow: inset 0 0.25em 0.75em 0.125em #C7C7C7, inset 0 0.125em 0.75em 0.05em #ffffff; }
-  @media screen and (min-width: 820px) {
-    .main__wrapper, .main__wrapper--right {
-      position: relative;
-      max-width: 100%; } }
 
 /*include position: fixed and width: 16.25em when menu becomes sticky*/
 .main__wrapper--right {
@@ -3402,6 +3873,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -3464,7 +3937,6 @@ the direction of where you want the margin spacing to be applied*/
   display: block;
   max-height: min-content; }
 
-/*INCLUDE POSITIONING STATIC DIMENSIONS OF MODULES*/
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
 /*transparency most visible on light surfaces*/
@@ -3496,247 +3968,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-.text__border {
-  border: 0.05em outset #FFF;
-  border-radius: 0 0.5em;
-  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
-
-.text__wrapper {
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 1.5em;
-  display: flex;
-  flex-direction: row;
-  position: absolute; }
-
-.text__heading, .text__heading--main, .text__heading--nav {
-  letter-spacing: 0.1em;
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 0.55em;
-  color: #FFF;
-  line-height: 1.5em;
-  font-size: 1em;
-  font-weight: 600;
-  margin-left: -0.1em;
-  font-family: "Quicksand Regular"; }
-
-.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
-  color: #000; }
-
-.text__heading-group {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-items: center; }
-
-.text__heading--main {
-  position: absolute;
-  top: 2.25em;
-  padding: 0;
-  font-family: "Quicksand Regular";
-  font-size: 2.25em;
-  color: #FFF; }
-
-.text__headingLabel--main {
-  position: absolute;
-  top: 3em;
-  padding-top: 0.5em;
-  width: 4em;
-  font-family: "Quicksand Light";
-  border-top: 0.25em solid #3CB3B9;
-  color: #FFF; }
-
-.text__heading--nav {
-  font-size: 1.25em; }
-  @media screen and (min-width: 768px) {
-    .text__heading--nav {
-      font-size: 1.5em;
-      font-weight: normal; } }
-
-.text__heading--nav.left {
-  margin-left: 0.25em; }
-
-.text__heading--nav.right {
-  margin-right: 0.5em; }
-
-.text__label {
-  position: relative;
-  padding-bottom: 0.5em;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link {
-  text-decoration: none;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link:hover {
-  cursor: pointer;
-  opacity: 0.75; }
-
-.text__link:visited {
-  color: #FFF; }
-
-.text--bold {
-  font-weight: 600; }
-
-.text--alert {
-  font-family: "Quicksand Medium";
-  font-size: 1.25em;
-  font-weight: 400; }
-
-.text--caption {
-  padding: 0.5em;
-  font-family: "Quicksand Light";
-  opacity: 0.75;
-  font-size: 0.85em; }
-
-.text--code {
-  padding: 0.125em 0.25em;
-  background: #1F9EA4;
-  border-radius: 0.125em;
-  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
-  color: #FFF;
-  font-weight: 600; }
-
-.text--hero {
-  font-size: 3em;
-  opacity: 0.75;
-  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
-
-.text--italicized {
-  font-style: italic; }
-
-.text--responsive {
-  counter-increment: 1;
-  position: relative;
-  font-size: 0.95em; }
-
-@font-face {
-  font-family: "Miriam Libre";
-  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Bold";
-  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Light";
-  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Medium";
-  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Regular";
-  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Bold";
-  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Regular";
-  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
-/*colors(include color variables from colors file)*/
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box; }
-
-.navigationBar {
-  /*Positioning*/
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0.375em;
-  /*Box Model*/
-  display: flex;
-  flex-direction: row;
-  min-height: 4em;
-  /*Visual*/
-  font-family: "Quicksand Regular";
-  background: #000;
-  box-shadow: 0 0.05em 0.5em 0.05em #4E4E4E;
-  z-index: 2; }
-
-.navigationBar--state {
-  position: relative;
-  flex: 1;
-  display: flex; }
-
-.navigationBar__text--absolute {
-  color: #FFF; }
-
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-@keyframes ease {
-  from {
-    max-height: 0%; }
-  to {
-    max-height: 100%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -3938,6 +4171,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -4077,7 +4312,7 @@ the direction of where you want the margin spacing to be applied*/
   min-height: 3.5em;
   box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E; }
 
-.sidebar__moduleSubHeading > .media {
+.sidebar__moduleSubHeading > .media, .sidebar__moduleSubHeading > .media__innerWrapper {
   border-left: 0.05em solid #3C3939;
   display: flex;
   flex: 2;
@@ -4119,6 +4354,8 @@ the direction of where you want the margin spacing to be applied*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -4180,6 +4417,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -4415,6 +4654,8 @@ input[type="text"].form__input--no-border {
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -4465,14 +4706,14 @@ $teal-box-shadow: //code here
   font-family: "Quicksand Light"; }
 
 .menu__item {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
   border-top: 0.05em solid #C7C7C7;
   border-bottom: 0.05em solid #C7C7C7;
   position: relative;
@@ -4488,14 +4729,6 @@ $teal-box-shadow: //code here
   background: rgba(255, 255, 255, 0.15); }
 
 .menu__item.active .menu__expander-icon {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
@@ -4509,14 +4742,39 @@ $teal-box-shadow: //code here
   margin-bottom: 0.75em; }
 
 .menu__dropDown-content {
-  display: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  max-height: 0;
   line-height: 1.5em; }
 
 .menu__dropDown-content.show {
-  display: block; }
+  max-height: 20em; }
+
+.menu__dropDown-content.show .menu__dropDown-item {
+  display: block;
+  opacity: 1;
+  visibility: visible; }
 
 .menu__dropDown-item {
-  padding: 0.25em; }
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: none;
+  padding: 0.25em;
+  opacity: 0;
+  visibility: hidden; }
 
 .menu__heading {
   margin-bottom: 0.5em;
@@ -4526,6 +4784,14 @@ $teal-box-shadow: //code here
   font-weight: 600; }
 
 .menu__expander-icon {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
   padding: 0.025em;
   cursor: pointer;
   right: 0.5em;
@@ -4557,6 +4823,8 @@ $teal-box-shadow: //code here
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {
@@ -4628,6 +4896,14 @@ $teal-box-shadow: //code here
   transform: rotate(315deg);
   right: 0.85em; }
 
+.icon__home {
+  position: relative;
+  color: #000;
+  font-size: 1.15em; }
+
+.icon__home:visited {
+  color: #000; }
+
 .icon__code--right {
   display: block;
   padding: 0.25em;
@@ -4644,9 +4920,6 @@ $teal-box-shadow: //code here
   -o-transform: rotate(135deg);
   transform: rotate(135deg);
   left: 0.85em; }
-
-.icon__search {
-  margin-top: -0.125em; }
 
 .icon__media--circle--small {
   height: 1em;
@@ -4665,6 +4938,32 @@ $teal-box-shadow: //code here
   -webkit-border-radius: 0.75em;
   border-radius: 0.75em;
   background: #3CB3B9; }
+
+.icon__search {
+  margin-top: -0.125em; }
+
+/*icon containers*/
+.icon__wrapper {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  padding: 0.25em 0;
+  max-height: 85%;
+  border-bottom: 0.25em solid #3CB3B9; }
+  .icon__wrapper:hover {
+    background: #3CB3B9;
+    border-bottom: 0;
+    box-shadow: inset 0 -0.05em 0.5em 0.05em #23585A;
+    cursor: pointer;
+    padding: 0.25em 0.35em; }
+
+.icon__wrapper > *:hover {
+  color: #FFF; }
 
 /*page corner icons*/
 .icon__pageCorner--top-left {
@@ -4689,7 +4988,7 @@ $teal-box-shadow: //code here
 container as a text to create padding between the text and the icon*/
 .icon__menu-item--right {
   position: absolute;
-  right: 0; }
+  right: 1em; }
 
 .icon__menu-item--top {
   position: absolute;
@@ -4851,6 +5150,8 @@ for color (--state) and including the .triangle mixin with desired color.*/
 /*Only input a string value for the $direction argument, leave the position
 argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
 @mixin transition($animations: ()) {

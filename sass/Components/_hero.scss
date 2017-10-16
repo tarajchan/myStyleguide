@@ -25,6 +25,8 @@
 	background: $teal-lowOpacity;
 	border: 0.05em solid $teal-dark;
 	border-radius: 0.25em;
+	box-shadow: inset 0 0 0.5em 0.015em $teal-dark,
+									  0.025em 0.025em 0.25em $teal-dark;
 }
 
 .hero__wrapper--half {

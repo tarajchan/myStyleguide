@@ -12,7 +12,7 @@
 }
 
 .menu__item {
-	@include prefix(transition, all 0.3s ease-in-out);
+	@include prefix(transition, all 0.15s ease-in-out);
 	@include border(0.05em solid $grey-ultraLight, null, 0.05em solid $grey-ultraLight, null);
 
 	position: relative;
@@ -30,7 +30,6 @@
 }
 
 .menu__item.active .menu__expander-icon {
-	@include prefix(transition, all 0.3s ease-in-out);
 	@include prefix(transform, rotate(-90deg));
 }
 
@@ -39,16 +38,30 @@
 }
 
 .menu__dropDown-content {
-	display: none;
+	@include prefix(transition, all 0.3s ease-in-out);
+
+	display: block;
+	max-height: 0;
 	line-height: $line-height;
 }
 
 .menu__dropDown-content.show {
+	max-height: 20em;
+}
+
+.menu__dropDown-content.show  .menu__dropDown-item {
 	display: block;
+	opacity: 1;
+	visibility: visible;
 }
 
 .menu__dropDown-item {
+	@include prefix(transition, all 0.3s ease-in-out);
+
+	display: none;
 	padding: 0.25em;
+	opacity: 0;
+	visibility: hidden;
 }
 
 .menu__heading {
@@ -60,6 +73,8 @@
 }
 
 .menu__expander-icon {
+	@include prefix(transition, all 0.15s ease-in-out);
+
 	padding: 0.025em;
 	cursor: pointer;
 	right: 0.5em;

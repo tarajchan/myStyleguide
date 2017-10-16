@@ -67,6 +67,17 @@
 	border-color: $white;
 }
 
+/*Accordion sizes*/
+
+.accordion.small {
+	padding: 0.5em;
+}
+
+.accordion.small.active {
+	padding: 0.5em;
+}
+
+
 .accordion__expander-icon {
 	@include prefix(transition, transform 0.3s);
 
@@ -86,15 +97,28 @@
 	 border: 0;
 }
 
+.accordion__group {
+	padding: 1em;
+	background: $black;
+	border: 0.01em solid $transparent;
+	border-radius: 0.25em;
+}
+
+.accordion__group--withHeading {
+	@extend .accordion__group;
+
+	padding: 0;
+}
+
 .accordion__heading {
 	flex: 1;
 }
 
 .accordion__innerPanel {
+	@include prefix(transition, all 0.3s);
 	@include padding(0.65em, 1em, 0.65em, 1em);
 
-	display: table-cell;
-	min-width: 100%;
+	margin: 0.5em;
 	background: $black;
 	border: 0.01em solid $transparent;
 	border-radius: 0.25em;
@@ -102,24 +126,27 @@
 }
 
 .accordion__panel {
-	@include prefix(transition, all 0.3s ease-in-out);
-
+	@include prefix(transition, max-height 0.4s ease-in-out,
+															opacity 0.25s ease-in-out, 
+															visibility 0.25s ease-in-out);
+	
 	position: relative;
-	display: none;
 	margin: auto;
 	max-height: 0;
 	width: 90%;
-	padding: 0.5em;
 	background: $black-opaque;
 	color: $white;
 	font-family: "Quicksand Light";
 	line-height: $line-height;
-	overflow: auto;
+	opacity: 0;
+	overflow: hidden;
+	visibility: hidden;
 }
 
 .accordion__panel-text {
 	position: relative;
-	min-width: 100%;
+	min-width: 95%;
+	margin: 1em;
 }
 
 .accordion__panel--left {
@@ -148,8 +175,12 @@
 	}
 }
 
+.accordion__panel--left .text__heading {
+	padding-left: 0.15em;
+}
+
 .accordion__panel--left > .media__image-wrapper--9 {
-	margin-bottom: 0.25em;
+	@include margin(null, auto, 0.25em, auto);
 }
 
 .accordion__panel--right {
@@ -207,33 +238,45 @@
 	@include padding-side("top", 1em);
 }
 
+.accordion__row.active {
+	max-height: min-content;
+}
+
+////////////
 .accordion__row.active > .accordion__panel {
 	@include border-radius(0, 0, 0.5em, 0.5em);
 
-	display: table;
-	max-height: min-content;
+	max-height: 200em;
+	opacity: 1;
+	visibility: visible;
 }
 
 .accordion__row--last.active > .accordion__panel {
 	@include border-radius(0, 0, 0.5em, 0.5em);
 
-	display: table;
-	max-height: min-content;
+	max-height: 200em;
+	opacity: 1;
+	visibility: visible;
 }
+
 
 .accordion__row--first.active > .accordion__panel {
 	@include border-radius(0, 0, 0.5em, 0.5em);
 
-	display: table;
-	max-height: min-content;
+	max-height: 200em;
+	opacity: 1;
+	visibility: visible;
 }
 
 .accordion__panel--border {
-	padding: 1em;
 	background: $transparent;
 	border: 0;
 	border-bottom: 0.05em solid $grey-dark;
 	border-radius: 0;
+}
+
+.accordion__row.active > .accordion__panel--border {
+	@extend .accordion__panel--border;
 }
 
 .accordion__row--last.active > .accordion__panel--border {
@@ -243,6 +286,7 @@
 .accordion__row--first.active > .accordion__panel--border {
 	@extend .accordion__panel--border;
 }
+
 .accordion__row--transparent,
 .accordion__row--transparent-last,
 .accordion__row--transparent-first {
@@ -250,15 +294,8 @@
 	border-radius: 0;
 }
 
-.accordion__group {
-	padding: 1em;
-	background: $black;
-	border: 0.01em solid $transparent;
-	border-radius: 0.25em;
-}
 
-
-/*Accordian styles*/
+/*Accordion styles*/
 
 .accordion--border {
 	@include border(0.05em solid $grey-dark, null, 0.05em solid $grey-dark, null);
@@ -275,6 +312,16 @@
 	border-bottom: 0;
 }
 
+
+/*Accordion behavior*/
+
+.accordion--singleSelect {
+	@extend .accordion;
+}
+
+.accordion--singleSelect.active {
+	@extend .accordion--border.active;
+}
 
 /*creates a "screen-like" appearance on the inner panel of the
 accordian panel*/
