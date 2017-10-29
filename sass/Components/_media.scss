@@ -74,9 +74,10 @@
 }
 
 .media__description--no-border {
+	@include padding(0, 0, 0, 0.75em);
+
 	position: relative;
 	flex: 3;
-	padding: 0 0.5em;
 }
 
 .media__description--small {

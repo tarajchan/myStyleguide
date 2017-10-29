@@ -5,3 +5,8 @@
 
 
 @include container-width;
+
+.container__row--flex {
+	display: flex;
+	flex-direction: row;
+}

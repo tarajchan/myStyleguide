@@ -3,7 +3,7 @@
 	<head>
 		<title>Grid Templates</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<link href="reset.css" rel="stylesheet" type="text/css"/>
+		<link href="../../reset.css" rel="stylesheet" type="text/css"/>
 		<link href="../main.css" rel="stylesheet" type="text/css"/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 	</head>
@@ -11,18 +11,32 @@
 		<nav class="navigationBar inverted clearfix">
 			<div class="navigationBar__highlight"></div>
 			<div class="navigationBar--thin">
-				<div class="navigationBar--state">
+				<div class="navigationBar--state left">
+					<button class="icon__search icon__wrapper first">
+						<i class="fa fa-search" aria-hidden="true"></i>
+					</button>
+				</div>
+				<div class="navigationBar--state-3 navigationBar--state center">
+					<div class="text__heading--outline-cap">
+						Responsive Grid Layout
+					</div>
+					<div class="navigationBar__menu--nested">
+						
+					</div>
+				</div>
+				<div class="navigationBar--state right">
 					<div class="navigationBar__icon-menu--thin">
-						<div class="icon__wrapper">
+						<button class="icon__search icon__wrapper">
+							<i class="fa fa-search" aria-hidden="true"></i>
+						</button>
+						<div class="form__input-segment">
+							<input type="text" class="form__input--no-border" placeholder="search">
+						</div>	
+						<div class="icon__wrapper--home">
 							<a href="#" class="icon__home">
 								<i class="fa fa-home" aria-hidden="true"></i>
 							</a>
 						</div>
-					</div>
-				</div>
-				<div class="navigationBar--state">
-					<div class="text__heading black">
-						Responsive Grid Layout Template
 					</div>
 				</div>
 			</div>
@@ -40,17 +54,20 @@
 			</div>
 		</nav>
 
-		<div class="main">
+		<div class="main--background">
 			<div class="grid__container--responsive-semantic grid">
 				<div class="grid__header--responsive-semantic">
 					<div class="hero">
-						<div class="hero__wrapper--half">
+						<div class="hero__image"></div>
+						<div class="hero__title--overlap-center">
 							<div class="text--hero">
 								GRID LAYOUT
 							</div>
-							<div class="text--caption">
-								Experience the responsiveness of this basic grid layout
-								as the grid areas adjust to the size of the window to deliver aesthetically pleasing layouts on any size screen.
+							<div class="hero__description">
+								<div class="text--caption black">
+									Experience the responsiveness of this basic grid layout
+									as the grid areas adjust to the size of the window to deliver aesthetically pleasing layouts on any size screen.
+								</div>
 							</div>
 						</div>
 					</div>
@@ -58,29 +75,31 @@
 
 				<main class="grid__main--responsive-semantic">
 					<div class="main--full">
-						<div class="main--flex">
+						<div class="content-switcher-- content-switcher">
 						
-							<div class="main__wrapper">
-								<div class="main__section top">
-									<div class="main__sectionHeading">
-										<div class="main__sectionHeading-icon">
-											<div class="main__sectionHeading-icon--medium">
-												<div class="main__sectionHeading-icon--small">
-													<div class="main__sectionHeading-icon--x-small"></div>
-												</div>
+						<div class="main__wrapper transparent">
+							<div class="main__section top">
+								<div class="main__sectionHeading transparent">
+									<div class="main__sectionHeading-icon">
+										<div class="main__sectionHeading-icon--medium">
+											<div class="main__sectionHeading-icon--small">
+												<div class="main__sectionHeading-icon--x-small"></div>
 											</div>
 										</div>
-										<div class="main__sectionHeading-text">Responsive grid</div>
-										<div class="example__module--right">
-											<div class="main__sectionHeading-expander-icon-heading">VIEW CODE</div>
-											<button class="main__sectionHeading-expander-icon button">
-												<div class="icon__code--left"></div>
-												<div class="icon__code--right"></div>
-											</button>
-										</div>
+									</div>
+									<div class="main__sectionHeading-text">Responsive grid</div>
+									<div class="example__module--right">
+										<div class="main__sectionHeading-expander-icon-heading">VIEW CODE</div>
+										<button class="main__sectionHeading-expander-icon button">
+											<div class="icon__code--left"></div>
+											<div class="icon__code--right"></div>
+										</button>
 									</div>
 								</div>
 							</div>
+						</div>
+
+						<div class="grid__gap--1 grid__container--auto-fill grid">
 
 							<div class="main__section">
 								<div class="media">
@@ -155,8 +174,8 @@
 								</div>
 							</div>
 						</div>
-
 					</div>
+
 				</main>
 
 				<aside class="grid__aside--responsive-semantic">	

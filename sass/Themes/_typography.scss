@@ -20,6 +20,16 @@
 	position: absolute;
 }
 
+.text__group--alert-info {
+	@include size(100%);
+
+	float: right;
+
+	@media screen and (min-width: 420px) {
+		@include size(90%, 100%);
+	}
+}
+
 
 //margin-left used to offset gap for last letter of heading due to letter-spacing
 .text__heading {
@@ -38,12 +48,40 @@
 	color: $black;
 }
 
+.text__heading--alert {
+	margin-bottom: 0.5em;
+	color: $teal-dark;
+	font-family: "Quicksand Regular";
+	font-size: 1.25em;
+	font-weight: $bold;
+}
+
 .text__heading-group {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-items: center;
 }
+
+.text__heading--outline-cap {
+	font-family: "Lulo Clean Outline Bold";
+	font-size: 0.95em;
+	color: $black;
+	text-align: center;
+
+	@include mediaQuery--custom(531px, $mq-tablet) {
+		font-size: 1em;
+	}
+
+	@include mediaQuery--tablet {
+		font-size: 1.15em;
+	}
+
+	@media screen and (min-width: $mq-desktop) {
+		font-size: 1.25em;	
+	}
+}
+
 
 
 //text for the heading of a section within the main body
@@ -113,21 +151,31 @@
 	color: $white;
 }
 
+.text__link-wrapper {
+	padding: 0.5em;
+}
+
 .text--bold {
 	font-weight: $bold;
 }
 
 .text--alert {
-	font-family: "Quicksand Medium";
-	font-size: 1.25em;
+	font-family: "Quicksand Regular";
+	font-size: 1em;
 	font-weight: 400;
+	line-height: $line-height;
 }
 
 .text--caption {
 	padding: 0.5em;
-	font-family: "Quicksand Light";
+	font-family: "Quicksand Regular";
+	line-height: $line-height;
 	opacity: 0.75;
-	font-size: 0.85em;
+	font-size: 0.95em;
+}
+
+.text--caption.black {
+	color: $black;
 }
 
 .text--code {
@@ -140,9 +188,17 @@
 }
 
 .text--hero {
-	font-size: 3em;
+	font-size: 1.5em;
 	opacity: 0.75;
 	text-shadow: 0.05em 0.025em 0.15em $grey-teal-tint;
+
+	@include mediaQuery--custom(600px, 640px) {
+		font-size: 2em;
+	}
+
+	@media screen and (min-width: 640px) {
+		font-size: 2.5em;
+	}
 }
 
 .text--italicized {
@@ -159,6 +215,11 @@
 
 //	font-size: calc({slope}*100vw + {y-intercept}px)
 
+
+@font-face {
+	font-family: "Lulo Clean Outline Bold";
+	src: url("../luloclean_outlinebold_macroman/LuloCleanOutlineBold-webfont.woff2") format("woff2");
+}
 
 @font-face {
 	font-family: "Miriam Libre";

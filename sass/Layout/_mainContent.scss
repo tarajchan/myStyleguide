@@ -5,14 +5,33 @@
 
 /*MISC*/
 
-@include container-width;
-
 .main {
 	@include abs-positioning(4.45em, 0, 0, 0);
 
 	background: $green-lowOpacity;
 	overflow-y: auto;
 	z-index: 1;	
+}
+
+.main--background {
+	@extend .main;
+	@include background-image(url("./Themes/whirlpool.png"), 0 0, 125%);
+
+	@include mediaQuery--custom($mq-mobile, 468px) {
+		@include background-image(url("./Themes/whirlpool.png"), 0 0, 100%);
+	}
+
+	@include mediaQuery--custom(469px, $mq-tablet) {
+		@include background-image(url("./Themes/whirlpool.png"), 0 0, 75%);
+	}
+
+	@include mediaQuery--tablet {
+		@include background-image(url("./Themes/whirlpool.png"), 0 0, 50%);
+	}
+
+	@media screen and (min-width: $mq-desktop) {
+		@include background-image(url("./Themes/whirlpool.png"), 0 0, 40%);
+	}
 }
 
 .main--flex {
@@ -27,16 +46,14 @@
 	@media screen and (min-width: $mq-tablet) {
 		max-width: 50%;
 	}
+
+	@media screen and (min-width: $mq-wide) {
+		max-width: 33%;
+	}
 }
 
 .main--flex .main__section.top {
 	min-width: 100%;
-}
-
-.main--flex .main__section:nth-child(2n) {
-	@media screen and (min-width: $mq-tablet) {
-		margin-left: 0.5em;
-	}
 }
 
 .main--flex .main__wrapper {
@@ -217,12 +234,36 @@
 	font-family: "Quicksand Bold";
 }
 
+.main__sectionDetails-chapter {
+	@include size(min-content);
+
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 0.5em;
+
+	@media screen and (min-width: 385px) {
+		margin-bottom: 0;
+	}
+}
+
+.main__sectionDetails-chapter-text {
+	@include padding(0.35em, 0.25em, 0.25em, 0.25em);
+
+	flex: 1;
+	margin-right: 0.25em;
+	background: $teal; 
+}
+
 .main__sectionDetails-description {
 	display: flex;
 	align-items: center;
-	margin-left: 1em;
 	font-family: "Quicksand Light";
 	font-size: 1.125em;
+
+	@media screen and (min-width: 385px) {
+		margin-left: 1em;
+	}
 }
 
 .main__sectionDetails-description-text {
@@ -244,28 +285,18 @@
 
 }
 
-.main__sectionDetails-chapter {
-	@include size(min-content);
-
-	position: relative;
-	display: flex;
-	flex-direction: row;
-}
-
-.main__sectionDetails-chapter-text {
-	@include padding(0.35em, 0.25em, 0.25em, 0.25em);
-
-	flex: 1;
-	margin-right: 0.25em;
-	background: $teal; 
-}
-
 .main__sectionDetails-text-wrapper {
 	position: relative;
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
 	padding-bottom: 0.25em;
 	min-height: 2em;
+
+	@media screen and (min-width: 385px) {
+		flex-direction: row;
+		align-items: center;
+	}
 }
 
 .main__sectionDetails-identifier {
@@ -283,6 +314,12 @@
 	align-items: center;
 	padding: 2em 1em;
 	box-shadow: inset 0 -0.25em 0.75em $grey-ultraLight;
+}
+
+.main__sectionHeading.transparent {
+	@extend .main__sectionHeading;
+
+	box-shadow: none;
 }
 
 .main__sectionHeading-expander-icon {
@@ -362,6 +399,16 @@
 	box-shadow: inset 0 0.25em 0.75em 0.125em $grey-ultraLight, 
 							inset 0 0.125em 0.75em 0.05em #ffffff;				
 
+}
+
+.main__wrapper.transparent {
+	@include margin(1em, null, 1em, null);
+
+	position: relative;
+	max-width: 100%;
+	background: none;
+	border: 0;
+	box-shadow: none;
 }
 
 /*include position: fixed and width: 16.25em when menu becomes sticky*/

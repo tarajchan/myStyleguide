@@ -35,6 +35,12 @@
 	right: 0.85em;
 }
 
+.icon__code--right {
+	@include arrow(absolute, "right", 0.25em, $grey-dark, solid);
+
+	left: 0.85em;
+}
+
 .icon__home {
 	position: relative;
 	color: $black;
@@ -45,10 +51,23 @@
 	color: $black;
 }
 
-.icon__code--right {
-	@include arrow(absolute, "right", 0.25em, $grey-dark, solid);
+.icon__info {
+	color: $teal-dark;
+	font-size: 2em;
+	text-shadow: 0.05em 0.05em $teal-lowOpacity;
+}
 
-	left: 0.85em;
+.icon__info--alert {
+	@include padding(null, 0.25em, 0.25em, null);
+	@include size(25%, 100%);
+
+	float: left;
+	text-align: center;
+
+	@media screen and (min-width: 420px) {
+		@include padding(0.25em, 0.25em, null, null);
+		@include size(10%, 100%);
+	}
 }
 
 .icon__media--circle--small {
@@ -65,6 +84,12 @@
 
 .icon__search {
 	margin-top: -0.125em;
+	font-size: 1em;
+	outline: none;
+}
+
+.icon__search--large {
+	font-size: 1.25em;
 }
 
 /*icon containers*/
@@ -72,9 +97,11 @@
 .icon__wrapper {
 	@include prefix(transition, all 0.15s ease-in-out);
 
-	padding: 0.25em 0;
 	max-height: 85%;
-	border-bottom: 0.25em solid $teal;
+	margin-left: 0.5em;
+	padding: 0.25em;
+	background: $transparent;
+	border: 0;
 
 		&:hover {
 			background: $teal;
@@ -85,7 +112,22 @@
 		}
 }
 
+.icon__wrapper.first {
+	margin-left: 0;
+}
+
+.icon__wrapper--home {
+	@extend .icon__wrapper;
+
+	padding: 0.25em 0;
+	border-bottom: 0.25em solid $teal;
+}
+
 .icon__wrapper > *:hover {
+	color: $white;
+}
+
+.icon__wrapper--home > *:hover {
 	color: $white;
 }
 
@@ -105,12 +147,12 @@
 container as a text to create padding between the text and the icon*/
 .icon__menu-item--right {
 	position: absolute;
-	right: 1em;
+	right: 0.75em;
 }
 
 .icon__menu-item--top {
 	position: absolute;
-	top: 1em;
+	top: 0.75em;
 }
 
 
@@ -195,6 +237,12 @@ for color (--state) and including the .triangle mixin with desired color.*/
 	content: "";
 }
 
+
+/*white triangle sizes*/
+
+.triangle--down-white--small {
+	@include triangle-eq(absolute, "down", 0.25em, $white);
+}
 
 
 /*black triangle sizes*/

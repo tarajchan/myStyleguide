@@ -6,7 +6,7 @@
 .alert {
 	position: relative;
 	display: flex;
-	padding: 1em;
+	padding: 1em 0.5em;
 	border-radius: 0.25em;
 	background: $transparent-15-l;
 	margin-top: 2em;
@@ -16,7 +16,13 @@
 .alert--info {
 	@extend .alert;
 
+	display: flex;
+	flex-direction: column;
 	background: $teal-lowOpacity;
-	border: 0.05em solid $teal;
+	border: 0.05em solid $grey-lowOpacity;
 	border-left: 0.25em solid $teal;
+
+	@media screen and (min-width: 420px) {
+		flex-direction: row;
+	}
 }

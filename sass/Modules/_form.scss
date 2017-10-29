@@ -24,15 +24,17 @@ input[type="text"].form__input--no-border {
 }
 
 .form__segment {
-	
-	display: none;
-
-	@media screen and (min-width: $mq-tablet) {
-
 	display: flex;
 	flex-direction: row;
 	position: relative;
 	min-height: 1.5em;
 	width: 80%;	
-	}
 }
+
+.form__input-segment {
+	@include prefix(transition, all 0.3s ease-in-out);
+	@extend .form__segment;
+
+	max-width: 0;	
+}
+

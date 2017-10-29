@@ -8,25 +8,69 @@
 }
 
 .hero {
+	position: relative;
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
+	min-height: 10em;
+	max-height: 20em;
+	max-width: 100%;
 	margin: auto;
-	min-height: 16em;
-	padding: 1.5em 3em;
-	width: 100%;
-	background: $teal-lowOpacity;
+	margin-top: 1.5em;
 	font-family: "Quicksand Regular";
+
+	@include mediaQuery--custom(500px, $mq-desktop) {
+		min-height: 15em;
+	}
+
+	@media screen and (min-width: $mq-desktop) {
+		max-width: 70%;
+		min-height: 20em;
+	}
+}
+
+.hero__description {
+	max-width: 100%;
+	margin: auto;
+
+	@media screen and (min-width: $mq-desktop) {
+		max-width: 70%;
+	}
+}
+
+.hero__description .text--caption {
+
+	@media screen and (min-width: $mq-tablet) {
+		font-size: 1.25em;
+	}
+}
+
+.hero__image {
+	@include background-image(url("./Themes/yellow_train.jpg"), 0em 0em, 100% 100%);
+	@include abs-positioning(0, 0, 0, 0);
+
+	z-index: 1;
+}
+
+.hero__title--overlap-center {
+	max-width: 50%;
+	margin: 0 auto;
+	padding: 0.5em 1.25em;
+	text-align: center;
+	z-index: 2;
+	border-top: 0.3em solid $teal;
 }
 
 .hero__wrapper {
 	padding: 0.75em 1em;
 	display: flex;
 	flex-direction: column;
-	background: $teal-lowOpacity;
-	border: 0.05em solid $teal-dark;
+	background: $transparent-15-d;
+	border: 0.05em solid $grey-blue-tint;
 	border-radius: 0.25em;
-	box-shadow: inset 0 0 0.5em 0.015em $teal-dark,
-									  0.025em 0.025em 0.25em $teal-dark;
+	box-shadow: inset 0 0 0.5em 0.015em $grey-blue-tint,
+									  0.025em 0.025em 0.25em $grey-blue-tint;
+	color: $white;
+	z-index: 2;
 }
 
 .hero__wrapper--half {
@@ -34,4 +78,3 @@
 
 	max-width: 50%; 
 }
-

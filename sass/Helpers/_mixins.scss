@@ -10,6 +10,15 @@
 	}
 }
 
+/*background mixins*/
+
+@mixin background-image($imageURL, $background-position, $background-size) {
+	background-image: $imageURL;
+	background-position: $background-position;
+	background-size: $background-size;
+}
+
+
 
 
 
@@ -130,13 +139,28 @@ argument unquoted in order for the CSS to render properly*/
 	height: $height;
 }
 
+
+/*Mixins for navigation bar flex states*/
+
+@mixin navigationBar--state {
+	@for $i from 1 through 5 {
+		.navigationBar--state-#{$i} {
+			flex: #{$i};
+		}
+	}
+}
+
+
+
+
 /*Mixins for column sizes for general use*/
 
 $columns: 12;
 
 @mixin container-width {
 	@for $i from 1 through $columns {
-		.container___width--#{$i} {
+		.container__width--#{$i} {
+			padding: 0.25em;
 			width: calc((#{$i}/12) * 100%);
 		}
 	}
