@@ -83,9 +83,14 @@
 }
 
 .icon__search {
-	margin-top: -0.125em;
+	margin-top: 0;
 	font-size: 1em;
 	outline: none;
+}
+
+.icon_search:hover > .fa-search {
+	position: relative;
+	top: -0.125em;
 }
 
 .icon__search--large {
@@ -97,7 +102,7 @@
 .icon__wrapper {
 	@include prefix(transition, all 0.15s ease-in-out);
 
-	max-height: 85%;
+	min-height: 2em;
 	margin-left: 0.5em;
 	padding: 0.25em;
 	background: $transparent;
@@ -108,7 +113,7 @@
 			border-bottom: 0;
 			box-shadow: inset 0 -0.05em 0.5em 0.05em $teal-dark;
 			cursor: pointer;
-			padding: 0.25em 0.35em;
+			padding: 0.35em;
 		}
 }
 

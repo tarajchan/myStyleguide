@@ -503,6 +503,71 @@ $teal-box-shadow: //code here
 /*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*background mixins*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Mixins for navigation bar flex states*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
 /*used with display property to hide content*/
@@ -663,9 +728,13 @@ $teal-box-shadow: //code here
   background: #3CB3B9; }
 
 .icon__search {
-  margin-top: -0.125em;
+  margin-top: 0;
   font-size: 1em;
   outline: none; }
+
+.icon_search:hover > .fa-search {
+  position: relative;
+  top: -0.125em; }
 
 .icon__search--large {
   font-size: 1.25em; }
@@ -680,7 +749,7 @@ $teal-box-shadow: //code here
   transition: all 0.15s ease-in-out;
   -o-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
-  max-height: 85%;
+  min-height: 2em;
   margin-left: 0.5em;
   padding: 0.25em;
   background: transparent;
@@ -690,7 +759,7 @@ $teal-box-shadow: //code here
     border-bottom: 0;
     box-shadow: inset 0 -0.05em 0.5em 0.05em #23585A;
     cursor: pointer;
-    padding: 0.25em 0.35em; }
+    padding: 0.35em; }
 
 .icon__wrapper.first, .first.icon__wrapper--home {
   margin-left: 0; }
@@ -1447,7 +1516,8 @@ $teal-box-shadow: //code here
   justify-items: center; }
 
 .text__heading--outline-cap {
-  font-family: "Lulo Clean Outline Bold";
+  font-family: "Pissjar Sans";
+  /*font-family: "Lulo Clean Outline Bold";*/
   font-size: 0.95em;
   color: #000;
   text-align: center; }
@@ -1564,6 +1634,9 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Miriam Libre";
   src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Pissjar Sans";
+  src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype"); }
 @font-face {
   font-family: "Quicksand Bold";
   src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
@@ -1942,7 +2015,8 @@ $teal-box-shadow: //code here
   justify-items: center; }
 
 .text__heading--outline-cap {
-  font-family: "Lulo Clean Outline Bold";
+  font-family: "Pissjar Sans";
+  /*font-family: "Lulo Clean Outline Bold";*/
   font-size: 0.95em;
   color: #000;
   text-align: center; }
@@ -2059,6 +2133,9 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Miriam Libre";
   src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Pissjar Sans";
+  src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype"); }
 @font-face {
   font-family: "Quicksand Bold";
   src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
@@ -2653,7 +2730,8 @@ $teal-box-shadow: //code here
   justify-items: center; }
 
 .text__heading--outline-cap {
-  font-family: "Lulo Clean Outline Bold";
+  font-family: "Pissjar Sans";
+  /*font-family: "Lulo Clean Outline Bold";*/
   font-size: 0.95em;
   color: #000;
   text-align: center; }
@@ -2770,6 +2848,9 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Miriam Libre";
   src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Pissjar Sans";
+  src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype"); }
 @font-face {
   font-family: "Quicksand Bold";
   src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
@@ -4205,7 +4286,8 @@ $teal-box-shadow: //code here
   justify-items: center; }
 
 .text__heading--outline-cap {
-  font-family: "Lulo Clean Outline Bold";
+  font-family: "Pissjar Sans";
+  /*font-family: "Lulo Clean Outline Bold";*/
   font-size: 0.95em;
   color: #000;
   text-align: center; }
@@ -4322,6 +4404,9 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Miriam Libre";
   src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Pissjar Sans";
+  src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype"); }
 @font-face {
   font-family: "Quicksand Bold";
   src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
@@ -4764,7 +4849,8 @@ $teal-box-shadow: //code here
   justify-items: center; }
 
 .text__heading--outline-cap {
-  font-family: "Lulo Clean Outline Bold";
+  font-family: "Pissjar Sans";
+  /*font-family: "Lulo Clean Outline Bold";*/
   font-size: 0.95em;
   color: #000;
   text-align: center; }
@@ -4881,6 +4967,9 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Miriam Libre";
   src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Pissjar Sans";
+  src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype"); }
 @font-face {
   font-family: "Quicksand Bold";
   src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
@@ -5303,9 +5392,13 @@ $teal-box-shadow: //code here
   background: #3CB3B9; }
 
 .icon__search {
-  margin-top: -0.125em;
+  margin-top: 0;
   font-size: 1em;
   outline: none; }
+
+.icon_search:hover > .fa-search {
+  position: relative;
+  top: -0.125em; }
 
 .icon__search--large {
   font-size: 1.25em; }
@@ -5320,7 +5413,7 @@ $teal-box-shadow: //code here
   transition: all 0.15s ease-in-out;
   -o-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
-  max-height: 85%;
+  min-height: 2em;
   margin-left: 0.5em;
   padding: 0.25em;
   background: transparent;
@@ -5330,7 +5423,7 @@ $teal-box-shadow: //code here
     border-bottom: 0;
     box-shadow: inset 0 -0.05em 0.5em 0.05em #23585A;
     cursor: pointer;
-    padding: 0.25em 0.35em; }
+    padding: 0.35em; }
 
 .icon__wrapper.first, .first.icon__wrapper--home {
   margin-left: 0; }
@@ -5635,7 +5728,8 @@ $teal-box-shadow: //code here
   justify-items: center; }
 
 .text__heading--outline-cap {
-  font-family: "Lulo Clean Outline Bold";
+  font-family: "Pissjar Sans";
+  /*font-family: "Lulo Clean Outline Bold";*/
   font-size: 0.95em;
   color: #000;
   text-align: center; }
@@ -5752,6 +5846,9 @@ $teal-box-shadow: //code here
 @font-face {
   font-family: "Miriam Libre";
   src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Pissjar Sans";
+  src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype"); }
 @font-face {
   font-family: "Quicksand Bold";
   src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }

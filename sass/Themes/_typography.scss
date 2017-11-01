@@ -64,7 +64,8 @@
 }
 
 .text__heading--outline-cap {
-	font-family: "Lulo Clean Outline Bold";
+	font-family: "Pissjar Sans";
+	/*font-family: "Lulo Clean Outline Bold";*/
 	font-size: 0.95em;
 	color: $black;
 	text-align: center;
@@ -224,6 +225,11 @@
 @font-face {
 	font-family: "Miriam Libre";
 	src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Pissjar Sans";
+	src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype");
 }
 
 @font-face {
