@@ -63,6 +63,3002 @@ the direction of where you want the margin spacing to be applied*/
 /*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
+.container__width--1 {
+  padding: 0.25em;
+  width: calc((1/12) * 100%); }
+
+.container__width--2 {
+  padding: 0.25em;
+  width: calc((2/12) * 100%); }
+
+.container__width--3 {
+  padding: 0.25em;
+  width: calc((3/12) * 100%); }
+
+.container__width--4 {
+  padding: 0.25em;
+  width: calc((4/12) * 100%); }
+
+.container__width--5 {
+  padding: 0.25em;
+  width: calc((5/12) * 100%); }
+
+.container__width--6 {
+  padding: 0.25em;
+  width: calc((6/12) * 100%); }
+
+.container__width--7 {
+  padding: 0.25em;
+  width: calc((7/12) * 100%); }
+
+.container__width--8 {
+  padding: 0.25em;
+  width: calc((8/12) * 100%); }
+
+.container__width--9 {
+  padding: 0.25em;
+  width: calc((9/12) * 100%); }
+
+.container__width--10 {
+  padding: 0.25em;
+  width: calc((10/12) * 100%); }
+
+.container__width--11 {
+  padding: 0.25em;
+  width: calc((11/12) * 100%); }
+
+.container__width--12 {
+  padding: 0.25em;
+  width: calc((12/12) * 100%); }
+
+.container__row--flex {
+  display: flex;
+  flex-direction: row; }
+
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*background mixins*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Mixins for navigation bar flex states*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+.grid {
+  display: grid; }
+
+/****Grid containers****
+ *all grid containers must be accompanied with the class of .grid 
+ *in order to enable display: grid. Must be used on the parent container
+ *with children placed in specified grid areas (using 'grid__template-columns--'
+ *and 'grid__template-rows--' or their rowonding offsets located below 
+ *the grid-containers section)
+ */
+.grid__container, .grid__container--auto-fill, .grid__container--12, .grid__container--4, .grid__container--3, .grid__container--2, .grid__container--page-layout {
+  margin: auto;
+  max-width: 95%; }
+
+.grid__container--auto-fill {
+  padding: 0 1em;
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr)); }
+
+.grid__container--12 {
+  grid-template-columns: repeat(12, auto);
+  grid-template-rows: repeat(auto-fill, minmax(min-content, auto)); }
+
+.grid__container--4 {
+  grid-template-columns: repeat(4, auto); }
+
+.grid__container--3 {
+  grid-template-columns: repeat(3, auto); }
+
+.grid__container--2 {
+  grid-template-columns: repeat(2, auto); }
+
+.grid__container--page-layout {
+  grid-template-areas: "main main" "footer footer";
+  grid-template-columns: minmax(75%, auto) 25%;
+  grid-template-rows: minmax(min-content, auto) 10em; }
+  @media screen and (min-width: 820px) {
+    .grid__container--page-layout {
+      grid-template-areas: "main navigation" "footer footer"; } }
+
+/*the "--responsive-semantic" modifier on the grid container specifies
+the its main usage and how it behaves. This container is commonly used for
+entire page layouts that include a header, footer, aside, and main section.*/
+.grid__container--responsive-semantic {
+  grid-template-columns: minmax(min-content, 15%) 1fr minmax(min-content, 15%);
+  grid-template-rows: 1fr repeat(3, minmax(auto, 1fr)) 1fr;
+  grid-template-areas: "header header header" "main main main" "main main main" "main main main" "footer footer footer"; }
+  @media screen and (min-width: 1024px) {
+    .grid__container--responsive-semantic {
+      display: grid;
+      grid-template-areas: "header header header" "aside main navigation" "aside main navigation" "aside main navigation" "footer footer footer"; } }
+
+.grid__header--responsive-semantic {
+  grid-area: header;
+  position: relative; }
+
+.grid__aside--responsive-semantic {
+  grid-area: aside;
+  display: none;
+  position: relative; }
+  @media screen and (min-width: 1024px) {
+    .grid__aside--responsive-semantic {
+      display: block; } }
+
+.grid__main--responsive-semantic {
+  grid-area: main;
+  position: relative; }
+
+.grid__main--responsive-semantic .grid__container--auto-fill {
+  max-width: 100%;
+  position: absolute;
+  grid-gap: 0; }
+  @media screen and (min-width: 672px) {
+    .grid__main--responsive-semantic .grid__container--auto-fill {
+      grid-row-gap: 1rem;
+      grid-column-gap: 2rem; } }
+
+.grid__main--responsive-semantic .main__section {
+  margin-bottom: 1rem; }
+  @media screen and (min-width: 672px) {
+    .grid__main--responsive-semantic .main__section {
+      margin-bottom: 0; } }
+
+@media screen and (min-width: 1024px) {
+  .grid__main--responsive-semantic .main__wrapper:nth-child(1), .grid__main--responsive-semantic .main__wrapper--right:nth-child(1) {
+    padding: 1em; } }
+
+.grid__navigation--responsive-semantic {
+  grid-area: navigation;
+  display: none;
+  position: relative; }
+  @media screen and (min-width: 1024px) {
+    .grid__navigation--responsive-semantic {
+      display: block; } }
+
+.grid__footer--responsive-semantic {
+  grid-area: footer;
+  position: relative;
+  background: rgba(0, 0, 0, 0.15); }
+
+/*Grid-template-area items for the page layout*/
+.grid__content--page-layout {
+  grid-area: main; }
+
+.grid__footer--page-layout {
+  grid-area: footer; }
+
+.grid__navigation--page-layout--right {
+  display: none;
+  grid-area: navigation; }
+  @media screen and (min-width: 820px) {
+    .grid__navigation--page-layout--right {
+      display: block; } }
+
+/*Grid gap sizes*/
+.grid__gap--1 {
+  grid-gap: 1em; }
+
+.grid__gap--75 {
+  grid-gap: 0.75em; }
+
+.grid__gap--5 {
+  grid-gap: 0.5em; }
+
+.grid__gap--25 {
+  grid-gap: 0.25em; }
+
+.grid__gap--125 {
+  grid-gap: 0.125em; }
+
+/****Grid tempate columns & rows****/
+/*Grid-rows spanning up to 12 columns with auto-placement*/
+.grid__column--span1 {
+  grid-column: auto/span 1; }
+
+.grid__column--span2 {
+  grid-column: auto/span 2; }
+
+.grid__column--span3 {
+  grid-column: auto/span 3; }
+
+.grid__column--span4 {
+  grid-column: auto/span 4; }
+
+.grid__column--span5 {
+  grid-column: auto/span 5; }
+
+.grid__column--span6 {
+  grid-column: auto/span 6; }
+
+.grid__column--span7 {
+  grid-column: auto/span 7; }
+
+.grid__column--span8 {
+  grid-column: auto/span 8; }
+
+.grid__column--span9 {
+  grid-column: auto/span 9; }
+
+.grid__column--span10 {
+  grid-column: auto/span 10; }
+
+.grid__column--span11 {
+  grid-column: auto/span 11; }
+
+.grid__column--span12 {
+  grid-column: auto/span 12; }
+
+/*Grid-rows spanning up to 12 rows with auto-placement*/
+.grid__row--span1 {
+  grid-row: auto/span 1; }
+
+.grid__row--span2 {
+  grid-row: auto/span 2; }
+
+.grid__row--span3 {
+  grid-row: auto/span 3; }
+
+.grid__row--span4 {
+  grid-row: auto/span 4; }
+
+.grid__row--span5 {
+  grid-row: auto/span 5; }
+
+.grid__row--span6 {
+  grid-row: auto/span 6; }
+
+.grid__row--span7 {
+  grid-row: auto/span 7; }
+
+.grid__row--span8 {
+  grid-row: auto/span 8; }
+
+.grid__row--span9 {
+  grid-row: auto/span 9; }
+
+.grid__row--span10 {
+  grid-row: auto/span 10; }
+
+.grid__row--span11 {
+  grid-row: auto/span 11; }
+
+.grid__row--span12 {
+  grid-row: auto/span 12; }
+
+/*Grid template-columns beginning from grid-line 1*/
+.grid__template--columns-1-12 {
+  grid-column: 1/span 1; }
+
+.grid__template--columns-1-6 {
+  grid-column: 1/span 2; }
+
+.grid__template--columns--1-4 {
+  grid-column: 1/span 3; }
+
+.grid__template--columns-1-3 {
+  grid-column: 1/span 4; }
+
+.grid__template--columns-5-12 {
+  grid-column: 1/span 5; }
+
+.grid__template--columns-1-2 {
+  grid-column: 1/span 6; }
+
+.grid__template--columns-7-12 {
+  grid-column: 1/span 7; }
+
+.grid__template--columns-2-3 {
+  grid-column: 1/span 8; }
+
+.grid__template--columns-3-4 {
+  grid-column: 1/span 9; }
+
+.grid__template--columns-5-6 {
+  grid-column: 1/span 10; }
+
+.grid__template--columns-11-12 {
+  grid-column: 1/span 11; }
+
+.grid__template--columns-12 {
+  grid-column: 1/span 12; }
+
+/*Grid-template-rows beginning from row-line 1*/
+.grid__template--rows-1-12 {
+  grid-row: 1/span 1; }
+
+.grid__template--rows-1-6 {
+  grid-row: 1/span 2; }
+
+.grid__template--rows--1-4 {
+  grid-row: 1/span 3; }
+
+.grid__template--rows-1-3 {
+  grid-row: 1/span 4; }
+
+.grid__template--rows-5-12 {
+  grid-row: 1/span 5; }
+
+.grid__template--rows-1-2 {
+  grid-row: 1/span 6; }
+
+.grid__template--rows-7-12 {
+  grid-row: 1/span 7; }
+
+.grid__template--rows-2-3 {
+  grid-row: 1/span 8; }
+
+.grid__template--rows-3-4 {
+  grid-row: 1/span 9; }
+
+.grid__template--rows-5-6 {
+  grid-row: 1/span 10; }
+
+.grid__template--rows-11-12 {
+  grid-row: 1/span 11; }
+
+.grid__template--rows-12 {
+  grid-row: 1/span 12; }
+
+/*grid-rowate-columns spanning x columns, with start lines defined
+by the first value of grid-column and the last value of the class name
+'grid__template--columns-span(x)-y'*/
+/*grid-template columns spanning 1 column*/
+.grid__template--columns-span1-2 {
+  grid-column: 2/span 1; }
+
+.grid__template--columns-span1-3 {
+  grid-column: 3/span 1; }
+
+.grid__template--columns-span1-4 {
+  grid-column: 4/span 1; }
+
+.grid__template--columns-span1-5 {
+  grid-column: 5/span 1; }
+
+.grid__template--columns-span1-6 {
+  grid-column: 6/span 1; }
+
+.grid__template--columns-span1-7 {
+  grid-column: 7/span 1; }
+
+.grid__template--columns-span1-8 {
+  grid-column: 8/span 1; }
+
+.grid__template--columns-span1-9 {
+  grid-column: 9/span 1; }
+
+.grid__template--columns-span1-10 {
+  grid-column: 10/span 1; }
+
+.grid__template--columns-span1-11 {
+  grid-column: 11/span 1; }
+
+/*grid-template columns spanning 2 columns*/
+.grid__template--columns-span2-2 {
+  grid-column: 2/span 2; }
+
+.grid__template--columns-span2-3 {
+  grid-column: 3/span 2; }
+
+.grid__template--columns-span2-4 {
+  grid-column: 4/span 2; }
+
+.grid__template--columns-span2-5 {
+  grid-column: 5/span 2; }
+
+.grid__template--columns-span2-6 {
+  grid-column: 6/span 2; }
+
+.grid__template--columns-span2-7 {
+  grid-column: 7/span 2; }
+
+.grid__template--columns-span2-8 {
+  grid-column: 8/span 2; }
+
+.grid__template--columns-span2-9 {
+  grid-column: 9/span 2; }
+
+/*grid-template columns spanning 3 columns*/
+.grid__template--columns-span3-2 {
+  grid-column: 2/span 3; }
+
+.grid__template--columns-span3-3 {
+  grid-column: 3/span 3; }
+
+.grid__template--columns-span3-4 {
+  grid-column: 4/span 3; }
+
+.grid__template--columns-span3-5 {
+  grid-column: 5/span 3; }
+
+.grid__template--columns-span3-6 {
+  grid-column: 6/span 3; }
+
+.grid__template--columns-span3-7 {
+  grid-column: 7/span 3; }
+
+.grid__template--columns-span3-8 {
+  grid-column: 8/span 3; }
+
+.grid__template--columns-span3-9 {
+  grid-column: 9/span 3; }
+
+/*grid-template columns spanning 4 columns*/
+.grid__template--columns-span4-2 {
+  grid-column: 2/span 4; }
+
+.grid__template--columns-span4-3 {
+  grid-column: 3/span 4; }
+
+.grid__template--columns-span4-4 {
+  grid-column: 4/span 4; }
+
+.grid__template--columns-span4-5 {
+  grid-column: 5/span 4; }
+
+.grid__template--columns-span4-6 {
+  grid-column: 6/span 4; }
+
+.grid__template--columns-span4-7 {
+  grid-column: 7/span 4; }
+
+.grid__template--columns-span4-8 {
+  grid-column: 8/span 4; }
+
+.grid__template--columns-span4-9 {
+  grid-column: 9/span 4; }
+
+/*.grid-template rows spanning 1 row*/
+.grid__template--rows-span1-2 {
+  grid-row: 2/span 1; }
+
+.grid__template--rows-span1-3 {
+  grid-row: 3/span 1; }
+
+.grid__template--rows-span1-4 {
+  grid-row: 4/span 1; }
+
+.grid__template--rows-span1-5 {
+  grid-row: 5/span 1; }
+
+.grid__template--rows-span1-6 {
+  grid-row: 6/span 1; }
+
+.grid__template--rows-span1-7 {
+  grid-row: 7/span 1; }
+
+.grid__template--rows-span1-8 {
+  grid-row: 8/span 1; }
+
+.grid__template--rows-span1-9 {
+  grid-row: 9/span 1; }
+
+.grid__template--rows-span1-10 {
+  grid-row: 10/span 1; }
+
+.grid__template--rows-span1-11 {
+  grid-column: 11/span 1; }
+
+/*grid-template rows spanning 2 rows*/
+.grid__template--rows-span2-2 {
+  grid-row: 2/span 2; }
+
+.grid__template--rows-span2-3 {
+  grid-row: 3/span 2; }
+
+.grid__template--rows-span2-4 {
+  grid-row: 4/span 2; }
+
+.grid__template--rows-span2-5 {
+  grid-row: 5/span 2; }
+
+.grid__template--rows-span2-6 {
+  grid-row: 6/span 2; }
+
+.grid__template--rows-span2-7 {
+  grid-row: 7/span 2; }
+
+.grid__template--rows-span2-8 {
+  grid-row: 8/span 2; }
+
+.grid__template--rows-span2-9 {
+  grid-row: 9/span 2; }
+
+.grid__template--rows-span2-10 {
+  grid-row: 10/span 2; }
+
+.grid__template--rows-span2-11 {
+  grid-row: 11/span 2; }
+
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*background mixins*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Mixins for navigation bar flex states*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*MISC*/
+.main, .main--background, .main--sidebar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 4.45em;
+  background: #DEF9EE;
+  overflow-y: auto;
+  z-index: 1; }
+
+.main--background {
+  background-image: url("./Themes/whirlpool.png");
+  background-position: 0 0;
+  background-size: 125%; }
+  @media screen and (min-width: 320px) and (max-width: 468px) {
+    .main--background {
+      background-image: url("./Themes/whirlpool.png");
+      background-position: 0 0;
+      background-size: 100%; } }
+  @media screen and (min-width: 469px) and (max-width: 768px) {
+    .main--background {
+      background-image: url("./Themes/whirlpool.png");
+      background-position: 0 0;
+      background-size: 75%; } }
+  @media screen and (min-width: 768px) {
+    .main--background {
+      background-image: url("./Themes/whirlpool.png");
+      background-position: 0 0;
+      background-size: 50%; } }
+
+.main--flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.main--flex .main__section {
+  max-width: 100%; }
+  @media screen and (min-width: 768px) {
+    .main--flex .main__section {
+      max-width: 50%; } }
+  @media screen and (min-width: 1536px) {
+    .main--flex .main__section {
+      max-width: 33%; } }
+
+.main--flex .main__section.top {
+  min-width: 100%; }
+
+.main--flex .main__wrapper, .main--flex .main__wrapper--right {
+  min-width: 100%; }
+
+.main--full {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0; }
+
+@media screen and (min-width: 1024px) {
+  .main--sidebar {
+    position: absolute;
+    bottom: 0;
+    left: 14em;
+    right: 0;
+    top: 4.35em;
+    overflow-y: auto; } }
+
+.main__body-wrapper {
+  position: relative;
+  top: 4.5em;
+  background: #FFF;
+  z-index: 1; }
+
+.main__section {
+  position: relative;
+  margin-bottom: 1em;
+  border-bottom: 0.01em solid #4BA7AB; }
+
+.main__section.top {
+  margin-bottom: 0;
+  border-bottom: 0; }
+
+.main__sectionContent {
+  border-top: 0.25em dotted #C7C7C7;
+  border-bottom: 0.25em dotted #C7C7C7;
+  margin-top: 2em;
+  margin-right: auto;
+  margin-bottom: 2em;
+  margin-left: auto;
+  position: relative;
+  max-width: 95%;
+  padding: 1em 0.25em; }
+  @media screen and (min-width: 480px) {
+    .main__sectionContent {
+      padding: 1em 0.5em; } }
+  @media screen and (min-width: 768px) {
+    .main__sectionContent {
+      padding: 1em; } }
+
+.main__sectionDescription {
+  border-left: 0.5em groove #3CB3B9;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-right: 1em;
+  margin-left: 0.5em;
+  font-family: "Quicksand Light";
+  line-height: 1.5em; }
+  @media screen and (min-width: 480px) {
+    .main__sectionDescription {
+      margin-right: 1.5em;
+      margin-left: 1em; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main__sectionDescription {
+      margin: 0 1.5em; } }
+  @media screen and (min-width: 1536px) {
+    .main__sectionDescription {
+      margin-right: 2.5em;
+      margin-bottom: 1em;
+      margin-left: 2.5em; } }
+
+.main__sectionDescription--bold {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0.75em;
+  max-width: 90%;
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.5em;
+  text-align: right; }
+  @media screen and (min-width: 640px) {
+    .main__sectionDescription--bold {
+      font-size: 1.35em; } }
+
+.main__sectionDescription-card.last,
+.main__sectionDescription-card.first,
+.main__sectionDescription-card {
+  flex: 1;
+  padding: 1em;
+  border: 0.05em solid #A0A0A0;
+  border-radius: 0.25em;
+  margin-top: 0.75em;
+  min-width: 100%;
+  background: linear-gradient(to bottom, #000 40%, #4E4E4E 100%);
+  box-shadow: inset 0 0.125em 1em 0.125em #3C3939, 0.25em 0.125em 1em 0.125em #8C8C8C;
+  color: white; }
+  @media screen and (min-width: 640px) {
+    .main__sectionDescription-card.last,
+    .main__sectionDescription-card.first,
+    .main__sectionDescription-card {
+      min-width: 48%; } }
+  @media screen and (min-width: 1200px) {
+    .main__sectionDescription-card.last,
+    .main__sectionDescription-card.first,
+    .main__sectionDescription-card {
+      min-width: 32%;
+      margin-left: 0.75em; } }
+
+.main__sectionDescription-card.last {
+  margin-left: 0; }
+  @media screen and (min-width: 640px) and (max-width: 1200px) {
+    .main__sectionDescription-card.last {
+      margin-left: 0.75em; } }
+
+.main__sectionDescription-card.first {
+  margin-left: 0; }
+
+@media screen and (min-width: 640px) {
+  .main__sectionDescription-card:nth-child(2) {
+    margin-left: 0.75em; } }
+
+.main__sectionDescription-content {
+  line-height: 2em; }
+
+.main__sectionDescription-card-heading {
+  font-size: 1.25em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 0.05em dashed #A0A0A0; }
+
+.main__sectionDescription-heading {
+  margin-top: 0.5em;
+  margin-left: 0.75em;
+  padding: 0.5em 0.25em;
+  font-size: 1.5em;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.05);
+  border-bottom: 0.25em groove #1F9EA4;
+  border-radius: 0.125em 0.125em 0 0; }
+  @media screen and (min-width: 480px) {
+    .main__sectionDescription-heading {
+      margin-top: 0.5em;
+      margin-left: 0.5em;
+      padding-left: 0.5em; } }
+
+.main__sectionDescription-title {
+  position: relative;
+  margin-bottom: 1em; }
+
+.main__sectionDescription-wrapper {
+  margin-bottom: 1em;
+  margin-left: 1em;
+  display: flex;
+  flex-wrap: wrap; }
+  @media screen and (min-width: 480px) {
+    .main__sectionDescription-wrapper {
+      margin-left: 1.5em; } }
+
+.main__sectionDetails {
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-left: 1em;
+  position: relative;
+  margin-bottom: 0.5em;
+  min-height: 4em;
+  font-family: "Quicksand Bold"; }
+
+.main__sectionDetails-chapter {
+  width: min-content;
+  height: min-content;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5em; }
+  @media screen and (min-width: 385px) {
+    .main__sectionDetails-chapter {
+      margin-bottom: 0; } }
+
+.main__sectionDetails-chapter-text {
+  padding-top: 0.35em;
+  padding-right: 0.25em;
+  padding-bottom: 0.25em;
+  padding-left: 0.25em;
+  flex: 1;
+  margin-right: 0.25em;
+  background: #3CB3B9; }
+
+.main__sectionDetails-description {
+  display: flex;
+  align-items: center;
+  font-family: "Quicksand Light";
+  font-size: 1.125em; }
+  @media screen and (min-width: 385px) {
+    .main__sectionDetails-description {
+      margin-left: 1em; } }
+
+.main__sectionDetails-description-text {
+  margin-right: 0.25em;
+  font-weight: 600; }
+
+.main__sectionDetails-description-tag {
+  margin-right: 0.25em;
+  margin-left: 0.25em;
+  padding-top: 0.25em;
+  padding-right: 1em;
+  padding-bottom: 0.25em;
+  padding-left: 1.15em;
+  font-weight: 600;
+  letter-spacing: 0.125em;
+  background: #000;
+  border-radius: 0.25em;
+  box-shadow: inset 0 0.125em 1em 0.125em #3C3939;
+  color: #FFF;
+  text-shadow: 0.05em 0.075em 0.05em #FFF; }
+
+.main__sectionDetails-text-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 0.25em;
+  min-height: 2em; }
+  @media screen and (min-width: 385px) {
+    .main__sectionDetails-text-wrapper {
+      flex-direction: row;
+      align-items: center; } }
+
+.main__sectionDetails-identifier {
+  max-width: 4em;
+  margin-bottom: 0.45em;
+  border-top: 0.25em solid #000; }
+
+.main__sectionHeading, .main__sectionHeading.transparent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 1em;
+  padding-bottom: 1em;
+  border-bottom: 0.01em solid #C7C7C7;
+  box-shadow: inset 0 -0.25em 0.75em #C7C7C7; }
+  @media screen and (min-width: 1024px) {
+    .main__sectionHeading, .main__sectionHeading.transparent {
+      padding: 2em 1em; } }
+
+.main__sectionHeading.transparent {
+  box-shadow: none; }
+
+.main__sectionHeading-expander-icon {
+  width: 2.5em;
+  height: 2.5em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1em;
+  margin-right: auto;
+  border: 0.25em double #8C8C8C;
+  border-radius: 0.25em; }
+
+.main__sectionHeading-expander-icon:hover {
+  box-shadow: 0.15em 0.15em 0.75em #8C8C8C; }
+
+.main__sectionHeading-expander-icon-heading {
+  padding: 0.25em;
+  font-size: 1.25em;
+  color: rgba(0, 0, 0, 0.15);
+  font-family: "Quicksand Bold";
+  margin-left: 3em; }
+
+.main__sectionHeading-icon {
+  border-top: 0.25em groove #133A9C;
+  border-right: 0.25em groove #133A9C;
+  margin-right: 1em;
+  width: 3em;
+  height: 3em;
+  position: relative;
+  box-shadow: 0.275em -0.125em 0.75em #A0A0A0; }
+
+.main__sectionHeading-icon--medium {
+  border-top: 0.175em groove #3CB3B9;
+  border-right: 0.175em groove #3CB3B9;
+  margin-top: 0.25em;
+  margin-right: 0.25em;
+  width: 2.5em;
+  height: 2.5em; }
+
+.main__sectionHeading-icon--small {
+  border-top: 0.185em groove #26CE31;
+  border-right: 0.185em groove #26CE31;
+  margin-top: 0.35em;
+  margin-right: 0.25em;
+  width: 2em;
+  height: 2em; }
+
+.main__sectionHeading-icon--x-small {
+  border-bottom: 0.15em groove #F00;
+  border-left: 0.15em groove #F00;
+  margin-top: 1.05em;
+  width: 0.75em;
+  height: 0.75em; }
+
+.main__sectionHeading-text {
+  position: relative;
+  flex: 4;
+  max-width: 100%;
+  margin-left: 1em;
+  font-family: "Quicksand Regular";
+  font-size: 1.5em;
+  line-height: 1.75em; }
+  @media screen and (min-width: 768px) {
+    .main__sectionHeading-text {
+      font-size: 2em; } }
+  @media screen and (min-width: 1024px) {
+    .main__sectionHeading-text {
+      max-width: 60%; } }
+
+.main__wrapper, .main__wrapper--right {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-top: 0.25em double #C7C7C7;
+  position: relative;
+  max-width: 100%;
+  background: #E6E6E6;
+  border: 1px solid #C7C7C7;
+  box-shadow: inset 0 0.25em 0.75em 0.125em #C7C7C7, inset 0 0.125em 0.75em 0.05em #ffffff; }
+
+.main__wrapper.transparent, .transparent.main__wrapper--right {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  position: relative;
+  max-width: 100%;
+  background: none;
+  border: 0;
+  box-shadow: none; }
+
+/*include position: fixed and width: 16.25em when menu becomes sticky*/
+.main__wrapper--right {
+  margin-left: 2em;
+  height: 100%; }
+
+.main__pageHeading {
+  position: relative;
+  margin-bottom: 1em;
+  min-height: 10em;
+  padding: 0 4em;
+  width: 100%;
+  background: repeating-linear-gradient(135deg, #212121 4%, #23585A 25%, #1F9EA4 40%, #3CB3B9 50%, transparent 96%);
+  box-shadow: 0 0.05em 0.5em 0.05em #A0A0A0; }
+
+.column {
+  display: flex; }
+
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*background mixins*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Mixins for navigation bar flex states*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+.example--pop-out {
+  padding: 0;
+  background: transparent;
+  border-radius: 0.25em; }
+
+.example--pop-out.active {
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.25); }
+
+.example__module--right {
+  position: absolute;
+  right: 3em;
+  top: 50%;
+  display: none;
+  margin-top: -1.5em;
+  align-items: center;
+  min-height: 3.5em; }
+  @media screen and (min-width: 640px) {
+    .example__module--right {
+      display: flex; } }
+
+.example__section--pop-out {
+  display: none;
+  margin-top: 1em;
+  max-height: 0;
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 0.25em;
+  font-family: "Miriam Libre";
+  font-size: 0.9em; }
+
+.example__section--pop-out.active {
+  display: block;
+  max-height: min-content; }
+
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*background mixins*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Mixins for navigation bar flex states*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+.text__border {
+  border: 0.05em outset #FFF;
+  border-radius: 0 0.5em;
+  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
+
+.text__wrapper {
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  position: absolute; }
+
+.text__group--alert-info {
+  width: 100%;
+  height: 100%;
+  float: right; }
+  @media screen and (min-width: 420px) {
+    .text__group--alert-info {
+      width: 90%;
+      height: 100%; } }
+
+.text__heading, .text__heading--main, .text__heading--nav {
+  letter-spacing: 0.1em;
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 0.55em;
+  color: #FFF;
+  line-height: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  margin-left: -0.1em;
+  font-family: "Quicksand Regular"; }
+
+.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
+  color: #000; }
+
+.text__heading--alert {
+  margin-bottom: 0.5em;
+  color: #23585A;
+  font-family: "Quicksand Regular";
+  font-size: 1.25em;
+  font-weight: 600; }
+
+.text__heading-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-items: center; }
+
+.text__heading--outline-cap {
+  font-family: "Pissjar Sans";
+  /*font-family: "Lulo Clean Outline Bold";*/
+  font-size: 1em;
+  color: #FFF;
+  text-align: center; }
+  @media screen and (min-width: 400px) and (max-width: 768px) {
+    .text__heading--outline-cap {
+      font-size: 1.15em; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .text__heading--outline-cap {
+      font-size: 1.25em; } }
+  @media screen and (min-width: 1024px) {
+    .text__heading--outline-cap {
+      font-size: 1.5em; } }
+
+.text__heading--main {
+  position: absolute;
+  top: 2.25em;
+  padding: 0;
+  font-family: "Quicksand Regular";
+  font-size: 2.25em;
+  color: #FFF; }
+
+.text__headingLabel--main {
+  position: absolute;
+  top: 3em;
+  padding-top: 0.5em;
+  width: 4em;
+  font-family: "Quicksand Light";
+  border-top: 0.25em solid #3CB3B9;
+  color: #FFF; }
+
+.text__heading--nav {
+  font-size: 1.25em; }
+  @media screen and (min-width: 768px) {
+    .text__heading--nav {
+      font-size: 1.5em;
+      font-weight: normal; } }
+
+.text__heading--nav.left {
+  margin-left: 0.25em; }
+
+.text__heading--nav.right {
+  margin-right: 0.5em; }
+
+.text__label {
+  position: relative;
+  padding-bottom: 0.5em;
+  font-family: "Quicksand Light";
+  font-size: 0.925em; }
+
+.text__link {
+  text-decoration: none;
+  font-family: "Quicksand Light";
+  font-size: 0.925em; }
+
+.text__link:hover {
+  cursor: pointer;
+  opacity: 0.75; }
+
+.text__link:visited {
+  color: #FFF; }
+
+.text__link-wrapper {
+  padding: 0.5em; }
+
+.text--bold {
+  font-weight: 600; }
+
+.text--alert {
+  font-family: "Quicksand Regular";
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5em; }
+
+.text--caption {
+  padding: 0.5em;
+  font-family: "Quicksand Regular";
+  line-height: 1.5em;
+  opacity: 0.75;
+  font-size: 0.95em; }
+
+.text--caption.black {
+  color: #000; }
+
+.text--code {
+  padding: 0.125em 0.25em;
+  background: #1F9EA4;
+  border-radius: 0.125em;
+  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
+  color: #FFF;
+  font-weight: 600; }
+
+.text--hero {
+  font-size: 1.5em;
+  opacity: 0.75;
+  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
+  @media screen and (min-width: 600px) and (max-width: 640px) {
+    .text--hero {
+      font-size: 2em; } }
+  @media screen and (min-width: 640px) {
+    .text--hero {
+      font-size: 2.5em; } }
+
+.text--italicized {
+  font-style: italic; }
+
+.text--responsive {
+  counter-increment: 1;
+  position: relative;
+  font-size: 0.95em; }
+
+@font-face {
+  font-family: "Lulo Clean Outline Bold";
+  src: url("../luloclean_outlinebold_macroman/LuloCleanOutlineBold-webfont.woff2") format("woff2"); }
+@font-face {
+  font-family: "Miriam Libre";
+  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Pissjar Sans";
+  src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Bold";
+  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Light";
+  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Medium";
+  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Regular";
+  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*background mixins*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Mixins for navigation bar flex states*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+.sidebar {
+  display: none; }
+  @media screen and (min-width: 1024px) {
+    .sidebar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      top: 4.35em;
+      display: block;
+      min-width: 14em;
+      background: #212121; } }
+
+.sidebar__dropDown {
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -ms-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -webkit-animation: 0.05s ease-out normal slide-vertical;
+  animation: 0.05s ease-out normal slide-vertical;
+  -moz-animation: 0.05s ease-out normal slide-vertical;
+  animation: 0.05s ease-out normal slide-vertical;
+  -ms-animation: 0.05s ease-out normal slide-vertical;
+  animation: 0.05s ease-out normal slide-vertical;
+  -o-animation: 0.05s ease-out normal slide-vertical;
+  animation: 0.05s ease-out normal slide-vertical;
+  position: relative;
+  top: 3em;
+  max-height: 0;
+  min-width: 100%;
+  background: linear-gradient(135deg, #3CB3B9, #000);
+  color: #FFF; }
+
+.sidebar__dropDown.show {
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 1em;
+  max-height: min-content;
+  top: 0; }
+
+.sidebar__dropDown.show .sidebar__dropDown-item {
+  opacity: 1; }
+
+.sidebar__dropDown-item {
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -ms-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  position: relative;
+  min-width: 100%;
+  font-family: "Quicksand Light";
+  line-height: 1.5em;
+  opacity: 0; }
+
+.sidebar__dropDown-item.collapsible {
+  padding: 0; }
+
+.sidebar__dropDown-item.collapsible .sidebar__dropDown-sub-menu {
+  opacity: 0; }
+
+.sidebar__dropDown-item.collapsible .triangle--down-white--small {
+  cursor: pointer; }
+
+.sidebar__dropDown-item.collapsible .triangle--down-white--small:hover {
+  opacity: 0.75; }
+
+.sidebar__dropDown-item.collapsible.active .sidebar__dropDown-sub-menu.show {
+  opacity: 0.75; }
+
+.sidebar__dropDown-item.last {
+  padding-bottom: 0.5em; }
+
+.sidebar__dropDown-item.first {
+  padding-top: 0.5em; }
+
+.sidebar__dropDown-sub-menu {
+  -webkit-transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
+  transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
+  -moz-transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
+  transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
+  -ms-transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
+  transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
+  -o-transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
+  transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
+  max-height: 0;
+  padding-left: 1em;
+  position: relative; }
+
+.sidebar__dropDown-sub-menu .sidebar__dropDown-item {
+  opacity: 0; }
+
+.sidebar__dropDown-sub-menu.show {
+  max-height: 20em; }
+
+.sidebar__dropDown-sub-menu.show .sidebar__dropDown-item {
+  opacity: 1; }
+
+/*show when bars icon is clicked in sidebar subheading*/
+.sidebar__iconBar {
+  display: none;
+  /*
+   **INCLUDE IN JS**
+  	@include border-radius(0, 0.5em, 0.5em, 0);
+  
+  	position: relative;
+  	flex: 1;
+  	margin-right: 0.5em;
+  	min-width: 3em;
+  	background: $black;
+  */ }
+
+.sidebar__innerContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  margin: 0.5em;
+  background: transparent; }
+
+.sidebar__module, .sidebar__moduleSubHeading, .sidebar__module.last {
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  display: flex;
+  min-width: 100%;
+  min-height: 3em;
+  padding-left: 1em;
+  background: #000;
+  box-shadow: inset 0 0.125em 0.5em #3D3D3D;
+  color: #FFF;
+  cursor: pointer;
+  font-family: "Quicksand Light"; }
+
+.sidebar__moduleSection {
+  flex: 1;
+  flex-direction: column;
+  margin: 0;
+  max-height: 16em;
+  background: transparent;
+  border-radius: 0.5em; }
+
+.sidebar__moduleSubHeading {
+  border-top: 0.25em solid #4BA7AB;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 0.5em;
+  position: relative;
+  display: flex;
+  min-height: 3.5em;
+  box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E; }
+
+.sidebar__moduleSubHeading > .media, .sidebar__moduleSubHeading > .media--horizontal, .sidebar__moduleSubHeading > .media--vertical, .sidebar__moduleSubHeading > .media__innerWrapper {
+  border-left: 0.05em solid #3C3939;
+  display: flex;
+  flex: 2;
+  flex-direction: row;
+  color: white; }
+
+.sidebar__module.last, .last.sidebar__moduleSubHeading {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  border-bottom: 0; }
+
+.sidebar__module.closed .sidebar__dropDown, .closed.sidebar__moduleSubHeading .sidebar__dropDown {
+  display: none; }
+
+.sidebar__module.opened .sidebar__dropDown, .opened.sidebar__moduleSubHeading .sidebar__dropDown {
+  display: block; }
+
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*background mixins*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Mixins for navigation bar flex states*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*background mixins*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Mixins for navigation bar flex states*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+.text__border {
+  border: 0.05em outset #FFF;
+  border-radius: 0 0.5em;
+  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
+
+.text__wrapper {
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  position: absolute; }
+
+.text__group--alert-info {
+  width: 100%;
+  height: 100%;
+  float: right; }
+  @media screen and (min-width: 420px) {
+    .text__group--alert-info {
+      width: 90%;
+      height: 100%; } }
+
+.text__heading, .text__heading--main, .text__heading--nav {
+  letter-spacing: 0.1em;
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 0.55em;
+  color: #FFF;
+  line-height: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  margin-left: -0.1em;
+  font-family: "Quicksand Regular"; }
+
+.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
+  color: #000; }
+
+.text__heading--alert {
+  margin-bottom: 0.5em;
+  color: #23585A;
+  font-family: "Quicksand Regular";
+  font-size: 1.25em;
+  font-weight: 600; }
+
+.text__heading-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-items: center; }
+
+.text__heading--outline-cap {
+  font-family: "Pissjar Sans";
+  /*font-family: "Lulo Clean Outline Bold";*/
+  font-size: 1em;
+  color: #FFF;
+  text-align: center; }
+  @media screen and (min-width: 400px) and (max-width: 768px) {
+    .text__heading--outline-cap {
+      font-size: 1.15em; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .text__heading--outline-cap {
+      font-size: 1.25em; } }
+  @media screen and (min-width: 1024px) {
+    .text__heading--outline-cap {
+      font-size: 1.5em; } }
+
+.text__heading--main {
+  position: absolute;
+  top: 2.25em;
+  padding: 0;
+  font-family: "Quicksand Regular";
+  font-size: 2.25em;
+  color: #FFF; }
+
+.text__headingLabel--main {
+  position: absolute;
+  top: 3em;
+  padding-top: 0.5em;
+  width: 4em;
+  font-family: "Quicksand Light";
+  border-top: 0.25em solid #3CB3B9;
+  color: #FFF; }
+
+.text__heading--nav {
+  font-size: 1.25em; }
+  @media screen and (min-width: 768px) {
+    .text__heading--nav {
+      font-size: 1.5em;
+      font-weight: normal; } }
+
+.text__heading--nav.left {
+  margin-left: 0.25em; }
+
+.text__heading--nav.right {
+  margin-right: 0.5em; }
+
+.text__label {
+  position: relative;
+  padding-bottom: 0.5em;
+  font-family: "Quicksand Light";
+  font-size: 0.925em; }
+
+.text__link {
+  text-decoration: none;
+  font-family: "Quicksand Light";
+  font-size: 0.925em; }
+
+.text__link:hover {
+  cursor: pointer;
+  opacity: 0.75; }
+
+.text__link:visited {
+  color: #FFF; }
+
+.text__link-wrapper {
+  padding: 0.5em; }
+
+.text--bold {
+  font-weight: 600; }
+
+.text--alert {
+  font-family: "Quicksand Regular";
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5em; }
+
+.text--caption {
+  padding: 0.5em;
+  font-family: "Quicksand Regular";
+  line-height: 1.5em;
+  opacity: 0.75;
+  font-size: 0.95em; }
+
+.text--caption.black {
+  color: #000; }
+
+.text--code {
+  padding: 0.125em 0.25em;
+  background: #1F9EA4;
+  border-radius: 0.125em;
+  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
+  color: #FFF;
+  font-weight: 600; }
+
+.text--hero {
+  font-size: 1.5em;
+  opacity: 0.75;
+  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
+  @media screen and (min-width: 600px) and (max-width: 640px) {
+    .text--hero {
+      font-size: 2em; } }
+  @media screen and (min-width: 640px) {
+    .text--hero {
+      font-size: 2.5em; } }
+
+.text--italicized {
+  font-style: italic; }
+
+.text--responsive {
+  counter-increment: 1;
+  position: relative;
+  font-size: 0.95em; }
+
+@font-face {
+  font-family: "Lulo Clean Outline Bold";
+  src: url("../luloclean_outlinebold_macroman/LuloCleanOutlineBold-webfont.woff2") format("woff2"); }
+@font-face {
+  font-family: "Miriam Libre";
+  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Pissjar Sans";
+  src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Bold";
+  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Light";
+  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Medium";
+  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Regular";
+  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
+/*Input styling*/
+input[type="text"] {
+  width: 100%;
+  height: 2em;
+  padding-top: 0;
+  padding-right: 1em;
+  padding-bottom: 0;
+  padding-left: 1em;
+  border-top-left-radius: 0.25em;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0.25em;
+  background: transparent;
+  border: 0.1em solid #8C8C8C;
+  color: #FFF;
+  font-family: "Quicksand Light";
+  outline: none; }
+
+input[type="text"].form__input--no-border {
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0.01em solid #3C3939;
+  border-left: 0; }
+
+.form__segment, .form__input-segment {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  min-height: 1.5rem;
+  width: 80%; }
+
+.form__input-segment {
+  position: absolute;
+  right: 18.25rem;
+  top: 3rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  min-width: 26rem;
+  max-height: 0;
+  min-height: 0;
+  padding: 0.295rem;
+  background: #212121; }
+
+.form__input-segment.active {
+  min-height: 2rem;
+  max-height: 3rem; }
+
+.form__input-segment input[type="text"] {
+  border-radius: 0.25rem; }
+
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*background mixins*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Mixins for navigation bar flex states*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+.menu {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: block;
+  padding: 1em;
+  font-family: "Quicksand Light"; }
+
+.menu__item {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  border-top: 0.05em solid #C7C7C7;
+  border-bottom: 0.05em solid #C7C7C7;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.25em;
+  margin-bottom: 0.5em;
+  font-size: 1.125em;
+  font-weight: 600;
+  line-height: 1.5em; }
+
+.menu__item.active {
+  background: rgba(255, 255, 255, 0.15); }
+
+.menu__item.active .menu__expander-icon {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg); }
+
+.menu__item--flex {
+  flex: 1; }
+
+.menu__dropDown {
+  margin-bottom: 0.75em; }
+
+.menu__dropDown-content {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  max-height: 0;
+  line-height: 1.5em; }
+
+.menu__dropDown-content.show {
+  max-height: 20em; }
+
+.menu__dropDown-content.show .menu__dropDown-item {
+  display: block;
+  opacity: 1;
+  visibility: visible; }
+
+.menu__dropDown-item {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: none;
+  padding: 0.25em;
+  opacity: 0;
+  visibility: hidden; }
+
+.menu__dropDown-positioning {
+  position: relative; }
+
+.menu__dropDown--absolute, .menu__dropDown--absolute.menu__dropDown--absolute--thin--right.active {
+  -webkit-transition: 0.15s all ease-in-out;
+  transition: 0.15s all ease-in-out;
+  -moz-transition: 0.15s all ease-in-out;
+  transition: 0.15s all ease-in-out;
+  -ms-transition: 0.15s all ease-in-out;
+  transition: 0.15s all ease-in-out;
+  -o-transition: 0.15s all ease-in-out;
+  transition: 0.15s all ease-in-out;
+  position: absolute;
+  max-height: 0;
+  min-width: 0;
+  background: #000;
+  z-index: 3; }
+
+.menu__dropDown--absolute.menu__dropDown--absolute--thin--right.active {
+  top: 2.7em;
+  max-height: 15rem;
+  min-width: 30rem; }
+
+.menu__dropDown--flex.active > .text__link {
+  opacity: 0.75; }
+
+.menu__dropDown-content--flex {
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -ms-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  border: 0;
+  opacity: 0; }
+
+.menu__dropDown-content--flex.show {
+  max-height: 20em;
+  padding-left: 0.75em;
+  font-size: 0.95em;
+  opacity: 1; }
+
+.menu__heading {
+  margin-bottom: 0.5em;
+  line-height: 1.15em;
+  font-family: "Quicksand Regular";
+  font-size: 1.15em;
+  font-weight: 600; }
+
+.menu__expander-icon {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  padding: 0.025em;
+  cursor: pointer;
+  right: 0.5em;
+  top: 0.9em; }
+
+.menu--flex {
+  display: flex;
+  flex-direction: column; }
+
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*background mixins*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Mixins for navigation bar flex states*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Semantically important icons*/
+.icon, .icon__ellipsis, .icon__envelope, .icon__home {
+  color: #FFF;
+  font-size: 1em; }
+
+.icon.black, .black.icon__ellipsis, .black.icon__envelope, .black.icon__home {
+  color: #000; }
+
+#icon__mq {
+  display: block;
+  color: #FFF; }
+  @media screen and (min-width: 1024px) and (max-width: 1350px) {
+    #icon__mq {
+      display: none; } }
+
+.icon__button {
+  width: 2em;
+  height: 2em;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  border: 0.05em solid #3C3939;
+  border-radius: 0.25em;
+  box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
+  color: #FFF;
+  cursor: pointer; }
+
+.icon__code--left {
+  display: block;
+  padding: 0.25em;
+  position: absolute;
+  border: solid #4E4E4E;
+  border-right: 0.25em;
+  border-bottom: 0.25em;
+  -webkit-transform: rotate(315deg);
+  transform: rotate(315deg);
+  -moz-transform: rotate(315deg);
+  transform: rotate(315deg);
+  -ms-transform: rotate(315deg);
+  transform: rotate(315deg);
+  -o-transform: rotate(315deg);
+  transform: rotate(315deg);
+  right: 0.85em; }
+
+.icon__code--right {
+  display: block;
+  padding: 0.25em;
+  position: absolute;
+  border: solid #4E4E4E;
+  border-right: 0.25em;
+  border-bottom: 0.25em;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+  left: 0.85em; }
+
+.icon__facebook {
+  color: #3B5998; }
+
+.icon__linkedin {
+  color: #0077B5; }
+
+.icon__pinterest {
+  color: #DC143C; }
+
+.icon__twitter {
+  color: #0084B4; }
+
+.icon__home {
+  position: relative; }
+  @media screen and (min-width: 640px) {
+    .icon__home {
+      font-size: 1.15em; } }
+
+.icon__home:visited {
+  color: #FFF; }
+
+.icon__info {
+  color: #23585A;
+  font-size: 2em;
+  text-shadow: 0.05em 0.05em rgba(60, 179, 185, 0.15); }
+
+.icon__info--alert {
+  padding-right: 0.25em;
+  padding-bottom: 0.25em;
+  width: 25%;
+  height: 100%;
+  float: left;
+  text-align: center; }
+  @media screen and (min-width: 420px) {
+    .icon__info--alert {
+      padding-top: 0.25em;
+      padding-right: 0.25em;
+      width: 10%;
+      height: 100%; } }
+
+.icon__media--circle--small {
+  height: 1em;
+  width: 1em;
+  -ms-border-radius: 0.5em;
+  moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+  background: #3CB3B9; }
+
+.icon__media--circle--medium {
+  height: 1.5em;
+  width: 1.5em;
+  -ms-border-radius: 0.75em;
+  moz-border-radius: 0.75em;
+  -webkit-border-radius: 0.75em;
+  border-radius: 0.75em;
+  background: #3CB3B9; }
+
+.icon__search {
+  margin-top: 0;
+  outline: none; }
+
+.icon_search:hover > .fa-search {
+  position: relative;
+  top: -0.125em; }
+
+.icon__search--large {
+  font-size: 1.25em; }
+
+/*icon containers*/
+.icon__wrapper, .icon__wrapper--home {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  min-height: 2em;
+  padding: 0 0.5em;
+  background: transparent;
+  border: 0;
+  border-right: 0.05em solid #4E4E4E;
+  outline: none; }
+  .icon__wrapper:hover, .icon__wrapper--home:hover {
+    background: #3CB3B9;
+    border-bottom: 0;
+    border-radius: 0.25em;
+    box-shadow: inset 0 -0.05em 0.5em 0.05em #23585A;
+    cursor: pointer;
+    padding: 0.35em; }
+
+.icon__wrapper.first, .first.icon__wrapper--home {
+  margin-left: 0; }
+
+.icon__wrapper.last, .last.icon__wrapper--home {
+  border: 0; }
+  .icon__wrapper.last:hover, .last.icon__wrapper--home:hover {
+    border-radius: 0 0.25em 0.25em 0; }
+
+.icon__wrapper--clock {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0.5rem;
+  border-right: 0.05rem solid #000; }
+
+.icon__wrapper--home {
+  padding: 0.25em 0;
+  border: 0;
+  border-bottom: 0.25em solid #3CB3B9; }
+
+.icon__wrapper > *:hover, .icon__wrapper--home > *:hover {
+  color: #FFF; }
+
+.icon__wrapper--home > *:hover {
+  color: #FFF; }
+
+/*page corner icons*/
+.icon__pageCorner--top-left {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border-left: 0.25em groove #3CB3B9;
+  border-top: 0.25em groove #3CB3B9;
+  border-bottom: 0.25em groove #3CB3B9;
+  border-right: 0.25em groove #3CB3B9; }
+
+.icon__pageCorner--bottom-right {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border-left: 0.25em groove #3CB3B9;
+  border-top: 0.25em groove #3CB3B9;
+  border-bottom: 0.25em groove #3CB3B9;
+  border-right: 0.25em groove #3CB3B9; }
+
+/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
+container as a text to create padding between the text and the icon*/
+.icon__menu-item--right {
+  position: absolute;
+  right: 0.75em; }
+
+.icon__menu-item--top {
+  position: absolute;
+  top: 0.75em; }
+
+/*creates a margin on the opposite side of the specified position
+in order to align the icon on either the right or left margin*/
+.icon--left {
+  margin-right: 0.5em; }
+
+.icon--right {
+  margin-left: 0.5em;
+  margin-top: 0.125em; }
+
+/*Positioning for absolutely positioned items*/
+.icon--absolute {
+  position: absolute; }
+
+.bottom {
+  bottom: 0; }
+
+.left {
+  left: 0; }
+
+.right {
+  right: 0; }
+
+.top {
+  top: 0; }
+
+/*Creates a triangle with equal widths for all borders. Commonly used 
+with dropdown menus to signify additional content. Color class names for
+black and white triangles have been created for styling purposes,but new 
+class names with different colors can be created by adding a state value 
+for color (--state) and including the .triangle mixin with desired color.*/
+/*white triangles*/
+.triangle--up--white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #FFF; }
+
+.triangle--right-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-left: 0.5em solid #FFF;
+  border-bottom: 0.5em solid transparent; }
+
+.triangle--down-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #FFF;
+  cursor: pointer; }
+
+.triangle--left-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #FFF;
+  border-bottom: 0.5em solid transparent; }
+
+/*black triangles*/
+.triangle--up-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-bottom: 0.5em solid #000; }
+
+.triangle--right-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-left: 0.5em solid #000;
+  border-bottom: 0.5em solid transparent; }
+
+.triangle--down-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  border-top: 0.5em solid #000; }
+
+.triangle--left-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-right: 0.5em solid #000;
+  border-bottom: 0.5em solid transparent; }
+
+.triangle--right-black.left:before {
+  content: ""; }
+
+/*white triangle sizes*/
+.triangle--down-white--small {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.25em solid transparent;
+  border-right: 0.25em solid transparent;
+  border-top: 0.25em solid #FFF; }
+
+/*black triangle sizes*/
+.triangle--down-black--small {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.25em solid transparent;
+  border-right: 0.25em solid transparent;
+  border-top: 0.25em solid #000; }
+
+.triangle--left-black--small {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.25em solid transparent;
+  border-right: 0.25em solid #000;
+  border-bottom: 0.25em solid transparent; }
+
+/*white arrows*/
+.arrow--down-white {
+  display: block;
+  padding: 0.25em;
+  position: relative;
+  border: solid #FFF;
+  border-right: 0.25em;
+  border-bottom: 0.25em;
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg); }
+
+/*Special types of triangles*/
+.triangle__page-corner--left {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.75em solid transparent;
+  border-right: 0.75em solid transparent;
+  border-top: 0.75em solid rgba(0, 0, 0, 0.5);
+  left: -1rem;
+  top: 1.9rem; }
+
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*background mixins*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Mixins for navigation bar flex states*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+.text__border {
+  border: 0.05em outset #FFF;
+  border-radius: 0 0.5em;
+  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
+
+.text__wrapper {
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  position: absolute; }
+
+.text__group--alert-info {
+  width: 100%;
+  height: 100%;
+  float: right; }
+  @media screen and (min-width: 420px) {
+    .text__group--alert-info {
+      width: 90%;
+      height: 100%; } }
+
+.text__heading, .text__heading--main, .text__heading--nav {
+  letter-spacing: 0.1em;
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 0.55em;
+  color: #FFF;
+  line-height: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  margin-left: -0.1em;
+  font-family: "Quicksand Regular"; }
+
+.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
+  color: #000; }
+
+.text__heading--alert {
+  margin-bottom: 0.5em;
+  color: #23585A;
+  font-family: "Quicksand Regular";
+  font-size: 1.25em;
+  font-weight: 600; }
+
+.text__heading-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-items: center; }
+
+.text__heading--outline-cap {
+  font-family: "Pissjar Sans";
+  /*font-family: "Lulo Clean Outline Bold";*/
+  font-size: 1em;
+  color: #FFF;
+  text-align: center; }
+  @media screen and (min-width: 400px) and (max-width: 768px) {
+    .text__heading--outline-cap {
+      font-size: 1.15em; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .text__heading--outline-cap {
+      font-size: 1.25em; } }
+  @media screen and (min-width: 1024px) {
+    .text__heading--outline-cap {
+      font-size: 1.5em; } }
+
+.text__heading--main {
+  position: absolute;
+  top: 2.25em;
+  padding: 0;
+  font-family: "Quicksand Regular";
+  font-size: 2.25em;
+  color: #FFF; }
+
+.text__headingLabel--main {
+  position: absolute;
+  top: 3em;
+  padding-top: 0.5em;
+  width: 4em;
+  font-family: "Quicksand Light";
+  border-top: 0.25em solid #3CB3B9;
+  color: #FFF; }
+
+.text__heading--nav {
+  font-size: 1.25em; }
+  @media screen and (min-width: 768px) {
+    .text__heading--nav {
+      font-size: 1.5em;
+      font-weight: normal; } }
+
+.text__heading--nav.left {
+  margin-left: 0.25em; }
+
+.text__heading--nav.right {
+  margin-right: 0.5em; }
+
+.text__label {
+  position: relative;
+  padding-bottom: 0.5em;
+  font-family: "Quicksand Light";
+  font-size: 0.925em; }
+
+.text__link {
+  text-decoration: none;
+  font-family: "Quicksand Light";
+  font-size: 0.925em; }
+
+.text__link:hover {
+  cursor: pointer;
+  opacity: 0.75; }
+
+.text__link:visited {
+  color: #FFF; }
+
+.text__link-wrapper {
+  padding: 0.5em; }
+
+.text--bold {
+  font-weight: 600; }
+
+.text--alert {
+  font-family: "Quicksand Regular";
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5em; }
+
+.text--caption {
+  padding: 0.5em;
+  font-family: "Quicksand Regular";
+  line-height: 1.5em;
+  opacity: 0.75;
+  font-size: 0.95em; }
+
+.text--caption.black {
+  color: #000; }
+
+.text--code {
+  padding: 0.125em 0.25em;
+  background: #1F9EA4;
+  border-radius: 0.125em;
+  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
+  color: #FFF;
+  font-weight: 600; }
+
+.text--hero {
+  font-size: 1.5em;
+  opacity: 0.75;
+  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
+  @media screen and (min-width: 600px) and (max-width: 640px) {
+    .text--hero {
+      font-size: 2em; } }
+  @media screen and (min-width: 640px) {
+    .text--hero {
+      font-size: 2.5em; } }
+
+.text--italicized {
+  font-style: italic; }
+
+.text--responsive {
+  counter-increment: 1;
+  position: relative;
+  font-size: 0.95em; }
+
+@font-face {
+  font-family: "Lulo Clean Outline Bold";
+  src: url("../luloclean_outlinebold_macroman/LuloCleanOutlineBold-webfont.woff2") format("woff2"); }
+@font-face {
+  font-family: "Miriam Libre";
+  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Pissjar Sans";
+  src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Bold";
+  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Light";
+  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Medium";
+  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Regular";
+  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*background mixins*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Mixins for navigation bar flex states*/
+/*Mixins for column sizes for general use*/
+/*Mixins for media image sizing*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
 .accordion, .accordion.active, .accordion--singleSelect {
   -webkit-transition: 0.1s;
   transition: 0.1s;
@@ -630,6 +3626,13 @@ the direction of where you want the margin spacing to be applied*/
 $teal-box-shadow: //code here
 */
 /*Semantically important icons*/
+.icon, .icon__ellipsis, .icon__envelope, .icon__home {
+  color: #FFF;
+  font-size: 1em; }
+
+.icon.black, .black.icon__ellipsis, .black.icon__envelope, .black.icon__home {
+  color: #000; }
+
 #icon__mq {
   display: block;
   color: #FFF; }
@@ -682,13 +3685,26 @@ $teal-box-shadow: //code here
   transform: rotate(135deg);
   left: 0.85em; }
 
+.icon__facebook {
+  color: #3B5998; }
+
+.icon__linkedin {
+  color: #0077B5; }
+
+.icon__pinterest {
+  color: #DC143C; }
+
+.icon__twitter {
+  color: #0084B4; }
+
 .icon__home {
-  position: relative;
-  color: #000;
-  font-size: 1.15em; }
+  position: relative; }
+  @media screen and (min-width: 640px) {
+    .icon__home {
+      font-size: 1.15em; } }
 
 .icon__home:visited {
-  color: #000; }
+  color: #FFF; }
 
 .icon__info {
   color: #23585A;
@@ -729,7 +3745,6 @@ $teal-box-shadow: //code here
 
 .icon__search {
   margin-top: 0;
-  font-size: 1em;
   outline: none; }
 
 .icon_search:hover > .fa-search {
@@ -750,13 +3765,15 @@ $teal-box-shadow: //code here
   -o-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
   min-height: 2em;
-  margin-left: 0.5em;
-  padding: 0.25em;
+  padding: 0 0.5em;
   background: transparent;
-  border: 0; }
+  border: 0;
+  border-right: 0.05em solid #4E4E4E;
+  outline: none; }
   .icon__wrapper:hover, .icon__wrapper--home:hover {
     background: #3CB3B9;
     border-bottom: 0;
+    border-radius: 0.25em;
     box-shadow: inset 0 -0.05em 0.5em 0.05em #23585A;
     cursor: pointer;
     padding: 0.35em; }
@@ -764,8 +3781,21 @@ $teal-box-shadow: //code here
 .icon__wrapper.first, .first.icon__wrapper--home {
   margin-left: 0; }
 
+.icon__wrapper.last, .last.icon__wrapper--home {
+  border: 0; }
+  .icon__wrapper.last:hover, .last.icon__wrapper--home:hover {
+    border-radius: 0 0.25em 0.25em 0; }
+
+.icon__wrapper--clock {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0.5rem;
+  border-right: 0.05rem solid #000; }
+
 .icon__wrapper--home {
   padding: 0.25em 0;
+  border: 0;
   border-bottom: 0.25em solid #3CB3B9; }
 
 .icon__wrapper > *:hover, .icon__wrapper--home > *:hover {
@@ -946,6 +3976,25 @@ for color (--state) and including the .triangle mixin with desired color.*/
   -o-transform: rotate(225deg);
   transform: rotate(225deg); }
 
+/*Special types of triangles*/
+.triangle__page-corner--left {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.75em solid transparent;
+  border-right: 0.75em solid transparent;
+  border-top: 0.75em solid rgba(0, 0, 0, 0.5);
+  left: -1rem;
+  top: 1.9rem; }
+
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
 /*used with display property to hide content*/
@@ -1011,6 +4060,7 @@ the direction of where you want the margin spacing to be applied*/
   /*Box Model*/
   display: flex;
   flex-direction: row;
+  justify-content: center;
   min-height: 4em;
   /*Visual*/
   font-family: "Quicksand Regular";
@@ -1032,7 +4082,7 @@ the direction of where you want the margin spacing to be applied*/
   justify-content: center; }
 
 .navigationBar--state.right {
-  margin-right: 1em;
+  margin-right: 0;
   justify-content: flex-end; }
 
 .navigationBar--state-1 {
@@ -1050,6 +4100,9 @@ the direction of where you want the margin spacing to be applied*/
 .navigationBar--state-5 {
   flex: 5; }
 
+.navigationBar--state-5 {
+  flex: 5; }
+
 .navigationBar--state.left .text__heading, .navigationBar--state.left .text__heading--main, .navigationBar--state.left .text__heading--nav {
   flex: 2;
   font-size: 0.85em; }
@@ -1058,8 +4111,8 @@ the direction of where you want the margin spacing to be applied*/
       flex: 1;
       font-size: 1em; } }
 
-.navigationBar.inverted {
-  background: #FFF; }
+.navigationBar.ultraDark {
+  background: #212121; }
 
 .navigationBar__text--absolute {
   color: #FFF; }
@@ -1079,14 +4132,28 @@ the direction of where you want the margin spacing to be applied*/
   align-items: center;
   justify-content: flex-end;
   height: 2.65em;
-  width: 100%; }
+  width: 100%;
+  background: #212121; }
   @media screen and (min-width: 768px) {
     .navigationBar--thin {
-      min-height: 2.65em; } }
+      min-height: 2.65em;
+      max-width: 60em; } }
 
 .navigationBar--thin .navigationBar--state {
   height: 100%;
-  padding: 0.5em; }
+  padding: 0.5em 0; }
+  @media screen and (min-width: 640px) and (max-width: 768px) {
+    .navigationBar--thin .navigationBar--state {
+      padding: 0.5em; } }
+
+.navigationBar--thin .navigationBar--state.center {
+  flex: 5; }
+  @media screen and (min-width: 640px) and (max-width: 768px) {
+    .navigationBar--thin .navigationBar--state.center {
+      flex: 3; } }
+  @media screen and (min-width: 768px) {
+    .navigationBar--thin .navigationBar--state.center {
+      flex: 1; } }
 
 .navigationBar__component {
   display: flex;
@@ -1269,9 +4336,29 @@ from drop down item*/
 
 /*Navigation bar styles*/
 .navigationBar__icon-menu--thin {
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -moz-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -ms-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -o-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
   display: flex;
   flex-direction: row;
-  align-items: center; }
+  align-items: center;
+  max-width: 20em;
+  min-width: 2.5em; }
+
+.navigationBar__icon-menu--thin input[type="text"] {
+  padding: 0.25em;
+  max-width: 0;
+  border: 0;
+  border-radius: 0.25em; }
+
+.navigationBar__icon-menu--thin.active input[type="text"] {
+  border: 0.1em solid #8C8C8C;
+  max-width: 20em; }
 
 .navigationBar__icon-menu--thin .form__input-segment {
   display: none; }
@@ -1280,17 +4367,29 @@ from drop down item*/
       display: block; } }
 
 .navigationBar__icon-menu--thin .icon__search {
-  display: none; }
+  display: none;
+  color: #FFF; }
   @media screen and (min-width: 768px) {
     .navigationBar__icon-menu--thin .icon__search {
-      display: block;
-      padding-bottom: 0.5em; } }
+      display: block; } }
 
 .navigationBar__icon-menu--thin.active {
-  width: 80%; }
+  max-width: 65em;
+  min-width: 100%; }
+
+.navigationBar__icon-menu--thin.active .icon__search {
+  border-right: 0; }
+
+.navigationBar__icon-menu--thin.active .icon__search:hover {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none; }
+
+.navigationBar__icon-menu--thin .form__input-segment {
+  max-width: 0; }
 
 .navigationBar__icon-menu--thin.active .form__input-segment {
-  max-width: none; }
+  max-width: 40em; }
 
 .navigationBar__menu--thin {
   position: fixed;
@@ -1298,6 +4397,7 @@ from drop down item*/
   display: flex;
   min-height: 1.5em;
   width: 100%;
+  background: #4E4E4E;
   font-family: "Quicksand Light"; }
 
 .navigationBar__menu--thin-left {
@@ -1323,7 +4423,7 @@ from drop down item*/
   display: flex;
   align-self: center;
   max-height: 1.25em;
-  color: #000; }
+  color: #FFF; }
   .navigationBar__menu-item--thin:nth-child(1)::after {
     content: "1";
     font-size: 0.95em; }
@@ -1518,18 +4618,18 @@ $teal-box-shadow: //code here
 .text__heading--outline-cap {
   font-family: "Pissjar Sans";
   /*font-family: "Lulo Clean Outline Bold";*/
-  font-size: 0.95em;
-  color: #000;
+  font-size: 1em;
+  color: #FFF;
   text-align: center; }
-  @media screen and (min-width: 531px) and (max-width: 768px) {
-    .text__heading--outline-cap {
-      font-size: 1em; } }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
+  @media screen and (min-width: 400px) and (max-width: 768px) {
     .text__heading--outline-cap {
       font-size: 1.15em; } }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
     .text__heading--outline-cap {
       font-size: 1.25em; } }
+  @media screen and (min-width: 1024px) {
+    .text__heading--outline-cap {
+      font-size: 1.5em; } }
 
 .text__heading--main {
   position: absolute;
@@ -1734,6 +4834,10 @@ the direction of where you want the margin spacing to be applied*/
 
 .breadcrumb__link--active {
   font-weight: 700; }
+
+.breadcrumb__wrapper {
+  padding: 1em 0;
+  background: #FFF; }
 
 .breadcrumb--bordered {
   margin: auto;
@@ -1953,263 +5057,6 @@ the direction of where you want the margin spacing to be applied*/
 /*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-.text__border {
-  border: 0.05em outset #FFF;
-  border-radius: 0 0.5em;
-  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
-
-.text__wrapper {
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 1.5em;
-  display: flex;
-  flex-direction: row;
-  position: absolute; }
-
-.text__group--alert-info {
-  width: 100%;
-  height: 100%;
-  float: right; }
-  @media screen and (min-width: 420px) {
-    .text__group--alert-info {
-      width: 90%;
-      height: 100%; } }
-
-.text__heading, .text__heading--main, .text__heading--nav {
-  letter-spacing: 0.1em;
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 0.55em;
-  color: #FFF;
-  line-height: 1.5em;
-  font-size: 1em;
-  font-weight: 600;
-  margin-left: -0.1em;
-  font-family: "Quicksand Regular"; }
-
-.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
-  color: #000; }
-
-.text__heading--alert {
-  margin-bottom: 0.5em;
-  color: #23585A;
-  font-family: "Quicksand Regular";
-  font-size: 1.25em;
-  font-weight: 600; }
-
-.text__heading-group {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-items: center; }
-
-.text__heading--outline-cap {
-  font-family: "Pissjar Sans";
-  /*font-family: "Lulo Clean Outline Bold";*/
-  font-size: 0.95em;
-  color: #000;
-  text-align: center; }
-  @media screen and (min-width: 531px) and (max-width: 768px) {
-    .text__heading--outline-cap {
-      font-size: 1em; } }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .text__heading--outline-cap {
-      font-size: 1.15em; } }
-  @media screen and (min-width: 1024px) {
-    .text__heading--outline-cap {
-      font-size: 1.25em; } }
-
-.text__heading--main {
-  position: absolute;
-  top: 2.25em;
-  padding: 0;
-  font-family: "Quicksand Regular";
-  font-size: 2.25em;
-  color: #FFF; }
-
-.text__headingLabel--main {
-  position: absolute;
-  top: 3em;
-  padding-top: 0.5em;
-  width: 4em;
-  font-family: "Quicksand Light";
-  border-top: 0.25em solid #3CB3B9;
-  color: #FFF; }
-
-.text__heading--nav {
-  font-size: 1.25em; }
-  @media screen and (min-width: 768px) {
-    .text__heading--nav {
-      font-size: 1.5em;
-      font-weight: normal; } }
-
-.text__heading--nav.left {
-  margin-left: 0.25em; }
-
-.text__heading--nav.right {
-  margin-right: 0.5em; }
-
-.text__label {
-  position: relative;
-  padding-bottom: 0.5em;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link {
-  text-decoration: none;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link:hover {
-  cursor: pointer;
-  opacity: 0.75; }
-
-.text__link:visited {
-  color: #FFF; }
-
-.text__link-wrapper {
-  padding: 0.5em; }
-
-.text--bold {
-  font-weight: 600; }
-
-.text--alert {
-  font-family: "Quicksand Regular";
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.5em; }
-
-.text--caption {
-  padding: 0.5em;
-  font-family: "Quicksand Regular";
-  line-height: 1.5em;
-  opacity: 0.75;
-  font-size: 0.95em; }
-
-.text--caption.black {
-  color: #000; }
-
-.text--code {
-  padding: 0.125em 0.25em;
-  background: #1F9EA4;
-  border-radius: 0.125em;
-  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
-  color: #FFF;
-  font-weight: 600; }
-
-.text--hero {
-  font-size: 1.5em;
-  opacity: 0.75;
-  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
-  @media screen and (min-width: 600px) and (max-width: 640px) {
-    .text--hero {
-      font-size: 2em; } }
-  @media screen and (min-width: 640px) {
-    .text--hero {
-      font-size: 2.5em; } }
-
-.text--italicized {
-  font-style: italic; }
-
-.text--responsive {
-  counter-increment: 1;
-  position: relative;
-  font-size: 0.95em; }
-
-@font-face {
-  font-family: "Lulo Clean Outline Bold";
-  src: url("../luloclean_outlinebold_macroman/LuloCleanOutlineBold-webfont.woff2") format("woff2"); }
-@font-face {
-  font-family: "Miriam Libre";
-  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Pissjar Sans";
-  src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Bold";
-  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Light";
-  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Medium";
-  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Regular";
-  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Bold";
-  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Regular";
-  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*background mixins*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-@keyframes ease {
-  from {
-    max-height: 0%; }
-  to {
-    max-height: 100%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Mixins for navigation bar flex states*/
-/*Mixins for column sizes for general use*/
-/*Mixins for media image sizing*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
 .card {
   position: relative; }
 
@@ -2313,7 +5160,6 @@ $teal-box-shadow: //code here
   max-height: 20em;
   max-width: 100%;
   margin: auto;
-  margin-top: 1.5em;
   font-family: "Quicksand Regular"; }
   @media screen and (min-width: 500px) and (max-width: 1024px) {
     .hero {
@@ -2324,11 +5170,7 @@ $teal-box-shadow: //code here
       min-height: 20em; } }
 
 .hero__description {
-  max-width: 100%;
-  margin: auto; }
-  @media screen and (min-width: 1024px) {
-    .hero__description {
-      max-width: 70%; } }
+  max-width: 100%; }
 
 @media screen and (min-width: 768px) {
   .hero__description .text--caption {
@@ -2346,6 +5188,11 @@ $teal-box-shadow: //code here
   z-index: 1; }
 
 .hero__title--overlap-center {
+  background-image: url("./Themes/whirlpool.png");
+  background-position: 0 0;
+  background-size: 100%;
+  position: relative;
+  top: 4.5em;
   max-width: 50%;
   margin: 0 auto;
   padding: 0.5em 1.25em;
@@ -2432,18 +5279,32 @@ the direction of where you want the margin spacing to be applied*/
 /*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
-.media, .media__innerWrapper {
+.media, .media--horizontal, .media--vertical, .media__innerWrapper {
   position: relative;
   display: flex;
-  flex-direction: row;
   font-family: "Quicksand Light"; }
+
+.media--horizontal {
+  flex-direction: row; }
+
+.media--vertical {
+  flex-direction: column; }
 
 .media__icon {
   display: flex;
-  flex: 1;
-  align-self: center;
-  justify-content: center;
-  padding: 0.5em; }
+  flex-direction: row;
+  align-items: center;
+  margin-right: 0.5rem;
+  background: white;
+  border: 0;
+  border-radius: 0.25rem; }
+
+.media__icon-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 0.5rem;
+  padding-bottom: 0.5rem; }
 
 .media__image {
   height: 90%;
@@ -2484,72 +5345,78 @@ the direction of where you want the margin spacing to be applied*/
   opacity: 0; }
 
 .media__image-wrapper--1 {
-  flex: 1;
+  margin-right: 0.75rem;
   width: calc((1/12) * 100%); }
 
 .media__image-wrapper--2 {
-  flex: 1;
+  margin-right: 0.75rem;
   width: calc((2/12) * 100%); }
 
 .media__image-wrapper--3 {
-  flex: 1;
+  margin-right: 0.75rem;
   width: calc((3/12) * 100%); }
 
 .media__image-wrapper--4 {
-  flex: 1;
+  margin-right: 0.75rem;
   width: calc((4/12) * 100%); }
 
 .media__image-wrapper--5 {
-  flex: 1;
+  margin-right: 0.75rem;
   width: calc((5/12) * 100%); }
 
 .media__image-wrapper--6 {
-  flex: 1;
+  margin-right: 0.75rem;
   width: calc((6/12) * 100%); }
 
 .media__image-wrapper--7 {
-  flex: 1;
+  margin-right: 0.75rem;
   width: calc((7/12) * 100%); }
 
 .media__image-wrapper--8 {
-  flex: 1;
+  margin-right: 0.75rem;
   width: calc((8/12) * 100%); }
 
 .media__image-wrapper--9 {
-  flex: 1;
+  margin-right: 0.75rem;
   width: calc((9/12) * 100%); }
 
 .media__image-wrapper--10 {
-  flex: 1;
+  margin-right: 0.75rem;
   width: calc((10/12) * 100%); }
 
 .media__image-wrapper--11 {
-  flex: 1;
+  margin-right: 0.75rem;
   width: calc((11/12) * 100%); }
 
 .media__image-wrapper--12 {
-  flex: 1;
+  margin-right: 0.75rem;
   width: calc((12/12) * 100%); }
 
 .media__innerWrapper {
-  padding: 0.5em;
-  min-width: 100%; }
+  padding: 1rem 0;
+  padding-top: 0.5rem;
+  min-width: 100%;
+  background: #BEE4DB; }
+
+.media__date {
+  flex: 14;
+  margin-left: 0.5rem;
+  padding-top: 0.5rem; }
 
 .media__description {
   position: relative;
-  flex: 3;
+  flex: 1;
   padding: 0 0.5em;
   border: 0.05em solid #212121;
   border-radius: 0.25em;
   box-shadow: 0 -0.125em 0.75em #212121, inset 0 -0.25em 0.5em #212121; }
 
 .media__description--no-border {
-  padding-top: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-left: 0.75em;
   position: relative;
-  flex: 3; }
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  padding-top: 1.25rem;
+  margin: 0 0.75rem; }
 
 .media__description--small {
   padding: 0; }
@@ -2582,26 +5449,51 @@ the direction of where you want the margin spacing to be applied*/
   font-size: 1em;
   line-height: 1.5em; }
 
-.media__heading,
+.media__heading, .media__heading--small,
 .media__heading--small,
 .media__heading--medium,
 .media__heading--large {
   font-weight: 600; }
 
-.media__heading {
+.media__heading, .media__heading--small {
+  padding-bottom: 0.25rem;
   font-size: 1.5em;
-  line-height: 1.5em; }
+  line-height: 1.5em;
+  color: #000; }
 
 .media__heading--small {
-  font-size: 1em; }
+  font-size: 1.15rem; }
 
-.media__heading-group {
-  flex: 4;
+.media__heading-group, .media__heading-group--column, .media__heading-group--row {
+  display: flex;
+  flex: 1;
+  margin-bottom: 0.5rem;
   line-height: 1.5em; }
 
-.media__heading-group--small {
-  flex: 4;
-  line-height: 1.25em; }
+.media__heading-group--column {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  flex-direction: column; }
+
+.media__heading-group--row {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-direction: row; }
+
+.media__heading-identifier {
+  max-width: 4em;
+  margin-bottom: 0.45em;
+  border-top: 0.25em solid #000; }
+
+.media__section {
+  display: flex;
+  flex-direction: row;
+  margin-left: -1.05rem;
+  max-width: 104%;
+  padding: 0.75rem;
+  padding-left: 1rem;
+  background: rgba(0, 0, 0, 0.15); }
 
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
@@ -2732,18 +5624,18 @@ $teal-box-shadow: //code here
 .text__heading--outline-cap {
   font-family: "Pissjar Sans";
   /*font-family: "Lulo Clean Outline Bold";*/
-  font-size: 0.95em;
-  color: #000;
+  font-size: 1em;
+  color: #FFF;
   text-align: center; }
-  @media screen and (min-width: 531px) and (max-width: 768px) {
-    .text__heading--outline-cap {
-      font-size: 1em; } }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
+  @media screen and (min-width: 400px) and (max-width: 768px) {
     .text__heading--outline-cap {
       font-size: 1.15em; } }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
     .text__heading--outline-cap {
       font-size: 1.25em; } }
+  @media screen and (min-width: 1024px) {
+    .text__heading--outline-cap {
+      font-size: 1.5em; } }
 
 .text__heading--main {
   position: absolute;
@@ -2985,2887 +5877,5 @@ the direction of where you want the margin spacing to be applied*/
 
 .table__row {
   display: table-row; }
-
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*background mixins*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-@keyframes ease {
-  from {
-    max-height: 0%; }
-  to {
-    max-height: 100%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Mixins for navigation bar flex states*/
-/*Mixins for column sizes for general use*/
-/*Mixins for media image sizing*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-.container__width--1 {
-  padding: 0.25em;
-  width: calc((1/12) * 100%); }
-
-.container__width--2 {
-  padding: 0.25em;
-  width: calc((2/12) * 100%); }
-
-.container__width--3 {
-  padding: 0.25em;
-  width: calc((3/12) * 100%); }
-
-.container__width--4 {
-  padding: 0.25em;
-  width: calc((4/12) * 100%); }
-
-.container__width--5 {
-  padding: 0.25em;
-  width: calc((5/12) * 100%); }
-
-.container__width--6 {
-  padding: 0.25em;
-  width: calc((6/12) * 100%); }
-
-.container__width--7 {
-  padding: 0.25em;
-  width: calc((7/12) * 100%); }
-
-.container__width--8 {
-  padding: 0.25em;
-  width: calc((8/12) * 100%); }
-
-.container__width--9 {
-  padding: 0.25em;
-  width: calc((9/12) * 100%); }
-
-.container__width--10 {
-  padding: 0.25em;
-  width: calc((10/12) * 100%); }
-
-.container__width--11 {
-  padding: 0.25em;
-  width: calc((11/12) * 100%); }
-
-.container__width--12 {
-  padding: 0.25em;
-  width: calc((12/12) * 100%); }
-
-.container__row--flex {
-  display: flex;
-  flex-direction: row; }
-
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*background mixins*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-@keyframes ease {
-  from {
-    max-height: 0%; }
-  to {
-    max-height: 100%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Mixins for navigation bar flex states*/
-/*Mixins for column sizes for general use*/
-/*Mixins for media image sizing*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-.grid {
-  display: grid; }
-
-/****Grid containers****
- *all grid containers must be accompanied with the class of .grid 
- *in order to enable display: grid. Must be used on the parent container
- *with children placed in specified grid areas (using 'grid__template-columns--'
- *and 'grid__template-rows--' or their rowonding offsets located below 
- *the grid-containers section)
- */
-.grid__container, .grid__container--auto-fill, .grid__container--12, .grid__container--4, .grid__container--3, .grid__container--2, .grid__container--page-layout {
-  margin: auto;
-  max-width: 95%; }
-
-.grid__container--auto-fill {
-  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr)); }
-
-.grid__container--12 {
-  grid-template-columns: repeat(12, auto);
-  grid-template-rows: repeat(auto-fill, minmax(min-content, auto)); }
-
-.grid__container--4 {
-  grid-template-columns: repeat(4, auto); }
-
-.grid__container--3 {
-  grid-template-columns: repeat(3, auto); }
-
-.grid__container--2 {
-  grid-template-columns: repeat(2, auto); }
-
-.grid__container--page-layout {
-  grid-template-areas: "main main" "footer footer";
-  grid-template-columns: minmax(75%, auto) 25%;
-  grid-template-rows: minmax(min-content, auto) 10em; }
-  @media screen and (min-width: 820px) {
-    .grid__container--page-layout {
-      grid-template-areas: "main navigation" "footer footer"; } }
-
-/*the "--responsive-semantic" modifier on the grid container specifies
-the its main usage and how it behaves. This container is commonly used for
-entire page layouts that include a header, footer, aside, and main section.*/
-.grid__container--responsive-semantic {
-  grid-template-columns: minmax(min-content, 15%) 1fr minmax(min-content, 15%);
-  grid-template-rows: 1fr repeat(3, minmax(auto, 1fr)) 1fr;
-  grid-template-areas: "header header header" "main main main" "main main main" "main main main" "footer footer footer"; }
-  @media screen and (min-width: 1024px) {
-    .grid__container--responsive-semantic {
-      display: grid;
-      grid-template-areas: "header header header" "aside main navigation" "aside main navigation" "aside main navigation" "footer footer footer"; } }
-
-.grid__header--responsive-semantic {
-  grid-area: header;
-  position: relative; }
-
-.grid__aside--responsive-semantic {
-  grid-area: aside;
-  display: none;
-  position: relative; }
-  @media screen and (min-width: 1024px) {
-    .grid__aside--responsive-semantic {
-      display: block; } }
-
-.grid__main--responsive-semantic {
-  grid-area: main;
-  position: relative; }
-
-.grid__main--responsive-semantic .grid__container--auto-fill {
-  max-width: 100%; }
-
-.grid__navigation--responsive-semantic {
-  grid-area: navigation;
-  display: none;
-  position: relative; }
-  @media screen and (min-width: 1024px) {
-    .grid__navigation--responsive-semantic {
-      display: block; } }
-
-.grid__footer--responsive-semantic {
-  grid-area: footer;
-  position: relative;
-  background: rgba(0, 0, 0, 0.15); }
-
-/*Grid-template-area items for the page layout*/
-.grid__content--page-layout {
-  grid-area: main; }
-
-.grid__footer--page-layout {
-  grid-area: footer; }
-
-.grid__navigation--page-layout--right {
-  display: none;
-  grid-area: navigation; }
-  @media screen and (min-width: 820px) {
-    .grid__navigation--page-layout--right {
-      display: block; } }
-
-/*Grid gap sizes*/
-.grid__gap--1 {
-  grid-gap: 1em; }
-
-.grid__gap--75 {
-  grid-gap: 0.75em; }
-
-.grid__gap--5 {
-  grid-gap: 0.5em; }
-
-.grid__gap--25 {
-  grid-gap: 0.25em; }
-
-.grid__gap--125 {
-  grid-gap: 0.125em; }
-
-/****Grid tempate columns & rows****/
-/*Grid-rows spanning up to 12 columns with auto-placement*/
-.grid__column--span1 {
-  grid-column: auto/span 1; }
-
-.grid__column--span2 {
-  grid-column: auto/span 2; }
-
-.grid__column--span3 {
-  grid-column: auto/span 3; }
-
-.grid__column--span4 {
-  grid-column: auto/span 4; }
-
-.grid__column--span5 {
-  grid-column: auto/span 5; }
-
-.grid__column--span6 {
-  grid-column: auto/span 6; }
-
-.grid__column--span7 {
-  grid-column: auto/span 7; }
-
-.grid__column--span8 {
-  grid-column: auto/span 8; }
-
-.grid__column--span9 {
-  grid-column: auto/span 9; }
-
-.grid__column--span10 {
-  grid-column: auto/span 10; }
-
-.grid__column--span11 {
-  grid-column: auto/span 11; }
-
-.grid__column--span12 {
-  grid-column: auto/span 12; }
-
-/*Grid-rows spanning up to 12 rows with auto-placement*/
-.grid__row--span1 {
-  grid-row: auto/span 1; }
-
-.grid__row--span2 {
-  grid-row: auto/span 2; }
-
-.grid__row--span3 {
-  grid-row: auto/span 3; }
-
-.grid__row--span4 {
-  grid-row: auto/span 4; }
-
-.grid__row--span5 {
-  grid-row: auto/span 5; }
-
-.grid__row--span6 {
-  grid-row: auto/span 6; }
-
-.grid__row--span7 {
-  grid-row: auto/span 7; }
-
-.grid__row--span8 {
-  grid-row: auto/span 8; }
-
-.grid__row--span9 {
-  grid-row: auto/span 9; }
-
-.grid__row--span10 {
-  grid-row: auto/span 10; }
-
-.grid__row--span11 {
-  grid-row: auto/span 11; }
-
-.grid__row--span12 {
-  grid-row: auto/span 12; }
-
-/*Grid template-columns beginning from grid-line 1*/
-.grid__template--columns-1-12 {
-  grid-column: 1/span 1; }
-
-.grid__template--columns-1-6 {
-  grid-column: 1/span 2; }
-
-.grid__template--columns--1-4 {
-  grid-column: 1/span 3; }
-
-.grid__template--columns-1-3 {
-  grid-column: 1/span 4; }
-
-.grid__template--columns-5-12 {
-  grid-column: 1/span 5; }
-
-.grid__template--columns-1-2 {
-  grid-column: 1/span 6; }
-
-.grid__template--columns-7-12 {
-  grid-column: 1/span 7; }
-
-.grid__template--columns-2-3 {
-  grid-column: 1/span 8; }
-
-.grid__template--columns-3-4 {
-  grid-column: 1/span 9; }
-
-.grid__template--columns-5-6 {
-  grid-column: 1/span 10; }
-
-.grid__template--columns-11-12 {
-  grid-column: 1/span 11; }
-
-.grid__template--columns-12 {
-  grid-column: 1/span 12; }
-
-/*Grid-template-rows beginning from row-line 1*/
-.grid__template--rows-1-12 {
-  grid-row: 1/span 1; }
-
-.grid__template--rows-1-6 {
-  grid-row: 1/span 2; }
-
-.grid__template--rows--1-4 {
-  grid-row: 1/span 3; }
-
-.grid__template--rows-1-3 {
-  grid-row: 1/span 4; }
-
-.grid__template--rows-5-12 {
-  grid-row: 1/span 5; }
-
-.grid__template--rows-1-2 {
-  grid-row: 1/span 6; }
-
-.grid__template--rows-7-12 {
-  grid-row: 1/span 7; }
-
-.grid__template--rows-2-3 {
-  grid-row: 1/span 8; }
-
-.grid__template--rows-3-4 {
-  grid-row: 1/span 9; }
-
-.grid__template--rows-5-6 {
-  grid-row: 1/span 10; }
-
-.grid__template--rows-11-12 {
-  grid-row: 1/span 11; }
-
-.grid__template--rows-12 {
-  grid-row: 1/span 12; }
-
-/*grid-rowate-columns spanning x columns, with start lines defined
-by the first value of grid-column and the last value of the class name
-'grid__template--columns-span(x)-y'*/
-/*grid-template columns spanning 1 column*/
-.grid__template--columns-span1-2 {
-  grid-column: 2/span 1; }
-
-.grid__template--columns-span1-3 {
-  grid-column: 3/span 1; }
-
-.grid__template--columns-span1-4 {
-  grid-column: 4/span 1; }
-
-.grid__template--columns-span1-5 {
-  grid-column: 5/span 1; }
-
-.grid__template--columns-span1-6 {
-  grid-column: 6/span 1; }
-
-.grid__template--columns-span1-7 {
-  grid-column: 7/span 1; }
-
-.grid__template--columns-span1-8 {
-  grid-column: 8/span 1; }
-
-.grid__template--columns-span1-9 {
-  grid-column: 9/span 1; }
-
-.grid__template--columns-span1-10 {
-  grid-column: 10/span 1; }
-
-.grid__template--columns-span1-11 {
-  grid-column: 11/span 1; }
-
-/*grid-template columns spanning 2 columns*/
-.grid__template--columns-span2-2 {
-  grid-column: 2/span 2; }
-
-.grid__template--columns-span2-3 {
-  grid-column: 3/span 2; }
-
-.grid__template--columns-span2-4 {
-  grid-column: 4/span 2; }
-
-.grid__template--columns-span2-5 {
-  grid-column: 5/span 2; }
-
-.grid__template--columns-span2-6 {
-  grid-column: 6/span 2; }
-
-.grid__template--columns-span2-7 {
-  grid-column: 7/span 2; }
-
-.grid__template--columns-span2-8 {
-  grid-column: 8/span 2; }
-
-.grid__template--columns-span2-9 {
-  grid-column: 9/span 2; }
-
-/*grid-template columns spanning 3 columns*/
-.grid__template--columns-span3-2 {
-  grid-column: 2/span 3; }
-
-.grid__template--columns-span3-3 {
-  grid-column: 3/span 3; }
-
-.grid__template--columns-span3-4 {
-  grid-column: 4/span 3; }
-
-.grid__template--columns-span3-5 {
-  grid-column: 5/span 3; }
-
-.grid__template--columns-span3-6 {
-  grid-column: 6/span 3; }
-
-.grid__template--columns-span3-7 {
-  grid-column: 7/span 3; }
-
-.grid__template--columns-span3-8 {
-  grid-column: 8/span 3; }
-
-.grid__template--columns-span3-9 {
-  grid-column: 9/span 3; }
-
-/*grid-template columns spanning 4 columns*/
-.grid__template--columns-span4-2 {
-  grid-column: 2/span 4; }
-
-.grid__template--columns-span4-3 {
-  grid-column: 3/span 4; }
-
-.grid__template--columns-span4-4 {
-  grid-column: 4/span 4; }
-
-.grid__template--columns-span4-5 {
-  grid-column: 5/span 4; }
-
-.grid__template--columns-span4-6 {
-  grid-column: 6/span 4; }
-
-.grid__template--columns-span4-7 {
-  grid-column: 7/span 4; }
-
-.grid__template--columns-span4-8 {
-  grid-column: 8/span 4; }
-
-.grid__template--columns-span4-9 {
-  grid-column: 9/span 4; }
-
-/*.grid-template rows spanning 1 row*/
-.grid__template--rows-span1-2 {
-  grid-row: 2/span 1; }
-
-.grid__template--rows-span1-3 {
-  grid-row: 3/span 1; }
-
-.grid__template--rows-span1-4 {
-  grid-row: 4/span 1; }
-
-.grid__template--rows-span1-5 {
-  grid-row: 5/span 1; }
-
-.grid__template--rows-span1-6 {
-  grid-row: 6/span 1; }
-
-.grid__template--rows-span1-7 {
-  grid-row: 7/span 1; }
-
-.grid__template--rows-span1-8 {
-  grid-row: 8/span 1; }
-
-.grid__template--rows-span1-9 {
-  grid-row: 9/span 1; }
-
-.grid__template--rows-span1-10 {
-  grid-row: 10/span 1; }
-
-.grid__template--rows-span1-11 {
-  grid-column: 11/span 1; }
-
-/*grid-template rows spanning 2 rows*/
-.grid__template--rows-span2-2 {
-  grid-row: 2/span 2; }
-
-.grid__template--rows-span2-3 {
-  grid-row: 3/span 2; }
-
-.grid__template--rows-span2-4 {
-  grid-row: 4/span 2; }
-
-.grid__template--rows-span2-5 {
-  grid-row: 5/span 2; }
-
-.grid__template--rows-span2-6 {
-  grid-row: 6/span 2; }
-
-.grid__template--rows-span2-7 {
-  grid-row: 7/span 2; }
-
-.grid__template--rows-span2-8 {
-  grid-row: 8/span 2; }
-
-.grid__template--rows-span2-9 {
-  grid-row: 9/span 2; }
-
-.grid__template--rows-span2-10 {
-  grid-row: 10/span 2; }
-
-.grid__template--rows-span2-11 {
-  grid-row: 11/span 2; }
-
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*background mixins*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-@keyframes ease {
-  from {
-    max-height: 0%; }
-  to {
-    max-height: 100%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Mixins for navigation bar flex states*/
-/*Mixins for column sizes for general use*/
-/*Mixins for media image sizing*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*MISC*/
-.main, .main--background, .main--sidebar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 4.45em;
-  background: #DEF9EE;
-  overflow-y: auto;
-  z-index: 1; }
-
-.main--background {
-  background-image: url("./Themes/whirlpool.png");
-  background-position: 0 0;
-  background-size: 125%; }
-  @media screen and (min-width: 320px) and (max-width: 468px) {
-    .main--background {
-      background-image: url("./Themes/whirlpool.png");
-      background-position: 0 0;
-      background-size: 100%; } }
-  @media screen and (min-width: 469px) and (max-width: 768px) {
-    .main--background {
-      background-image: url("./Themes/whirlpool.png");
-      background-position: 0 0;
-      background-size: 75%; } }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .main--background {
-      background-image: url("./Themes/whirlpool.png");
-      background-position: 0 0;
-      background-size: 50%; } }
-  @media screen and (min-width: 1024px) {
-    .main--background {
-      background-image: url("./Themes/whirlpool.png");
-      background-position: 0 0;
-      background-size: 40%; } }
-
-.main--flex {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; }
-
-.main--flex .main__section {
-  max-width: 100%; }
-  @media screen and (min-width: 768px) {
-    .main--flex .main__section {
-      max-width: 50%; } }
-  @media screen and (min-width: 1536px) {
-    .main--flex .main__section {
-      max-width: 33%; } }
-
-.main--flex .main__section.top {
-  min-width: 100%; }
-
-.main--flex .main__wrapper, .main--flex .main__wrapper--right {
-  min-width: 100%; }
-
-.main--full {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0; }
-
-@media screen and (min-width: 1024px) {
-  .main--sidebar {
-    position: absolute;
-    bottom: 0;
-    left: 14em;
-    right: 0;
-    top: 4.35em;
-    overflow-y: auto; } }
-
-.main__section {
-  border-bottom: 0.01em solid #4BA7AB;
-  position: relative;
-  margin-bottom: 1em; }
-
-.main__section.top {
-  margin-bottom: 0;
-  border-bottom: 0; }
-
-.main__sectionContent {
-  border-top: 0.25em dotted #C7C7C7;
-  border-bottom: 0.25em dotted #C7C7C7;
-  margin-top: 2em;
-  margin-right: auto;
-  margin-bottom: 2em;
-  margin-left: auto;
-  position: relative;
-  max-width: 95%;
-  padding: 1em 0.25em; }
-  @media screen and (min-width: 480px) {
-    .main__sectionContent {
-      padding: 1em 0.5em; } }
-  @media screen and (min-width: 768px) {
-    .main__sectionContent {
-      padding: 1em; } }
-
-.main__sectionDescription {
-  border-left: 0.5em groove #3CB3B9;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  margin-right: 1em;
-  margin-left: 0.5em;
-  font-family: "Quicksand Light";
-  line-height: 1.5em; }
-  @media screen and (min-width: 480px) {
-    .main__sectionDescription {
-      margin-right: 1.5em;
-      margin-left: 1em; } }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .main__sectionDescription {
-      margin: 0 1.5em; } }
-  @media screen and (min-width: 1536px) {
-    .main__sectionDescription {
-      margin-right: 2.5em;
-      margin-bottom: 1em;
-      margin-left: 2.5em; } }
-
-.main__sectionDescription--bold {
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 0.75em;
-  max-width: 90%;
-  font-size: 1.25em;
-  font-weight: 600;
-  line-height: 1.5em;
-  text-align: right; }
-  @media screen and (min-width: 640px) {
-    .main__sectionDescription--bold {
-      font-size: 1.35em; } }
-
-.main__sectionDescription-card.last,
-.main__sectionDescription-card.first,
-.main__sectionDescription-card {
-  flex: 1;
-  padding: 1em;
-  border: 0.05em solid #A0A0A0;
-  border-radius: 0.25em;
-  margin-top: 0.75em;
-  min-width: 100%;
-  background: linear-gradient(to bottom, #000 40%, #4E4E4E 100%);
-  box-shadow: inset 0 0.125em 1em 0.125em #3C3939, 0.25em 0.125em 1em 0.125em #8C8C8C;
-  color: white; }
-  @media screen and (min-width: 640px) {
-    .main__sectionDescription-card.last,
-    .main__sectionDescription-card.first,
-    .main__sectionDescription-card {
-      min-width: 48%; } }
-  @media screen and (min-width: 1200px) {
-    .main__sectionDescription-card.last,
-    .main__sectionDescription-card.first,
-    .main__sectionDescription-card {
-      min-width: 32%;
-      margin-left: 0.75em; } }
-
-.main__sectionDescription-card.last {
-  margin-left: 0; }
-  @media screen and (min-width: 640px) and (max-width: 1200px) {
-    .main__sectionDescription-card.last {
-      margin-left: 0.75em; } }
-
-.main__sectionDescription-card.first {
-  margin-left: 0; }
-
-@media screen and (min-width: 640px) {
-  .main__sectionDescription-card:nth-child(2) {
-    margin-left: 0.75em; } }
-
-.main__sectionDescription-content {
-  line-height: 2em; }
-
-.main__sectionDescription-card-heading {
-  font-size: 1.25em;
-  font-weight: 600;
-  margin-bottom: 0.5em;
-  padding-bottom: 0.5em;
-  border-bottom: 0.05em dashed #A0A0A0; }
-
-.main__sectionDescription-heading {
-  margin-top: 0.5em;
-  margin-left: 0.75em;
-  padding: 0.5em 0.25em;
-  font-size: 1.5em;
-  font-weight: 600;
-  background: rgba(0, 0, 0, 0.05);
-  border-bottom: 0.25em groove #1F9EA4;
-  border-radius: 0.125em 0.125em 0 0; }
-  @media screen and (min-width: 480px) {
-    .main__sectionDescription-heading {
-      margin-top: 0.5em;
-      margin-left: 0.5em;
-      padding-left: 0.5em; } }
-
-.main__sectionDescription-title {
-  position: relative;
-  margin-bottom: 1em; }
-
-.main__sectionDescription-wrapper {
-  margin-bottom: 1em;
-  margin-left: 1em;
-  display: flex;
-  flex-wrap: wrap; }
-  @media screen and (min-width: 480px) {
-    .main__sectionDescription-wrapper {
-      margin-left: 1.5em; } }
-
-.main__sectionDetails {
-  padding-top: 1em;
-  padding-right: 1em;
-  padding-left: 1em;
-  position: relative;
-  margin-bottom: 0.5em;
-  min-height: 4em;
-  font-family: "Quicksand Bold"; }
-
-.main__sectionDetails-chapter {
-  width: min-content;
-  height: min-content;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 0.5em; }
-  @media screen and (min-width: 385px) {
-    .main__sectionDetails-chapter {
-      margin-bottom: 0; } }
-
-.main__sectionDetails-chapter-text {
-  padding-top: 0.35em;
-  padding-right: 0.25em;
-  padding-bottom: 0.25em;
-  padding-left: 0.25em;
-  flex: 1;
-  margin-right: 0.25em;
-  background: #3CB3B9; }
-
-.main__sectionDetails-description {
-  display: flex;
-  align-items: center;
-  font-family: "Quicksand Light";
-  font-size: 1.125em; }
-  @media screen and (min-width: 385px) {
-    .main__sectionDetails-description {
-      margin-left: 1em; } }
-
-.main__sectionDetails-description-text {
-  margin-right: 0.25em;
-  font-weight: 600; }
-
-.main__sectionDetails-description-tag {
-  margin-right: 0.25em;
-  margin-left: 0.25em;
-  padding-top: 0.25em;
-  padding-right: 1em;
-  padding-bottom: 0.25em;
-  padding-left: 1.15em;
-  font-weight: 600;
-  letter-spacing: 0.125em;
-  background: #000;
-  border-radius: 0.25em;
-  box-shadow: inset 0 0.125em 1em 0.125em #3C3939;
-  color: #FFF;
-  text-shadow: 0.05em 0.075em 0.05em #FFF; }
-
-.main__sectionDetails-text-wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-bottom: 0.25em;
-  min-height: 2em; }
-  @media screen and (min-width: 385px) {
-    .main__sectionDetails-text-wrapper {
-      flex-direction: row;
-      align-items: center; } }
-
-.main__sectionDetails-identifier {
-  border-top: 0.25em solid #000;
-  max-width: 4em;
-  margin-bottom: 0.45em; }
-
-.main__sectionHeading, .main__sectionHeading.transparent {
-  border-bottom: 0.01em solid #C7C7C7;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 2em 1em;
-  box-shadow: inset 0 -0.25em 0.75em #C7C7C7; }
-
-.main__sectionHeading.transparent {
-  box-shadow: none; }
-
-.main__sectionHeading-expander-icon {
-  width: 2.5em;
-  height: 2.5em;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 1em;
-  margin-right: auto;
-  border: 0.25em double #8C8C8C;
-  border-radius: 0.25em; }
-
-.main__sectionHeading-expander-icon:hover {
-  box-shadow: 0.15em 0.15em 0.75em #8C8C8C; }
-
-.main__sectionHeading-expander-icon-heading {
-  padding: 0.25em;
-  font-size: 1.25em;
-  color: rgba(0, 0, 0, 0.15);
-  font-family: "Quicksand Bold";
-  margin-left: 3em; }
-
-.main__sectionHeading-icon {
-  border-top: 0.25em groove #133A9C;
-  border-right: 0.25em groove #133A9C;
-  margin-right: 1em;
-  width: 3em;
-  height: 3em;
-  position: relative;
-  box-shadow: 0.275em -0.125em 0.75em #A0A0A0; }
-
-.main__sectionHeading-icon--medium {
-  border-top: 0.175em groove #3CB3B9;
-  border-right: 0.175em groove #3CB3B9;
-  margin-top: 0.25em;
-  margin-right: 0.25em;
-  width: 2.5em;
-  height: 2.5em; }
-
-.main__sectionHeading-icon--small {
-  border-top: 0.185em groove #26CE31;
-  border-right: 0.185em groove #26CE31;
-  margin-top: 0.35em;
-  margin-right: 0.25em;
-  width: 2em;
-  height: 2em; }
-
-.main__sectionHeading-icon--x-small {
-  border-bottom: 0.15em groove #F00;
-  border-left: 0.15em groove #F00;
-  margin-top: 1.05em;
-  width: 0.75em;
-  height: 0.75em; }
-
-.main__sectionHeading-text {
-  position: relative;
-  flex: 4;
-  max-width: 60%;
-  margin-left: 1em;
-  font-family: "Quicksand Regular";
-  font-size: 1.5em;
-  line-height: 1.75em; }
-  @media screen and (min-width: 768px) {
-    .main__sectionHeading-text {
-      font-size: 2em; } }
-
-.main__wrapper, .main__wrapper--right {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  border-top: 0.25em double #C7C7C7;
-  position: relative;
-  max-width: 100%;
-  background: #E6E6E6;
-  border: 1px solid #C7C7C7;
-  box-shadow: inset 0 0.25em 0.75em 0.125em #C7C7C7, inset 0 0.125em 0.75em 0.05em #ffffff; }
-
-.main__wrapper.transparent, .transparent.main__wrapper--right {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  position: relative;
-  max-width: 100%;
-  background: none;
-  border: 0;
-  box-shadow: none; }
-
-/*include position: fixed and width: 16.25em when menu becomes sticky*/
-.main__wrapper--right {
-  margin-left: 2em;
-  height: 100%; }
-
-.main__pageHeading {
-  position: relative;
-  margin-bottom: 1em;
-  min-height: 10em;
-  padding: 0 4em;
-  width: 100%;
-  background: repeating-linear-gradient(135deg, #212121 4%, #23585A 25%, #1F9EA4 40%, #3CB3B9 50%, transparent 96%);
-  box-shadow: 0 0.05em 0.5em 0.05em #A0A0A0; }
-
-.column {
-  display: flex; }
-
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*background mixins*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-@keyframes ease {
-  from {
-    max-height: 0%; }
-  to {
-    max-height: 100%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Mixins for navigation bar flex states*/
-/*Mixins for column sizes for general use*/
-/*Mixins for media image sizing*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-.example--pop-out {
-  padding: 0;
-  background: transparent;
-  border-radius: 0.25em; }
-
-.example--pop-out.active {
-  padding: 1em;
-  background: rgba(0, 0, 0, 0.25); }
-
-.example__module--right {
-  position: absolute;
-  right: 3em;
-  top: 50%;
-  display: none;
-  margin-top: -1.5em;
-  align-items: center;
-  min-height: 3.5em; }
-  @media screen and (min-width: 640px) {
-    .example__module--right {
-      display: flex; } }
-
-.example__section--pop-out {
-  display: none;
-  margin-top: 1em;
-  max-height: 0;
-  padding: 1em;
-  background: rgba(0, 0, 0, 0.15);
-  border-radius: 0.25em;
-  font-family: "Miriam Libre";
-  font-size: 0.9em; }
-
-.example__section--pop-out.active {
-  display: block;
-  max-height: min-content; }
-
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*background mixins*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-@keyframes ease {
-  from {
-    max-height: 0%; }
-  to {
-    max-height: 100%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Mixins for navigation bar flex states*/
-/*Mixins for column sizes for general use*/
-/*Mixins for media image sizing*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-.text__border {
-  border: 0.05em outset #FFF;
-  border-radius: 0 0.5em;
-  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
-
-.text__wrapper {
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 1.5em;
-  display: flex;
-  flex-direction: row;
-  position: absolute; }
-
-.text__group--alert-info {
-  width: 100%;
-  height: 100%;
-  float: right; }
-  @media screen and (min-width: 420px) {
-    .text__group--alert-info {
-      width: 90%;
-      height: 100%; } }
-
-.text__heading, .text__heading--main, .text__heading--nav {
-  letter-spacing: 0.1em;
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 0.55em;
-  color: #FFF;
-  line-height: 1.5em;
-  font-size: 1em;
-  font-weight: 600;
-  margin-left: -0.1em;
-  font-family: "Quicksand Regular"; }
-
-.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
-  color: #000; }
-
-.text__heading--alert {
-  margin-bottom: 0.5em;
-  color: #23585A;
-  font-family: "Quicksand Regular";
-  font-size: 1.25em;
-  font-weight: 600; }
-
-.text__heading-group {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-items: center; }
-
-.text__heading--outline-cap {
-  font-family: "Pissjar Sans";
-  /*font-family: "Lulo Clean Outline Bold";*/
-  font-size: 0.95em;
-  color: #000;
-  text-align: center; }
-  @media screen and (min-width: 531px) and (max-width: 768px) {
-    .text__heading--outline-cap {
-      font-size: 1em; } }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .text__heading--outline-cap {
-      font-size: 1.15em; } }
-  @media screen and (min-width: 1024px) {
-    .text__heading--outline-cap {
-      font-size: 1.25em; } }
-
-.text__heading--main {
-  position: absolute;
-  top: 2.25em;
-  padding: 0;
-  font-family: "Quicksand Regular";
-  font-size: 2.25em;
-  color: #FFF; }
-
-.text__headingLabel--main {
-  position: absolute;
-  top: 3em;
-  padding-top: 0.5em;
-  width: 4em;
-  font-family: "Quicksand Light";
-  border-top: 0.25em solid #3CB3B9;
-  color: #FFF; }
-
-.text__heading--nav {
-  font-size: 1.25em; }
-  @media screen and (min-width: 768px) {
-    .text__heading--nav {
-      font-size: 1.5em;
-      font-weight: normal; } }
-
-.text__heading--nav.left {
-  margin-left: 0.25em; }
-
-.text__heading--nav.right {
-  margin-right: 0.5em; }
-
-.text__label {
-  position: relative;
-  padding-bottom: 0.5em;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link {
-  text-decoration: none;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link:hover {
-  cursor: pointer;
-  opacity: 0.75; }
-
-.text__link:visited {
-  color: #FFF; }
-
-.text__link-wrapper {
-  padding: 0.5em; }
-
-.text--bold {
-  font-weight: 600; }
-
-.text--alert {
-  font-family: "Quicksand Regular";
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.5em; }
-
-.text--caption {
-  padding: 0.5em;
-  font-family: "Quicksand Regular";
-  line-height: 1.5em;
-  opacity: 0.75;
-  font-size: 0.95em; }
-
-.text--caption.black {
-  color: #000; }
-
-.text--code {
-  padding: 0.125em 0.25em;
-  background: #1F9EA4;
-  border-radius: 0.125em;
-  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
-  color: #FFF;
-  font-weight: 600; }
-
-.text--hero {
-  font-size: 1.5em;
-  opacity: 0.75;
-  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
-  @media screen and (min-width: 600px) and (max-width: 640px) {
-    .text--hero {
-      font-size: 2em; } }
-  @media screen and (min-width: 640px) {
-    .text--hero {
-      font-size: 2.5em; } }
-
-.text--italicized {
-  font-style: italic; }
-
-.text--responsive {
-  counter-increment: 1;
-  position: relative;
-  font-size: 0.95em; }
-
-@font-face {
-  font-family: "Lulo Clean Outline Bold";
-  src: url("../luloclean_outlinebold_macroman/LuloCleanOutlineBold-webfont.woff2") format("woff2"); }
-@font-face {
-  font-family: "Miriam Libre";
-  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Pissjar Sans";
-  src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Bold";
-  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Light";
-  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Medium";
-  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Regular";
-  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Bold";
-  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Regular";
-  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*background mixins*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-@keyframes ease {
-  from {
-    max-height: 0%; }
-  to {
-    max-height: 100%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Mixins for navigation bar flex states*/
-/*Mixins for column sizes for general use*/
-/*Mixins for media image sizing*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-.sidebar {
-  display: none; }
-  @media screen and (min-width: 1024px) {
-    .sidebar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      top: 4.35em;
-      display: block;
-      min-width: 14em;
-      background: #212121; } }
-
-.sidebar__dropDown {
-  -webkit-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-  -moz-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-  -ms-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-  -o-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-  -webkit-animation: 0.05s ease-out normal slide-vertical;
-  animation: 0.05s ease-out normal slide-vertical;
-  -moz-animation: 0.05s ease-out normal slide-vertical;
-  animation: 0.05s ease-out normal slide-vertical;
-  -ms-animation: 0.05s ease-out normal slide-vertical;
-  animation: 0.05s ease-out normal slide-vertical;
-  -o-animation: 0.05s ease-out normal slide-vertical;
-  animation: 0.05s ease-out normal slide-vertical;
-  position: relative;
-  top: 3em;
-  max-height: 0;
-  min-width: 100%;
-  background: linear-gradient(135deg, #3CB3B9, #000);
-  color: #FFF; }
-
-.sidebar__dropDown.show {
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 1em;
-  max-height: min-content;
-  top: 0; }
-
-.sidebar__dropDown.show .sidebar__dropDown-item {
-  opacity: 1; }
-
-.sidebar__dropDown-item {
-  -webkit-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-  -moz-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-  -ms-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-  -o-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-  position: relative;
-  min-width: 100%;
-  font-family: "Quicksand Light";
-  line-height: 1.5em;
-  opacity: 0; }
-
-.sidebar__dropDown-item.collapsible {
-  padding: 0; }
-
-.sidebar__dropDown-item.collapsible .sidebar__dropDown-sub-menu {
-  opacity: 0; }
-
-.sidebar__dropDown-item.collapsible .triangle--down-white--small {
-  cursor: pointer; }
-
-.sidebar__dropDown-item.collapsible .triangle--down-white--small:hover {
-  opacity: 0.75; }
-
-.sidebar__dropDown-item.collapsible.active .sidebar__dropDown-sub-menu.show {
-  opacity: 0.75; }
-
-.sidebar__dropDown-item.last {
-  padding-bottom: 0.5em; }
-
-.sidebar__dropDown-item.first {
-  padding-top: 0.5em; }
-
-.sidebar__dropDown-sub-menu {
-  -webkit-transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
-  transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
-  -moz-transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
-  transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
-  -ms-transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
-  transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
-  -o-transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
-  transition: 0.25s max-height ease-in-out, 0.1s opacity ease-in-out;
-  max-height: 0;
-  padding-left: 1em;
-  position: relative; }
-
-.sidebar__dropDown-sub-menu .sidebar__dropDown-item {
-  opacity: 0; }
-
-.sidebar__dropDown-sub-menu.show {
-  max-height: 20em; }
-
-.sidebar__dropDown-sub-menu.show .sidebar__dropDown-item {
-  opacity: 1; }
-
-/*show when bars icon is clicked in sidebar subheading*/
-.sidebar__iconBar {
-  display: none;
-  /*
-   **INCLUDE IN JS**
-  	@include border-radius(0, 0.5em, 0.5em, 0);
-  
-  	position: relative;
-  	flex: 1;
-  	margin-right: 0.5em;
-  	min-width: 3em;
-  	background: $black;
-  */ }
-
-.sidebar__innerContainer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  display: flex;
-  flex-direction: row;
-  margin: 0.5em;
-  background: transparent; }
-
-.sidebar__module, .sidebar__moduleSubHeading, .sidebar__module.last {
-  flex: 1;
-  align-items: center;
-  justify-content: flex-start;
-  position: relative;
-  display: flex;
-  min-width: 100%;
-  min-height: 3em;
-  padding-left: 1em;
-  background: #000;
-  box-shadow: inset 0 0.125em 0.5em #3D3D3D;
-  color: #FFF;
-  cursor: pointer;
-  font-family: "Quicksand Light"; }
-
-.sidebar__moduleSection {
-  flex: 1;
-  flex-direction: column;
-  margin: 0;
-  max-height: 16em;
-  background: transparent;
-  border-radius: 0.5em; }
-
-.sidebar__moduleSubHeading {
-  border-top: 0.25em solid #4BA7AB;
-  border-top-left-radius: 0.5em;
-  border-top-right-radius: 0.5em;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  padding-left: 0.5em;
-  position: relative;
-  display: flex;
-  min-height: 3.5em;
-  box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E; }
-
-.sidebar__moduleSubHeading > .media, .sidebar__moduleSubHeading > .media__innerWrapper {
-  border-left: 0.05em solid #3C3939;
-  display: flex;
-  flex: 2;
-  flex-direction: row;
-  color: white; }
-
-.sidebar__module.last, .last.sidebar__moduleSubHeading {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0.5em;
-  border-bottom-left-radius: 0.5em;
-  border-bottom: 0; }
-
-.sidebar__module.closed .sidebar__dropDown, .closed.sidebar__moduleSubHeading .sidebar__dropDown {
-  display: none; }
-
-.sidebar__module.opened .sidebar__dropDown, .opened.sidebar__moduleSubHeading .sidebar__dropDown {
-  display: block; }
-
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*background mixins*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-@keyframes ease {
-  from {
-    max-height: 0%; }
-  to {
-    max-height: 100%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Mixins for navigation bar flex states*/
-/*Mixins for column sizes for general use*/
-/*Mixins for media image sizing*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*background mixins*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-@keyframes ease {
-  from {
-    max-height: 0%; }
-  to {
-    max-height: 100%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Mixins for navigation bar flex states*/
-/*Mixins for column sizes for general use*/
-/*Mixins for media image sizing*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-.text__border {
-  border: 0.05em outset #FFF;
-  border-radius: 0 0.5em;
-  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
-
-.text__wrapper {
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 1.5em;
-  display: flex;
-  flex-direction: row;
-  position: absolute; }
-
-.text__group--alert-info {
-  width: 100%;
-  height: 100%;
-  float: right; }
-  @media screen and (min-width: 420px) {
-    .text__group--alert-info {
-      width: 90%;
-      height: 100%; } }
-
-.text__heading, .text__heading--main, .text__heading--nav {
-  letter-spacing: 0.1em;
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 0.55em;
-  color: #FFF;
-  line-height: 1.5em;
-  font-size: 1em;
-  font-weight: 600;
-  margin-left: -0.1em;
-  font-family: "Quicksand Regular"; }
-
-.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
-  color: #000; }
-
-.text__heading--alert {
-  margin-bottom: 0.5em;
-  color: #23585A;
-  font-family: "Quicksand Regular";
-  font-size: 1.25em;
-  font-weight: 600; }
-
-.text__heading-group {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-items: center; }
-
-.text__heading--outline-cap {
-  font-family: "Pissjar Sans";
-  /*font-family: "Lulo Clean Outline Bold";*/
-  font-size: 0.95em;
-  color: #000;
-  text-align: center; }
-  @media screen and (min-width: 531px) and (max-width: 768px) {
-    .text__heading--outline-cap {
-      font-size: 1em; } }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .text__heading--outline-cap {
-      font-size: 1.15em; } }
-  @media screen and (min-width: 1024px) {
-    .text__heading--outline-cap {
-      font-size: 1.25em; } }
-
-.text__heading--main {
-  position: absolute;
-  top: 2.25em;
-  padding: 0;
-  font-family: "Quicksand Regular";
-  font-size: 2.25em;
-  color: #FFF; }
-
-.text__headingLabel--main {
-  position: absolute;
-  top: 3em;
-  padding-top: 0.5em;
-  width: 4em;
-  font-family: "Quicksand Light";
-  border-top: 0.25em solid #3CB3B9;
-  color: #FFF; }
-
-.text__heading--nav {
-  font-size: 1.25em; }
-  @media screen and (min-width: 768px) {
-    .text__heading--nav {
-      font-size: 1.5em;
-      font-weight: normal; } }
-
-.text__heading--nav.left {
-  margin-left: 0.25em; }
-
-.text__heading--nav.right {
-  margin-right: 0.5em; }
-
-.text__label {
-  position: relative;
-  padding-bottom: 0.5em;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link {
-  text-decoration: none;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link:hover {
-  cursor: pointer;
-  opacity: 0.75; }
-
-.text__link:visited {
-  color: #FFF; }
-
-.text__link-wrapper {
-  padding: 0.5em; }
-
-.text--bold {
-  font-weight: 600; }
-
-.text--alert {
-  font-family: "Quicksand Regular";
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.5em; }
-
-.text--caption {
-  padding: 0.5em;
-  font-family: "Quicksand Regular";
-  line-height: 1.5em;
-  opacity: 0.75;
-  font-size: 0.95em; }
-
-.text--caption.black {
-  color: #000; }
-
-.text--code {
-  padding: 0.125em 0.25em;
-  background: #1F9EA4;
-  border-radius: 0.125em;
-  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
-  color: #FFF;
-  font-weight: 600; }
-
-.text--hero {
-  font-size: 1.5em;
-  opacity: 0.75;
-  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
-  @media screen and (min-width: 600px) and (max-width: 640px) {
-    .text--hero {
-      font-size: 2em; } }
-  @media screen and (min-width: 640px) {
-    .text--hero {
-      font-size: 2.5em; } }
-
-.text--italicized {
-  font-style: italic; }
-
-.text--responsive {
-  counter-increment: 1;
-  position: relative;
-  font-size: 0.95em; }
-
-@font-face {
-  font-family: "Lulo Clean Outline Bold";
-  src: url("../luloclean_outlinebold_macroman/LuloCleanOutlineBold-webfont.woff2") format("woff2"); }
-@font-face {
-  font-family: "Miriam Libre";
-  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Pissjar Sans";
-  src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Bold";
-  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Light";
-  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Medium";
-  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Regular";
-  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Bold";
-  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Regular";
-  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
-/*Input styling*/
-input[type="text"] {
-  width: 90%;
-  height: 2em;
-  padding-top: 0;
-  padding-right: 1em;
-  padding-bottom: 0;
-  padding-left: 1em;
-  border-top-left-radius: 0.25em;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0.25em;
-  background: transparent;
-  border: 0.1em solid #8C8C8C;
-  color: #FFF;
-  font-family: "Quicksand Light";
-  outline: none; }
-
-input[type="text"].form__input--no-border {
-  border-top: 0;
-  border-right: 0;
-  border-bottom: 0.01em solid #3C3939;
-  border-left: 0; }
-
-.form__segment, .form__input-segment {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  min-height: 1.5em;
-  width: 80%; }
-
-.form__input-segment {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  max-width: 0; }
-
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*background mixins*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-@keyframes ease {
-  from {
-    max-height: 0%; }
-  to {
-    max-height: 100%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Mixins for navigation bar flex states*/
-/*Mixins for column sizes for general use*/
-/*Mixins for media image sizing*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-.menu {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  display: block;
-  padding: 1em;
-  font-family: "Quicksand Light"; }
-
-.menu__item {
-  -webkit-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  -moz-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  -ms-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  -o-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  border-top: 0.05em solid #C7C7C7;
-  border-bottom: 0.05em solid #C7C7C7;
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0.25em;
-  margin-bottom: 0.5em;
-  font-size: 1.125em;
-  font-weight: 600;
-  line-height: 1.5em; }
-
-.menu__item.active {
-  background: rgba(255, 255, 255, 0.15); }
-
-.menu__item.active .menu__expander-icon {
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transform: rotate(-90deg); }
-
-.menu__item--flex {
-  flex: 1; }
-
-.menu__dropDown {
-  margin-bottom: 0.75em; }
-
-.menu__dropDown-content {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  display: block;
-  max-height: 0;
-  line-height: 1.5em; }
-
-.menu__dropDown-content.show {
-  max-height: 20em; }
-
-.menu__dropDown-content.show .menu__dropDown-item {
-  display: block;
-  opacity: 1;
-  visibility: visible; }
-
-.menu__dropDown-item {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  display: none;
-  padding: 0.25em;
-  opacity: 0;
-  visibility: hidden; }
-
-.menu__dropDown--flex.active > .text__link {
-  opacity: 0.75; }
-
-.menu__dropDown-content--flex {
-  -webkit-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-  -moz-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-  -ms-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-  -o-transition: 0.3s all ease-in-out;
-  transition: 0.3s all ease-in-out;
-  display: flex;
-  flex-direction: column;
-  max-height: 0;
-  border: 0;
-  opacity: 0; }
-
-.menu__dropDown-content--flex.show {
-  max-height: 20em;
-  padding-left: 0.75em;
-  font-size: 0.95em;
-  opacity: 1; }
-
-.menu__heading {
-  margin-bottom: 0.5em;
-  line-height: 1.15em;
-  font-family: "Quicksand Regular";
-  font-size: 1.15em;
-  font-weight: 600; }
-
-.menu__expander-icon {
-  -webkit-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  -moz-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  -ms-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  -o-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  padding: 0.025em;
-  cursor: pointer;
-  right: 0.5em;
-  top: 0.9em; }
-
-.menu--flex {
-  display: flex;
-  flex-direction: column; }
-
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*background mixins*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-@keyframes ease {
-  from {
-    max-height: 0%; }
-  to {
-    max-height: 100%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Mixins for navigation bar flex states*/
-/*Mixins for column sizes for general use*/
-/*Mixins for media image sizing*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*Semantically important icons*/
-#icon__mq {
-  display: block;
-  color: #FFF; }
-  @media screen and (min-width: 1024px) and (max-width: 1350px) {
-    #icon__mq {
-      display: none; } }
-
-.icon__button {
-  width: 2em;
-  height: 2em;
-  margin-right: 0.5em;
-  padding: 0.5em;
-  border: 0.05em solid #3C3939;
-  border-radius: 0.25em;
-  box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
-  color: #FFF;
-  cursor: pointer; }
-
-.icon__code--left {
-  display: block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -moz-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -ms-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -o-transform: rotate(315deg);
-  transform: rotate(315deg);
-  right: 0.85em; }
-
-.icon__code--right {
-  display: block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -moz-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  transform: rotate(135deg);
-  left: 0.85em; }
-
-.icon__home {
-  position: relative;
-  color: #000;
-  font-size: 1.15em; }
-
-.icon__home:visited {
-  color: #000; }
-
-.icon__info {
-  color: #23585A;
-  font-size: 2em;
-  text-shadow: 0.05em 0.05em rgba(60, 179, 185, 0.15); }
-
-.icon__info--alert {
-  padding-right: 0.25em;
-  padding-bottom: 0.25em;
-  width: 25%;
-  height: 100%;
-  float: left;
-  text-align: center; }
-  @media screen and (min-width: 420px) {
-    .icon__info--alert {
-      padding-top: 0.25em;
-      padding-right: 0.25em;
-      width: 10%;
-      height: 100%; } }
-
-.icon__media--circle--small {
-  height: 1em;
-  width: 1em;
-  -ms-border-radius: 0.5em;
-  moz-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
-  border-radius: 0.5em;
-  background: #3CB3B9; }
-
-.icon__media--circle--medium {
-  height: 1.5em;
-  width: 1.5em;
-  -ms-border-radius: 0.75em;
-  moz-border-radius: 0.75em;
-  -webkit-border-radius: 0.75em;
-  border-radius: 0.75em;
-  background: #3CB3B9; }
-
-.icon__search {
-  margin-top: 0;
-  font-size: 1em;
-  outline: none; }
-
-.icon_search:hover > .fa-search {
-  position: relative;
-  top: -0.125em; }
-
-.icon__search--large {
-  font-size: 1.25em; }
-
-/*icon containers*/
-.icon__wrapper, .icon__wrapper--home {
-  -webkit-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  -moz-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  -ms-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  -o-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  min-height: 2em;
-  margin-left: 0.5em;
-  padding: 0.25em;
-  background: transparent;
-  border: 0; }
-  .icon__wrapper:hover, .icon__wrapper--home:hover {
-    background: #3CB3B9;
-    border-bottom: 0;
-    box-shadow: inset 0 -0.05em 0.5em 0.05em #23585A;
-    cursor: pointer;
-    padding: 0.35em; }
-
-.icon__wrapper.first, .first.icon__wrapper--home {
-  margin-left: 0; }
-
-.icon__wrapper--home {
-  padding: 0.25em 0;
-  border-bottom: 0.25em solid #3CB3B9; }
-
-.icon__wrapper > *:hover, .icon__wrapper--home > *:hover {
-  color: #FFF; }
-
-.icon__wrapper--home > *:hover {
-  color: #FFF; }
-
-/*page corner icons*/
-.icon__pageCorner--top-left {
-  position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
-
-.icon__pageCorner--bottom-right {
-  position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
-
-/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
-container as a text to create padding between the text and the icon*/
-.icon__menu-item--right {
-  position: absolute;
-  right: 0.75em; }
-
-.icon__menu-item--top {
-  position: absolute;
-  top: 0.75em; }
-
-/*creates a margin on the opposite side of the specified position
-in order to align the icon on either the right or left margin*/
-.icon--left {
-  margin-right: 0.5em; }
-
-.icon--right {
-  margin-left: 0.5em;
-  margin-top: 0.125em; }
-
-/*Positioning for absolutely positioned items*/
-.icon--absolute {
-  position: absolute; }
-
-.bottom {
-  bottom: 0; }
-
-.left {
-  left: 0; }
-
-.right {
-  right: 0; }
-
-.top {
-  top: 0; }
-
-/*Creates a triangle with equal widths for all borders. Commonly used 
-with dropdown menus to signify additional content. Color class names for
-black and white triangles have been created for styling purposes,but new 
-class names with different colors can be created by adding a state value 
-for color (--state) and including the .triangle mixin with desired color.*/
-/*white triangles*/
-.triangle--up--white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #FFF; }
-
-.triangle--right-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--down-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #FFF;
-  cursor: pointer; }
-
-.triangle--left-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
-
-/*black triangles*/
-.triangle--up-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #000; }
-
-.triangle--right-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--down-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #000; }
-
-.triangle--left-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--right-black.left:before {
-  content: ""; }
-
-/*white triangle sizes*/
-.triangle--down-white--small {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.25em solid transparent;
-  border-right: 0.25em solid transparent;
-  border-top: 0.25em solid #FFF; }
-
-/*black triangle sizes*/
-.triangle--down-black--small {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.25em solid transparent;
-  border-right: 0.25em solid transparent;
-  border-top: 0.25em solid #000; }
-
-.triangle--left-black--small {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.25em solid transparent;
-  border-right: 0.25em solid #000;
-  border-bottom: 0.25em solid transparent; }
-
-/*white arrows*/
-.arrow--down-white {
-  display: block;
-  padding: 0.25em;
-  position: relative;
-  border: solid #FFF;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -moz-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -ms-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -o-transform: rotate(225deg);
-  transform: rotate(225deg); }
-
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*background mixins*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-@keyframes ease {
-  from {
-    max-height: 0%; }
-  to {
-    max-height: 100%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Mixins for navigation bar flex states*/
-/*Mixins for column sizes for general use*/
-/*Mixins for media image sizing*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-.text__border {
-  border: 0.05em outset #FFF;
-  border-radius: 0 0.5em;
-  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
-
-.text__wrapper {
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 1.5em;
-  display: flex;
-  flex-direction: row;
-  position: absolute; }
-
-.text__group--alert-info {
-  width: 100%;
-  height: 100%;
-  float: right; }
-  @media screen and (min-width: 420px) {
-    .text__group--alert-info {
-      width: 90%;
-      height: 100%; } }
-
-.text__heading, .text__heading--main, .text__heading--nav {
-  letter-spacing: 0.1em;
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 0.55em;
-  color: #FFF;
-  line-height: 1.5em;
-  font-size: 1em;
-  font-weight: 600;
-  margin-left: -0.1em;
-  font-family: "Quicksand Regular"; }
-
-.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
-  color: #000; }
-
-.text__heading--alert {
-  margin-bottom: 0.5em;
-  color: #23585A;
-  font-family: "Quicksand Regular";
-  font-size: 1.25em;
-  font-weight: 600; }
-
-.text__heading-group {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-items: center; }
-
-.text__heading--outline-cap {
-  font-family: "Pissjar Sans";
-  /*font-family: "Lulo Clean Outline Bold";*/
-  font-size: 0.95em;
-  color: #000;
-  text-align: center; }
-  @media screen and (min-width: 531px) and (max-width: 768px) {
-    .text__heading--outline-cap {
-      font-size: 1em; } }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .text__heading--outline-cap {
-      font-size: 1.15em; } }
-  @media screen and (min-width: 1024px) {
-    .text__heading--outline-cap {
-      font-size: 1.25em; } }
-
-.text__heading--main {
-  position: absolute;
-  top: 2.25em;
-  padding: 0;
-  font-family: "Quicksand Regular";
-  font-size: 2.25em;
-  color: #FFF; }
-
-.text__headingLabel--main {
-  position: absolute;
-  top: 3em;
-  padding-top: 0.5em;
-  width: 4em;
-  font-family: "Quicksand Light";
-  border-top: 0.25em solid #3CB3B9;
-  color: #FFF; }
-
-.text__heading--nav {
-  font-size: 1.25em; }
-  @media screen and (min-width: 768px) {
-    .text__heading--nav {
-      font-size: 1.5em;
-      font-weight: normal; } }
-
-.text__heading--nav.left {
-  margin-left: 0.25em; }
-
-.text__heading--nav.right {
-  margin-right: 0.5em; }
-
-.text__label {
-  position: relative;
-  padding-bottom: 0.5em;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link {
-  text-decoration: none;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link:hover {
-  cursor: pointer;
-  opacity: 0.75; }
-
-.text__link:visited {
-  color: #FFF; }
-
-.text__link-wrapper {
-  padding: 0.5em; }
-
-.text--bold {
-  font-weight: 600; }
-
-.text--alert {
-  font-family: "Quicksand Regular";
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.5em; }
-
-.text--caption {
-  padding: 0.5em;
-  font-family: "Quicksand Regular";
-  line-height: 1.5em;
-  opacity: 0.75;
-  font-size: 0.95em; }
-
-.text--caption.black {
-  color: #000; }
-
-.text--code {
-  padding: 0.125em 0.25em;
-  background: #1F9EA4;
-  border-radius: 0.125em;
-  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
-  color: #FFF;
-  font-weight: 600; }
-
-.text--hero {
-  font-size: 1.5em;
-  opacity: 0.75;
-  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
-  @media screen and (min-width: 600px) and (max-width: 640px) {
-    .text--hero {
-      font-size: 2em; } }
-  @media screen and (min-width: 640px) {
-    .text--hero {
-      font-size: 2.5em; } }
-
-.text--italicized {
-  font-style: italic; }
-
-.text--responsive {
-  counter-increment: 1;
-  position: relative;
-  font-size: 0.95em; }
-
-@font-face {
-  font-family: "Lulo Clean Outline Bold";
-  src: url("../luloclean_outlinebold_macroman/LuloCleanOutlineBold-webfont.woff2") format("woff2"); }
-@font-face {
-  font-family: "Miriam Libre";
-  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Pissjar Sans";
-  src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Bold";
-  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Light";
-  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Medium";
-  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Regular";
-  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Bold";
-  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Regular";
-  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 
 /*# sourceMappingURL=main.css.map */

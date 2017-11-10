@@ -6,17 +6,37 @@
 .media {
 	position: relative;
 	display: flex;
-	flex-direction: row;
 	font-family: "Quicksand Light";
 }
 
-.media__icon {
-	display: flex;
-	flex: 1;
-	align-self: center;
-	justify-content: center;
-	padding: 0.5em;
+.media--horizontal {
+	@extend .media;
 
+	flex-direction: row;
+}
+
+.media--vertical {
+	@extend .media;
+
+	flex-direction: column;
+}
+
+.media__icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 0.5rem;
+  background: white;
+  border: 0;
+  border-radius: 0.25rem;
+}
+
+.media__icon-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .media__image {
@@ -59,13 +79,21 @@
 .media__innerWrapper {
 	@extend .media;
 
-	padding: 0.5em;
+	padding: 1rem 0;
+	padding-top: 0.5rem;
 	min-width: 100%;
+	background: $wintergreen-light;
+}
+
+.media__date {
+	flex: 14;
+	margin-left: 0.5rem;
+	padding-top: 0.5rem;
 }
 
 .media__description {
 	position: relative;
-	flex: 3;
+	flex: 1;
 	padding: 0 0.5em;
 	border: 0.05em solid $black-opaque;
 	border-radius: 0.25em;
@@ -74,10 +102,11 @@
 }
 
 .media__description--no-border {
-	@include padding(0, 0, 0, 0.75em);
-
 	position: relative;
-	flex: 3;
+	flex: 1;
+	padding: 0.5rem 0.75rem;
+	padding-top: 1.25rem;
+	margin: 0 0.75rem;
 }
 
 .media__description--small {
@@ -126,20 +155,51 @@
 }
 
 .media__heading {
+	padding-bottom: 0.25rem;
 	font-size: 1.5em;
 	line-height: $line-height;
+	color: $black;
 }
 
 .media__heading--small {
-	font-size: 1em;
+	@extend .media__heading;
+
+	font-size: 1.15rem;
 }
 
 .media__heading-group {
-	flex: 4;
+	display: flex;
+	flex: 1;
+	margin-bottom: 0.5rem;
 	line-height: $line-height;
 }
 
-.media__heading-group--small {
-	flex: 4;
-	line-height: 1.25em;
+.media__heading-group--column {
+	@extend .media__heading-group;
+	@include margin(null, 0.5rem, 0.5rem, 0.5rem);
+
+	flex-direction: column;	
+}
+
+.media__heading-group--row {
+	@extend .media__heading-group;	
+	@include margin(0.5rem, null, 0.5rem, null);
+
+	flex-direction: row;
+}
+
+.media__heading-identifier {
+	max-width: 4em;
+	margin-bottom: 0.45em;
+	border-top: 0.25em solid $black;
+}
+
+.media__section {
+	display: flex;
+	flex-direction: row;
+	margin-left: -1.05rem;
+	max-width: 104%;
+	padding: 0.75rem;
+	padding-left: 1rem;
+	background: $transparent-15-l;
 }

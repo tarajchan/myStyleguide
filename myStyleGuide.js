@@ -1,76 +1,30 @@
 
-document.addEventListener("DOMContentLoaded", main);
 
-
-function main() {
-	"use strict";
-	let dropDownArrow = document.querySelectorAll(".triangle--down-white--small");
-	let accordion = document.querySelectorAll(".accordion");
-	let accordionSingle = document.querySelectorAll(".accordion--singleSelect");
-	let sidebarButton = document.querySelectorAll(".sidebar__module");
-	let search = document.querySelectorAll(".icon__search");
-	let showHTML = document.querySelectorAll(".main__sectionHeading-expander-icon");
-	let navItemThin = document. querySelectorAll(".navigationBar__menu-item--thin");
-	let textLink = document.querySelectorAll(".text__link");
-	let menuDropDown = document.querySelectorAll(".menu__expander-icon");
-	let menuFlexItem = document.querySelectorAll(".menu__dropDown--flex .text__link");
-	const MQ_DESKTOPBP = window.matchMedia("(min-width: 768px)");
-	const MQ_TABLETBP = window.matchMedia("max-width: 640px");
-
-
-	for (var i = 0; i < accordion.length; i++) {
-		accordion[i].addEventListener("click", toggle(i), false);
-	}
-
-	for (var i = 0; i < search.length; i++) {
-		search[i].addEventListener("click", toggle(i), false);
-	}
-
-	for (var i = 0; i < accordionSingle.length; i++) {
-		accordionSingle[i].addEventListener("click", toggleSingle(i), false);
-	}
-
-	for (var i = 0; i < dropDownArrow.length; i++) {
-		dropDownArrow[i].addEventListener("click", toggleDropDown(i), false);
-	}
-
-	for (var i = 0; i < showHTML.length; i++) {
-		showHTML[i].addEventListener("click", showCode(i), false);
-	}
-
-	for (var i = 0; i < textLink.length; i++) {
-		textLink[i].addEventListener("click", toggleMenu(i), false);
-	}
-
-	for (var i = 0; i < menuDropDown.length; i++) {
-		menuDropDown[i].addEventListener("click", toggleMenu(i), false);
-	}
-
-	for (var i = 0; i < menuFlexItem.length; i++) {
-		menuFlexItem[i].addEventListener("click", toggleThisAndNext(i), false);
-	}	
-
-	for (var i = 0; i < sidebarButton.length; i++) {
-		sidebarButton[i].addEventListener("click", toggleThisAndNext(i), false);
-	}
-
-	for (var i = 0; i < navItemThin.length; i++) {
-		navItemThin[i].addEventListener("mouseover", scaleItem(i), false);
-	}
-
-
-	WidthChange(MQ_TABLETBP);
-	MQ_TABLETBP.addListener(WidthChange);
-
-	WidthChange(MQ_DESKTOPBP);
-	MQ_DESKTOPBP.addListener(WidthChange);
-} 
+/*const addBorder = (i) => {
+	return function() {
+		if (this.style.borderRight = "0.05em solid $grey-dark") {
+			this.previousSibling.style.border = "0";
+		} else {
+			this.previousSibling.style.borderRight = "0.05em solid $grey-dark";
+		}
+	};
+};
+*/
 
 function toggle(i) {
 	return function() {
 		this.parentNode.classList.toggle("active");
 		this.classList.toggle("active");
 	};
+/*
+	for (let i = 0; i < navIconMenu.length; i++) {
+		if (navIconMenu[i].classList.contains("active")) {
+		  navIconMenu[i].parentNode.classList.toggle("navigationBar--state-5");
+			navIconMenu[i].parentNode.previousSibling.classList.toggle("navigationBar--state-3");
+		} 
+	}
+*/
+
 }
 
 function toggleThisAndNext(i) {
@@ -102,17 +56,30 @@ function toggleSingle(i) {
 	};
 }
 
+const removeBorder = (i) => {
+	return function() {
+		this.previousSibling.style.removeProperty("border");	
+	};
+};
+
 function scaleItem(i) {
 	return function() {
-		this.nextElementSibling.removeProperty("border-left");
+		this.nextElementSibling.style.removeProperty("border-left");
 	};
 }
 
+const showDropDown = (i) => {
+	let absDropDown = document.querySelector(".menu__dropDown--absolute"); 
 
+	return () => {
+		absDropDown.classList.toggle("active");
+		absDropDown.classList.toggle("menu__dropDown--absolute--thin--right");	
+	};
+};
 
-function setClass(variable, className, methodName) {
-	for (var i=0; i < variable.length; i++) {
-		variable[i].classList[methodName](className);
+function setClass(letiable, className, methodName) {
+	for (let i=0; i < letiable.length; i++) {
+		letiable[i].classList[methodName](className);
 	}
 }
 
@@ -152,7 +119,7 @@ function WidthChange(MQ_TABLETBP) {
 	if (MQ_TABLETBP.matches) {
 		icon.setAttributeNode(iconContent);
 
-		for (var i=0; i < navItemThin.length; i++) {
+		for (let i=0; i < navItemThin.length; i++) {
 			navItemThin[i].appendChild(icon);
 			console.log(icon.getAttribute("class"));
 		}
@@ -185,6 +152,97 @@ function WidthChange(MQ_DESKTOPBP) {
 	}
 }
 
+function main() {
+	"use strict";
+	let today = new Date();
+	let dateStringToday = today.toDateString();
+
+	let formInput = document.querySelector(".form__input-segment");
+
+	let dropDownArrow = document.querySelectorAll(".triangle--down-white--small");
+	let ellipsis = document.querySelectorAll(".icon__ellipsis");
+	let accordion = document.querySelectorAll(".accordion");
+	let accordionSingle = document.querySelectorAll(".accordion--singleSelect");
+	let sidebarButton = document.querySelectorAll(".sidebar__module");
+	let iconWrapper = document.querySelectorAll(".icon__wrapper");
+	let search = document.querySelectorAll(".icon__search");
+	let showHTML = document.querySelectorAll(".main__sectionHeading-expander-icon");
+	let mediaDate = document.querySelectorAll(".media__date");
+	let navItemThin = document. querySelectorAll(".navigationBar__menu-item--thin");
+	let textLink = document.querySelectorAll(".text__link");
+	let menuDropDown = document.querySelectorAll(".menu__expander-icon");
+	
+	const MQ_DESKTOPBP = window.matchMedia("(min-width: 768px)");
+	const MQ_TABLETBP = window.matchMedia("max-width: 640px");
+
+
+	for (let i = 0; i < accordion.length; i++) {
+		accordion[i].addEventListener("click", toggle(i), false);
+	}
+
+	for (let i = 0; i < search.length; i++) {
+		search[i].addEventListener("click", toggle(i), false);
+	}
+
+	for (let i = 0; i < accordionSingle.length; i++) {
+		accordionSingle[i].addEventListener("click", toggleSingle(i), false);
+	}
+
+	for (let i = 0; i < dropDownArrow.length; i++) {
+		dropDownArrow[i].addEventListener("click", toggleDropDown(i), false);
+	}
+
+	for (let i = 0; i < ellipsis.length; i++) {
+		ellipsis[i].addEventListener("click", showDropDown(i), false);
+	}
+
+	// for (let i = 0; i < iconWrapper.length; i++) {
+	// 	iconWrapper[i].addEventListener("mouseover", removeBorder(i), false);
+	// }
+
+	// for (let i = 0; i < iconWrapper.length; i++) {
+	// 	iconWrapper[i].addEventListener("mouseleave", addBorder(i), false);
+	// }
+
+	for (let i = 0; i < showHTML.length; i++) {
+		showHTML[i].addEventListener("click", showCode(i), false);
+	}
+
+	for (let i = 0; i < textLink.length; i++) {
+		textLink[i].addEventListener("click", toggleMenu(i), false);
+	}
+
+	for (let i = 0; i < menuDropDown.length; i++) {
+		menuDropDown[i].addEventListener("click", toggleMenu(i), false);
+	}
+
+	// for (let i = 0; i < menuFlexItem.length; i++) {
+	// 	menuFlexItem[i].addEventListener("click", toggleThisAndNext(i), false);
+	// }
+
+	for (let i = 0; i < sidebarButton.length; i++) {
+		sidebarButton[i].addEventListener("click", toggleThisAndNext(i), false);
+	}
+
+	for (let i = 0; i < navItemThin.length; i++) {
+		navItemThin[i].addEventListener("mouseover", scaleItem(i), false);
+	}
+
+	for (let i = 0; i < mediaDate.length; i++) {
+		mediaDate[i].textContent = dateStringToday;
+	}
+
+
+
+	WidthChange(MQ_TABLETBP);
+	MQ_TABLETBP.addListener(WidthChange);
+
+	WidthChange(MQ_DESKTOPBP);
+	MQ_DESKTOPBP.addListener(WidthChange);
+} 
+
+document.addEventListener("DOMContentLoaded", main);
+
 /*function toggleDropDown(i) {
 	let sideModules = document.querySelectorAll(".sidebar__module"); 
 	let parentNode = this.parentNode.className;
@@ -192,7 +250,7 @@ function WidthChange(MQ_DESKTOPBP) {
 	return function(event) {
 		let clickedElement = event.currentTarget;
 
-		for (var i = 0; i < sideModules.length; i++) {
+		for (let i = 0; i < sideModules.length; i++) {
 			sideModules[i].className = "sidebar__module closed";
 			if (parentNode.classList.contains("closed")) {
 					parentNode.classList.toggle("closed");
@@ -202,25 +260,6 @@ function WidthChange(MQ_DESKTOPBP) {
 }
 */
 	
-		
-
-
-
-
-/*var indexValuesForEachRow = [0, 1, 2, 3, 4];
-
-	function main() {
-		var flexRowList = document.getElementsByClassName('row--flex-12');
-		var flexRowArray = [];
-
-		console.log(flexRowList);
-		for (var i=0; i < flexRowList.length; i++) {
-			flexRowList[i].addEventListener('click', showHTML(i));
-			flexRowArray.push(flexRowList[i]);
-		}
-
-	}
-*/
 
 /*pair appropriate HTML code snipet with the corresponding row based
 	the array index value of the "row--flex-12" by creating a for loop
@@ -228,15 +267,15 @@ function WidthChange(MQ_DESKTOPBP) {
 	
 	/*function showHTML(i) {
 		 
-		 var flexRowList = document.getElementsByClassName('row--flex-12');
-		 var flexRowArray = [];
+		 let flexRowList = document.getElementsByClassName('row--flex-12');
+		 let flexRowArray = [];
 
-		 for (var i=0; i < flexRowList.length; i++) {
+		 for (let i=0; i < flexRowList.length; i++) {
 			flexRowArray.push(flexRowList[i]);
 		}
 
 		 return function(event) {
-		 	var clickedElement = event.currentTarget;
+		 	let clickedElement = event.currentTarget;
 
 		 	indexValuesForEachRow.forEach(function() {
 		 		if (indexValuesForEachRo  w[0] === )
@@ -248,15 +287,3 @@ function WidthChange(MQ_DESKTOPBP) {
 	}	
 	
 	*/
-	/* function toggleItems() {
-		var toggle = document.querySelectorAll('.toggle');
-
-		
-		for (var i=0; i < toggle.length; i++) {
-			if (toggle[i].style.display = 'none') {
-				toggle[i].style.display = 'block';
-			} else {
-				toggle[i].style.display = 'none';
-			}
-		}	
-	} */

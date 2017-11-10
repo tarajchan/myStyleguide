@@ -171,7 +171,7 @@ $columns: 12;
 @mixin media-image {
 	@for $i from 1 through $columns {
 		.media__image-wrapper--#{$i} {
-			flex: 1;
+			margin-right: 0.75rem;
 			width: calc((#{$i}/12) * 100%);
 		}
 	}

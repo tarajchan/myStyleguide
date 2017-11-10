@@ -14,6 +14,7 @@
 	/*Box Model*/
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 	min-height: 4em;
 
 	/*Visual*/
@@ -40,12 +41,16 @@
 }
 
 .navigationBar--state.right {
-	margin-right: 1em;
+	margin-right: 0;
 	justify-content: flex-end;
 }
 
 //Generates class names for flex 1-5 on navigationBar--state containers
 @include navigationBar--state;
+
+.navigationBar--state-5 {
+	flex: 5;
+}
 
 .navigationBar--state.left .text__heading {
 	flex: 2;
@@ -57,8 +62,8 @@
 	}
 }
 
-.navigationBar.inverted {
-	background: $white;
+.navigationBar.ultraDark {
+	background: $black-opaque;
 }
 
 .navigationBar__text--absolute {
@@ -77,15 +82,32 @@
 	justify-content: flex-end;
 	height: 2.65em;
 	width: 100%;
+	background: $black-opaque;
 
 	@media screen and (min-width: $mq-tablet) {
 		min-height: 2.65em;
+		max-width: 60em;
 	}
 }
 
 .navigationBar--thin .navigationBar--state {
 	height: 100%;
-	padding: 0.5em;
+	padding: 0.5em 0;
+
+	@include mediaQuery--custom (640px, $mq-tablet) {
+		padding: 0.5em;		
+	}
+}
+
+.navigationBar--thin .navigationBar--state.center {
+	flex: 5;
+
+	@include mediaQuery--custom (640px, $mq-tablet) {
+		flex: 3;
+	}
+	@media screen and (min-width: $mq-tablet) {
+		flex: 1;
+	}
 }
 
 .navigationBar__component {
@@ -280,9 +302,25 @@ from drop down item*/
 /*Navigation bar styles*/
 
 .navigationBar__icon-menu--thin {
+	@include prefix(transition, 0.3s all ease-in-out);
+
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	max-width: 20em;
+	min-width: 2.5em;
+}
+
+.navigationBar__icon-menu--thin input[type="text"] {
+	padding: 0.25em;
+	max-width: 0;
+	border: 0;
+	border-radius: 0.25em;
+}
+
+.navigationBar__icon-menu--thin.active input[type="text"] {
+	border: 0.1em solid $grey;
+	max-width: 20em;
 }
 
 .navigationBar__icon-menu--thin .form__input-segment {
@@ -295,19 +333,34 @@ from drop down item*/
 
 .navigationBar__icon-menu--thin .icon__search {
 	display: none;
+	color: $white;
 
 	@media screen and (min-width: $mq-tablet) {
-		display: block;
-		padding-bottom: 0.5em;
+		display: block;	
 	}
 }
 
 .navigationBar__icon-menu--thin.active {
-	width: 80%;
+	max-width: 65em;
+	min-width: 100%;
 }
 
+.navigationBar__icon-menu--thin.active .icon__search {
+	border-right: 0;
+}
+
+.navigationBar__icon-menu--thin.active .icon__search:hover {
+	background: $transparent;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.navigationBar__icon-menu--thin .form__input-segment {
+	max-width: 0;
+}	
+
 .navigationBar__icon-menu--thin.active .form__input-segment {
-	max-width: none;
+	max-width: 40em;
 }
 
 .navigationBar__menu--thin {
@@ -316,6 +369,7 @@ from drop down item*/
 	display: flex;
 	min-height: 1.5em;
 	width: 100%;
+	background: $grey-dark;
 	font-family: "Quicksand Light";
 }
 
@@ -335,7 +389,7 @@ from drop down item*/
 	display: flex;
 	align-self: center;
 	max-height: 1.25em;
-	color: $black;
+	color: $white;
 
 	@for $i from 1 through 4 {
 		&:nth-child(#{$i})::after {

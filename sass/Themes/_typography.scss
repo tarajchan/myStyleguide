@@ -66,20 +66,20 @@
 .text__heading--outline-cap {
 	font-family: "Pissjar Sans";
 	/*font-family: "Lulo Clean Outline Bold";*/
-	font-size: 0.95em;
-	color: $black;
+	font-size: 1em;
+	color: $white;
 	text-align: center;
 
-	@include mediaQuery--custom(531px, $mq-tablet) {
-		font-size: 1em;
-	}
-
-	@include mediaQuery--tablet {
+	@include mediaQuery--custom(400px, $mq-tablet) {
 		font-size: 1.15em;
 	}
 
+	@include mediaQuery--tablet {
+		font-size: 1.25em;
+	}
+
 	@media screen and (min-width: $mq-desktop) {
-		font-size: 1.25em;	
+		font-size: 1.5em;	
 	}
 }
 

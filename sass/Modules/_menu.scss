@@ -68,6 +68,28 @@
 	visibility: hidden;
 }
 
+.menu__dropDown-positioning {
+	position: relative;
+}
+
+.menu__dropDown--absolute {
+	@include prefix(transition, 0.15s all ease-in-out);
+
+	position: absolute;
+	max-height: 0;
+	min-width: 0;
+	background: $black;
+	z-index: 3;
+}
+
+.menu__dropDown--absolute.menu__dropDown--absolute--thin--right.active {
+	@extend .menu__dropDown--absolute;
+	top: 2.7em;
+	max-height: 15rem;
+	min-width: 30rem;
+}
+
+
 .menu__dropDown--flex.active > .text__link {
 	opacity: 0.75;
 }

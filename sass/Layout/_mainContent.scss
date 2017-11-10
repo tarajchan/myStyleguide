@@ -25,12 +25,8 @@
 		@include background-image(url("./Themes/whirlpool.png"), 0 0, 75%);
 	}
 
-	@include mediaQuery--tablet {
+	@media screen and (min-width: $mq-tablet) {
 		@include background-image(url("./Themes/whirlpool.png"), 0 0, 50%);
-	}
-
-	@media screen and (min-width: $mq-desktop) {
-		@include background-image(url("./Themes/whirlpool.png"), 0 0, 40%);
 	}
 }
 
@@ -73,11 +69,18 @@
 	}
 }
 
-.main__section {
-	@include border-side("bottom", 0.01em solid $teal-medium);
+.main__body-wrapper {
+	position: relative;
+	top: 4.5em;
+	background: $white;
+	z-index: 1;
+}
 
+
+.main__section {
 	position: relative;
 	margin-bottom: 1em;
+	border-bottom: 0.01em solid $teal-medium;
 }
 
 .main__section.top {
@@ -300,20 +303,23 @@
 }
 
 .main__sectionDetails-identifier {
-	@include border-side("top", 0.25em solid $black);
-
 	max-width: 4em;
 	margin-bottom: 0.45em;
+	border-top: 0.25em solid $black;
 }
 
 .main__sectionHeading {
-	@include border-side("bottom", 0.01em solid $grey-ultraLight);
-
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	padding: 2em 1em;
+	padding: 0 1em;
+	padding-bottom: 1em;
+	border-bottom: 0.01em solid $grey-ultraLight;
 	box-shadow: inset 0 -0.25em 0.75em $grey-ultraLight;
+
+	@media screen and (min-width: $mq-desktop) {
+		padding: 2em 1em;
+	}
 }
 
 .main__sectionHeading.transparent {
@@ -377,7 +383,7 @@
 .main__sectionHeading-text {
 	position: relative;
 	flex: 4;
-	max-width: 60%;
+	max-width: 100%;
 	margin-left: 1em;
 	font-family: "Quicksand Regular";
 	font-size: 1.5em;
@@ -385,6 +391,9 @@
 
 	@media screen and (min-width: $mq-tablet) {
 		font-size: 2em;
+	}
+	@media screen and (min-width: $mq-desktop) {
+		max-width: 60%;
 	}
 }
 

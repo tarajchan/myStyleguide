@@ -25,6 +25,7 @@
 .grid__container--auto-fill {
 	@extend .grid__container;
 
+	padding: 0 1em;
 	grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
 }
 
@@ -115,6 +116,27 @@ entire page layouts that include a header, footer, aside, and main section.*/
 
 .grid__main--responsive-semantic .grid__container--auto-fill {
 	max-width: 100%;
+	position: absolute;
+	grid-gap: 0;
+
+	@media screen and (min-width: 672px) {
+		grid-row-gap: 1rem;
+		grid-column-gap: 2rem;
+	}
+}
+
+.grid__main--responsive-semantic .main__section {
+	margin-bottom: 1rem;
+
+	@media screen and (min-width: 672px) {
+	margin-bottom: 0;
+	}
+}
+
+.grid__main--responsive-semantic .main__wrapper:nth-child(1) {
+	@media screen and (min-width: $mq-desktop) {
+		padding: 1em;
+	}
 }
 
 .grid__navigation--responsive-semantic {

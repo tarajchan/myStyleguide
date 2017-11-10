@@ -5,6 +5,14 @@
 
 /*Semantically important icons*/
 
+.icon {
+	color: $white;
+	font-size: 1em;
+}
+
+.icon.black {
+	color: $black;
+}
 
 #icon__mq {
 
@@ -41,14 +49,42 @@
 	left: 0.85em;
 }
 
+.icon__ellipsis {
+	@extend .icon;
+}
+
+.icon__envelope {
+	@extend .icon;
+}
+
+.icon__facebook {
+	color: $blue-facebook;
+}
+
+.icon__linkedin {
+	color: $blue-linkedin;
+}
+
+.icon__pinterest {
+	color: $red-pinterest;
+}
+
+.icon__twitter {
+	color: $blue-twitter;
+}
+
 .icon__home {
+	@extend .icon;
+
 	position: relative;
-	color: $black;
-	font-size: 1.15em;
+
+	@media screen and (min-width: 640px) {
+		font-size: 1.15em;
+	}
 }
 
 .icon__home:visited {
-	color: $black;
+	color: $white;
 }
 
 .icon__info {
@@ -84,7 +120,6 @@
 
 .icon__search {
 	margin-top: 0;
-	font-size: 1em;
 	outline: none;
 }
 
@@ -103,14 +138,16 @@
 	@include prefix(transition, all 0.15s ease-in-out);
 
 	min-height: 2em;
-	margin-left: 0.5em;
-	padding: 0.25em;
+	padding: 0 0.5em;
 	background: $transparent;
 	border: 0;
+	border-right: 0.05em solid $grey-dark;
+	outline: none;
 
 		&:hover {
 			background: $teal;
 			border-bottom: 0;
+			border-radius: 0.25em;
 			box-shadow: inset 0 -0.05em 0.5em 0.05em $teal-dark;
 			cursor: pointer;
 			padding: 0.35em;
@@ -121,10 +158,27 @@
 	margin-left: 0;
 }
 
+.icon__wrapper.last {
+	border: 0;
+
+	&:hover {
+		border-radius: 0 0.25em 0.25em 0;
+	}
+}
+
+.icon__wrapper--clock {
+	display: flex;
+	align-items: center;
+	padding-left: 0;
+	padding-right: 0.5rem;
+	border-right: 0.05rem solid $black;
+}
+
 .icon__wrapper--home {
 	@extend .icon__wrapper;
 
 	padding: 0.25em 0;
+	border: 0;
 	border-bottom: 0.25em solid $teal;
 }
 
@@ -264,4 +318,15 @@ for color (--state) and including the .triangle mixin with desired color.*/
 
 .arrow--down-white {
 	@include arrow(relative, "down", 0.25em, $white, solid);
+}
+
+
+/*Special types of triangles*/
+
+.triangle__page-corner--left {
+	@include prefix(transform, rotate(-45deg));
+	@include triangle-eq(absolute, "down", 0.75em, $transparent-50-l);
+
+	left: -1rem;
+	top: 1.9rem;
 }

@@ -10,6 +10,7 @@ $transparent-25-d: rgba(255, 255, 255, 0.25);
 $transparent-05-l: rgba(0, 0, 0, 0.05);
 $transparent-15-l: rgba(0, 0, 0, 0.15); 
 $transparent-25-l: rgba(0, 0, 0, 0.25); 
+$transparent-50-l: rgba(0, 0, 0, 0.50);
 
 /*Basic colors*/
 
@@ -26,6 +27,7 @@ $grey-ultraLight: #C7C7C7;
 $grey-lowOpacity: #E6E6E6;
 $charcoal: #3C3939;
 $red: #F00;
+$red-pinterest: #DC143C;
 
 /*Tertiary color scheme for main color theme*/
 
@@ -41,8 +43,11 @@ $teal-green-tint: #1F9EA4;
 $teal-medium: #4BA7AB;
 $teal-dark: #23585A;
 $teal-lowOpacity: rgba(60, 179, 185, 0.15);
-$blue-highlight: #B0F0FF;
 $blue-dark: #133A9C;
+$blue-highlight: #B0F0FF;
+$blue-linkedin: #0077B5;
+$blue-facebook: #3B5998;
+$blue-twitter: #0084B4;
 
 /*Button preset colors*/
 $button: $transparent;
