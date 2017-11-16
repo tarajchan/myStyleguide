@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 	</head>
 	<body>
-		<nav class="navigationBar ultraDark clearfix">
+		<nav class="navigationBar--column ultraDark clearfix">
 			<div class="navigationBar__highlight"></div>
 			<div class="navigationBar--thin">
 				<div class="navigationBar--state left">
@@ -41,6 +41,11 @@
 					</div>
 				</div>
 			</div>
+			<div class="navigationBar__input-wrapper">
+				<div class="form__input-segment">
+					<input type="text" placeholder="search">
+				</div>
+			</div>
 			<div class="navigationBar__menu--thin">
 				<div class="navigationBar__menu--thin-left">
 					<div class="navigationBar__menu-item--thin first">
@@ -52,9 +57,6 @@
 					<div class="navigationBar__menu-item--thin">
 					</div>
 				</div>
-			</div>
-			<div class="form__input-segment">
-				<input type="text" placeholder="search">
 			</div>
 			<div class="menu__dropDown-positioning">
 				<div class="menu__dropDown--absolute--thin--right menu__dropDown--absolute">
@@ -81,18 +83,34 @@
 							<a class="breadcrumb__link--active breadcrumb__link">Accordion</a>
 						</div>
 					</div>
-					<div class="hero">
-						<div class="hero__image"></div>
-						<div class="hero__title--overlap-center">
-							<div class="text--hero">
+					<div class="hero grid__container--3 grid">
+						<div class="hero__wrapper--overlap-left grid__template--rows-1-12 grid__template--columns-1-6 container__max-height--6 horizontal top">
+							<div class="text__heading--hero">
 								GRID LAYOUT
 							</div>
+							<div class="button__wrapper button__next">
+								<button class="button">
+									<div class="text--thin text--hero">Next Post</div>
+									<div class="arrow--right-white"></div>
+								</button>
+							</div>
+						</div>
+						<div class="hero__image grid__template--rows-1-6 grid__template--columns-1-6">
+							<img src="../Themes/yellow_train.jpg" alt="Yellow train in Japan" height="100%" width="100%"/>
+						</div>
+						<div class="hero__wrapper--overlap-left grid__template--rows-span1-4 grid__template--columns-1-6">
 							<div class="hero__description">
-								<div class="text--caption black">
+								<div class="text--caption">
 									Experience the responsiveness of this basic grid layout
 									as the grid areas adjust to the size of the window to deliver aesthetically pleasing layouts on any size screen.
 								</div>
 							</div>
+						</div>
+						<div class="hero__image grid__template--rows-1-6 grid__template--columns-span1-3">
+							<img src="../Themes/snowy_road.jpg" alt="Snowy road during the winter" height="100%" width="100%"/>
+						</div>
+						<div class="hero__image grid__template--rows-span1-3 grid__template--columns-span1-3">
+							<img src="../Themes/crater_lake.jpg" alt="Stars above Crater Lake" height="100%" width="100%"/>
 						</div>
 					</div>
 				</div>
@@ -104,11 +122,8 @@
 							<div class="main__wrapper transparent">
 								<div class="main__section top">
 									<div class="main__sectionHeading transparent">
-										
 										<div class="main__sectionHeading-text">Responsive grid</div>
-										<div class="example__module--right">
-											
-										</div>
+										<div class="main__sectionHeading-keyword-text">Section I</div>
 									</div>
 								</div>
 							</div>
@@ -124,16 +139,16 @@
 												</div>
 												<div class="media__date text--italicized"></div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__facebook fa fa-facebook-official" aria-hidden="true"></i>
+													<i class="icon--large icon__facebook fa fa-facebook-official" aria-hidden="true"></i>
 												</div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__twitter fa fa-twitter" aria-hidden="true"></i>
+													<i class="icon--large icon__twitter fa fa-twitter" aria-hidden="true"></i>
 												</div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__pinterest fa fa-pinterest" aria-hidden="true"></i>
+													<i class="icon--large icon__pinterest fa fa-pinterest" aria-hidden="true"></i>
 												</div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__linkedin fa fa-linkedin-square" aria-hidden="true"></i>
+													<i class="icon--large icon__linkedin fa fa-linkedin-square" aria-hidden="true"></i>
 												</div>
 											</div>
 											<div class="triangle__page-corner--left"></div>
@@ -142,8 +157,8 @@
 													<img src="../Themes/fog__stockImage.jpg" src="Media image" height="100%" width="100%">
 												</div>
 												<div class="media__heading-group--column">
-													<div class="media__heading--small">Topic</div>
 													<div class="media__heading-identifier"></div>
+													<div class="media__heading--small inverted">Topic</div>
 													<div class="media__heading">Media Object with Image</div>
 												</div>
 											</div>
@@ -165,16 +180,16 @@
 												</div>
 												<div class="media__date text--italicized"></div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__facebook fa fa-facebook-official" aria-hidden="true"></i>
+													<i class="icon--large icon__facebook fa fa-facebook-official" aria-hidden="true"></i>
 												</div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__twitter fa fa-twitter" aria-hidden="true"></i>
+													<i class="icon--large icon__twitter fa fa-twitter" aria-hidden="true"></i>
 												</div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__pinterest fa fa-pinterest" aria-hidden="true"></i>
+													<i class="icon--large icon__pinterest fa fa-pinterest" aria-hidden="true"></i>
 												</div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__linkedin fa fa-linkedin-square" aria-hidden="true"></i>
+													<i class="icon--large icon__linkedin fa fa-linkedin-square" aria-hidden="true"></i>
 												</div>
 											</div>
 											<div class="triangle__page-corner--left"></div>
@@ -183,8 +198,8 @@
 													<img src="../Themes/fog__stockImage.jpg" src="Media image" height="100%" width="100%">
 												</div>
 												<div class="media__heading-group--column">
-													<div class="media__heading--small">Topic</div>
 													<div class="media__heading-identifier"></div>
+													<div class="media__heading--small inverted">Topic</div>
 													<div class="media__heading">Media Object with Image</div>
 												</div>
 											</div>
@@ -206,16 +221,16 @@
 												</div>
 												<div class="media__date text--italicized"></div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__facebook fa fa-facebook-official" aria-hidden="true"></i>
+													<i class="icon--large icon__facebook fa fa-facebook-official" aria-hidden="true"></i>
 												</div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__twitter fa fa-twitter" aria-hidden="true"></i>
+													<i class="icon--large icon__twitter fa fa-twitter" aria-hidden="true"></i>
 												</div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__pinterest fa fa-pinterest" aria-hidden="true"></i>
+													<i class="icon--large icon__pinterest fa fa-pinterest" aria-hidden="true"></i>
 												</div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__linkedin fa fa-linkedin-square" aria-hidden="true"></i>
+													<i class="icon--large icon__linkedin fa fa-linkedin-square" aria-hidden="true"></i>
 												</div>
 											</div>
 											<div class="triangle__page-corner--left"></div>
@@ -225,8 +240,8 @@
 													<!--<div class="media__image-transparent-overlay"></div>-->
 												</div>
 												<div class="media__heading-group--column">
-													<div class="media__heading--small">Topic</div>
 													<div class="media__heading-identifier"></div>
+													<div class="media__heading--small inverted">Topic</div>
 													<div class="media__heading">Media Object with Image</div>
 												</div>
 											</div>
@@ -248,16 +263,16 @@
 												</div>
 												<div class="media__date text--italicized"></div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__facebook fa fa-facebook-official" aria-hidden="true"></i>
+													<i class="icon--large icon__facebook fa fa-facebook-official" aria-hidden="true"></i>
 												</div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__twitter fa fa-twitter" aria-hidden="true"></i>
+													<i class="icon--large icon__twitter fa fa-twitter" aria-hidden="true"></i>
 												</div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__pinterest fa fa-pinterest" aria-hidden="true"></i>
+													<i class="icon--large icon__pinterest fa fa-pinterest" aria-hidden="true"></i>
 												</div>
 												<div class="media__icon icon__wrapper">
-													<i class="icon__linkedin fa fa-linkedin-square" aria-hidden="true"></i>
+													<i class="icon--largeicon__linkedin fa fa-linkedin-square" aria-hidden="true"></i>
 												</div>
 											</div>
 											<div class="triangle__page-corner--left"></div>
@@ -266,8 +281,8 @@
 													<img src="../Themes/fog__stockImage.jpg" src="Media image" height="100%" width="100%">
 												</div>
 												<div class="media__heading-group--column">
-													<div class="media__heading--small">Topic</div>
 													<div class="media__heading-identifier"></div>
+													<div class="media__heading--small inverted">Topic</div>
 													<div class="media__heading">Media Object with Image</div>
 												</div>
 											</div>

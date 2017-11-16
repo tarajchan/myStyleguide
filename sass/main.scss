@@ -1,5 +1,7 @@
 // main.scss
 
+@import "./Themes/_icons.scss";
+@import "./Themes/_typography.scss";
 @import "./Layout/_container.scss";
 @import "./Layout/_grid.scss";
 @import "./Layout/_mainContent.scss";
@@ -7,8 +9,6 @@
 @import "./Modules/_sidebar.scss";
 @import "./Modules/_form.scss";
 @import "./Modules/_menu.scss";
-@import "./Themes/_icons.scss";
-@import "./Themes/_typography.scss";
 @import "./Components/_accordion.scss";
 @import "./Components/_alert.scss";
 @import "./Components/_carousel.scss";

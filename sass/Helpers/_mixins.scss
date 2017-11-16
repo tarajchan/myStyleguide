@@ -166,6 +166,16 @@ $columns: 12;
 	}
 }
 
+/*Mixins for height (percentage) */
+
+@mixin max-height {
+	@for $i from 1 through $columns {
+		.container__max-height--#{$i} {
+			max-height: calc((#{$i}/12) * 100%);
+		}
+	}
+}
+
 /*Mixins for media image sizing*/
 
 @mixin media-image {

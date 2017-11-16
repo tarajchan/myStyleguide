@@ -9,21 +9,21 @@
 
 .hero {
 	position: relative;
-	display: flex;
-	align-items: flex-end;
-	min-height: 10em;
-	max-height: 20em;
+	min-height: 15rem;
+	max-height: 20rem;
 	max-width: 100%;
 	margin: auto;
 	font-family: "Quicksand Regular";
 
 	@include mediaQuery--custom(500px, $mq-desktop) {
-		min-height: 15em;
+		min-height: 20rem;
+		max-height: 40rem;
 	}
 
 	@media screen and (min-width: $mq-desktop) {
 		max-width: 70%;
-		min-height: 20em;
+		min-height: 40rem;
+		max-height: 50rem;
 	}
 }
 
@@ -34,28 +34,65 @@
 .hero__description .text--caption {
 
 	@media screen and (min-width: $mq-tablet) {
-		font-size: 1.25em;
+		font-size: 1.25rem;
 	}
 }
 
 .hero__image {
-	@include background-image(url("./Themes/yellow_train.jpg"), 0em 0em, 100% 100%);
-	@include abs-positioning(0, 0, 0, 0);
+	//@include background-image(url("./Themes/yellow_train.jpg"), 0em 0em, 100% 100%);
+	@include abs-positioning(0, 0, null, 0);
 
 	z-index: 1;
 }
 
-.hero__title--overlap-center {
-	@include background-image(url("./Themes/whirlpool.png"), 0 0, 100%);
 
-	position: relative;
-	top: 4.5em;
-	max-width: 50%;
-	margin: 0 auto;
+.hero__wrapper--overlap {
+	@include background-image(url("./Themes/dark-triangles.png"), 0 0, 50%);
+	@include abs-positioning(0, 0, null, 0);
+
 	padding: 0.5em 1.25em;
-	text-align: center;
+	color: $white;
+	opacity: 0.85;
 	z-index: 2;
+}
+
+.hero__wrapper--overlap.horizontal {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;	
+}
+
+.hero__wrapper--overlap.top {
+	top: -1.5rem;
+}
+
+.hero__wrapper--overlap.vertical {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.hero__wrapper--overlap-center {
+	@extend .hero__wrapper--overlap;
+
+	text-align: center;
 	border-top: 0.3em solid $teal;
+}
+
+.hero__wrapper--overlap-left {
+	@extend .hero__wrapper--overlap;
+
+	text-align: left;
+	border-left: 0.3em solid $teal;
+	box-shadow: 0.05rem 0.025rem 0.75rem $black-opaque;
+}
+
+.hero__wrapper--overlap-right {
+	@extend .hero__wrapper--overlap;
+	
+	text-align: right;
+	border-rights: 0.3em solid $teal;
 }
 
 .hero__wrapper {

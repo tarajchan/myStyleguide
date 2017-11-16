@@ -293,8 +293,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	padding-bottom: 0.25em;
-	min-height: 2em;
+	padding-bottom: 0.25rem;
+	min-height: 2rem;
 
 	@media screen and (min-width: 385px) {
 		flex-direction: row;
@@ -303,23 +303,18 @@
 }
 
 .main__sectionDetails-identifier {
-	max-width: 4em;
-	margin-bottom: 0.45em;
-	border-top: 0.25em solid $black;
+	max-width: 4rem;
+	margin-bottom: 0.45rem;
+	border-top: 0.25rem solid $black;
 }
 
 .main__sectionHeading {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	padding: 0 1em;
-	padding-bottom: 1em;
-	border-bottom: 0.01em solid $grey-ultraLight;
-	box-shadow: inset 0 -0.25em 0.75em $grey-ultraLight;
-
-	@media screen and (min-width: $mq-desktop) {
-		padding: 2em 1em;
-	}
+	padding: 2rem 1rem;
+	border-bottom: 0.01rem solid $grey-ultraLight;
+	box-shadow: inset 0 -0.25rem 0.75rem $grey-ultraLight;
 }
 
 .main__sectionHeading.transparent {
@@ -375,22 +370,31 @@
 }
 
 .main__sectionHeading-icon--x-small {
-	@include border(null, null, 0.15em groove $red, 0.15em groove $red);
-	@include margin-side("top", 1.05em);
-	@include size(0.75em);
+	@include border(null, null, 0.15rem groove $red, 0.15rem groove $red);
+	@include margin-side("top", 1.05rem);
+	@include size(0.75rem);
+}
+
+.main__sectionHeading-keyword-text {
+	position: absolute;
+	top: 0.5rem;
+	margin-left: 1.125rem;
+	color: $red-pinterest;
+	font-family: "Miriam Libre";
+	font-size: 1rem;
 }
 
 .main__sectionHeading-text {
 	position: relative;
 	flex: 4;
 	max-width: 100%;
-	margin-left: 1em;
+	margin-left: 1rem;
 	font-family: "Quicksand Regular";
-	font-size: 1.5em;
-	line-height: 1.75em;
+	font-size: 1.5rem;
+	line-height: 1.75rem;
 
 	@media screen and (min-width: $mq-tablet) {
-		font-size: 2em;
+		font-size: 2rem;
 	}
 	@media screen and (min-width: $mq-desktop) {
 		max-width: 60%;

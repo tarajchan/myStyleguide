@@ -3,11 +3,11 @@
 @import "../Helpers/_mixins.scss";
 @import "./_colors.scss";
 
-/*Semantically important icons*/
+/*Sremantically important icons*/
 
 .icon {
 	color: $white;
-	font-size: 1em;
+	font-size: 1rem;
 }
 
 .icon.black {
@@ -25,28 +25,28 @@
 }
 
 .icon__button {
-	@include size(2em);
+	@include size(2rem);
 
-	margin-right: 0.5em;
-	padding: 0.5em;
-	border: 0.05em solid $charcoal;
-	border-radius: 0.25em;
-	box-shadow: inset 0 0em 0.75em 0.125em $black,
-							inset 0 0.35em 1em 0.125em $grey-dark;
+	margin-right: 0.5rem;
+	padding: 0.5rem;
+	border: 0.05rem solid $charcoal;
+	border-radius: 0.25rem;
+	box-shadow: inset 0 0rem 0.75rem 0.125rem $black,
+							inset 0 0.35rem 1rem 0.125rem $grey-dark;
 	color: $white;
 	cursor: pointer;
 }
 
 .icon__code--left {
-	@include arrow(absolute, "left", 0.25em, $grey-dark, solid);
+	@include arrow(absolute, "left", 0.25rem, $grey-dark, solid);
 
-	right: 0.85em;
+	right: 0.85rem;
 }
 
 .icon__code--right {
-	@include arrow(absolute, "right", 0.25em, $grey-dark, solid);
+	@include arrow(absolute, "right", 0.25rem, $grey-dark, solid);
 
-	left: 0.85em;
+	left: 0.85rem;
 }
 
 .icon__ellipsis {
@@ -65,6 +65,10 @@
 	color: $blue-linkedin;
 }
 
+.icon__map-marker {
+	color: $red;
+}
+
 .icon__pinterest {
 	color: $red-pinterest;
 }
@@ -79,7 +83,7 @@
 	position: relative;
 
 	@media screen and (min-width: 640px) {
-		font-size: 1.15em;
+		font-size: 1.15rem;
 	}
 }
 
@@ -89,31 +93,31 @@
 
 .icon__info {
 	color: $teal-dark;
-	font-size: 2em;
-	text-shadow: 0.05em 0.05em $teal-lowOpacity;
+	font-size: 2rem;
+	text-shadow: 0.05rem 0.05rem $teal-lowOpacity;
 }
 
 .icon__info--alert {
-	@include padding(null, 0.25em, 0.25em, null);
+	@include padding(null, 0.25rem, 0.25rem, null);
 	@include size(25%, 100%);
 
 	float: left;
 	text-align: center;
 
 	@media screen and (min-width: 420px) {
-		@include padding(0.25em, 0.25em, null, null);
+		@include padding(0.25rem, 0.25rem, null, null);
 		@include size(10%, 100%);
 	}
 }
 
 .icon__media--circle--small {
-	@include circle(1em, 1em, 0.5em);
+	@include circle(1rem, 1rem, 0.5rem);
 
 	background: $teal;
 }
 
 .icon__media--circle--medium {
-	@include circle(1.5em, 1.5em, 0.75em);
+	@include circle(1.5rem, 1.5rem, 0.75rem);
 
 	background: $teal;
 }
@@ -125,11 +129,11 @@
 
 .icon_search:hover > .fa-search {
 	position: relative;
-	top: -0.125em;
+	top: -0.125rem;
 }
 
 .icon__search--large {
-	font-size: 1.25em;
+	font-size: 1.25rem;
 }
 
 /*icon containers*/
@@ -137,20 +141,20 @@
 .icon__wrapper {
 	@include prefix(transition, all 0.15s ease-in-out);
 
-	min-height: 2em;
-	padding: 0 0.5em;
+	min-height: 2rem;
+	padding: 0 0.5rem;
 	background: $transparent;
 	border: 0;
-	border-right: 0.05em solid $grey-dark;
+	border-right: 0.05rem solid $grey-dark;
 	outline: none;
 
 		&:hover {
 			background: $teal;
 			border-bottom: 0;
-			border-radius: 0.25em;
-			box-shadow: inset 0 -0.05em 0.5em 0.05em $teal-dark;
+			border-radius: 0.25rem;
+			box-shadow: inset 0 -0.05rem 0.5rem 0.05rem $teal-dark;
 			cursor: pointer;
-			padding: 0.35em;
+			padding: 0.35rem;
 		}
 }
 
@@ -162,7 +166,7 @@
 	border: 0;
 
 	&:hover {
-		border-radius: 0 0.25em 0.25em 0;
+		border-radius: 0 0.25rem 0.25rem 0;
 	}
 }
 
@@ -177,9 +181,9 @@
 .icon__wrapper--home {
 	@extend .icon__wrapper;
 
-	padding: 0.25em 0;
+	padding: 0.25rem 0;
 	border: 0;
-	border-bottom: 0.25em solid $teal;
+	border-bottom: 0.25rem solid $teal;
 }
 
 .icon__wrapper > *:hover {
@@ -194,39 +198,53 @@
 /*page corner icons*/
 
 .icon__pageCorner--top-left {
-	@include page-corner(relative, "top left", 0.25em, groove, $teal, 2em);	
+	@include page-corner(relative, "top left", 0.25rem, groove, $teal, 2rem);	
 }
 
 .icon__pageCorner--bottom-right {
-	@include page-corner(relative, "bottom right", 0.25em, groove, $teal, 2em);	
+	@include page-corner(relative, "bottom right", 0.25rem, groove, $teal, 2rem);	
 }
 
 
-/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
+/* aligns an icon on the right side of a menu itrem, ideal for positioning icons that are placed within the same
 container as a text to create padding between the text and the icon*/
-.icon__menu-item--right {
+.icon__menu-itrem--right {
 	position: absolute;
-	right: 0.75em;
+	right: 0.75rem;
 }
 
-.icon__menu-item--top {
+.icon__menu-itrem--top {
 	position: absolute;
-	top: 0.75em;
+	top: 0.75rem;
 }
 
 
 /*creates a margin on the opposite side of the specified position
 in order to align the icon on either the right or left margin*/
 .icon--left {
-	margin-right: 0.5em;
+	margin-right: 0.5rem;
 }
 
 .icon--right {
-	margin-left: 0.5em;
-  margin-top: 0.125em;
+	margin-left: 0.5rem;
+  margin-top: 0.125rem;
 }
 
-/*Positioning for absolutely positioned items*/
+/*Icon sizes*/
+
+.icon--small {
+	font-size: 0.9rem;
+}
+
+.icon--medium {
+	font-size: 1.25rem;
+}
+
+.icon--large {
+	font-size: 1.75rem;
+}
+
+/*Positioning for absolutely positioned itrems*/
 
 .icon--absolute {
 	position: absolute;
@@ -258,38 +276,38 @@ for color (--state) and including the .triangle mixin with desired color.*/
 
 /*white triangles*/
  .triangle--up--white {
-	@include triangle-eq(absolute, "up", 0.5em, $white);	
+	@include triangle-eq(absolute, "up", 0.5rem, $white);	
 }
 
  .triangle--right-white {
-	@include triangle-eq(absolute, "right", 0.5em, $white);
+	@include triangle-eq(absolute, "right", 0.5rem, $white);
 }
 
  .triangle--down-white {
-	@include triangle-eq(absolute, "down", 0.5em, $white);
+	@include triangle-eq(absolute, "down", 0.5rem, $white);
 
 	cursor: pointer;
 }
 
  .triangle--left-white {
-	@include triangle-eq(absolute, "left", 0.5em, $white);
+	@include triangle-eq(absolute, "left", 0.5rem, $white);
 }
 
 /*black triangles*/
  .triangle--up-black {
-	@include triangle-eq(absolute, "up", 0.5em, $black);
+	@include triangle-eq(absolute, "up", 0.5rem, $black);
 }
 
  .triangle--right-black {
-	@include triangle-eq(absolute, "right", 0.5em, $black);
+	@include triangle-eq(absolute, "right", 0.5rem, $black);
 }
 
  .triangle--down-black {
-	@include triangle-eq(absolute, "down", 0.5em, $black);
+	@include triangle-eq(absolute, "down", 0.5rem, $black);
 }
 
  .triangle--left-black {
-	@include triangle-eq(absolute, "left", 0.5em, $black);
+	@include triangle-eq(absolute, "left", 0.5rem, $black);
 }
 
 .triangle--right-black.left:before {
@@ -300,32 +318,35 @@ for color (--state) and including the .triangle mixin with desired color.*/
 /*white triangle sizes*/
 
 .triangle--down-white--small {
-	@include triangle-eq(absolute, "down", 0.25em, $white);
+	@include triangle-eq(absolute, "down", 0.25rem, $white);
 }
 
 
 /*black triangle sizes*/
 
 .triangle--down-black--small {
-	@include triangle-eq(absolute, "down", 0.25em, $black);
+	@include triangle-eq(absolute, "down", 0.25rem, $black);
 }
 
 .triangle--left-black--small {
-	@include triangle-eq(absolute, "left", 0.25em, $black);
+	@include triangle-eq(absolute, "left", 0.25rem, $black);
 }
 
 /*white arrows*/
 
 .arrow--down-white {
-	@include arrow(relative, "down", 0.25em, $white, solid);
+	@include arrow(relative, "down", 0.25rem, $white, solid);
 }
 
+.arrow--right-white {
+	@include arrow(relative, "right", 0.25rem, $white, solid);
+}
 
 /*Special types of triangles*/
 
 .triangle__page-corner--left {
 	@include prefix(transform, rotate(-45deg));
-	@include triangle-eq(absolute, "down", 0.75em, $transparent-50-l);
+	@include triangle-eq(absolute, "down", 0.75rem, $transparent-50-l);
 
 	left: -1rem;
 	top: 1.9rem;

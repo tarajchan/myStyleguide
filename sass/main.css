@@ -1,3 +1,736 @@
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*background mixins*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Mixins for navigation bar flex states*/
+/*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
+/*Mixins for media image sizing*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+/*Sremantically important icons*/
+.icon, .icon__ellipsis, .icon__envelope, .icon__home {
+  color: #FFF;
+  font-size: 1rem; }
+
+.icon.black, .black.icon__ellipsis, .black.icon__envelope, .black.icon__home {
+  color: #000; }
+
+#icon__mq {
+  display: block;
+  color: #FFF; }
+  @media screen and (min-width: 1024px) and (max-width: 1350px) {
+    #icon__mq {
+      display: none; } }
+
+.icon__button {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  border: 0.05rem solid #3C3939;
+  border-radius: 0.25rem;
+  box-shadow: inset 0 0rem 0.75rem 0.125rem #000, inset 0 0.35rem 1rem 0.125rem #4E4E4E;
+  color: #FFF;
+  cursor: pointer; }
+
+.icon__code--left {
+  display: block;
+  padding: 0.25rem;
+  position: absolute;
+  border: solid #4E4E4E;
+  border-right: 0.25rem;
+  border-bottom: 0.25rem;
+  -webkit-transform: rotate(315deg);
+  transform: rotate(315deg);
+  -moz-transform: rotate(315deg);
+  transform: rotate(315deg);
+  -ms-transform: rotate(315deg);
+  transform: rotate(315deg);
+  -o-transform: rotate(315deg);
+  transform: rotate(315deg);
+  right: 0.85rem; }
+
+.icon__code--right {
+  display: block;
+  padding: 0.25rem;
+  position: absolute;
+  border: solid #4E4E4E;
+  border-right: 0.25rem;
+  border-bottom: 0.25rem;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+  left: 0.85rem; }
+
+.icon__facebook {
+  color: #3B5998; }
+
+.icon__linkedin {
+  color: #0077B5; }
+
+.icon__map-marker {
+  color: #F00; }
+
+.icon__pinterest {
+  color: #DC143C; }
+
+.icon__twitter {
+  color: #0084B4; }
+
+.icon__home {
+  position: relative; }
+  @media screen and (min-width: 640px) {
+    .icon__home {
+      font-size: 1.15rem; } }
+
+.icon__home:visited {
+  color: #FFF; }
+
+.icon__info {
+  color: #23585A;
+  font-size: 2rem;
+  text-shadow: 0.05rem 0.05rem rgba(60, 179, 185, 0.15); }
+
+.icon__info--alert {
+  padding-right: 0.25rem;
+  padding-bottom: 0.25rem;
+  width: 25%;
+  height: 100%;
+  float: left;
+  text-align: center; }
+  @media screen and (min-width: 420px) {
+    .icon__info--alert {
+      padding-top: 0.25rem;
+      padding-right: 0.25rem;
+      width: 10%;
+      height: 100%; } }
+
+.icon__media--circle--small {
+  height: 1rem;
+  width: 1rem;
+  -ms-border-radius: 0.5rem;
+  moz-border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  background: #3CB3B9; }
+
+.icon__media--circle--medium {
+  height: 1.5rem;
+  width: 1.5rem;
+  -ms-border-radius: 0.75rem;
+  moz-border-radius: 0.75rem;
+  -webkit-border-radius: 0.75rem;
+  border-radius: 0.75rem;
+  background: #3CB3B9; }
+
+.icon__search {
+  margin-top: 0;
+  outline: none; }
+
+.icon_search:hover > .fa-search {
+  position: relative;
+  top: -0.125rem; }
+
+.icon__search--large {
+  font-size: 1.25rem; }
+
+/*icon containers*/
+.icon__wrapper, .icon__wrapper--home {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -ms-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  min-height: 2rem;
+  padding: 0 0.5rem;
+  background: transparent;
+  border: 0;
+  border-right: 0.05rem solid #4E4E4E;
+  outline: none; }
+  .icon__wrapper:hover, .icon__wrapper--home:hover {
+    background: #3CB3B9;
+    border-bottom: 0;
+    border-radius: 0.25rem;
+    box-shadow: inset 0 -0.05rem 0.5rem 0.05rem #23585A;
+    cursor: pointer;
+    padding: 0.35rem; }
+
+.icon__wrapper.first, .first.icon__wrapper--home {
+  margin-left: 0; }
+
+.icon__wrapper.last, .last.icon__wrapper--home {
+  border: 0; }
+  .icon__wrapper.last:hover, .last.icon__wrapper--home:hover {
+    border-radius: 0 0.25rem 0.25rem 0; }
+
+.icon__wrapper--clock {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0.5rem;
+  border-right: 0.05rem solid #000; }
+
+.icon__wrapper--home {
+  padding: 0.25rem 0;
+  border: 0;
+  border-bottom: 0.25rem solid #3CB3B9; }
+
+.icon__wrapper > *:hover, .icon__wrapper--home > *:hover {
+  color: #FFF; }
+
+.icon__wrapper--home > *:hover {
+  color: #FFF; }
+
+/*page corner icons*/
+.icon__pageCorner--top-left {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-left: 0.25rem groove #3CB3B9;
+  border-top: 0.25rem groove #3CB3B9;
+  border-bottom: 0.25rem groove #3CB3B9;
+  border-right: 0.25rem groove #3CB3B9; }
+
+.icon__pageCorner--bottom-right {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-left: 0.25rem groove #3CB3B9;
+  border-top: 0.25rem groove #3CB3B9;
+  border-bottom: 0.25rem groove #3CB3B9;
+  border-right: 0.25rem groove #3CB3B9; }
+
+/* aligns an icon on the right side of a menu itrem, ideal for positioning icons that are placed within the same
+container as a text to create padding between the text and the icon*/
+.icon__menu-itrem--right {
+  position: absolute;
+  right: 0.75rem; }
+
+.icon__menu-itrem--top {
+  position: absolute;
+  top: 0.75rem; }
+
+/*creates a margin on the opposite side of the specified position
+in order to align the icon on either the right or left margin*/
+.icon--left {
+  margin-right: 0.5rem; }
+
+.icon--right {
+  margin-left: 0.5rem;
+  margin-top: 0.125rem; }
+
+/*Icon sizes*/
+.icon--small {
+  font-size: 0.9rem; }
+
+.icon--medium {
+  font-size: 1.25rem; }
+
+.icon--large {
+  font-size: 1.75rem; }
+
+/*Positioning for absolutely positioned itrems*/
+.icon--absolute {
+  position: absolute; }
+
+.bottom {
+  bottom: 0; }
+
+.left {
+  left: 0; }
+
+.right {
+  right: 0; }
+
+.top {
+  top: 0; }
+
+/*Creates a triangle with equal widths for all borders. Commonly used 
+with dropdown menus to signify additional content. Color class names for
+black and white triangles have been created for styling purposes,but new 
+class names with different colors can be created by adding a state value 
+for color (--state) and including the .triangle mixin with desired color.*/
+/*white triangles*/
+.triangle--up--white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid #FFF; }
+
+.triangle--right-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5rem solid transparent;
+  border-left: 0.5rem solid #FFF;
+  border-bottom: 0.5rem solid transparent; }
+
+.triangle--down-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 0.5rem solid #FFF;
+  cursor: pointer; }
+
+.triangle--left-white {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5rem solid transparent;
+  border-right: 0.5rem solid #FFF;
+  border-bottom: 0.5rem solid transparent; }
+
+/*black triangles*/
+.triangle--up-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid #000; }
+
+.triangle--right-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5rem solid transparent;
+  border-left: 0.5rem solid #000;
+  border-bottom: 0.5rem solid transparent; }
+
+.triangle--down-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 0.5rem solid #000; }
+
+.triangle--left-black {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.5rem solid transparent;
+  border-right: 0.5rem solid #000;
+  border-bottom: 0.5rem solid transparent; }
+
+.triangle--right-black.left:before {
+  content: ""; }
+
+/*white triangle sizes*/
+.triangle--down-white--small {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.25rem solid transparent;
+  border-right: 0.25rem solid transparent;
+  border-top: 0.25rem solid #FFF; }
+
+/*black triangle sizes*/
+.triangle--down-black--small {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.25rem solid transparent;
+  border-right: 0.25rem solid transparent;
+  border-top: 0.25rem solid #000; }
+
+.triangle--left-black--small {
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 0.25rem solid transparent;
+  border-right: 0.25rem solid #000;
+  border-bottom: 0.25rem solid transparent; }
+
+/*white arrows*/
+.arrow--down-white {
+  display: block;
+  padding: 0.25rem;
+  position: relative;
+  border: solid #FFF;
+  border-right: 0.25rem;
+  border-bottom: 0.25rem;
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg); }
+
+.arrow--right-white {
+  display: block;
+  padding: 0.25rem;
+  position: relative;
+  border: solid #FFF;
+  border-right: 0.25rem;
+  border-bottom: 0.25rem;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg); }
+
+/*Special types of triangles*/
+.triangle__page-corner--left {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-left: 0.75rem solid transparent;
+  border-right: 0.75rem solid transparent;
+  border-top: 0.75rem solid rgba(0, 0, 0, 0.5);
+  left: -1rem;
+  top: 1.9rem; }
+
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Vendor prefix mixin*/
+/*background mixins*/
+/*@keyframes mixins (animation mixins)*/
+@keyframes slide-vertical {
+  from {
+    margin-bottom: 20%;
+    height: 50%; }
+  to {
+    margin-bottom: 100%;
+    height: 200%; } }
+@keyframes ease {
+  from {
+    max-height: 0%; }
+  to {
+    max-height: 100%; } }
+/*Icon mixins*/
+/*Only input a string value for the $direction argument, leave the position
+argument unquoted in order for the CSS to render properly*/
+/*Box model dimensions*/
+/*Mixins for navigation bar flex states*/
+/*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
+/*Mixins for media image sizing*/
+/*Transition Mixins*/
+/*
+@mixin transition($animations: ()) {
+	$transition: map-merge((
+		animation-iteration-count: 1,
+		animation-duration: 0.3s,
+		animation-timing-function: ease,
+		animation-fill-mode: both), $animations);
+
+	animation-iteration-count: map-get($transition, animation-iteration-count);
+	animation-duration: map-get($transition, animation-duration);
+	animation-timing-function: map-get($transition, animation-timing-function);
+	animation-fill-mode: map-get($transition, animation-fill-mode);
+
+}
+*/
+/*Typography Mixins*/
+/*Box shadow*/
+/*Specify inset value as false to turn off inset property value*/
+/*Flexbox helpers*/
+/*MARGIN & PADDING HELPERS*/
+/*create a margin or padding offset by plugging in a value and string that represents
+the direction of where you want the margin spacing to be applied*/
+/*Positioning mixins*/
+/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Media Query Mixins*/
+/*GLOBAL HELPERS*/
+/*Variables for font-size and line-height*/
+/*used with display property to hide content*/
+/*Media query breakpoint widths*/
+/*Transparent colors*/
+/*transparency most visible on dark surfaces*/
+/*transparency most visible on light surfaces*/
+/*Basic colors*/
+/*Tertiary color scheme for main color theme*/
+/*Button preset colors*/
+/*include box-shadow mixin to create preset box-shadow colored themes
+$teal-box-shadow: //code here
+*/
+.text__border {
+  border: 0.05em outset #FFF;
+  border-radius: 0 0.5em;
+  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
+
+.text__wrapper {
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: row;
+  position: absolute; }
+
+.text__group--alert-info {
+  width: 100%;
+  height: 100%;
+  float: right; }
+  @media screen and (min-width: 420px) {
+    .text__group--alert-info {
+      width: 90%;
+      height: 100%; } }
+
+.text__heading, .text__heading--main, .text__heading--nav {
+  letter-spacing: 0.1em;
+  padding-top: 0;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-left: 0.55em;
+  color: #FFF;
+  line-height: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  margin-left: -0.1em;
+  font-family: "Quicksand Regular"; }
+
+.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
+  color: #000; }
+
+.text__heading--alert {
+  margin-bottom: 0.5em;
+  color: #23585A;
+  font-family: "Quicksand Regular";
+  font-size: 1.25em;
+  font-weight: 600; }
+
+.text__heading-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-items: center; }
+
+.text__heading--outline-cap {
+  font-family: "Pissjar Sans";
+  /*font-family: "Lulo Clean Outline Bold";*/
+  font-size: 1em;
+  color: #FFF;
+  text-align: center; }
+  @media screen and (min-width: 400px) and (max-width: 768px) {
+    .text__heading--outline-cap {
+      font-size: 1.15em; } }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .text__heading--outline-cap {
+      font-size: 1.25em; } }
+  @media screen and (min-width: 1024px) {
+    .text__heading--outline-cap {
+      font-size: 1.5em; } }
+
+.text__heading--main {
+  position: absolute;
+  top: 2.25em;
+  padding: 0;
+  font-family: "Quicksand Regular";
+  font-size: 2.25em;
+  color: #FFF; }
+
+.text__headingLabel--main {
+  position: absolute;
+  top: 3em;
+  padding-top: 0.5em;
+  width: 4em;
+  font-family: "Quicksand Light";
+  border-top: 0.25em solid #3CB3B9;
+  color: #FFF; }
+
+.text__heading--nav {
+  font-size: 1.25em; }
+  @media screen and (min-width: 768px) {
+    .text__heading--nav {
+      font-size: 1.5em;
+      font-weight: normal; } }
+
+.text__heading--nav.left {
+  margin-left: 0.25em; }
+
+.text__heading--nav.right {
+  margin-right: 0.5em; }
+
+.text__label {
+  position: relative;
+  padding-bottom: 0.5em;
+  font-family: "Quicksand Light";
+  font-size: 0.925em; }
+
+.text__link {
+  text-decoration: none;
+  font-family: "Quicksand Light";
+  font-size: 0.925em; }
+
+.text__link:hover {
+  cursor: pointer;
+  opacity: 0.75; }
+
+.text__link:visited {
+  color: #FFF; }
+
+.text__link-wrapper {
+  padding: 0.5em; }
+
+.text--bold {
+  font-weight: 600; }
+
+.text--alert {
+  font-family: "Quicksand Regular";
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5em; }
+
+.text--caption {
+  padding: 0.5em;
+  font-family: "Quicksand Regular";
+  line-height: 1.5em;
+  opacity: 0.75;
+  font-size: 0.95em; }
+
+.text--caption.black {
+  color: #000; }
+
+.text--code {
+  padding: 0.125em 0.25em;
+  background: #1F9EA4;
+  border-radius: 0.125em;
+  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
+  color: #FFF;
+  font-weight: 600; }
+
+.text--hero, .text__heading--hero {
+  font-size: 1rem;
+  font-family: "Miriam Libre";
+  margin-left: 0.5rem;
+  opacity: 1;
+  text-shadow: 0.05rem 0.025rem 0.15rem #8BA4A3;
+  color: #FFF; }
+  @media screen and (min-width: 600px) and (max-width: 640px) {
+    .text--hero, .text__heading--hero {
+      font-size: 1.25em; } }
+  @media screen and (min-width: 640px) {
+    .text--hero, .text__heading--hero {
+      font-size: 1.5em; } }
+
+.text__heading--hero {
+  font-weight: 600;
+  letter-spacing: 0.125rem; }
+
+.text--thin {
+  font-weight: 400; }
+
+.text--italicized {
+  font-style: italic; }
+
+.text--responsive {
+  counter-increment: 1;
+  position: relative;
+  font-size: 0.95em; }
+
+@font-face {
+  font-family: "Lulo Clean Outline Bold";
+  src: url("../luloclean_outlinebold_macroman/LuloCleanOutlineBold-webfont.woff2") format("woff2"); }
+@font-face {
+  font-family: "Miriam Libre";
+  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Pissjar Sans";
+  src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Bold";
+  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Light";
+  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Medium";
+  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
+@font-face {
+  font-family: "Quicksand Regular";
+  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Bold";
+  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
+@font-face {
+  font-family: "Inconsolata Regular";
+  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
 /*transparency most visible on light surfaces*/
@@ -32,6 +765,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -111,6 +845,42 @@ the direction of where you want the margin spacing to be applied*/
   padding: 0.25em;
   width: calc((12/12) * 100%); }
 
+.container__max-height--1 {
+  max-height: calc((1/12) * 100%); }
+
+.container__max-height--2 {
+  max-height: calc((2/12) * 100%); }
+
+.container__max-height--3 {
+  max-height: calc((3/12) * 100%); }
+
+.container__max-height--4 {
+  max-height: calc((4/12) * 100%); }
+
+.container__max-height--5 {
+  max-height: calc((5/12) * 100%); }
+
+.container__max-height--6 {
+  max-height: calc((6/12) * 100%); }
+
+.container__max-height--7 {
+  max-height: calc((7/12) * 100%); }
+
+.container__max-height--8 {
+  max-height: calc((8/12) * 100%); }
+
+.container__max-height--9 {
+  max-height: calc((9/12) * 100%); }
+
+.container__max-height--10 {
+  max-height: calc((10/12) * 100%); }
+
+.container__max-height--11 {
+  max-height: calc((11/12) * 100%); }
+
+.container__max-height--12 {
+  max-height: calc((12/12) * 100%); }
+
 .container__row--flex {
   display: flex;
   flex-direction: row; }
@@ -140,6 +910,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -199,17 +970,18 @@ $teal-box-shadow: //code here
   grid-template-columns: repeat(auto-fill, minmax(20em, 1fr)); }
 
 .grid__container--12 {
-  grid-template-columns: repeat(12, auto);
+  grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(auto-fill, minmax(min-content, auto)); }
 
 .grid__container--4 {
-  grid-template-columns: repeat(4, auto); }
+  grid-template-columns: repeat(4, 1fr); }
 
 .grid__container--3 {
-  grid-template-columns: repeat(3, auto); }
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, minmax(auto, 10rem)); }
 
 .grid__container--2 {
-  grid-template-columns: repeat(2, auto); }
+  grid-template-columns: repeat(2, 1fr); }
 
 .grid__container--page-layout {
   grid-template-areas: "main main" "footer footer";
@@ -234,6 +1006,9 @@ entire page layouts that include a header, footer, aside, and main section.*/
 .grid__header--responsive-semantic {
   grid-area: header;
   position: relative; }
+
+.grid__header--responsive-semantic .hero {
+  top: 2rem; }
 
 .grid__aside--responsive-semantic {
   grid-area: aside;
@@ -663,6 +1438,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -964,29 +1740,25 @@ the direction of where you want the margin spacing to be applied*/
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-bottom: 0.25em;
-  min-height: 2em; }
+  padding-bottom: 0.25rem;
+  min-height: 2rem; }
   @media screen and (min-width: 385px) {
     .main__sectionDetails-text-wrapper {
       flex-direction: row;
       align-items: center; } }
 
 .main__sectionDetails-identifier {
-  max-width: 4em;
-  margin-bottom: 0.45em;
-  border-top: 0.25em solid #000; }
+  max-width: 4rem;
+  margin-bottom: 0.45rem;
+  border-top: 0.25rem solid #000; }
 
 .main__sectionHeading, .main__sectionHeading.transparent {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0 1em;
-  padding-bottom: 1em;
-  border-bottom: 0.01em solid #C7C7C7;
-  box-shadow: inset 0 -0.25em 0.75em #C7C7C7; }
-  @media screen and (min-width: 1024px) {
-    .main__sectionHeading, .main__sectionHeading.transparent {
-      padding: 2em 1em; } }
+  padding: 2rem 1rem;
+  border-bottom: 0.01rem solid #C7C7C7;
+  box-shadow: inset 0 -0.25rem 0.75rem #C7C7C7; }
 
 .main__sectionHeading.transparent {
   box-shadow: none; }
@@ -1039,23 +1811,31 @@ the direction of where you want the margin spacing to be applied*/
   height: 2em; }
 
 .main__sectionHeading-icon--x-small {
-  border-bottom: 0.15em groove #F00;
-  border-left: 0.15em groove #F00;
-  margin-top: 1.05em;
-  width: 0.75em;
-  height: 0.75em; }
+  border-bottom: 0.15rem groove #F00;
+  border-left: 0.15rem groove #F00;
+  margin-top: 1.05rem;
+  width: 0.75rem;
+  height: 0.75rem; }
+
+.main__sectionHeading-keyword-text {
+  position: absolute;
+  top: 0.5rem;
+  margin-left: 1.125rem;
+  color: #DC143C;
+  font-family: "Miriam Libre";
+  font-size: 1rem; }
 
 .main__sectionHeading-text {
   position: relative;
   flex: 4;
   max-width: 100%;
-  margin-left: 1em;
+  margin-left: 1rem;
   font-family: "Quicksand Regular";
-  font-size: 1.5em;
-  line-height: 1.75em; }
+  font-size: 1.5rem;
+  line-height: 1.75rem; }
   @media screen and (min-width: 768px) {
     .main__sectionHeading-text {
-      font-size: 2em; } }
+      font-size: 2rem; } }
   @media screen and (min-width: 1024px) {
     .main__sectionHeading-text {
       max-width: 60%; } }
@@ -1130,6 +1910,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -1230,6 +2011,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -1416,16 +2198,26 @@ $teal-box-shadow: //code here
   color: #FFF;
   font-weight: 600; }
 
-.text--hero {
-  font-size: 1.5em;
-  opacity: 0.75;
-  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
+.text--hero, .text__heading--hero {
+  font-size: 1rem;
+  font-family: "Miriam Libre";
+  margin-left: 0.5rem;
+  opacity: 1;
+  text-shadow: 0.05rem 0.025rem 0.15rem #8BA4A3;
+  color: #FFF; }
   @media screen and (min-width: 600px) and (max-width: 640px) {
-    .text--hero {
-      font-size: 2em; } }
+    .text--hero, .text__heading--hero {
+      font-size: 1.25em; } }
   @media screen and (min-width: 640px) {
-    .text--hero {
-      font-size: 2.5em; } }
+    .text--hero, .text__heading--hero {
+      font-size: 1.5em; } }
+
+.text__heading--hero {
+  font-weight: 600;
+  letter-spacing: 0.125rem; }
+
+.text--thin {
+  font-weight: 400; }
 
 .text--italicized {
   font-style: italic; }
@@ -1487,6 +2279,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -1728,6 +2521,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -1793,6 +2587,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -1979,16 +2774,26 @@ $teal-box-shadow: //code here
   color: #FFF;
   font-weight: 600; }
 
-.text--hero {
-  font-size: 1.5em;
-  opacity: 0.75;
-  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
+.text--hero, .text__heading--hero {
+  font-size: 1rem;
+  font-family: "Miriam Libre";
+  margin-left: 0.5rem;
+  opacity: 1;
+  text-shadow: 0.05rem 0.025rem 0.15rem #8BA4A3;
+  color: #FFF; }
   @media screen and (min-width: 600px) and (max-width: 640px) {
-    .text--hero {
-      font-size: 2em; } }
+    .text--hero, .text__heading--hero {
+      font-size: 1.25em; } }
   @media screen and (min-width: 640px) {
-    .text--hero {
-      font-size: 2.5em; } }
+    .text--hero, .text__heading--hero {
+      font-size: 1.5em; } }
+
+.text__heading--hero {
+  font-weight: 600;
+  letter-spacing: 0.125rem; }
+
+.text--thin {
+  font-weight: 400; }
 
 .text--italicized {
   font-style: italic; }
@@ -2057,29 +2862,17 @@ input[type="text"].form__input--no-border {
   width: 80%; }
 
 .form__input-segment {
-  position: absolute;
-  right: 18.25rem;
-  top: 3rem;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  min-width: 26rem;
-  max-height: 0;
-  min-height: 0;
-  padding: 0.295rem;
+  min-height: 2rem;
+  max-width: 60rem;
+  margin: auto;
   background: #212121; }
 
-.form__input-segment.active {
-  min-height: 2rem;
-  max-height: 3rem; }
-
 .form__input-segment input[type="text"] {
-  border-radius: 0.25rem; }
+  position: absolute;
+  left: 1rem;
+  border-radius: 0.25rem;
+  height: 100%;
+  max-width: 50rem; }
 
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -2106,6 +2899,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -2302,698 +3096,6 @@ $teal-box-shadow: //code here
   display: flex;
   flex-direction: column; }
 
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*background mixins*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-@keyframes ease {
-  from {
-    max-height: 0%; }
-  to {
-    max-height: 100%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Mixins for navigation bar flex states*/
-/*Mixins for column sizes for general use*/
-/*Mixins for media image sizing*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-/*Semantically important icons*/
-.icon, .icon__ellipsis, .icon__envelope, .icon__home {
-  color: #FFF;
-  font-size: 1em; }
-
-.icon.black, .black.icon__ellipsis, .black.icon__envelope, .black.icon__home {
-  color: #000; }
-
-#icon__mq {
-  display: block;
-  color: #FFF; }
-  @media screen and (min-width: 1024px) and (max-width: 1350px) {
-    #icon__mq {
-      display: none; } }
-
-.icon__button {
-  width: 2em;
-  height: 2em;
-  margin-right: 0.5em;
-  padding: 0.5em;
-  border: 0.05em solid #3C3939;
-  border-radius: 0.25em;
-  box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
-  color: #FFF;
-  cursor: pointer; }
-
-.icon__code--left {
-  display: block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -moz-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -ms-transform: rotate(315deg);
-  transform: rotate(315deg);
-  -o-transform: rotate(315deg);
-  transform: rotate(315deg);
-  right: 0.85em; }
-
-.icon__code--right {
-  display: block;
-  padding: 0.25em;
-  position: absolute;
-  border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -moz-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -ms-transform: rotate(135deg);
-  transform: rotate(135deg);
-  -o-transform: rotate(135deg);
-  transform: rotate(135deg);
-  left: 0.85em; }
-
-.icon__facebook {
-  color: #3B5998; }
-
-.icon__linkedin {
-  color: #0077B5; }
-
-.icon__pinterest {
-  color: #DC143C; }
-
-.icon__twitter {
-  color: #0084B4; }
-
-.icon__home {
-  position: relative; }
-  @media screen and (min-width: 640px) {
-    .icon__home {
-      font-size: 1.15em; } }
-
-.icon__home:visited {
-  color: #FFF; }
-
-.icon__info {
-  color: #23585A;
-  font-size: 2em;
-  text-shadow: 0.05em 0.05em rgba(60, 179, 185, 0.15); }
-
-.icon__info--alert {
-  padding-right: 0.25em;
-  padding-bottom: 0.25em;
-  width: 25%;
-  height: 100%;
-  float: left;
-  text-align: center; }
-  @media screen and (min-width: 420px) {
-    .icon__info--alert {
-      padding-top: 0.25em;
-      padding-right: 0.25em;
-      width: 10%;
-      height: 100%; } }
-
-.icon__media--circle--small {
-  height: 1em;
-  width: 1em;
-  -ms-border-radius: 0.5em;
-  moz-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
-  border-radius: 0.5em;
-  background: #3CB3B9; }
-
-.icon__media--circle--medium {
-  height: 1.5em;
-  width: 1.5em;
-  -ms-border-radius: 0.75em;
-  moz-border-radius: 0.75em;
-  -webkit-border-radius: 0.75em;
-  border-radius: 0.75em;
-  background: #3CB3B9; }
-
-.icon__search {
-  margin-top: 0;
-  outline: none; }
-
-.icon_search:hover > .fa-search {
-  position: relative;
-  top: -0.125em; }
-
-.icon__search--large {
-  font-size: 1.25em; }
-
-/*icon containers*/
-.icon__wrapper, .icon__wrapper--home {
-  -webkit-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  -moz-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  -ms-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  -o-transition: all 0.15s ease-in-out;
-  transition: all 0.15s ease-in-out;
-  min-height: 2em;
-  padding: 0 0.5em;
-  background: transparent;
-  border: 0;
-  border-right: 0.05em solid #4E4E4E;
-  outline: none; }
-  .icon__wrapper:hover, .icon__wrapper--home:hover {
-    background: #3CB3B9;
-    border-bottom: 0;
-    border-radius: 0.25em;
-    box-shadow: inset 0 -0.05em 0.5em 0.05em #23585A;
-    cursor: pointer;
-    padding: 0.35em; }
-
-.icon__wrapper.first, .first.icon__wrapper--home {
-  margin-left: 0; }
-
-.icon__wrapper.last, .last.icon__wrapper--home {
-  border: 0; }
-  .icon__wrapper.last:hover, .last.icon__wrapper--home:hover {
-    border-radius: 0 0.25em 0.25em 0; }
-
-.icon__wrapper--clock {
-  display: flex;
-  align-items: center;
-  padding-left: 0;
-  padding-right: 0.5rem;
-  border-right: 0.05rem solid #000; }
-
-.icon__wrapper--home {
-  padding: 0.25em 0;
-  border: 0;
-  border-bottom: 0.25em solid #3CB3B9; }
-
-.icon__wrapper > *:hover, .icon__wrapper--home > *:hover {
-  color: #FFF; }
-
-.icon__wrapper--home > *:hover {
-  color: #FFF; }
-
-/*page corner icons*/
-.icon__pageCorner--top-left {
-  position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
-
-.icon__pageCorner--bottom-right {
-  position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
-
-/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
-container as a text to create padding between the text and the icon*/
-.icon__menu-item--right {
-  position: absolute;
-  right: 0.75em; }
-
-.icon__menu-item--top {
-  position: absolute;
-  top: 0.75em; }
-
-/*creates a margin on the opposite side of the specified position
-in order to align the icon on either the right or left margin*/
-.icon--left {
-  margin-right: 0.5em; }
-
-.icon--right {
-  margin-left: 0.5em;
-  margin-top: 0.125em; }
-
-/*Positioning for absolutely positioned items*/
-.icon--absolute {
-  position: absolute; }
-
-.bottom {
-  bottom: 0; }
-
-.left {
-  left: 0; }
-
-.right {
-  right: 0; }
-
-.top {
-  top: 0; }
-
-/*Creates a triangle with equal widths for all borders. Commonly used 
-with dropdown menus to signify additional content. Color class names for
-black and white triangles have been created for styling purposes,but new 
-class names with different colors can be created by adding a state value 
-for color (--state) and including the .triangle mixin with desired color.*/
-/*white triangles*/
-.triangle--up--white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #FFF; }
-
-.triangle--right-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--down-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #FFF;
-  cursor: pointer; }
-
-.triangle--left-white {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
-
-/*black triangles*/
-.triangle--up-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #000; }
-
-.triangle--right-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--down-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #000; }
-
-.triangle--left-black {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
-
-.triangle--right-black.left:before {
-  content: ""; }
-
-/*white triangle sizes*/
-.triangle--down-white--small {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.25em solid transparent;
-  border-right: 0.25em solid transparent;
-  border-top: 0.25em solid #FFF; }
-
-/*black triangle sizes*/
-.triangle--down-black--small {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.25em solid transparent;
-  border-right: 0.25em solid transparent;
-  border-top: 0.25em solid #000; }
-
-.triangle--left-black--small {
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-top: 0.25em solid transparent;
-  border-right: 0.25em solid #000;
-  border-bottom: 0.25em solid transparent; }
-
-/*white arrows*/
-.arrow--down-white {
-  display: block;
-  padding: 0.25em;
-  position: relative;
-  border: solid #FFF;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
-  -webkit-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -moz-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -ms-transform: rotate(225deg);
-  transform: rotate(225deg);
-  -o-transform: rotate(225deg);
-  transform: rotate(225deg); }
-
-/*Special types of triangles*/
-.triangle__page-corner--left {
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  height: 0;
-  width: 0;
-  position: absolute;
-  border-left: 0.75em solid transparent;
-  border-right: 0.75em solid transparent;
-  border-top: 0.75em solid rgba(0, 0, 0, 0.5);
-  left: -1rem;
-  top: 1.9rem; }
-
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Vendor prefix mixin*/
-/*background mixins*/
-/*@keyframes mixins (animation mixins)*/
-@keyframes slide-vertical {
-  from {
-    margin-bottom: 20%;
-    height: 50%; }
-  to {
-    margin-bottom: 100%;
-    height: 200%; } }
-@keyframes ease {
-  from {
-    max-height: 0%; }
-  to {
-    max-height: 100%; } }
-/*Icon mixins*/
-/*Only input a string value for the $direction argument, leave the position
-argument unquoted in order for the CSS to render properly*/
-/*Box model dimensions*/
-/*Mixins for navigation bar flex states*/
-/*Mixins for column sizes for general use*/
-/*Mixins for media image sizing*/
-/*Transition Mixins*/
-/*
-@mixin transition($animations: ()) {
-	$transition: map-merge((
-		animation-iteration-count: 1,
-		animation-duration: 0.3s,
-		animation-timing-function: ease,
-		animation-fill-mode: both), $animations);
-
-	animation-iteration-count: map-get($transition, animation-iteration-count);
-	animation-duration: map-get($transition, animation-duration);
-	animation-timing-function: map-get($transition, animation-timing-function);
-	animation-fill-mode: map-get($transition, animation-fill-mode);
-
-}
-*/
-/*Typography Mixins*/
-/*Box shadow*/
-/*Specify inset value as false to turn off inset property value*/
-/*Flexbox helpers*/
-/*MARGIN & PADDING HELPERS*/
-/*create a margin or padding offset by plugging in a value and string that represents
-the direction of where you want the margin spacing to be applied*/
-/*Positioning mixins*/
-/*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
-/*Media Query Mixins*/
-/*GLOBAL HELPERS*/
-/*Variables for font-size and line-height*/
-/*used with display property to hide content*/
-/*Media query breakpoint widths*/
-/*Transparent colors*/
-/*transparency most visible on dark surfaces*/
-/*transparency most visible on light surfaces*/
-/*Basic colors*/
-/*Tertiary color scheme for main color theme*/
-/*Button preset colors*/
-/*include box-shadow mixin to create preset box-shadow colored themes
-$teal-box-shadow: //code here
-*/
-.text__border {
-  border: 0.05em outset #FFF;
-  border-radius: 0 0.5em;
-  box-shadow: inset 0 -0.125em 0.75em 0.0175em #4BA7AB, inset 0 -0.125em 0.25em #FFF, inset 0 -0.25em 0.5em #26CE31, inset 0 -0.25em 1em #F00; }
-
-.text__wrapper {
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 1.5em;
-  display: flex;
-  flex-direction: row;
-  position: absolute; }
-
-.text__group--alert-info {
-  width: 100%;
-  height: 100%;
-  float: right; }
-  @media screen and (min-width: 420px) {
-    .text__group--alert-info {
-      width: 90%;
-      height: 100%; } }
-
-.text__heading, .text__heading--main, .text__heading--nav {
-  letter-spacing: 0.1em;
-  padding-top: 0;
-  padding-right: 0.5em;
-  padding-bottom: 0;
-  padding-left: 0.55em;
-  color: #FFF;
-  line-height: 1.5em;
-  font-size: 1em;
-  font-weight: 600;
-  margin-left: -0.1em;
-  font-family: "Quicksand Regular"; }
-
-.text__heading.black, .black.text__heading--main, .black.text__heading--nav {
-  color: #000; }
-
-.text__heading--alert {
-  margin-bottom: 0.5em;
-  color: #23585A;
-  font-family: "Quicksand Regular";
-  font-size: 1.25em;
-  font-weight: 600; }
-
-.text__heading-group {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-items: center; }
-
-.text__heading--outline-cap {
-  font-family: "Pissjar Sans";
-  /*font-family: "Lulo Clean Outline Bold";*/
-  font-size: 1em;
-  color: #FFF;
-  text-align: center; }
-  @media screen and (min-width: 400px) and (max-width: 768px) {
-    .text__heading--outline-cap {
-      font-size: 1.15em; } }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .text__heading--outline-cap {
-      font-size: 1.25em; } }
-  @media screen and (min-width: 1024px) {
-    .text__heading--outline-cap {
-      font-size: 1.5em; } }
-
-.text__heading--main {
-  position: absolute;
-  top: 2.25em;
-  padding: 0;
-  font-family: "Quicksand Regular";
-  font-size: 2.25em;
-  color: #FFF; }
-
-.text__headingLabel--main {
-  position: absolute;
-  top: 3em;
-  padding-top: 0.5em;
-  width: 4em;
-  font-family: "Quicksand Light";
-  border-top: 0.25em solid #3CB3B9;
-  color: #FFF; }
-
-.text__heading--nav {
-  font-size: 1.25em; }
-  @media screen and (min-width: 768px) {
-    .text__heading--nav {
-      font-size: 1.5em;
-      font-weight: normal; } }
-
-.text__heading--nav.left {
-  margin-left: 0.25em; }
-
-.text__heading--nav.right {
-  margin-right: 0.5em; }
-
-.text__label {
-  position: relative;
-  padding-bottom: 0.5em;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link {
-  text-decoration: none;
-  font-family: "Quicksand Light";
-  font-size: 0.925em; }
-
-.text__link:hover {
-  cursor: pointer;
-  opacity: 0.75; }
-
-.text__link:visited {
-  color: #FFF; }
-
-.text__link-wrapper {
-  padding: 0.5em; }
-
-.text--bold {
-  font-weight: 600; }
-
-.text--alert {
-  font-family: "Quicksand Regular";
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.5em; }
-
-.text--caption {
-  padding: 0.5em;
-  font-family: "Quicksand Regular";
-  line-height: 1.5em;
-  opacity: 0.75;
-  font-size: 0.95em; }
-
-.text--caption.black {
-  color: #000; }
-
-.text--code {
-  padding: 0.125em 0.25em;
-  background: #1F9EA4;
-  border-radius: 0.125em;
-  box-shadow: inset 0 0.05em 0.5em #3CB3B9;
-  color: #FFF;
-  font-weight: 600; }
-
-.text--hero {
-  font-size: 1.5em;
-  opacity: 0.75;
-  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
-  @media screen and (min-width: 600px) and (max-width: 640px) {
-    .text--hero {
-      font-size: 2em; } }
-  @media screen and (min-width: 640px) {
-    .text--hero {
-      font-size: 2.5em; } }
-
-.text--italicized {
-  font-style: italic; }
-
-.text--responsive {
-  counter-increment: 1;
-  position: relative;
-  font-size: 0.95em; }
-
-@font-face {
-  font-family: "Lulo Clean Outline Bold";
-  src: url("../luloclean_outlinebold_macroman/LuloCleanOutlineBold-webfont.woff2") format("woff2"); }
-@font-face {
-  font-family: "Miriam Libre";
-  src: url("../Miriam_Libre/MiriamLibre-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Pissjar Sans";
-  src: url("../Pissjar Sans/Pissjar_Sans.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Bold";
-  src: url("../Quicksand/Quicksand-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Light";
-  src: url("../Quicksand/Quicksand-Light.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Medium";
-  src: url("../Quicksand/Quicksand-Medium.ttf") format("truetype"); }
-@font-face {
-  font-family: "Quicksand Regular";
-  src: url("../Quicksand/Quicksand-Regular.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Bold";
-  src: url("../Inconsolata/Inconsolata-Bold.ttf") format("truetype"); }
-@font-face {
-  font-family: "Inconsolata Regular";
-  src: url("../Inconsolata/Inconsolata-Regular.ttf") format("truetype"); }
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
 /*transparency most visible on light surfaces*/
@@ -3028,6 +3130,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -3437,6 +3540,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -3520,6 +3624,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -3589,6 +3694,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -3625,10 +3731,10 @@ the direction of where you want the margin spacing to be applied*/
 /*include box-shadow mixin to create preset box-shadow colored themes
 $teal-box-shadow: //code here
 */
-/*Semantically important icons*/
+/*Sremantically important icons*/
 .icon, .icon__ellipsis, .icon__envelope, .icon__home {
   color: #FFF;
-  font-size: 1em; }
+  font-size: 1rem; }
 
 .icon.black, .black.icon__ellipsis, .black.icon__envelope, .black.icon__home {
   color: #000; }
@@ -3641,23 +3747,23 @@ $teal-box-shadow: //code here
       display: none; } }
 
 .icon__button {
-  width: 2em;
-  height: 2em;
-  margin-right: 0.5em;
-  padding: 0.5em;
-  border: 0.05em solid #3C3939;
-  border-radius: 0.25em;
-  box-shadow: inset 0 0em 0.75em 0.125em #000, inset 0 0.35em 1em 0.125em #4E4E4E;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+  border: 0.05rem solid #3C3939;
+  border-radius: 0.25rem;
+  box-shadow: inset 0 0rem 0.75rem 0.125rem #000, inset 0 0.35rem 1rem 0.125rem #4E4E4E;
   color: #FFF;
   cursor: pointer; }
 
 .icon__code--left {
   display: block;
-  padding: 0.25em;
+  padding: 0.25rem;
   position: absolute;
   border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
+  border-right: 0.25rem;
+  border-bottom: 0.25rem;
   -webkit-transform: rotate(315deg);
   transform: rotate(315deg);
   -moz-transform: rotate(315deg);
@@ -3666,15 +3772,15 @@ $teal-box-shadow: //code here
   transform: rotate(315deg);
   -o-transform: rotate(315deg);
   transform: rotate(315deg);
-  right: 0.85em; }
+  right: 0.85rem; }
 
 .icon__code--right {
   display: block;
-  padding: 0.25em;
+  padding: 0.25rem;
   position: absolute;
   border: solid #4E4E4E;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
+  border-right: 0.25rem;
+  border-bottom: 0.25rem;
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg);
   -moz-transform: rotate(135deg);
@@ -3683,13 +3789,16 @@ $teal-box-shadow: //code here
   transform: rotate(135deg);
   -o-transform: rotate(135deg);
   transform: rotate(135deg);
-  left: 0.85em; }
+  left: 0.85rem; }
 
 .icon__facebook {
   color: #3B5998; }
 
 .icon__linkedin {
   color: #0077B5; }
+
+.icon__map-marker {
+  color: #F00; }
 
 .icon__pinterest {
   color: #DC143C; }
@@ -3701,46 +3810,46 @@ $teal-box-shadow: //code here
   position: relative; }
   @media screen and (min-width: 640px) {
     .icon__home {
-      font-size: 1.15em; } }
+      font-size: 1.15rem; } }
 
 .icon__home:visited {
   color: #FFF; }
 
 .icon__info {
   color: #23585A;
-  font-size: 2em;
-  text-shadow: 0.05em 0.05em rgba(60, 179, 185, 0.15); }
+  font-size: 2rem;
+  text-shadow: 0.05rem 0.05rem rgba(60, 179, 185, 0.15); }
 
 .icon__info--alert {
-  padding-right: 0.25em;
-  padding-bottom: 0.25em;
+  padding-right: 0.25rem;
+  padding-bottom: 0.25rem;
   width: 25%;
   height: 100%;
   float: left;
   text-align: center; }
   @media screen and (min-width: 420px) {
     .icon__info--alert {
-      padding-top: 0.25em;
-      padding-right: 0.25em;
+      padding-top: 0.25rem;
+      padding-right: 0.25rem;
       width: 10%;
       height: 100%; } }
 
 .icon__media--circle--small {
-  height: 1em;
-  width: 1em;
-  -ms-border-radius: 0.5em;
-  moz-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
-  border-radius: 0.5em;
+  height: 1rem;
+  width: 1rem;
+  -ms-border-radius: 0.5rem;
+  moz-border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
   background: #3CB3B9; }
 
 .icon__media--circle--medium {
-  height: 1.5em;
-  width: 1.5em;
-  -ms-border-radius: 0.75em;
-  moz-border-radius: 0.75em;
-  -webkit-border-radius: 0.75em;
-  border-radius: 0.75em;
+  height: 1.5rem;
+  width: 1.5rem;
+  -ms-border-radius: 0.75rem;
+  moz-border-radius: 0.75rem;
+  -webkit-border-radius: 0.75rem;
+  border-radius: 0.75rem;
   background: #3CB3B9; }
 
 .icon__search {
@@ -3749,10 +3858,10 @@ $teal-box-shadow: //code here
 
 .icon_search:hover > .fa-search {
   position: relative;
-  top: -0.125em; }
+  top: -0.125rem; }
 
 .icon__search--large {
-  font-size: 1.25em; }
+  font-size: 1.25rem; }
 
 /*icon containers*/
 .icon__wrapper, .icon__wrapper--home {
@@ -3764,19 +3873,19 @@ $teal-box-shadow: //code here
   transition: all 0.15s ease-in-out;
   -o-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
-  min-height: 2em;
-  padding: 0 0.5em;
+  min-height: 2rem;
+  padding: 0 0.5rem;
   background: transparent;
   border: 0;
-  border-right: 0.05em solid #4E4E4E;
+  border-right: 0.05rem solid #4E4E4E;
   outline: none; }
   .icon__wrapper:hover, .icon__wrapper--home:hover {
     background: #3CB3B9;
     border-bottom: 0;
-    border-radius: 0.25em;
-    box-shadow: inset 0 -0.05em 0.5em 0.05em #23585A;
+    border-radius: 0.25rem;
+    box-shadow: inset 0 -0.05rem 0.5rem 0.05rem #23585A;
     cursor: pointer;
-    padding: 0.35em; }
+    padding: 0.35rem; }
 
 .icon__wrapper.first, .first.icon__wrapper--home {
   margin-left: 0; }
@@ -3784,7 +3893,7 @@ $teal-box-shadow: //code here
 .icon__wrapper.last, .last.icon__wrapper--home {
   border: 0; }
   .icon__wrapper.last:hover, .last.icon__wrapper--home:hover {
-    border-radius: 0 0.25em 0.25em 0; }
+    border-radius: 0 0.25rem 0.25rem 0; }
 
 .icon__wrapper--clock {
   display: flex;
@@ -3794,9 +3903,9 @@ $teal-box-shadow: //code here
   border-right: 0.05rem solid #000; }
 
 .icon__wrapper--home {
-  padding: 0.25em 0;
+  padding: 0.25rem 0;
   border: 0;
-  border-bottom: 0.25em solid #3CB3B9; }
+  border-bottom: 0.25rem solid #3CB3B9; }
 
 .icon__wrapper > *:hover, .icon__wrapper--home > *:hover {
   color: #FFF; }
@@ -3807,42 +3916,52 @@ $teal-box-shadow: //code here
 /*page corner icons*/
 .icon__pageCorner--top-left {
   position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
+  width: 2rem;
+  height: 2rem;
+  border-left: 0.25rem groove #3CB3B9;
+  border-top: 0.25rem groove #3CB3B9;
+  border-bottom: 0.25rem groove #3CB3B9;
+  border-right: 0.25rem groove #3CB3B9; }
 
 .icon__pageCorner--bottom-right {
   position: relative;
-  width: 2em;
-  height: 2em;
-  border-left: 0.25em groove #3CB3B9;
-  border-top: 0.25em groove #3CB3B9;
-  border-bottom: 0.25em groove #3CB3B9;
-  border-right: 0.25em groove #3CB3B9; }
+  width: 2rem;
+  height: 2rem;
+  border-left: 0.25rem groove #3CB3B9;
+  border-top: 0.25rem groove #3CB3B9;
+  border-bottom: 0.25rem groove #3CB3B9;
+  border-right: 0.25rem groove #3CB3B9; }
 
-/* aligns an icon on the right side of a menu item, ideal for positioning icons that are placed within the same
+/* aligns an icon on the right side of a menu itrem, ideal for positioning icons that are placed within the same
 container as a text to create padding between the text and the icon*/
-.icon__menu-item--right {
+.icon__menu-itrem--right {
   position: absolute;
-  right: 0.75em; }
+  right: 0.75rem; }
 
-.icon__menu-item--top {
+.icon__menu-itrem--top {
   position: absolute;
-  top: 0.75em; }
+  top: 0.75rem; }
 
 /*creates a margin on the opposite side of the specified position
 in order to align the icon on either the right or left margin*/
 .icon--left {
-  margin-right: 0.5em; }
+  margin-right: 0.5rem; }
 
 .icon--right {
-  margin-left: 0.5em;
-  margin-top: 0.125em; }
+  margin-left: 0.5rem;
+  margin-top: 0.125rem; }
 
-/*Positioning for absolutely positioned items*/
+/*Icon sizes*/
+.icon--small {
+  font-size: 0.9rem; }
+
+.icon--medium {
+  font-size: 1.25rem; }
+
+.icon--large {
+  font-size: 1.75rem; }
+
+/*Positioning for absolutely positioned itrems*/
 .icon--absolute {
   position: absolute; }
 
@@ -3868,67 +3987,67 @@ for color (--state) and including the .triangle mixin with desired color.*/
   height: 0;
   width: 0;
   position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #FFF; }
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid #FFF; }
 
 .triangle--right-white {
   height: 0;
   width: 0;
   position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
+  border-top: 0.5rem solid transparent;
+  border-left: 0.5rem solid #FFF;
+  border-bottom: 0.5rem solid transparent; }
 
 .triangle--down-white {
   height: 0;
   width: 0;
   position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #FFF;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 0.5rem solid #FFF;
   cursor: pointer; }
 
 .triangle--left-white {
   height: 0;
   width: 0;
   position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #FFF;
-  border-bottom: 0.5em solid transparent; }
+  border-top: 0.5rem solid transparent;
+  border-right: 0.5rem solid #FFF;
+  border-bottom: 0.5rem solid transparent; }
 
 /*black triangles*/
 .triangle--up-black {
   height: 0;
   width: 0;
   position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-bottom: 0.5em solid #000; }
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid #000; }
 
 .triangle--right-black {
   height: 0;
   width: 0;
   position: absolute;
-  border-top: 0.5em solid transparent;
-  border-left: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
+  border-top: 0.5rem solid transparent;
+  border-left: 0.5rem solid #000;
+  border-bottom: 0.5rem solid transparent; }
 
 .triangle--down-black {
   height: 0;
   width: 0;
   position: absolute;
-  border-left: 0.5em solid transparent;
-  border-right: 0.5em solid transparent;
-  border-top: 0.5em solid #000; }
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 0.5rem solid #000; }
 
 .triangle--left-black {
   height: 0;
   width: 0;
   position: absolute;
-  border-top: 0.5em solid transparent;
-  border-right: 0.5em solid #000;
-  border-bottom: 0.5em solid transparent; }
+  border-top: 0.5rem solid transparent;
+  border-right: 0.5rem solid #000;
+  border-bottom: 0.5rem solid transparent; }
 
 .triangle--right-black.left:before {
   content: ""; }
@@ -3938,35 +4057,35 @@ for color (--state) and including the .triangle mixin with desired color.*/
   height: 0;
   width: 0;
   position: absolute;
-  border-left: 0.25em solid transparent;
-  border-right: 0.25em solid transparent;
-  border-top: 0.25em solid #FFF; }
+  border-left: 0.25rem solid transparent;
+  border-right: 0.25rem solid transparent;
+  border-top: 0.25rem solid #FFF; }
 
 /*black triangle sizes*/
 .triangle--down-black--small {
   height: 0;
   width: 0;
   position: absolute;
-  border-left: 0.25em solid transparent;
-  border-right: 0.25em solid transparent;
-  border-top: 0.25em solid #000; }
+  border-left: 0.25rem solid transparent;
+  border-right: 0.25rem solid transparent;
+  border-top: 0.25rem solid #000; }
 
 .triangle--left-black--small {
   height: 0;
   width: 0;
   position: absolute;
-  border-top: 0.25em solid transparent;
-  border-right: 0.25em solid #000;
-  border-bottom: 0.25em solid transparent; }
+  border-top: 0.25rem solid transparent;
+  border-right: 0.25rem solid #000;
+  border-bottom: 0.25rem solid transparent; }
 
 /*white arrows*/
 .arrow--down-white {
   display: block;
-  padding: 0.25em;
+  padding: 0.25rem;
   position: relative;
   border: solid #FFF;
-  border-right: 0.25em;
-  border-bottom: 0.25em;
+  border-right: 0.25rem;
+  border-bottom: 0.25rem;
   -webkit-transform: rotate(225deg);
   transform: rotate(225deg);
   -moz-transform: rotate(225deg);
@@ -3975,6 +4094,22 @@ for color (--state) and including the .triangle mixin with desired color.*/
   transform: rotate(225deg);
   -o-transform: rotate(225deg);
   transform: rotate(225deg); }
+
+.arrow--right-white {
+  display: block;
+  padding: 0.25rem;
+  position: relative;
+  border: solid #FFF;
+  border-right: 0.25rem;
+  border-bottom: 0.25rem;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg); }
 
 /*Special types of triangles*/
 .triangle__page-corner--left {
@@ -3989,9 +4124,9 @@ for color (--state) and including the .triangle mixin with desired color.*/
   height: 0;
   width: 0;
   position: absolute;
-  border-left: 0.75em solid transparent;
-  border-right: 0.75em solid transparent;
-  border-top: 0.75em solid rgba(0, 0, 0, 0.5);
+  border-left: 0.75rem solid transparent;
+  border-right: 0.75rem solid transparent;
+  border-top: 0.75rem solid rgba(0, 0, 0, 0.5);
   left: -1rem;
   top: 1.9rem; }
 
@@ -4020,6 +4155,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -4051,7 +4187,7 @@ the direction of where you want the margin spacing to be applied*/
 /*Variables for font-size and line-height*/
 /*used with display property to hide content*/
 /*Media query breakpoint widths*/
-.navigationBar {
+.navigationBar, .navigationBar--column {
   /*Positioning*/
   position: fixed;
   left: 0;
@@ -4067,6 +4203,10 @@ the direction of where you want the margin spacing to be applied*/
   background: #000;
   box-shadow: 0 0.05em 0.5em 0.05em #4E4E4E;
   z-index: 2; }
+
+.navigationBar--column {
+  flex-direction: column;
+  align-items: center; }
 
 .navigationBar--state {
   position: relative;
@@ -4111,7 +4251,7 @@ the direction of where you want the margin spacing to be applied*/
       flex: 1;
       font-size: 1em; } }
 
-.navigationBar.ultraDark {
+.navigationBar.ultraDark, .ultraDark.navigationBar--column {
   background: #212121; }
 
 .navigationBar__text--absolute {
@@ -4126,7 +4266,7 @@ the direction of where you want the margin spacing to be applied*/
   background: linear-gradient(to bottom, #FFF 20%, rgba(0, 0, 0, 0.05) 50%, #E6E6E6 100%);
   -o-background: linear-gradient(to bottom, #FFF 20%, rgba(0, 0, 0, 0.05) 50%, #E6E6E6 100%);
   background: linear-gradient(to bottom, #FFF 20%, rgba(0, 0, 0, 0.05) 50%, #E6E6E6 100%);
-  position: fixed;
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -4248,6 +4388,25 @@ from drop down item*/
   top: 0;
   min-height: 0.375em;
   background: #3CB3B9; }
+
+.navigationBar__input-wrapper {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-height: 0;
+  border-top: 0.05rem solid #4E4E4E; }
+
+.navigationBar__input-wrapper.active {
+  max-height: 3rem; }
 
 .navigationBar__menu {
   display: flex;
@@ -4392,8 +4551,7 @@ from drop down item*/
   max-width: 40em; }
 
 .navigationBar__menu--thin {
-  position: fixed;
-  top: 3em;
+  position: relative;
   display: flex;
   min-height: 1.5em;
   width: 100%;
@@ -4523,6 +4681,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -4709,16 +4868,26 @@ $teal-box-shadow: //code here
   color: #FFF;
   font-weight: 600; }
 
-.text--hero {
-  font-size: 1.5em;
-  opacity: 0.75;
-  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
+.text--hero, .text__heading--hero {
+  font-size: 1rem;
+  font-family: "Miriam Libre";
+  margin-left: 0.5rem;
+  opacity: 1;
+  text-shadow: 0.05rem 0.025rem 0.15rem #8BA4A3;
+  color: #FFF; }
   @media screen and (min-width: 600px) and (max-width: 640px) {
-    .text--hero {
-      font-size: 2em; } }
+    .text--hero, .text__heading--hero {
+      font-size: 1.25em; } }
   @media screen and (min-width: 640px) {
-    .text--hero {
-      font-size: 2.5em; } }
+    .text--hero, .text__heading--hero {
+      font-size: 1.5em; } }
+
+.text__heading--hero {
+  font-weight: 600;
+  letter-spacing: 0.125rem; }
+
+.text--thin {
+  font-weight: 400; }
 
 .text--italicized {
   font-style: italic; }
@@ -4780,6 +4949,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -4874,6 +5044,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -4946,6 +5117,14 @@ $teal-box-shadow: //code here
   transition: background 0.3s;
   background: #26CE31; }
 
+.button__next {
+  background: linear-gradient(to right, #23585A 10%, #4BA7AB 25%, #3CB3B9 50%, #23585A);
+  border: 0.125rem groove #1F9EA4; }
+
+.button__next .arrow--right-white {
+  top: 0.05rem;
+  margin-left: 0.25rem; }
+
 .button__search {
   border-top: 0.05em solid #8C8C8C;
   border-right: 0.05em solid #8C8C8C;
@@ -4955,6 +5134,12 @@ $teal-box-shadow: //code here
   border-top-right-radius: 0.25em;
   border-bottom-right-radius: 0.25em;
   border-bottom-left-radius: 0; }
+
+.button__wrapper {
+  padding: 0.25rem;
+  border-radius: 0.25rem; }
+  .button__wrapper:hover {
+    opacity: 0.85; }
 
 .button--absolute, #button--active {
   position: absolute;
@@ -4992,6 +5177,11 @@ $teal-box-shadow: //code here
   margin-right: auto;
   margin-left: auto; }
 
+.button--with-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
 /*transparency most visible on light surfaces*/
@@ -5026,6 +5216,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -5105,6 +5296,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -5154,51 +5346,74 @@ $teal-box-shadow: //code here
 
 .hero {
   position: relative;
-  display: flex;
-  align-items: flex-end;
-  min-height: 10em;
-  max-height: 20em;
+  min-height: 15rem;
+  max-height: 20rem;
   max-width: 100%;
   margin: auto;
   font-family: "Quicksand Regular"; }
   @media screen and (min-width: 500px) and (max-width: 1024px) {
     .hero {
-      min-height: 15em; } }
+      min-height: 20rem;
+      max-height: 40rem; } }
   @media screen and (min-width: 1024px) {
     .hero {
       max-width: 70%;
-      min-height: 20em; } }
+      min-height: 40rem;
+      max-height: 50rem; } }
 
 .hero__description {
   max-width: 100%; }
 
 @media screen and (min-width: 768px) {
   .hero__description .text--caption {
-    font-size: 1.25em; } }
+    font-size: 1.25rem; } }
 
 .hero__image {
-  background-image: url("./Themes/yellow_train.jpg");
-  background-position: 0em 0em;
-  background-size: 100% 100%;
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
   top: 0;
   z-index: 1; }
 
-.hero__title--overlap-center {
-  background-image: url("./Themes/whirlpool.png");
+.hero__wrapper--overlap, .hero__wrapper--overlap-center, .hero__wrapper--overlap-left, .hero__wrapper--overlap-right {
+  background-image: url("./Themes/dark-triangles.png");
   background-position: 0 0;
-  background-size: 100%;
-  position: relative;
-  top: 4.5em;
-  max-width: 50%;
-  margin: 0 auto;
+  background-size: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
   padding: 0.5em 1.25em;
+  color: #FFF;
+  opacity: 0.85;
+  z-index: 2; }
+
+.hero__wrapper--overlap.horizontal, .horizontal.hero__wrapper--overlap-center, .horizontal.hero__wrapper--overlap-left, .horizontal.hero__wrapper--overlap-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; }
+
+.hero__wrapper--overlap.top, .top.hero__wrapper--overlap-center, .top.hero__wrapper--overlap-left, .top.hero__wrapper--overlap-right {
+  top: -1.5rem; }
+
+.hero__wrapper--overlap.vertical, .vertical.hero__wrapper--overlap-center, .vertical.hero__wrapper--overlap-left, .vertical.hero__wrapper--overlap-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.hero__wrapper--overlap-center {
   text-align: center;
-  z-index: 2;
   border-top: 0.3em solid #3CB3B9; }
+
+.hero__wrapper--overlap-left {
+  text-align: left;
+  border-left: 0.3em solid #3CB3B9;
+  box-shadow: 0.05rem 0.025rem 0.75rem #212121; }
+
+.hero__wrapper--overlap-right {
+  text-align: right;
+  border-rights: 0.3em solid #3CB3B9; }
 
 .hero__wrapper, .hero__wrapper--half {
   padding: 0.75em 1em;
@@ -5248,6 +5463,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -5295,9 +5511,22 @@ the direction of where you want the margin spacing to be applied*/
   flex-direction: row;
   align-items: center;
   margin-right: 0.5rem;
-  background: white;
+  background: transparent;
   border: 0;
   border-radius: 0.25rem; }
+  .media__icon:hover {
+    background: rgba(0, 0, 0, 0.05);
+    border: 0;
+    border-radius: 0.25rem;
+    box-shadow: none;
+    cursor: pointer;
+    padding: 0 0.5rem; }
+
+.media__icon > .icon--large {
+  font-size: 1.75rem; }
+
+.media__icon:hover > .icon--large {
+  color: #FFF; }
 
 .media__icon-bar {
   display: flex;
@@ -5318,10 +5547,10 @@ the direction of where you want the margin spacing to be applied*/
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75em;
-  border: 0.15em groove #212121;
-  border-radius: 0.25em;
-  box-shadow: 0 0.125em 0.75em #212121, inset 0 0.25em 0.5em #212121; }
+  padding: 0.75rem;
+  border: 0.15rem groove #212121;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.75rem #212121, inset 0 0.25rem 0.5rem #212121; }
 
 .media__image-wrapper--5:hover .media__image-transparent-overlay {
   opacity: 1; }
@@ -5406,10 +5635,10 @@ the direction of where you want the margin spacing to be applied*/
 .media__description {
   position: relative;
   flex: 1;
-  padding: 0 0.5em;
-  border: 0.05em solid #212121;
-  border-radius: 0.25em;
-  box-shadow: 0 -0.125em 0.75em #212121, inset 0 -0.25em 0.5em #212121; }
+  padding: 0 0.5rem;
+  border: 0.05rem solid #212121;
+  border-radius: 0.25rem;
+  box-shadow: 0 -0.125rem 0.75rem #212121, inset 0 -0.25rem 0.5rem #212121; }
 
 .media__description--no-border {
   position: relative;
@@ -5423,30 +5652,30 @@ the direction of where you want the margin spacing to be applied*/
 
 .media__description-text {
   line-height: 1.5em;
-  font-size: 0.9em; }
+  font-size: 0.9rem; }
 
 .media__description-heading {
-  margin-top: 0.5em;
+  margin-top: 0.5rem;
   margin-right: auto;
-  margin-bottom: 0.75em;
+  margin-bottom: 0.75rem;
   margin-left: auto;
   max-width: 80%;
-  padding: 0.125em;
+  padding: 0.125rem;
   font-family: "Inconsolata Regular";
-  font-size: 1.25em;
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.5em;
   text-align: center;
   background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.05) 75%, transparent);
-  border: 0.05em solid #4E4E4E;
-  border-radius: 0.125em;
-  box-shadow: inset 0 0.095em 0.5em #212121; }
+  border: 0.05rem solid #4E4E4E;
+  border-radius: 0.125rem;
+  box-shadow: inset 0 0.095rem 0.5rem #212121; }
 
 .media__description-sub-heading {
-  margin-bottom: 0.5em;
-  padding: 0 0.75em;
+  margin-bottom: 0.5rem;
+  padding: 0 0.75rem;
   font-family: "Quicksand Light";
-  font-size: 1em;
+  font-size: 1rem;
   line-height: 1.5em; }
 
 .media__heading, .media__heading--small,
@@ -5457,8 +5686,13 @@ the direction of where you want the margin spacing to be applied*/
 
 .media__heading, .media__heading--small {
   padding-bottom: 0.25rem;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   line-height: 1.5em;
+  color: #FFF; }
+
+.media__heading.inverted, .inverted.media__heading--small,
+.media__heading.inverted--small.inverted,
+.inverted--small.inverted.media__heading--small {
   color: #000; }
 
 .media__heading--small {
@@ -5482,8 +5716,8 @@ the direction of where you want the margin spacing to be applied*/
   flex-direction: row; }
 
 .media__heading-identifier {
-  max-width: 4em;
-  margin-bottom: 0.45em;
+  max-width: 2rem;
+  margin-bottom: 0.125rem;
   border-top: 0.25em solid #000; }
 
 .media__section {
@@ -5529,6 +5763,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*
@@ -5715,16 +5950,26 @@ $teal-box-shadow: //code here
   color: #FFF;
   font-weight: 600; }
 
-.text--hero {
-  font-size: 1.5em;
-  opacity: 0.75;
-  text-shadow: 0.05em 0.025em 0.15em #8BA4A3; }
+.text--hero, .text__heading--hero {
+  font-size: 1rem;
+  font-family: "Miriam Libre";
+  margin-left: 0.5rem;
+  opacity: 1;
+  text-shadow: 0.05rem 0.025rem 0.15rem #8BA4A3;
+  color: #FFF; }
   @media screen and (min-width: 600px) and (max-width: 640px) {
-    .text--hero {
-      font-size: 2em; } }
+    .text--hero, .text__heading--hero {
+      font-size: 1.25em; } }
   @media screen and (min-width: 640px) {
-    .text--hero {
-      font-size: 2.5em; } }
+    .text--hero, .text__heading--hero {
+      font-size: 1.5em; } }
+
+.text__heading--hero {
+  font-weight: 600;
+  letter-spacing: 0.125rem; }
+
+.text--thin {
+  font-weight: 400; }
 
 .text--italicized {
   font-style: italic; }
@@ -5786,6 +6031,7 @@ argument unquoted in order for the CSS to render properly*/
 /*Box model dimensions*/
 /*Mixins for navigation bar flex states*/
 /*Mixins for column sizes for general use*/
+/*Mixins for height (percentage) */
 /*Mixins for media image sizing*/
 /*Transition Mixins*/
 /*

@@ -24,6 +24,13 @@
 	z-index: 2;
 }
 
+.navigationBar--column {
+	@extend .navigationBar;
+
+	flex-direction: column;
+	align-items: center;
+}
+
 .navigationBar--state {
 	position: relative;
 	display: flex;
@@ -75,7 +82,7 @@
 .navigationBar--thin {
 	@include prefix(background, linear-gradient(to bottom, $white 20%, $transparent-05-l 50%, $grey-lowOpacity 100%));
 
-	position: fixed;
+	position: relative;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -211,6 +218,21 @@ from drop down item*/
 	top: 0;
 	min-height: 0.375em;
 	background: $teal;
+}
+
+.navigationBar__input-wrapper {
+	@include prefix(transition, all 0.3s ease-in-out);
+
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	max-height: 0;
+	border-top: 0.05rem solid $grey-dark;
+} 
+
+.navigationBar__input-wrapper.active {
+	max-height: 3rem;
 }
 
 .navigationBar__menu {
@@ -364,8 +386,7 @@ from drop down item*/
 }
 
 .navigationBar__menu--thin {
-	position: fixed;
-	top: 3em;
+	position: relative;
 	display: flex;
 	min-height: 1.5em;
 	width: 100%;

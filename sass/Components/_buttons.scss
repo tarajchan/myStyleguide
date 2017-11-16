@@ -39,11 +39,29 @@
 	background: $green-neon;
 }
 
+.button__next {
+	background: linear-gradient(to right, $teal-dark 10%, $teal-medium 25%, $teal 50%, $teal-dark);
+	border: 0.125rem groove $teal-green-tint;
+}
+
+.button__next .arrow--right-white {
+	top: 0.05rem;
+	margin-left: 0.25rem;
+}
 
 .button__search {
 	@include border(0.05em solid $grey, 0.05em solid $grey, 0.05em solid $grey, 0);
 	@include border-radius(0, 0.25em, 0.25em, 0);
 	@extend .button;
+}
+
+.button__wrapper {
+	padding: 0.25rem;
+	border-radius: 0.25rem;
+
+		&:hover {
+			opacity: 0.85;
+		}
 }
 
 .button--absolute {
@@ -82,4 +100,10 @@
 
 .button--center {
 	@include margin(null, auto, null, auto);
+}
+
+.button--with-icon {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }

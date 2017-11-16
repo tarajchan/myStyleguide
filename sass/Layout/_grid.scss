@@ -32,26 +32,27 @@
 .grid__container--12 {
 	@extend .grid__container;
 
-	grid-template-columns: repeat(12, auto);
+	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: repeat(auto-fill, minmax(min-content, auto));
 }
 
 .grid__container--4 {
 	@extend .grid__container;
 
-	grid-template-columns: repeat(4, auto);
+	grid-template-columns: repeat(4, 1fr);
 }
 
 .grid__container--3 {
 	@extend .grid__container;
 
-	grid-template-columns: repeat(3, auto);
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, minmax(auto, 10rem));
 }
 
 .grid__container--2 {
 	@extend .grid__container;
 
-	grid-template-columns: repeat(2, auto);
+	grid-template-columns: repeat(2, 1fr);
 }
 
 .grid__container--page-layout {
@@ -97,6 +98,10 @@ entire page layouts that include a header, footer, aside, and main section.*/
 .grid__header--responsive-semantic {
 	grid-area: header;
 	position: relative;
+}
+
+.grid__header--responsive-semantic .hero {
+	top: 2rem;
 }
 
 .grid__aside--responsive-semantic {

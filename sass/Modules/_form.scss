@@ -32,22 +32,18 @@ input[type="text"].form__input--no-border {
 }
 
 .form__input-segment {
-	@include abs-positioning(3rem, 18.25rem, null, null);
-	@include prefix(transition, all 0.3s ease-in-out);
 	@extend .form__segment;
 
-	min-width: 26rem;
-	max-height: 0;
-	min-height: 0;
-	padding: 0.295rem;	
+	min-height: 2rem;
+	max-width: 60rem;	
+	margin: auto;
 	background: $black-opaque;
 }
 
-.form__input-segment.active {
-	min-height: 2rem;
-	max-height: 3rem;
-}
-
 .form__input-segment input[type="text"] {
+	position: absolute;
+	left: 1rem;
 	border-radius: 0.25rem;
+	height: 100%;
+	max-width: 50rem;
 }
