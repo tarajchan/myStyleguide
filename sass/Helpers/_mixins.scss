@@ -295,6 +295,19 @@ the direction of where you want the margin spacing to be applied*/
 	top: $top;	
 }
 
+/*Grid gap mixins*/
+
+@mixin grid-gap {
+	@for $i from 1 through 4 {
+		$rem: #{$i}/4;
+
+		.grid__gap--#{$rem} {
+			padding: 0.25rem;
+			width: calc((#{$i}/4) * 1rem);
+		}
+	}
+}
+
 /*Media Query Mixins*/
 
 @mixin mediaQuery--mobile {

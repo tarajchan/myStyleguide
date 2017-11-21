@@ -46,7 +46,7 @@
 	@extend .grid__container;
 
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(3, minmax(auto, 10rem));
+	grid-template-rows: repeat(3, minmax(auto, 12rem));
 }
 
 .grid__container--2 {
@@ -102,6 +102,12 @@ entire page layouts that include a header, footer, aside, and main section.*/
 
 .grid__header--responsive-semantic .hero {
 	top: 2rem;
+	background: $grey-lowOpacity;
+	padding: 0 1.25rem 1.25rem;
+}
+
+.grid__header--responsive-semantic .hero img {
+	border-radius: 0.25rem;
 }
 
 .grid__aside--responsive-semantic {
@@ -182,6 +188,7 @@ entire page layouts that include a header, footer, aside, and main section.*/
 
 // grid__gap class names are based on fractions of 1em
 
+
 .grid__gap--1 {
 	grid-gap: 1em;
 }
@@ -201,6 +208,7 @@ entire page layouts that include a header, footer, aside, and main section.*/
 .grid__gap--125 {
 	grid-gap: 0.125em;
 }
+
 
 /****Grid tempate columns & rows****/
 

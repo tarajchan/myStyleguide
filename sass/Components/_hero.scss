@@ -27,6 +27,10 @@
 	}
 }
 
+.hero .hero__image:nth-child(1) {
+	bottom: 0;
+}
+
 .hero__description {
 	max-width: 100%;
 }
@@ -48,7 +52,7 @@
 
 .hero__wrapper--overlap {
 	@include background-image(url("./Themes/dark-triangles.png"), 0 0, 50%);
-	@include abs-positioning(0, 0, null, 0);
+	@include abs-positioning(0, 0, 0, 0);
 
 	padding: 0.5em 1.25em;
 	color: $white;
@@ -61,6 +65,11 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;	
+}
+
+.hero__wrapper--overlap.bottom {
+	top: -0.5rem;
+	opacity: 1;
 }
 
 .hero__wrapper--overlap.top {

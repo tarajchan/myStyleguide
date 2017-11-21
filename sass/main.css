@@ -54,6 +54,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
@@ -515,6 +516,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -792,6 +794,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -937,6 +940,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -978,7 +982,7 @@ $teal-box-shadow: //code here
 
 .grid__container--3 {
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, minmax(auto, 10rem)); }
+  grid-template-rows: repeat(3, minmax(auto, 12rem)); }
 
 .grid__container--2 {
   grid-template-columns: repeat(2, 1fr); }
@@ -1008,7 +1012,12 @@ entire page layouts that include a header, footer, aside, and main section.*/
   position: relative; }
 
 .grid__header--responsive-semantic .hero {
-  top: 2rem; }
+  top: 2rem;
+  background: #E6E6E6;
+  padding: 0 1.25rem 1.25rem; }
+
+.grid__header--responsive-semantic .hero img {
+  border-radius: 0.25rem; }
 
 .grid__aside--responsive-semantic {
   grid-area: aside;
@@ -1465,6 +1474,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -1937,6 +1947,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -2038,6 +2049,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -2306,6 +2318,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -2548,6 +2561,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -2614,6 +2628,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -2859,7 +2874,7 @@ input[type="text"].form__input--no-border {
   flex-direction: row;
   position: relative;
   min-height: 1.5rem;
-  width: 80%; }
+  width: 85%; }
 
 .form__input-segment {
   min-height: 2rem;
@@ -2869,10 +2884,10 @@ input[type="text"].form__input--no-border {
 
 .form__input-segment input[type="text"] {
   position: absolute;
-  left: 1rem;
+  left: 0;
+  top: 0;
   border-radius: 0.25rem;
-  height: 100%;
-  max-width: 50rem; }
+  height: 100%; }
 
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -2926,6 +2941,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -3157,6 +3173,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -3567,6 +3584,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -3651,6 +3669,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -3721,6 +3740,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
@@ -4182,6 +4202,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -4215,8 +4236,14 @@ the direction of where you want the margin spacing to be applied*/
   align-items: center; }
 
 .navigationBar--state.left {
-  margin-left: 1em;
+  margin-left: 0;
   justify-content: flex-start; }
+
+.navigationBar--state.left .icon__wrapper--home {
+  margin-left: 1rem; }
+  @media screen and (min-width: 1350px) {
+    .navigationBar--state.left .icon__wrapper--home {
+      margin-left: 0; } }
 
 .navigationBar--state.center {
   justify-content: center; }
@@ -4271,20 +4298,23 @@ the direction of where you want the margin spacing to be applied*/
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  height: 2.65em;
+  height: 2.65rem;
   width: 100%;
   background: #212121; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1350px) {
     .navigationBar--thin {
-      min-height: 2.65em;
-      max-width: 60em; } }
+      min-height: 2.65rem;
+      max-width: 60rem; } }
+  @media screen and (min-width: 1351px) {
+    .navigationBar--thin {
+      max-width: 70%; } }
 
 .navigationBar--thin .navigationBar--state {
   height: 100%;
-  padding: 0.5em 0; }
+  padding: 0.5rem 0; }
   @media screen and (min-width: 640px) and (max-width: 768px) {
     .navigationBar--thin .navigationBar--state {
-      padding: 0.5em; } }
+      padding: 0.5rem; } }
 
 .navigationBar--thin .navigationBar--state.center {
   flex: 5; }
@@ -4315,6 +4345,11 @@ the direction of where you want the margin spacing to be applied*/
       position: relative;
       min-height: 1.5em;
       width: 80%; } }
+
+.navigationBar__divider {
+  border: 0;
+  border-top: 0.05rem solid #4E4E4E;
+  min-width: 100%; }
 
 .navigationBar__dropDown-item,
 .navigationBar__dropDown-sub-item {
@@ -4375,18 +4410,18 @@ from drop down item*/
   display: flex;
   left: 1vw;
   right: 1vw;
-  top: 0.85em;
-  max-height: 3em;
-  border-radius: 0.5em;
-  border-bottom: 0.25em solid #3CB3B9;
-  box-shadow: inset 0 0.125em 1em 0.125em #3C3939; }
+  top: 0.85rem;
+  max-height: 3rem;
+  border-radius: 0.5rem;
+  border-bottom: 0.25rem solid #3CB3B9;
+  box-shadow: inset 0 0.125rem 1rem 0.125rem #3C3939; }
 
 .navigationBar__highlight {
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
-  min-height: 0.375em;
+  min-height: 0.375rem;
   background: #3CB3B9; }
 
 .navigationBar__input-wrapper {
@@ -4402,11 +4437,33 @@ from drop down item*/
   display: flex;
   align-items: center;
   width: 100%;
-  max-height: 0;
-  border-top: 0.05rem solid #4E4E4E; }
+  min-height: 3rem; }
+  @media screen and (min-width: 980px) {
+    .navigationBar__input-wrapper {
+      max-width: 60rem; } }
 
 .navigationBar__input-wrapper.active {
   max-height: 3rem; }
+
+.navigationBar__input-wrapper .form__input-segment {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem; }
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    .navigationBar__input-wrapper .form__input-segment {
+      width: 100%; } }
+  @media screen and (min-width: 640px) {
+    .navigationBar__input-wrapper .form__input-segment {
+      margin: auto;
+      margin-left: 1rem;
+      margin-right: 1rem; } }
 
 .navigationBar__menu {
   display: flex;
@@ -4708,6 +4765,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -4976,6 +5034,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -5071,6 +5130,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
@@ -5135,11 +5195,17 @@ $teal-box-shadow: //code here
   border-bottom-right-radius: 0.25em;
   border-bottom-left-radius: 0; }
 
-.button__wrapper {
+.button__wrapper, .button__wrapper--wide {
   padding: 0.25rem;
   border-radius: 0.25rem; }
-  .button__wrapper:hover {
+  .button__wrapper:hover, .button__wrapper--wide:hover {
     opacity: 0.85; }
+
+.button__wrapper--border {
+  border: 0.05rem solid #4E4E4E; }
+
+.button__wrapper--wide {
+  padding: 0.25rem 1.5rem; }
 
 .button--absolute, #button--active {
   position: absolute;
@@ -5243,6 +5309,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -5323,6 +5390,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*Transparent colors*/
 /*transparency most visible on dark surfaces*/
@@ -5361,6 +5429,9 @@ $teal-box-shadow: //code here
       min-height: 40rem;
       max-height: 50rem; } }
 
+.hero .hero__image:nth-child(1) {
+  bottom: 0; }
+
 .hero__description {
   max-width: 100%; }
 
@@ -5380,6 +5451,7 @@ $teal-box-shadow: //code here
   background-position: 0 0;
   background-size: 50%;
   position: absolute;
+  bottom: 0;
   left: 0;
   right: 0;
   top: 0;
@@ -5393,6 +5465,10 @@ $teal-box-shadow: //code here
   flex-direction: row;
   align-items: center;
   justify-content: space-between; }
+
+.hero__wrapper--overlap.bottom, .bottom.hero__wrapper--overlap-center, .bottom.hero__wrapper--overlap-left, .bottom.hero__wrapper--overlap-right {
+  top: -0.5rem;
+  opacity: 1; }
 
 .hero__wrapper--overlap.top, .top.hero__wrapper--overlap-center, .top.hero__wrapper--overlap-left, .top.hero__wrapper--overlap-right {
   top: -1.5rem; }
@@ -5490,6 +5566,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -5790,6 +5867,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/
@@ -6058,6 +6136,7 @@ argument unquoted in order for the CSS to render properly*/
 the direction of where you want the margin spacing to be applied*/
 /*Positioning mixins*/
 /*Positioning for absolutely positioned items can be set by including numeric values for each arg*/
+/*Grid gap mixins*/
 /*Media Query Mixins*/
 /*GLOBAL HELPERS*/
 /*Variables for font-size and line-height*/

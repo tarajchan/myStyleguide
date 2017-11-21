@@ -28,7 +28,7 @@ input[type="text"].form__input--no-border {
 	flex-direction: row;
 	position: relative;
 	min-height: 1.5rem;
-	width: 80%;	
+	width: 85%;	
 }
 
 .form__input-segment {
@@ -42,8 +42,8 @@ input[type="text"].form__input--no-border {
 
 .form__input-segment input[type="text"] {
 	position: absolute;
-	left: 1rem;
+	left: 0;
+	top: 0;
 	border-radius: 0.25rem;
 	height: 100%;
-	max-width: 50rem;
 }

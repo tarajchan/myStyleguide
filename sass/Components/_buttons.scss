@@ -64,6 +64,16 @@
 		}
 }
 
+.button__wrapper--border {
+	border: 0.05rem solid $grey-dark;
+}
+
+.button__wrapper--wide {
+	@extend .button__wrapper;
+
+	padding: 0.25rem 1.5rem;
+}
+
 .button--absolute {
 	@include abs-positioning(0, 0, 0, 0);
 	@include padding-side("left", 1em);
