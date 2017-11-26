@@ -111,18 +111,8 @@ function showCode(i) {
 }
 
 function WidthChange(MQ_TABLETBP) {
-	let navItemThin = document.querySelectorAll(".navigationBar__menu-item--thin");
-	let icon = document.createElement("i");
-	let iconContent = document.createAtttribute("class");
-	iconContent.value = "fa fa-bars icon--left"; 
-
 	if (MQ_TABLETBP.matches) {
-		icon.setAttributeNode(iconContent);
-
-		for (let i=0; i < navItemThin.length; i++) {
-			navItemThin[i].appendChild(icon);
-			console.log(icon.getAttribute("class"));
-		}
+		alert("!");
 	}
 }
 
@@ -173,7 +163,7 @@ function main() {
 	let menuDropDown = document.querySelectorAll(".menu__expander-icon");
 	
 	const MQ_DESKTOPBP = window.matchMedia("(min-width: 768px)");
-	const MQ_TABLETBP = window.matchMedia("max-width: 640px");
+	const MQ_TABLETBP = window.matchMedia("(max-width: 640px)");
 
 
 	for (let i = 0; i < accordion.length; i++) {

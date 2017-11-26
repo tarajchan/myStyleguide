@@ -428,6 +428,7 @@ from drop down item*/
 .navigationBar__menu--thin {
 	position: relative;
 	display: flex;
+	margin-bottom: 0.5rem;
 	min-height: 1.5em;
 	width: 100%;
 	background: $grey-dark;
@@ -449,7 +450,7 @@ from drop down item*/
 	position: relative;
 	display: flex;
 	align-self: center;
-	max-height: 1.25em;
+	height: 100%;
 	color: $white;
 
 	@for $i from 1 through 4 {

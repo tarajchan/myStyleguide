@@ -46,7 +46,7 @@
 	@extend .grid__container;
 
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(3, minmax(auto, 12rem));
+	grid-template-rows: repeat(auto-fill, minmax(auto, 33%));
 }
 
 .grid__container--2 {
@@ -61,7 +61,7 @@
 	grid-template-areas:  	"main main"
 											"footer footer";
 	grid-template-columns: minmax(75%, auto) 25%;
-	grid-template-rows: minmax(min-content, auto) 10em;
+	grid-template-rows: minmax(min-content, auto) 10rem;
  
 
 	@media screen and (min-width: 820px) {
@@ -101,9 +101,9 @@ entire page layouts that include a header, footer, aside, and main section.*/
 }
 
 .grid__header--responsive-semantic .hero {
-	top: 2rem;
 	background: $grey-lowOpacity;
 	padding: 0 1.25rem 1.25rem;
+	margin-bottom: 3rem;
 }
 
 .grid__header--responsive-semantic .hero img {
@@ -140,7 +140,9 @@ entire page layouts that include a header, footer, aside, and main section.*/
 	margin-bottom: 1rem;
 
 	@media screen and (min-width: 672px) {
-	margin-bottom: 0;
+		margin-bottom: 0;
+		margin-left: 1rem;
+		margin-top: 1rem;
 	}
 }
 
@@ -207,6 +209,50 @@ entire page layouts that include a header, footer, aside, and main section.*/
 
 .grid__gap--125 {
 	grid-gap: 0.125em;
+}
+
+/*Grid-column-gap sizes*/
+
+.grid__column-gap--1 {
+	grid-column-gap: 1em;
+}
+
+.grid__column-gap--75 {
+	grid-column-gap: 0.75em;
+}
+
+.grid__column-gap--5 {
+	grid-column-gap: 0.5em;
+}
+
+.grid__column-gap--25 {
+	grid-column-gap: 0.25em;
+}
+
+.grid__column-gap--125 {
+	grid-column-gap: 0.125em;
+}
+
+/*Grid-row-gap sizez*/
+
+.grid__row-gap--1 {
+	grid-row-gap: 1em;
+}
+
+.grid__row-gap--75 {
+	grid-row-gap: 0.75em;
+}
+
+.grid__row-gap--5 {
+	grid-row-gap: 0.5em;
+}
+
+.grid__row-gap--25 {
+	grid-row-gap: 0.25em;
+}
+
+.grid__row-gap--125 {
+	grid-row-gap: 0.125em;
 }
 
 

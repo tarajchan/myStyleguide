@@ -982,7 +982,7 @@ $teal-box-shadow: //code here
 
 .grid__container--3 {
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, minmax(auto, 12rem)); }
+  grid-template-rows: repeat(auto-fill, minmax(auto, 33%)); }
 
 .grid__container--2 {
   grid-template-columns: repeat(2, 1fr); }
@@ -990,7 +990,7 @@ $teal-box-shadow: //code here
 .grid__container--page-layout {
   grid-template-areas: "main main" "footer footer";
   grid-template-columns: minmax(75%, auto) 25%;
-  grid-template-rows: minmax(min-content, auto) 10em; }
+  grid-template-rows: minmax(min-content, auto) 10rem; }
   @media screen and (min-width: 820px) {
     .grid__container--page-layout {
       grid-template-areas: "main navigation" "footer footer"; } }
@@ -1012,9 +1012,9 @@ entire page layouts that include a header, footer, aside, and main section.*/
   position: relative; }
 
 .grid__header--responsive-semantic .hero {
-  top: 2rem;
   background: #E6E6E6;
-  padding: 0 1.25rem 1.25rem; }
+  padding: 0 1.25rem 1.25rem;
+  margin-bottom: 3rem; }
 
 .grid__header--responsive-semantic .hero img {
   border-radius: 0.25rem; }
@@ -1044,7 +1044,9 @@ entire page layouts that include a header, footer, aside, and main section.*/
   margin-bottom: 1rem; }
   @media screen and (min-width: 672px) {
     .grid__main--responsive-semantic .main__section {
-      margin-bottom: 0; } }
+      margin-bottom: 0;
+      margin-left: 1rem;
+      margin-top: 1rem; } }
 
 @media screen and (min-width: 1024px) {
   .grid__main--responsive-semantic .main__wrapper:nth-child(1), .grid__main--responsive-semantic .main__wrapper--right:nth-child(1) {
@@ -1092,6 +1094,38 @@ entire page layouts that include a header, footer, aside, and main section.*/
 
 .grid__gap--125 {
   grid-gap: 0.125em; }
+
+/*Grid-column-gap sizes*/
+.grid__column-gap--1 {
+  grid-column-gap: 1em; }
+
+.grid__column-gap--75 {
+  grid-column-gap: 0.75em; }
+
+.grid__column-gap--5 {
+  grid-column-gap: 0.5em; }
+
+.grid__column-gap--25 {
+  grid-column-gap: 0.25em; }
+
+.grid__column-gap--125 {
+  grid-column-gap: 0.125em; }
+
+/*Grid-row-gap sizez*/
+.grid__row-gap--1 {
+  grid-row-gap: 1em; }
+
+.grid__row-gap--75 {
+  grid-row-gap: 0.75em; }
+
+.grid__row-gap--5 {
+  grid-row-gap: 0.5em; }
+
+.grid__row-gap--25 {
+  grid-row-gap: 0.25em; }
+
+.grid__row-gap--125 {
+  grid-row-gap: 0.125em; }
 
 /****Grid tempate columns & rows****/
 /*Grid-rows spanning up to 12 columns with auto-placement*/
@@ -1486,12 +1520,13 @@ the direction of where you want the margin spacing to be applied*/
   bottom: 0;
   left: 0;
   right: 0;
-  top: 4.45em;
+  top: 4.45rem;
   background: #DEF9EE;
   overflow-y: auto;
   z-index: 1; }
 
 .main--background {
+  top: 0;
   background-image: url("./Themes/whirlpool.png");
   background-position: 0 0;
   background-size: 125%; }
@@ -1830,7 +1865,7 @@ the direction of where you want the margin spacing to be applied*/
 .main__sectionHeading-keyword-text {
   position: absolute;
   top: 0.5rem;
-  margin-left: 1.125rem;
+  margin-left: 0.125rem;
   color: #DC143C;
   font-family: "Miriam Libre";
   font-size: 1rem; }
@@ -1839,7 +1874,6 @@ the direction of where you want the margin spacing to be applied*/
   position: relative;
   flex: 4;
   max-width: 100%;
-  margin-left: 1rem;
   font-family: "Quicksand Regular";
   font-size: 1.5rem;
   line-height: 1.75rem; }
@@ -4610,6 +4644,7 @@ from drop down item*/
 .navigationBar__menu--thin {
   position: relative;
   display: flex;
+  margin-bottom: 0.5rem;
   min-height: 1.5em;
   width: 100%;
   background: #4E4E4E;
@@ -4637,7 +4672,7 @@ from drop down item*/
   position: relative;
   display: flex;
   align-self: center;
-  max-height: 1.25em;
+  height: 100%;
   color: #FFF; }
   .navigationBar__menu-item--thin:nth-child(1)::after {
     content: "1";
@@ -5066,7 +5101,8 @@ the direction of where you want the margin spacing to be applied*/
 
 .breadcrumb__wrapper {
   padding: 1em 0;
-  background: #FFF; }
+  background: #FFF;
+  margin-bottom: 2rem; }
 
 .breadcrumb--bordered {
   margin: auto;
@@ -5426,54 +5462,102 @@ $teal-box-shadow: //code here
   @media screen and (min-width: 1024px) {
     .hero {
       max-width: 70%;
-      min-height: 40rem;
+      min-height: 30rem;
       max-height: 50rem; } }
 
-.hero .hero__image:nth-child(1) {
-  bottom: 0; }
+.hero .grid__container--3 {
+  max-width: 100%;
+  margin: 0; }
 
 .hero__description {
-  max-width: 100%; }
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin-left: -0.25rem;
+  border: 0.05rem groove #A0A0A0;
+  box-shadow: 0.15rem 0.125rem 0.5rem #212121; }
 
-@media screen and (min-width: 768px) {
-  .hero__description .text--caption {
-    font-size: 1.25rem; } }
+.hero__description > .text--caption {
+  position: absolute;
+  bottom: -0.65rem;
+  left: 0.5rem;
+  right: -0.65rem;
+  top: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 0.65rem;
+  background: rgba(35, 88, 90, 0.15);
+  border: 0.05rem groove #23585A;
+  border-radius: 0.25rem;
+  box-shadow: inset 0.05rem 0.05rem 0.5rem #3D3D3D;
+  font-family: "Miriam Libre";
+  line-height: 1.5em;
+  font-size: 0.95rem;
+  opacity: 1; }
+  @media screen and (min-width: 640px) and (max-width: 768px) {
+    .hero__description > .text--caption {
+      font-size: 1rem;
+      line-height: 1.75rem; } }
+  @media screen and (min-width: 768px) {
+    .hero__description > .text--caption {
+      font-size: 1.15rem;
+      line-height: 2rem; } }
 
 .hero__image {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
   z-index: 1; }
 
-.hero__wrapper--overlap, .hero__wrapper--overlap-center, .hero__wrapper--overlap-left, .hero__wrapper--overlap-right {
-  background-image: url("./Themes/dark-triangles.png");
-  background-position: 0 0;
-  background-size: 50%;
+.hero__wrapper, .hero__wrapper--half {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+  box-shadow: inset 0 0 0.5em 0.015em #677790, 0.025em 0.025em 0.25em #677790;
+  z-index: 2; }
+
+.hero__wrapper .hero__wrapper--overlap, .hero__wrapper--half .hero__wrapper--overlap, .hero__wrapper .hero__wrapper--overlap--title, .hero__wrapper--half .hero__wrapper--overlap--title, .hero__wrapper .hero__wrapper--overlap-center, .hero__wrapper--half .hero__wrapper--overlap-center, .hero__wrapper .hero__wrapper--overlap-left, .hero__wrapper--half .hero__wrapper--overlap-left, .hero__wrapper .hero__wrapper--overlap-right, .hero__wrapper--half .hero__wrapper--overlap-right {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  top: 0;
-  padding: 0.5em 1.25em;
+  top: -1.5rem; }
+
+.hero__wrapper--overlap, .hero__wrapper--overlap--title, .hero__wrapper--overlap-center, .hero__wrapper--overlap-left, .hero__wrapper--overlap-right {
+  background-image: url("./Themes/dark-triangles.png");
+  background-position: 0 0;
+  background-size: 50%;
+  padding: 1.25em;
+  padding-top: 1.5rem;
   color: #FFF;
   opacity: 0.85;
   z-index: 2; }
 
-.hero__wrapper--overlap.horizontal, .horizontal.hero__wrapper--overlap-center, .horizontal.hero__wrapper--overlap-left, .horizontal.hero__wrapper--overlap-right {
+.hero__wrapper--overlap--title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: -3.5rem;
+  padding-top: 3rem; }
+
+.hero__wrapper--overlap--title .text__heading--hero {
+  position: absolute;
+  top: 0.75rem; }
+
+.hero__wrapper--overlap.horizontal, .horizontal.hero__wrapper--overlap--title, .horizontal.hero__wrapper--overlap-center, .horizontal.hero__wrapper--overlap-left, .horizontal.hero__wrapper--overlap-right {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between; }
 
-.hero__wrapper--overlap.bottom, .bottom.hero__wrapper--overlap-center, .bottom.hero__wrapper--overlap-left, .bottom.hero__wrapper--overlap-right {
+.hero__wrapper--overlap.bottom, .bottom.hero__wrapper--overlap--title, .bottom.hero__wrapper--overlap-center, .bottom.hero__wrapper--overlap-left, .bottom.hero__wrapper--overlap-right {
   top: -0.5rem;
   opacity: 1; }
 
-.hero__wrapper--overlap.top, .top.hero__wrapper--overlap-center, .top.hero__wrapper--overlap-left, .top.hero__wrapper--overlap-right {
+.hero__wrapper--overlap.top, .top.hero__wrapper--overlap--title, .top.hero__wrapper--overlap-center, .top.hero__wrapper--overlap-left, .top.hero__wrapper--overlap-right {
+  position: relative;
+  left: 0;
+  right: 0;
   top: -1.5rem; }
 
-.hero__wrapper--overlap.vertical, .vertical.hero__wrapper--overlap-center, .vertical.hero__wrapper--overlap-left, .vertical.hero__wrapper--overlap-right {
+.hero__wrapper--overlap.vertical, .vertical.hero__wrapper--overlap--title, .vertical.hero__wrapper--overlap-center, .vertical.hero__wrapper--overlap-left, .vertical.hero__wrapper--overlap-right {
   display: flex;
   flex-direction: column;
   justify-content: center; }
@@ -5490,17 +5574,6 @@ $teal-box-shadow: //code here
 .hero__wrapper--overlap-right {
   text-align: right;
   border-rights: 0.3em solid #3CB3B9; }
-
-.hero__wrapper, .hero__wrapper--half {
-  padding: 0.75em 1em;
-  display: flex;
-  flex-direction: column;
-  background: rgba(255, 255, 255, 0.15);
-  border: 0.05em solid #677790;
-  border-radius: 0.25em;
-  box-shadow: inset 0 0 0.5em 0.015em #677790, 0.025em 0.025em 0.25em #677790;
-  color: #FFF;
-  z-index: 2; }
 
 .hero__wrapper--half {
   max-width: 50%; }
@@ -5765,7 +5838,8 @@ the direction of where you want the margin spacing to be applied*/
   padding-bottom: 0.25rem;
   font-size: 1.5rem;
   line-height: 1.5em;
-  color: #FFF; }
+  color: #FFF;
+  font-family: "Miriam Libre"; }
 
 .media__heading.inverted, .inverted.media__heading--small,
 .media__heading.inverted--small.inverted,

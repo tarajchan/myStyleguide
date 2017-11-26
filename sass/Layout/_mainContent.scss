@@ -6,7 +6,7 @@
 /*MISC*/
 
 .main {
-	@include abs-positioning(4.45em, 0, 0, 0);
+	@include abs-positioning(4.45rem, 0, 0, 0);
 
 	background: $green-lowOpacity;
 	overflow-y: auto;
@@ -15,6 +15,9 @@
 
 .main--background {
 	@extend .main;
+	
+	top: 0;
+
 	@include background-image(url("./Themes/whirlpool.png"), 0 0, 125%);
 
 	@include mediaQuery--custom($mq-mobile, 468px) {
@@ -378,7 +381,7 @@
 .main__sectionHeading-keyword-text {
 	position: absolute;
 	top: 0.5rem;
-	margin-left: 1.125rem;
+	margin-left: 0.125rem;
 	color: $red-pinterest;
 	font-family: "Miriam Libre";
 	font-size: 1rem;
@@ -388,7 +391,6 @@
 	position: relative;
 	flex: 4;
 	max-width: 100%;
-	margin-left: 1rem;
 	font-family: "Quicksand Regular";
 	font-size: 1.5rem;
 	line-height: 1.75rem;
